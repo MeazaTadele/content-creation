@@ -34,7 +34,7 @@ Every decision faced, open or made. Meaza chooses which one is "the hard decisio
 
 | # | Decision | Options found so far | Status | Logged |
 |---|---|---|---|---|
-| 1 | Story, person, audience, language | — | Open | Tue 24 Nov |
+| 1 | Story, person, audience, language | Story and audience chosen; language still open | **Partly decided Tue 24 Nov.** Story: the Easter morning Meaza woke up and her mom was home, the first holiday she remembers celebrating with her mom (mom usually works on holidays). Audience: friends Yishak and Betty, maybe her brother. Language: open | Tue 24 Nov |
 | 2 | Visual style | realistic, illustrated, painted, animated-looking (illustrated hides inconsistency better) | Open | Tue 24 Nov |
 | 3 | Code language | Python (FFmpeg, Kaggle, ACE-Step tooling are mostly Python) or Node/TypeScript | Open | Tue 24 Nov |
 | 4 | Orchestrator | Makefile, Python CLI, other | Open | Tue 24 Nov |
@@ -59,6 +59,9 @@ All of them, small or large. Feeds `FAILURES.md` and the report's "hardest probl
 | When | Challenge | What was tried | Outcome |
 |---|---|---|---|
 | Tue 24 Nov | Instant Vlog Clip repo could not be read from the claude.ai session (access denied) | Moved to Claude Code, attached the repo there | Resolved Tue 24 Nov |
+| Tue 24 Nov | Audience has 2 confirmed testers (Yishak, Betty) + brother as a maybe; each user test needs at least 3 people | — | Open |
+| Tue 24 Nov | Real people in the story: Meaza, her mom, maybe her brother. Consent needed before generating their likeness or putting words about them on screen; includes the detail that mom works on holidays | — | Open |
+| Tue 24 Nov | Private family detail (mom's work) would go to free AI services that may train on data, and into a public post | — | Open |
 | Tue 24 Nov | Ownership of Instant Vlog Clip code (built for a client) vs. the assignment's public-repo requirement. The repo has no LICENSE file | — | Open: check the contract before copying any code |
 
 ## 3. Experiments (→ `EXPERIMENTS.md`, target ≥ 10)
@@ -87,7 +90,7 @@ _None yet._
 
 ## 6. Audience and user tests (→ `DESIGN.md`)
 
-- Audience: _not decided_
+- Audience: friends Yishak and Betty, maybe Meaza's brother (chosen Tue 24 Nov)
 - Where they watch: _not decided_
 - Intent (what they should feel or understand): _not decided_
 - Written before generating anything: date/commit to be recorded here
