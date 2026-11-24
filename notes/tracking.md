@@ -47,10 +47,14 @@ Every decision faced, open or made. Meaza chooses which one is "the hard decisio
 | 11 | Ceiling work, if any | see research notes below | Open | Tue 24 Nov |
 | 12 | Reuse anything from Instant Vlog Clip | A: fork the app; B: new pipeline, borrow ideas only; C: new pipeline now, app as a front end later | Open | Tue 24 Nov |
 | 13 | Which coding agent writes the pipeline code | Claude Code (paid) or the free agents the brief suggests (Antigravity CLI, OpenCode). Relevant to the report's "agent writes the scripts" practice | **Decided Tue 24 Nov: Claude Code.** Report must state this openly | Tue 24 Nov |
-| 14 | Model for each stage | Script: Gemini 3.8 Flash / Flash-Lite. Narration: Gemini TTS, OmniVoice Amharic, CosyVoice2 Amharic. Keyframes: FLUX.2 klein 4B, FLUX.1 schnell. Video: Wan 2.2 TI2V-5B, HunyuanVideo 1.5, LTX-2 family. Music: ACE-Step 1.5 | Open | Tue 24 Nov |
+| 14 | Model for each stage | Script: Gemini 3.8 Flash / Flash-Lite. Narration: Gemini TTS, ElevenLabs (Amharic listed; free tier to check), Azure am-ET Mekdes/Ameha (free tier; card requirement to check), OmniVoice Amharic, Chatterbox/CosyVoice2 Amharic fine-tunes; or compare several (Meaza raised comparing Gemini vs ElevenLabs, Tue 24 Nov). Keyframes: FLUX.2 klein 4B, FLUX.1 schnell. Video: Wan 2.2 TI2V-5B, HunyuanVideo 1.5, LTX-2 family. Music: ACE-Step 1.5 | Open | Tue 24 Nov |
 | 15 | Where the pipeline runs | This Claude Code cloud container (needs network access to providers + keys saved as environment secrets) or Meaza's own computer (needs Python/Node, FFmpeg installed) | Open | Tue 24 Nov |
 | 16 | GPU platform for video and music | Kaggle (2x T4, ~30 GPU h/week, brief's main pick) or Colab (backup) | Open | Tue 24 Nov |
 | 17 | Branch workflow in the repo | merge `tracking-log` into `main` and work on `main`; or work on branches and merge | Open | Tue 24 Nov |
+
+## To-do
+
+- [ ] Prepare a questionnaire for the audience tests, beyond their general opinion of the video (requested by Meaza, Tue 24 Nov). Needed before user test 1.
 
 ## 2. Challenges and blockers
 
