@@ -50,11 +50,25 @@ Every decision faced, open or made. Meaza chooses which one is "the hard decisio
 | 14 | Model for each stage | Script: Gemini 3.8 Flash / Flash-Lite. Narration: Gemini TTS, ElevenLabs (Amharic listed; free tier to check), Azure am-ET Mekdes/Ameha (free tier; card requirement to check), OmniVoice Amharic, Chatterbox/CosyVoice2 Amharic fine-tunes; or compare several (Meaza raised comparing Gemini vs ElevenLabs, Tue 24 Nov). Keyframes: FLUX.2 klein 4B, FLUX.1 schnell. Video: Wan 2.2 TI2V-5B, HunyuanVideo 1.5, LTX-2 family. Music: ACE-Step 1.5 | Open | Tue 24 Nov |
 | 15 | Where the pipeline runs | This Claude Code cloud container (needs network access to providers + keys saved as environment secrets) or Meaza's own computer (needs Python/Node, FFmpeg installed) | Open | Tue 24 Nov |
 | 16 | GPU platform for video and music | Kaggle (2x T4, ~30 GPU h/week, brief's main pick) or Colab (backup) | Open | Tue 24 Nov |
+| 18 | How to evaluate the Amharic voices | Meaza's own ear (native speaker, but not blind); blind listening by testers; automatic check (speech recognition back to text, error rate vs script); measured latency and cost; or a mix. Any number of models | Open | Tue 24 Nov |
+| 19 | Audience intent: what they should feel or understand at the end | To be worked out (see story open items) | Open | Tue 24 Nov |
 | 17 | Branch workflow in the repo | merge `tracking-log` into `main` and work on `main`; or work on branches and merge | Open | Tue 24 Nov |
 
 ## To-do
 
 - [ ] Prepare a questionnaire for the audience tests, beyond their general opinion of the video (requested by Meaza, Tue 24 Nov). Needed before user test 1.
+
+### Story: open items (Tue 24 Nov)
+- Intent (D19) and where the audience watches
+- Story details (age, year, Fasika traditions, what woke her, first sight of mom, what was said, food, who was there, holidays before, feeling now)
+- Logline (one sentence) and the arc: before / turning point / ending
+- Narrator: first person? adult looking back or child's present tense? voice age and gender
+- How much of each face is shown (mom, Meaza as a child, brother)
+- Whether dad appears
+- How mom's absence is framed (so it doesn't read as blame), and whether mom is comfortable with it
+- What stays out (mom's job specifics, the shop)
+- Title and the closing line
+- Cultural accuracy of the Easter details
 
 ## 2. Challenges and blockers
 
