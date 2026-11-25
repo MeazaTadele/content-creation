@@ -30,7 +30,8 @@ def list_models() -> list[str]:
 
 def _version_key(name: str):
     nums = [int(x) for x in re.findall(r"\d+", name)]
-    return (0 if "preview" in name else 1, nums)
+    # prefer stable over preview, full Flash over Flash-Lite, then the newest version
+    return (0 if "preview" in name else 1, 0 if "lite" in name else 1, nums)
 
 
 def pick_tts_model() -> str:

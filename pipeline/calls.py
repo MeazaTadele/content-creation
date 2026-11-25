@@ -22,6 +22,7 @@ MAX_DELAY = 60.0
 # Patterns that must never reach the log, whatever a provider puts in an error message.
 _SECRET_PATTERNS = [
     re.compile(r"AIza[0-9A-Za-z_\-]{20,}"),
+    re.compile(r"AQ\.[0-9A-Za-z_\-]{20,}"),
     re.compile(r"(?i)(bearer\s+)[A-Za-z0-9._\-]{16,}"),
     re.compile(r"(?i)(xi-api-key|x-goog-api-key|api[_-]?key|token|key)([\"'=:\s]+)[A-Za-z0-9._\-]{16,}"),
 ]
