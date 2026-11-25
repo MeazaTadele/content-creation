@@ -37,13 +37,30 @@ class Manifest:
         return bool(out) and (ROOT / out).exists()
 
     def put(self, stage: str, unit: str, entry: dict) -> None:
-        self.data["units"][self.key(stage, unit)] = entry
-        self.save()
+        self._update("units", self.key(stage, unit), entry)
 
     # measured values (timing, loudness, error rates) -------------------
     def measure(self, name: str, value) -> None:
-        self.data["measured"][name] = value
-        self.save()
+        self._update("measured", name, value)
+
+    def _update(self, section: str, key: str, value) -> None:
+        """Re-read the file and change only this one entry, so two runs at once (for example a long
+        Kaggle job and a picture stage) never overwrite each other's records."""
+        self._reload()
+        self.data[section][key] = value
+        atomic.write_json(self.path, self.data)
+
+    def _reload(self) -> None:
+        if self.path.exists():
+            disk = json.loads(self.path.read_text(encoding="utf-8"))
+            for k in self.data:
+                self.data[k].update(disk.get(k, {}))
 
     def save(self) -> None:
+        self._reload_keep_sources()
         atomic.write_json(self.path, self.data)
+
+    def _reload_keep_sources(self) -> None:
+        mine = dict(self.data["stage_sources"])
+        self._reload()
+        self.data["stage_sources"].update(mine)
