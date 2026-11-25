@@ -25,7 +25,10 @@ class ElevenLabsTTS(TTSProvider):
         key = http.require_env("ELEVENLABS_API_KEY", KEY_HINT)
         if not voice:
             raise FatalError("set voice.voice_names.elevenlabs in storyboard.json to an ElevenLabs voice id")
-        body = {"text": text, "model_id": self.model, "language_code": "am"}
+        body = {"text": text, "model_id": self.model}
+        # eleven_v3 rejects language_code "am" (smoke test, 25 Nov), but accepts Amharic text without it
+        if os.environ.get("ELEVENLABS_LANGUAGE_CODE"):
+            body["language_code"] = os.environ["ELEVENLABS_LANGUAGE_CODE"]
         r = http.post(f"{API}/text-to-speech/{voice}?output_format=pcm_24000",
                       headers={"xi-api-key": key, "Content-Type": "application/json"}, json=body)
         if not r.content:

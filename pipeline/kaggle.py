@@ -40,7 +40,11 @@ def username() -> str:
 def _cli(*args: str, timeout: int = 600) -> str:
     if not shutil.which("kaggle"):
         raise KaggleError("the kaggle command is not installed: pip install kaggle")
-    p = subprocess.run(["kaggle", *args], capture_output=True, text=True, timeout=timeout)
+    env = dict(os.environ)
+    if env.get("KAGGLE_KEY"):
+        # legacy username + key: sent as Basic auth, which a header-injecting proxy can fill in
+        env.pop("KAGGLE_API_TOKEN", None)
+    p = subprocess.run(["kaggle", *args], capture_output=True, text=True, timeout=timeout, env=env)
     if p.returncode != 0:
         raise KaggleError(f"kaggle {' '.join(args[:2])} failed: {(p.stderr or p.stdout).strip()[:400]}")
     return p.stdout
