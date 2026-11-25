@@ -4,6 +4,22 @@ Each entry: **hypothesis → change → result**, with the evidence (log lines, 
 the reason for the choice that followed. One thing is changed at a time; seeds are fixed when
 comparing prompts.
 
+## E5. Can image editing change clothes but keep a face? (Wed 25 Nov)
+
+- **Hypothesis:** giving FLUX.2 klein an already-chosen character image plus "the same person, only
+  the outfit changes" keeps the face while changing the clothes, which plain text generation can't
+  do (every new description gave a new face).
+- **Change:** two attempts. (1) Mother: edit candidate 1 to a specific kemis; prompt listed the whole
+  dress. (2) Father and brother: edit their chosen round-4 images to one simpler outfit (white
+  tunic with a red embroidered border, a striped gabi over one shoulder, beige trousers, sandals).
+- **Result:** (1) barely changed the dress: the edits kept the original short tunic and skirt. One
+  wording was also blocked by Cloudflare's safety filter (FAILURES.md F10). (2) worked: both men
+  kept their faces and beards and wore the new outfit (`outputs/refsheet/contact_sheet_v7.jpg`,
+  "before" next to the edits).
+- **What it suggests:** editing works when the change is a clear swap of one outfit for a simple
+  one; a long, detailed dress description competes with what is already in the image. For the
+  mother, generating fresh with the full description worked better (rounds 6 and 7).
+
 ## E4. Do more specific character descriptions fix the faces? (Wed 25 Nov)
 
 - **Hypothesis:** reference sheet round 1 used short descriptions ("an Ethiopian woman in her

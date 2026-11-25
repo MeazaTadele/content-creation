@@ -3,6 +3,26 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F10. Cloudflare's safety filter blocked a harmless image edit (Wed 25 Nov)
+
+- **What broke:** editing the mother's reference image with the prompt "the same woman as in the
+  reference image, with the same face, hair and body, now wearing exactly this dress…" returned HTTP
+  400, "Your output has been flagged".
+- **What was tried:** the same request reworded ("same face and hairstyle, now dressed in exactly this
+  traditional outfit"), with a new seed.
+- **Fix:** the reworded prompt passed. The likely trigger was asking to keep the "body" while
+  changing clothes. Edit prompts now name only the face, hair and outfit.
+
+## F11. A code change regenerated images that had already been chosen (Wed 25 Nov)
+
+- **What broke:** adding image editing to the reference stage added a new field to every
+  character's fingerprint, so the next run regenerated all twelve reference images, including the
+  three Meaza had just picked, which came back different.
+- **Fix:** the picked images were still on disk and were restored in the manifest; the fingerprint
+  now includes the input image only for edited candidates, so other fingerprints stay unchanged.
+- **Lesson:** this is the known weak point of fingerprint option (b): any change to what goes into
+  a fingerprint invalidates its cache. A new input should be added only where it exists.
+
 ## F9. The narration job waited 45 minutes in Kaggle's GPU queue (Wed 25 Nov)
 
 - **What broke:** the OmniVoice and MMS narration job was pushed to Kaggle on GPU T4 x2 and stayed

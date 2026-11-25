@@ -19,27 +19,29 @@
     },
     {
       "id": "mother",
-      "description": "a slim Ethiopian woman in her forties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, gentle eyes, a calm closed-mouth smile, black hair pulled back neatly, no headscarf; wearing a long cream handwoven cotton habesha kemis with wide elbow-length sleeves and a V neckline; one central vertical tibeb panel from the neckline to below the waist, woven in red, blue and gold diamond and chevron patterns, ending in a tree-like cross motif with orange-gold flower rosettes and blue branches; large dark plum feather-like leaf motifs fanning across the skirt; orange-gold rosettes on the shoulders; embroidered cuffs; wide red bands edged in gold near the hem on both sides; a plain cream sash tied at the waist; a small cross pendant on a cord",
-      "reference_seed": 811,
+      "description": "a slim Ethiopian woman in her forties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, gentle eyes, a calm closed-mouth smile, black hair pulled back neatly, no headscarf; wearing a long cream crinkled handwoven cotton habesha dress with long sleeves, a V neckline and a gathered high waist; one narrow tibeb stripe running straight down the centre from the neckline to the hem, woven in yellow, green, navy and black zigzag and chevron patterns, ending in a large black, green and gold cross motif near the hem; matching tibeb bands on the cuffs; a matching cream netela over one shoulder with a yellow-orange border",
+      "reference_seed": 821,
       "reference_candidates": 4,
       "reference_use": null,
       "consent": "ETHICS.md#consent"
     },
     {
       "id": "father",
-      "description": "a slim Ethiopian man in his fifties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm brown skin, bald on top with short grey hair at the sides, short grey beard, wearing a white long-sleeved traditional tunic with a short mandarin collar and small buttons down the front, wide blue embroidered panels with gold accents across the chest and running down both sides of the buttons, small blue cross motifs on the lower front, and plain white trousers",
-      "reference_seed": 751,
+      "description": "the same man as in the reference image, same face, hairstyle and beard, now dressed in a white long cotton tunic shirt with a red embroidered border around the neck opening and on the cuffs, a white gabi shawl with thin green, yellow and red stripes draped over one shoulder, light beige trousers and brown sandals, with no other changes",
+      "reference_seed": 761,
       "reference_candidates": 2,
       "reference_use": null,
-      "consent": "ETHICS.md#consent"
+      "consent": "ETHICS.md#consent",
+      "edit_from": "references/father_base.png"
     },
     {
       "id": "brother",
-      "description": "a slim Ethiopian young man of about nineteen, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, short tightly curled black hair with a neat high fade, a full short black beard, wearing a white long-sleeved traditional tunic with a short mandarin collar and small buttons down the front, wide blue embroidered panels with gold accents across the chest and running down both sides of the buttons, small blue cross motifs on the lower front, and plain white trousers",
-      "reference_seed": 901,
+      "description": "the same man as in the reference image, same face, hairstyle and beard, now dressed in a white long cotton tunic shirt with a red embroidered border around the neck opening and on the cuffs, a white gabi shawl with thin green, yellow and red stripes draped over one shoulder, light beige trousers and brown sandals, with no other changes",
+      "reference_seed": 911,
       "reference_candidates": 2,
       "reference_use": null,
-      "consent": "ETHICS.md#consent"
+      "consent": "ETHICS.md#consent",
+      "edit_from": "references/brother_base.png"
     }
   ],
   "voice": {
