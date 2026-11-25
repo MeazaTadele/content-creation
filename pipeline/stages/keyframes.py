@@ -11,7 +11,7 @@ from . import refsheet
 from .base import Context, Unit, check_stage_version, execute, out_path, rel, say
 
 STAGE = "keyframes"
-STAGE_VERSION = 2  # 2: scene-first prompt, no character-sheet layout (F12)
+STAGE_VERSION = 3  # 3: style and exclusions placed first in long prompts
 SIZES = {"9x16": (768, 1344), "16x9": (1344, 768)}
 
 
@@ -27,7 +27,14 @@ def full_prompt(sb: dict, shot: dict) -> str:
     if ids:
         who = ("The people look like the reference images (same face and clothes), placed into this scene: "
                + "; ".join(chars[c]["description"] for c in ids))
-    parts = [SCENE, shot["image"]["prompt"], who, sb["style"]["block"]]
+    scene = shot["image"]["prompt"]
+    avoid = ""
+    if "Not in the picture:" in scene:  # put the exclusions up front, where a long prompt can't cut them off
+        scene, avoid = scene.split("Not in the picture:", 1)
+        avoid = "Not in the picture:" + avoid
+    # style and exclusions first, details after: if the text encoder truncates a long prompt, it loses
+    # detail, not the look of the film
+    parts = [SCENE, sb["style"]["block"], avoid, scene, who]
     return ". ".join(p.strip().rstrip(".") for p in parts if p and p.strip())
 
 
