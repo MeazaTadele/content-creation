@@ -61,11 +61,10 @@
       "gemini": "Kore",
       "elevenlabs": "EXAVITQu4vr4xnSDxMaL"
     },
-    "style_instruction": "Read in Amharic, calm, warm and unhurried, like remembering a happy morning",
     "references": {
       "omnivoice": {
-        "audio": "outputs/voicebench/samples/gemini_kore_warm_s09.wav",
-        "text": "ከእናቴ ጋር ያለኝ የመጀመሪያ የበዓል ትውስታ ይሄ ነው። እስከዛሬ ድረስ የሕይወቴ ምርጥ ቀን ነው።"
+        "audio": "outputs/voicebench/samples/gemini_kore_clean_sample.wav",
+        "text": "ሰላም። ይህ የድምፅ ሙከራ ነው። በበዓሉ ጠዋት ቤቱ በቡና መዓዛ ተሞላ።"
       }
     }
   },

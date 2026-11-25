@@ -3,6 +3,24 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F15. Gemini read the English style instruction aloud, and the narration turned to nonsense (Wed 25 Nov)
+
+- **What broke:** radio cut v4 was not understandable Amharic. Two linked causes:
+  1. The Gemini provider sent a style instruction ("Read in Amharic, calm, warm and unhurried…")
+     in front of each line, and Gemini spoke the instruction too. The lengths gave it away: shot 8
+     has three words, but its Gemini clip was 16.9 s long.
+  2. One of those Gemini clips was then used as the sample voice OmniVoice copies, with only the
+     Amharic line as its transcript. A sample whose words don't match its transcript made OmniVoice
+     produce nonsense for every line (and made it very slow: 103 s of speech).
+- **What was tried:** comparing each clip's length with its word count across voices pointed straight
+  at Gemini.
+- **Fix:** Gemini now gets the line alone, never an instruction in front of it. OmniVoice's sample is
+  a clean Kore clip (two neutral sentences, no instruction, transcript exact). The narration stage
+  now warns when a clip is far too long for its words. The Gemini comparison lines will be redone
+  when its daily quota resets.
+- **Lesson:** an HTTP 200 and a playable file prove nothing about the content. A cheap sanity check
+  (seconds per word) would have caught this before it reached the film.
+
 ## F14. The keyframes got Ethiopian culture wrong (Wed 25 Nov, caught by me)
 
 - **What broke:** looking at the keyframes, I found: "fresh grass" on the floor came out as a

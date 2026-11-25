@@ -138,6 +138,17 @@ def run_batch(ctx: Context, voices: list[str] | None = None) -> dict:
     return stats
 
 
+def pace_check(ctx: Context) -> None:
+    """Warn about clips whose length doesn't fit their words: a sign the audio isn't just the line."""
+    for s in ctx.sb["shots"]:
+        words = len(s["narration"]["am"].split())
+        for v in ctx.sb["voice"]["compare"]:
+            e = ctx.manifest.get(STAGE, f"{v}/{s['id']}")
+            if e and words and e.get("speech_seconds", 0) / words > 1.6:
+                say(f"  WARNING: {v}/{s['id']} is {e['speech_seconds']:.1f} s for {words} words; "
+                    "listen to it: it may contain more than the line")
+
+
 def run(ctx: Context, voices: list[str] | None = None) -> dict:
     """Each voice runs on its own: one voice hitting a quota never stops the others.
     Only a failure of the film's chosen voice (voice.use) stops the run."""
@@ -156,4 +167,5 @@ def run(ctx: Context, voices: list[str] | None = None) -> dict:
             s = {"generated": 0, "cached": 0, "failed": 1}
         total = {k: total[k] + s[k] for k in total}
     b = run_batch(ctx, voices)
+    pace_check(ctx)
     return {k: total[k] + b[k] for k in total}

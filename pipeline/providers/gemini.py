@@ -57,7 +57,9 @@ class GeminiTTS(TTSProvider):
 
     def synthesize(self, text, voice, style, out_wav, tmp_dir):
         self.check_ready()
-        prompt = f"{style.strip()}:\n{text}" if style else text
+        # style instructions are not sent: Gemini read an English instruction aloud before the Amharic
+        # line (FAILURES.md F15), so the text goes in alone
+        prompt = text
         body = {
             "contents": [{"parts": [{"text": prompt}]}],
             "generationConfig": {
