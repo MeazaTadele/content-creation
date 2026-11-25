@@ -57,20 +57,23 @@ def _publish_inputs(stage: str, folder: Path) -> str:
     try:
         _cli("datasets", "version", "-p", str(folder), "-m", f"job {time.strftime('%Y%m%dT%H%M%S')}",
              "--dir-mode", "zip")
-    except KaggleError as e:
-        if "not found" in str(e).lower() or "404" in str(e) or "does not exist" in str(e).lower():
+    except KaggleError as first:
+        # a dataset that doesn't exist yet comes back as 403 or 404 depending on the endpoint: create it
+        try:
             _cli("datasets", "create", "-p", str(folder), "--dir-mode", "zip")  # private by default
-        else:
-            raise
+        except KaggleError as second:
+            raise KaggleError(f"{first}\nand creating it failed too: {second}") from None
     return ds_id
 
 
 def _wait_for_dataset(ds_id: str, timeout: int = 900) -> None:
     t0 = time.time()
     while time.time() - t0 < timeout:
-        out = _cli("datasets", "status", ds_id)
-        if "ready" in out.lower():
-            return
+        try:
+            if "ready" in _cli("datasets", "status", ds_id).lower():
+                return
+        except KaggleError:
+            pass  # a brand-new dataset answers 403 for a short while before it exists everywhere
         time.sleep(15)
     raise KaggleError(f"dataset {ds_id} was not ready after {timeout} s")
 
