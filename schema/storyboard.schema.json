@@ -409,6 +409,23 @@
           }
         }
       }
+    },
+    "pacing": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Default quiet before and after each narration line (seconds); a shot's own timing overrides it.",
+      "properties": {
+        "lead_in": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "tail": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 3
+        }
+      }
     }
   },
   "$defs": {

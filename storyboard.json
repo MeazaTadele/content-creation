@@ -114,8 +114,8 @@
       "id": "s01",
       "reason": "Opens on her, flat and unexcited. The viewer wonders why a holiday feels like nothing.",
       "narration": {
-        "am": "ዛሬ ጠዋት ፋሲካ ነው። ከእንቅልፌ ነቃሁ። እዛው አልጋዬ ላይ ነኝ፣ ምክንያቱም ምንም የሚያጓጓ ቀን አይደለም።",
-        "en": "It's Easter morning. I'm awake, but I stay in bed. There's nothing to look forward to."
+        "am": "ዛሬ ፋሲካ ነው። እህህ… ግን ከአልጋ የሚያስነሳ የሚያጓጓ ነገር የለኝም።",
+        "en": "It's Easter today. Sigh… but there's nothing exciting enough to get me out of bed."
       },
       "image": {
         "prompt": "A girl about twelve lies in bed, centred, eyes open. Soft morning light on the blanket.",
@@ -135,8 +135,8 @@
       "id": "s02",
       "reason": "Before: we meet the mother through her absence. The food stays, she goes.",
       "narration": {
-        "am": "ለእኔ ሁሉም የበዓል ቀን አንድ ነው። እኛ ቤት፣ እናቴ ምግብ ሰርታልን ወደ ሥራ ትሄዳለች።",
-        "en": "For me, every holiday is the same. At our house, Mom makes the food and leaves for work."
+        "am": "በዓል እኛ ቤት ተመሳሳይ ነው። እናቴ ምግብ ሰራርታልን በጠዋት ወደ ሥራ ትሄዳለች።",
+        "en": "At our house, holidays are always the same. Mom cooks for us and leaves for work early in the morning."
       },
       "image": {
         "prompt": "Blue light before dawn. A covered pot sits on the table in the foreground, with the front door behind it.",
@@ -154,8 +154,8 @@
       "id": "s03",
       "reason": "Shows that a holiday without her is just a normal day with good food.",
       "narration": {
-        "am": "እኔ፣ አባቴና ወንድሜ ብቻ ቤት እንውላለን። ከሌላው ቀን የሚለየው፣ ጥሩ ጥሩ ምግብ ስላለ ብቻ ነው።",
-        "en": "It's just me, my dad and my brother at home. The only thing that makes it different from any other day is the special food."
+        "am": "እኔ፣ አባቴና ወንድሜ ቲቪ ስናይ እንውላለን። ከሌላው ቀን ብዙም አይለይም።",
+        "en": "My dad, my brother and I spend the day watching TV. It's not much different from any other day."
       },
       "image": {
         "prompt": "An ordinary living room on a holiday: a man and a young man, seen from behind, the TV glowing, covered dishes on the table, nothing festive.",
@@ -176,18 +176,18 @@
       "id": "s04",
       "reason": "The hinge. We hear her before we see her, which holds the reveal.",
       "narration": {
-        "am": "አልጋዬ ላይ እያለሁ፣ የእናቴን ድምፅ የሰማሁ መሰለኝ። ለማረጋገጥ ተነሳሁ።",
-        "en": "Lying in bed, I think I hear my mother's voice. I get up to check."
+        "am": "እዛው አልጋዬ ላይ እንዳለሁ፣ የእናቴን ድምፅ የሰማሁ መሰለኝ። እናም ለማየት እሮጬ ወጣሁ።",
+        "en": "Still in bed, I thought I heard my mother's voice. So I ran out to see."
       },
       "image": {
-        "prompt": "A girl's bare feet step onto the floor. Ahead, a half-open door with warm light and a thin haze beyond it.",
+        "prompt": "A girl's bare feet hurry across the floor. Ahead, a half-open door with warm light and a thin haze beyond it.",
         "characters": [
           "girl"
         ],
         "seed": 1004
       },
       "motion": {
-        "prompt": "the feet step toward the door",
+        "prompt": "the feet run toward the warm doorway",
         "seed": 2004,
         "kenburns": true
       },
@@ -197,8 +197,8 @@
       "id": "s05",
       "reason": "THE TURN. It's the first time we see her.",
       "narration": {
-        "am": "ወጥቼ ሳይ፣ እናቴ እቤት ናት። በርጩማ ላይ ቁጭ ብላ፣ ቡና እያፈላች ነው።",
-        "en": "I walk out, and my mother is home. Sitting on a little stool, making coffee."
+        "am": "እናቴ ሳሎን ቡና እያፈላች ነው።",
+        "en": "Mom is in the living room, making coffee."
       },
       "image": {
         "prompt": "A mother in her forties, centred, in a white traditional dress and shawl. She sits on a low stool by a charcoal stove with a clay coffee pot.",
@@ -217,8 +217,8 @@
       "id": "s06",
       "reason": "The house has changed. Texture and smell, no faces.",
       "narration": {
-        "am": "ወለሉ ላይ ለምለም ቄጤማ አለ። ዕጣን ከቡናው ጋር ይጨሳል።",
-        "en": "There's fresh green grass on the floor. Incense burns beside the coffee."
+        "am": "ቄጤማ ተጎዝጉዟል፣ ዕጣን እየጨሰ ነው።",
+        "en": "Fresh grass covers the floor, and incense is burning."
       },
       "image": {
         "prompt": "Low angle on a floor covered with long fresh grass. Incense smoke drifts through a sunbeam past the coffee tray.",
@@ -233,13 +233,13 @@
     },
     {
       "id": "s07",
-      "reason": "The whole family is home and busy together.",
+      "reason": "The whole family is home together, and the men are as happy as she is.",
       "narration": {
-        "am": "የበዓል ዘፈን ይሰማል። አባቴና ወንድሜ፣ በጉን እያዘጋጁ ነው።",
-        "en": "Holiday music is playing. My dad and brother are getting the lamb ready."
+        "am": "ወንድሜ እና አባቴ ቡናቸውን ይዘው ቁጭ ብለዋል። እንደኔ ደስተኛ እንደሆኑ ያስታውቃሉ።",
+        "en": "My brother and my dad sit holding their coffee. You can tell they're as happy as I am."
       },
       "image": {
-        "prompt": "A man's hands and a young man's hands work side by side at a wooden board with onions and spices. No meat cutting or blood visible.",
+        "prompt": "A man in a white tunic and a young man in a white tunic sit side by side on low stools, holding small coffee cups, relaxed and smiling, seen from behind and slightly to the side so their faces are not shown, warm festive living room",
         "characters": [
           "father",
           "brother"
@@ -247,7 +247,7 @@
         "seed": 1007
       },
       "motion": {
-        "prompt": "slow sideways slide",
+        "prompt": "slow sideways slide, steam rising from the cups",
         "seed": 2007,
         "kenburns": true
       },
@@ -257,8 +257,8 @@
       "id": "s08",
       "reason": "Her joy, shown through her stillness.",
       "narration": {
-        "am": "እናቴ እየቆላች ያለው ቡና እና ዕጣኑ፣ ቤቱን ሞልቶታል። በሩ ላይ ቆሜ ስመለከታቸው፣ ደስታዬ ወሰን የለውም።",
-        "en": "The coffee Mom is roasting and the incense fill the house. Standing in the doorway watching them, I've never been happier."
+        "am": "አየኋቸው፣ ደስ አለኝ።",
+        "en": "I looked at them, and I was so happy."
       },
       "image": {
         "prompt": "From behind: the girl stands centred in a doorway. The room beyond is warm and hazy with roasting smoke.",
@@ -278,8 +278,8 @@
       "id": "s09",
       "reason": "The celebration at its fullest: everyone is there.",
       "narration": {
-        "am": "ይሄ፣ ከእናቴ ጋር ያሳለፍኩት የማስታውሰው የመጀመሪያ በዓል ነው። እስካሁን ድረስ፣ በሕይወቴ በጣም ደስተኛ የሆንኩበት ቀን ነው።",
-        "en": "This is the first holiday I remember spending with my mother. To this day, it's the happiest day of my life."
+        "am": "ከእናቴ ጋር ያለኝ የመጀመሪያ የበዓል ትውስታ ይሄ ነው። እስከዛሬ ድረስ የሕይወቴ ምርጥ ቀን ነው።",
+        "en": "This is my first holiday memory with my mother. To this day, it's the best day of my life."
       },
       "image": {
         "prompt": "The mother's hands pour coffee from the clay pot into small cups. Four hands reach in and each takes a cup.",
@@ -313,5 +313,9 @@
       },
       "transition": "cut"
     }
-  ]
+  ],
+  "pacing": {
+    "lead_in": 0.15,
+    "tail": 0.3
+  }
 }

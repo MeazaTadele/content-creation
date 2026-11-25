@@ -28,8 +28,9 @@ def compute(ctx: Context) -> dict:
         if not e:
             raise TimingError(f"no narration for {voice}/{s['id']}; run the narration stage first")
         t = s.get("timing", {})
-        lead = t.get("lead_in", DEFAULT_LEAD_IN)
-        tail = t.get("tail", DEFAULT_TAIL)
+        pace = sb.get("pacing", {})
+        lead = t.get("lead_in", pace.get("lead_in", DEFAULT_LEAD_IN))
+        tail = t.get("tail", pace.get("tail", DEFAULT_TAIL))
         speech = e["speech_seconds"]
         narr_start = start + lead
         if prev_narr_end is not None and narr_start < prev_narr_end + MIN_GAP:
