@@ -119,7 +119,8 @@
       },
       "motion": {
         "prompt": "a curtain moves slightly",
-        "seed": 2001
+        "seed": 2001,
+        "kenburns": true
       },
       "transition": "cut"
     },
@@ -137,7 +138,8 @@
       },
       "motion": {
         "prompt": "the door slowly closes",
-        "seed": 2002
+        "seed": 2002,
+        "kenburns": true
       },
       "transition": "cut"
     },
@@ -158,7 +160,8 @@
       },
       "motion": {
         "prompt": "slow push-in on the dishes",
-        "seed": 2003
+        "seed": 2003,
+        "kenburns": true
       },
       "transition": "cut"
     },
@@ -178,7 +181,8 @@
       },
       "motion": {
         "prompt": "the feet step toward the door",
-        "seed": 2004
+        "seed": 2004,
+        "kenburns": true
       },
       "transition": "crossfade"
     },
@@ -237,7 +241,8 @@
       },
       "motion": {
         "prompt": "slow sideways slide",
-        "seed": 2007
+        "seed": 2007,
+        "kenburns": true
       },
       "transition": "cut"
     },
@@ -257,7 +262,8 @@
       },
       "motion": {
         "prompt": "smoke drifts across her",
-        "seed": 2008
+        "seed": 2008,
+        "kenburns": true
       },
       "transition": "cut"
     },
@@ -295,7 +301,8 @@
       },
       "motion": {
         "prompt": "slow pull-back; hold a few seconds after the voice ends",
-        "seed": 2010
+        "seed": 2010,
+        "kenburns": true
       },
       "transition": "cut"
     }

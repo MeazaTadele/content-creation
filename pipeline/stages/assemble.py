@@ -18,7 +18,7 @@ from . import keyframes, music, shots
 from .base import Context, Unit, check_stage_version, execute, out_path, rel, say
 
 STAGE = "assemble"
-STAGE_VERSION = 1
+STAGE_VERSION = 2  # 2: clips play, then drift over their last frame (decision 29a)
 MOVES = ["in", "right", "out", "left"]
 CLIP_HEAD_TRIM = 0.2  # many generated clips have a weak first moment
 
@@ -40,15 +40,52 @@ def _kenburns_filter(move: str, frames: int, w: int, h: int) -> str:
             f"zoompan=z='{z}':{xy}:d={frames}:s={w}x{h}:fps={FPS},format=yuv420p")
 
 
-def _clip_filter(ratio: str, w: int, h: int, dur: float) -> str:
-    fit = (f"trim=start={CLIP_HEAD_TRIM},setpts=PTS-STARTPTS,fps={FPS},"
-           f"tpad=stop_mode=clone:stop_duration={dur + 1:.2f},trim=duration={dur:.3f},setpts=PTS-STARTPTS")
+DRIFT_ZOOM = 0.06  # how far the camera drifts in after a clip ends (decision 29a)
+
+
+def _render_clip_with_drift(clip: Path, ratio: str, w: int, h: int, dur: float, tmp_dir: Path, out: Path) -> dict:
+    """Decision 29 (a): play the generated clip, then keep the camera drifting slowly over its last
+    frame until the shot's narration is done. The drift starts at the clip's last framing, so there
+    is no jump. 16:9 shows the vertical result over a blurred copy of itself (decision 6)."""
+    vw, vh = CANVAS["9x16"]
+    clip_len = max(0.0, media.duration(clip) - CLIP_HEAD_TRIM)
+    play = min(clip_len, dur)
+    rest = max(0.0, dur - play)
+    stem = out.stem
+    part1 = tmp_dir / f"{stem}_play.mp4"
+    media.run(["-ss", str(CLIP_HEAD_TRIM), "-i", str(clip), "-t", f"{play:.3f}", "-vf",
+               f"scale={vw}:{vh}:force_original_aspect_ratio=increase,crop={vw}:{vh},fps={FPS},format=yuv420p",
+               "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", str(part1)])
+    parts = [part1]
+    if rest > 1 / FPS:
+        last = tmp_dir / f"{stem}_last.png"
+        media.run(["-sseof", "-0.1", "-i", str(part1), "-frames:v", "1", "-update", "1", str(last)])
+        frames = max(1, round(rest * FPS))
+        n = max(frames - 1, 1)
+        part2 = tmp_dir / f"{stem}_drift.mp4"
+        media.run(["-i", str(last), "-vf",
+                   f"scale={vw * 2}:{vh * 2},zoompan=z='1+{DRIFT_ZOOM}*on/{n}':x='iw/2-(iw/zoom/2)':"
+                   f"y='ih/2-(ih/zoom/2)':d={frames}:s={vw}x{vh}:fps={FPS},format=yuv420p",
+                   "-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
+                   str(part2)])
+        parts.append(part2)
+    joined = tmp_dir / f"{stem}_vertical.mp4"
+    if len(parts) == 1:
+        joined = part1
+    else:
+        lst = tmp_dir / f"{stem}_list.txt"
+        lst.write_text("".join(f"file '{p}'\n" for p in parts))
+        media.run(["-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(joined)])
     if ratio == "9x16":
-        return f"[0:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},{fit},format=yuv420p[v]"
-    # 16:9 from a vertical clip: the clip centred over a blurred, darkened copy of itself (decision 6)
-    return (f"[0:v]split[a][b];[a]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},"
-            f"boxblur=40:4,eq=brightness=-0.08[bg];[b]scale=-2:{h}[fg];[bg][fg]overlay=(W-w)/2:0,{fit},"
-            f"format=yuv420p[v]")
+        media.run(["-i", str(joined), "-vf", f"fps={FPS},tpad=stop_mode=clone:stop_duration=1,trim=duration={dur:.3f},setpts=PTS-STARTPTS,format=yuv420p",
+                   "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", str(out)])
+    else:
+        media.run(["-i", str(joined), "-filter_complex",
+                   f"[0:v]split[a][b];[a]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},"
+                   f"boxblur=40:4,eq=brightness=-0.08[bg];[b]scale=-2:{h}[fg];[bg][fg]overlay=(W-w)/2:0,"
+                   f"fps={FPS},tpad=stop_mode=clone:stop_duration=1,trim=duration={dur:.3f},setpts=PTS-STARTPTS,format=yuv420p[v]",
+                   "-map", "[v]", "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", str(out)])
+    return {"clip_seconds": round(play, 3), "drift_seconds": round(rest, 3)}
 
 
 def segment_units(ctx: Context, timeline: dict, ratio: str) -> list[Unit]:
@@ -73,9 +110,8 @@ def segment_units(ctx: Context, timeline: dict, ratio: str) -> list[Unit]:
 
         def run(tmp, tmp_dir, source=source, kind=kind, move=move, frames=frames, dur=dur):
             if kind == "clip":
-                media.run(["-i", str(source), "-filter_complex", _clip_filter(ratio, w, h, dur), "-map", "[v]",
-                           "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-r", str(FPS),
-                           str(tmp)])
+                extra = _render_clip_with_drift(source, ratio, w, h, dur, tmp_dir, tmp)
+                return {"kind": kind, "move": "clip+drift", "frames": frames, **extra}
             else:
                 media.run(["-i", str(source), "-vf", _kenburns_filter(move, frames, w, h), "-frames:v",
                            str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
