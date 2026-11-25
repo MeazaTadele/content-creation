@@ -19,8 +19,8 @@
     },
     {
       "id": "mother",
-      "description": "a slim Habesha Ethiopian woman in her forties, warm medium-brown skin, narrow oval face with high cheekbones, gentle tired eyes, a calm closed-mouth smile, hair covered with a soft headscarf, wearing a white handwoven habesha kemis dress with a dark blue and black tibeb embroidered border down the front, small woven cross motifs on the shoulders, and a white netela shawl with a blue and maroon striped border",
-      "reference_seed": 451,
+      "description": "a slim Ethiopian woman in her forties with East African features, warm medium-brown skin, narrow oval face with high cheekbones, gentle eyes, a calm closed-mouth smile, no headscarf, dark hair pulled back neatly; wearing a long white handwoven habesha kemis with long sleeves and a V neckline, a wide vertical tibeb panel down the front woven in dark navy with small yellow, red and blue diamond and chevron patterns, black cross motifs on the shoulders and chest, embroidered cuffs, black leaf motifs on the skirt, a white sash tied at the waist, and a white netela draped over the shoulders with wide blue and maroon striped fringed borders",
+      "reference_seed": 501,
       "reference_candidates": 4,
       "reference_use": null,
       "consent": "ETHICS.md#consent"
@@ -35,8 +35,8 @@
     },
     {
       "id": "brother",
-      "description": "a slim Habesha Ethiopian teenage boy of about sixteen, warm medium-brown skin, short black hair with a neat high fade, wearing a blue plaid shirt over a dark t-shirt",
-      "reference_seed": 651,
+      "description": "a slim Ethiopian young man of about nineteen with East African features, warm medium-brown skin, short black hair with a neat high fade, a full short black beard, wearing a blue plaid shirt over a dark t-shirt",
+      "reference_seed": 701,
       "reference_candidates": 2,
       "reference_use": null,
       "consent": "ETHICS.md#consent"
@@ -151,7 +151,7 @@
         "en": "It's just me, my dad and my brother at home. The only thing that makes it different from any other day is the special food."
       },
       "image": {
-        "prompt": "An ordinary living room on a holiday: a man and a boy, seen from behind, the TV glowing, covered dishes on the table, nothing festive.",
+        "prompt": "An ordinary living room on a holiday: a man and a young man, seen from behind, the TV glowing, covered dishes on the table, nothing festive.",
         "characters": [
           "father",
           "brother"
@@ -232,7 +232,7 @@
         "en": "Holiday music is playing. My dad and brother are getting the lamb ready."
       },
       "image": {
-        "prompt": "A man's hands and a teenage boy's hands work side by side at a wooden board with onions and spices. No meat cutting or blood visible.",
+        "prompt": "A man's hands and a young man's hands work side by side at a wooden board with onions and spices. No meat cutting or blood visible.",
         "characters": [
           "father",
           "brother"
