@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MeazaTadele/content-creation/schema/storyboard.schema.json",
+  "title": "Heritage Short storyboard",
+  "description": "The contract between every pipeline stage. Written by people; never modified by the pipeline.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "title", "language", "subtitle_language", "style", "characters", "voice", "music", "end_card", "providers", "shots"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "title": {"type": "string", "minLength": 1},
+    "language": {"type": "string", "enum": ["am"]},
+    "subtitle_language": {"type": "string", "enum": ["en"]},
+    "placeholder": {"type": "boolean", "description": "True while the story text is not final; nothing about real people may be generated while this is true."},
+    "style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["block"],
+      "properties": {
+        "block": {"type": "string", "minLength": 1, "description": "Fixed style text appended to every image prompt."},
+        "negative": {"type": "string"}
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description"],
+        "properties": {
+          "id": {"$ref": "#/$defs/id"},
+          "description": {"type": "string", "minLength": 1},
+          "reference_seed": {"type": "integer", "minimum": 0},
+          "reference_candidates": {"type": "integer", "minimum": 1, "maximum": 8},
+          "reference_use": {"type": ["integer", "null"], "minimum": 0, "description": "Index of the chosen reference candidate (a human choice)."},
+          "consent": {"type": "string", "description": "Anchor of the consent record in ETHICS.md."}
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["compare", "use"],
+      "properties": {
+        "compare": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/tts_provider"}},
+        "use": {"$ref": "#/$defs/tts_provider"},
+        "voice_names": {"type": "object", "additionalProperties": {"type": "string"}},
+        "style_instruction": {"type": "string"}
+      }
+    },
+    "music": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cues"],
+      "properties": {
+        "candidates": {"type": "integer", "minimum": 1, "maximum": 8},
+        "cues": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "from_shot", "caption"],
+            "properties": {
+              "id": {"$ref": "#/$defs/id"},
+              "from_shot": {"$ref": "#/$defs/id"},
+              "caption": {"type": "string", "minLength": 1},
+              "bpm": {"type": "integer", "minimum": 40, "maximum": 200},
+              "key": {"type": "string"},
+              "instrumental": {"type": "boolean"},
+              "seed": {"type": "integer", "minimum": 0},
+              "use": {"type": ["integer", "null"], "minimum": 0, "description": "Index of the chosen candidate (a human choice)."}
+            }
+          }
+        }
+      }
+    },
+    "end_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lines", "seconds"],
+      "properties": {
+        "lines": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "seconds": {"type": "number", "minimum": 2, "maximum": 6}
+      }
+    },
+    "providers": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keyframes", "shots", "music"],
+      "properties": {
+        "script": {"type": "string"},
+        "keyframes": {"type": "string", "enum": ["cloudflare-flux", "placeholder"]},
+        "shots": {"type": "string", "enum": ["kaggle-wan22", "none"]},
+        "music": {"type": "string", "enum": ["kaggle-acestep", "placeholder"]},
+        "asr": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "reason", "narration", "image", "motion"],
+        "properties": {
+          "id": {"$ref": "#/$defs/id"},
+          "reason": {"type": "string", "minLength": 3, "description": "Why this shot exists."},
+          "narration": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["am", "en"],
+            "properties": {
+              "am": {"type": "string", "minLength": 1},
+              "en": {"type": "string", "minLength": 1}
+            }
+          },
+          "image": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["prompt", "seed"],
+            "properties": {
+              "prompt": {"type": "string", "minLength": 1},
+              "characters": {"type": "array", "items": {"$ref": "#/$defs/id"}},
+              "seed": {"type": "integer", "minimum": 0}
+            }
+          },
+          "motion": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["prompt", "seed"],
+            "properties": {
+              "prompt": {"type": "string", "minLength": 1},
+              "seed": {"type": "integer", "minimum": 0},
+              "kenburns": {"type": "boolean", "description": "Force the Ken Burns fallback for this shot."},
+              "kenburns_move": {"type": "string", "enum": ["in", "out", "left", "right"]}
+            }
+          },
+          "timing": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "lead_in": {"type": "number", "minimum": 0, "maximum": 3},
+              "tail": {"type": "number", "minimum": 0, "maximum": 4},
+              "min": {"type": "number", "minimum": 1, "maximum": 15}
+            }
+          },
+          "transition": {"type": "string", "enum": ["cut", "crossfade"]}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,31}$"},
+    "tts_provider": {"type": "string", "enum": ["gemini", "elevenlabs", "mms", "omnivoice", "cosyvoice2", "placeholder"]}
+  }
+}
