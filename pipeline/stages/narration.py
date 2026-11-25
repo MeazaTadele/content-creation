@@ -5,9 +5,12 @@ Voices that run on Kaggle (MMS, OmniVoice, CosyVoice2) are produced by the voice
 """
 from __future__ import annotations
 
-from .. import calls, media, providers
+import shutil
+
+from .. import calls, kaggle, media, providers
+from ..calls import log_job_unit
 from ..fingerprint import fingerprint
-from .base import Context, Unit, check_stage_version, execute, out_path, rel
+from .base import Context, Unit, check_stage_version, execute, out_path, rel, say
 
 STAGE = "narration"
 STAGE_VERSION = 1
@@ -55,6 +58,66 @@ def units(ctx: Context, voices: list[str] | None = None) -> list[Unit]:
     return out
 
 
+def batch_units(ctx: Context, voices: list[str] | None = None) -> list[dict]:
+    """Lines for the open voices that run as one Kaggle job (MMS, OmniVoice, CosyVoice2)."""
+    sb = ctx.sb
+    voices = voices or sb["voice"]["compare"]
+    out = []
+    for v in voices:
+        prov = providers.tts(v)
+        if not getattr(prov, "batch", False):
+            continue
+        for shot in sb["shots"]:
+            text = shot["narration"]["am"]
+            fp = fingerprint(STAGE, STAGE_VERSION, {"text": text, "provider": v, "model": prov.model, "seed": 7})
+            unit = f"{v}/{shot['id']}"
+            if ctx.manifest.is_fresh(STAGE, unit, fp):
+                say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
+                continue
+            out.append({"voice": v, "shot": shot["id"], "unit": unit, "fp": fp, "text": text, "model": prov.model})
+    return out
+
+
+def run_batch(ctx: Context, voices: list[str] | None = None) -> dict:
+    todo = batch_units(ctx, voices)
+    stats = {"generated": 0, "cached": 0, "failed": 0}
+    if not todo:
+        return stats
+    if ctx.dry_run:
+        for t in todo:
+            say(f"  would run  {STAGE}/{t['unit']}  ({t['voice']} on Kaggle)")
+        stats["generated"] = len(todo)
+        return stats
+    job_units = [{"unit": f"{t['voice']}_{t['shot']}", "model": t["voice"], "text": t["text"], "seed": 7,
+                  "fingerprint": t["fp"]} for t in todo]
+    job_id, res = kaggle.run_job("tts-open", job_units, {}, timeout=3600)
+    for t, ju in zip(todo, job_units):
+        r = kaggle.read_result(res, ju["unit"])
+        dst = out_path(STAGE, t["unit"], t["fp"], "wav")
+        ok = bool(r and r.get("status") == "ok" and (res / r["output"]).exists())
+        if ok:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            media.to_wav(res / r["output"], dst)
+            start, end, total = media.speech_bounds(dst)
+            ctx.manifest.put(STAGE, t["unit"], {
+                "fingerprint": t["fp"], "output": rel(dst), "status": "generated", "provider": t["voice"],
+                "model": r.get("model", t["model"]), "seconds": r.get("seconds"), "speech_start": start,
+                "speech_end": end, "file_seconds": total, "speech_seconds": round(end - start, 3),
+                "voice": t["voice"], "shot": t["shot"]})
+            stats["generated"] += 1
+        else:
+            stats["failed"] += 1
+            say(f"  {STAGE}/{t['unit']}: failed on Kaggle: {(r or {}).get('error', 'no result')[:150]}")
+        log_job_unit(stage=STAGE, unit=t["unit"], provider=t["voice"], model=(r or {}).get("model", t["model"]),
+                     params={"text_chars": len(t["text"])}, seed=7, status=(r or {}).get("status", "missing"),
+                     latency_ms=int(((r or {}).get("seconds") or 0) * 1000),
+                     gpu_seconds=(r or {}).get("gpu_seconds") or 0, fingerprint=t["fp"],
+                     output=rel(dst) if ok else None, job_id=job_id, error=(r or {}).get("error"))
+    return stats
+
+
 def run(ctx: Context, voices: list[str] | None = None) -> dict:
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
-    return execute(ctx, units(ctx, voices))
+    stats = execute(ctx, units(ctx, voices))
+    b = run_batch(ctx, voices)
+    return {k: stats[k] + b[k] for k in stats}
