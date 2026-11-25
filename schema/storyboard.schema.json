@@ -159,6 +159,12 @@
               }
             }
           }
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.7,
+          "maximum": 1.6,
+          "description": "Speaking speed for voices that support it (OmniVoice); >1 is faster."
         }
       }
     },

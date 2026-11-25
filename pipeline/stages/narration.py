@@ -76,14 +76,18 @@ def batch_units(ctx: Context, voices: list[str] | None = None) -> list[dict]:
         ref_key = ({"file_sha256": ref["audio_sha256"]} if ref and ref.get("audio_sha256") else ref_path)
         for shot in sb["shots"]:
             text = shot["narration"]["am"]
-            fp = fingerprint(STAGE, STAGE_VERSION, {"text": text, "provider": v, "model": prov.model, "seed": 7,
-                                                     "reference": ref_key, "reference_text": ref and ref["text"]})
+            speed = sb["voice"].get("speed")
+            fp_in = {"text": text, "provider": v, "model": prov.model, "seed": 7,
+                     "reference": ref_key, "reference_text": ref and ref["text"]}
+            if speed and speed != 1.0:
+                fp_in["speed"] = speed
+            fp = fingerprint(STAGE, STAGE_VERSION, fp_in)
             unit = f"{v}/{shot['id']}"
             if ctx.manifest.is_fresh(STAGE, unit, fp):
                 say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
                 continue
             out.append({"voice": v, "shot": shot["id"], "unit": unit, "fp": fp, "text": text, "model": prov.model,
-                        "reference": ref_path, "reference_text": ref and ref["text"]})
+                        "reference": ref_path, "reference_text": ref and ref["text"], "speed": speed})
     return out
 
 
@@ -101,6 +105,8 @@ def run_batch(ctx: Context, voices: list[str] | None = None) -> dict:
     for t in todo:
         ju = {"unit": f"{t['voice']}_{t['shot']}", "model": t["voice"], "text": t["text"], "seed": 7,
               "fingerprint": t["fp"]}
+        if t.get("speed"):
+            ju["speed"] = t["speed"]
         if t["reference"]:
             if not t["reference"].exists():
                 raise RuntimeError(f"the private voice sample {t['reference']} is not on this machine; the committed "

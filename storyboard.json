@@ -63,10 +63,11 @@
     },
     "references": {
       "omnivoice": {
-        "audio": "outputs/voicebench/samples/gemini_kore_clean_sample.wav",
+        "audio": "outputs/voicebench/samples/gemini_kore_clean_tight.wav",
         "text": "ሰላም። ይህ የድምፅ ሙከራ ነው። በበዓሉ ጠዋት ቤቱ በቡና መዓዛ ተሞላ።"
       }
-    }
+    },
+    "speed": 1.25
   },
   "music": {
     "candidates": 3,
