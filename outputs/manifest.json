@@ -55,13 +55,55 @@
       "speech_seconds": 15.041,
       "voice": "elevenlabs",
       "shot": "s04"
+    },
+    "narration/gemini/s05": {
+      "fingerprint": "53f14a02881c94283f40701706443cfb3eb71e8ccc1cf223edc06c30c7b13b3f",
+      "output": "outputs/narration/gemini/s05__53f14a02.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 3.73,
+      "speech_start": 0.19,
+      "speech_end": 7.091,
+      "file_seconds": 7.091,
+      "speech_seconds": 6.901,
+      "voice": "elevenlabs",
+      "shot": "s05"
+    },
+    "narration/gemini/s06": {
+      "fingerprint": "adc48d066e7627659c473234b2d757662b4cf39cf1412c5a6c33d53eaf4024c3",
+      "output": "outputs/narration/gemini/s06__adc48d06.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 11.48,
+      "speech_start": 0.0,
+      "speech_end": 5.471,
+      "file_seconds": 5.471,
+      "speech_seconds": 5.471,
+      "voice": "elevenlabs",
+      "shot": "s06"
+    },
+    "narration/gemini/s07": {
+      "fingerprint": "beb4714b099e36aabea3c2fe11573bb9b9414f48c2f1f57452cd59578718e934",
+      "output": "outputs/narration/gemini/s07__beb4714b.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 4.75,
+      "speech_start": 0.0,
+      "speech_end": 12.481,
+      "file_seconds": 12.481,
+      "speech_seconds": 12.481,
+      "voice": "gemini",
+      "shot": "s07"
     }
   },
   "stage_versions": {},
   "stage_sources": {
     "narration": {
       "version": 1,
-      "sha": "3b6a5ce2938bbb122a514745670339cc64b18cf4ae3b9a0434fdce5278ad39f4"
+      "sha": "9024cae806db05047f5ce34f147a883d6c358159316c0097418f93dcd4f43076"
     },
     "refsheet": {
       "version": 1,

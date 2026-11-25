@@ -9,3 +9,4 @@ __pycache__/
 # temporary files from interrupted writes
 *.tmp
 outputs/tmp/
+*.tmp.*
