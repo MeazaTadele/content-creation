@@ -2,7 +2,7 @@
 PY ?= python3
 RUN = $(PY) -m pipeline
 
-.PHONY: film plan radio validate narration timing refsheet keyframes music smoke check test
+.PHONY: film plan radio validate narration timing refsheet keyframes shots music smoke check test
 
 film:       ; $(RUN) film
 plan:       ; $(RUN) plan
@@ -12,6 +12,7 @@ narration:  ; $(RUN) narration
 timing:     ; $(RUN) timing
 refsheet:   ; $(RUN) refsheet
 keyframes:  ; $(RUN) keyframes
+shots:      ; $(RUN) shots
 music:      ; $(RUN) music
 smoke:      ; $(RUN) smoke
 

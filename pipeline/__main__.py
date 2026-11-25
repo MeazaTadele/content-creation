@@ -15,7 +15,7 @@ import sys
 
 from . import config, contract
 from .manifest import Manifest
-from .stages import assemble, keyframes, music, narration, refsheet, timing
+from .stages import assemble, keyframes, music, narration, refsheet, shots, timing
 from .stages.base import Context, say
 
 
@@ -62,6 +62,12 @@ def cmd_keyframes(_):
     _report("keyframes", keyframes.run(ctx))
 
 
+def cmd_shots(_):
+    ctx = _ctx()
+    say("video clips")
+    _report("shots", shots.run(ctx))
+
+
 def cmd_music(_):
     ctx = _ctx()
     tl = ctx.manifest.data["measured"].get("timeline") or timing.compute(ctx)
@@ -89,17 +95,19 @@ def _ensure_placeholder_music(ctx, tl):
 
 def cmd_film(_):
     ctx = _ctx()
-    say("1/6 narration")
+    say("1/7 narration")
     _report("narration", narration.run(ctx))
-    say("2/6 timing")
+    say("2/7 timing")
     tl = timing.run(ctx)
-    say("3/6 reference sheet")
+    say("3/7 reference sheet")
     _report("refsheet", refsheet.run(ctx))
-    say("4/6 keyframes")
+    say("4/7 keyframes")
     _report("keyframes", keyframes.run(ctx))
-    say("5/6 music")
+    say("5/7 video clips")
+    _report("shots", shots.run(ctx))
+    say("6/7 music")
     _report("music", music.run(ctx, tl))
-    say("6/6 assembly")
+    say("7/7 assembly")
     _report("assembly", assemble.run_film(ctx, tl))
 
 
@@ -115,6 +123,8 @@ def cmd_plan(_):
     except timing.TimingError as e:
         say(f"music and assembly: after narration ({e})")
         return
+    say("video clips")
+    _report("shots", shots.run(ctx))
     say("music")
     _report("music", music.run(ctx, tl))
     say("assembly: reruns only the parts whose inputs changed")
@@ -129,7 +139,8 @@ def cmd_smoke(_):
 def main(argv=None):
     p = argparse.ArgumentParser(prog="pipeline", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("validate", "plan", "narration", "timing", "refsheet", "keyframes", "music", "radio", "film", "smoke"):
+    for name in ("validate", "plan", "narration", "timing", "refsheet", "keyframes", "shots", "music", "radio", "film",
+                 "smoke"):
         sub.add_parser(name)
     args = p.parse_args(argv)
     if not shutil.which("ffmpeg"):
