@@ -109,6 +109,8 @@ def run_omnivoice(units, inp):
                     prompts[u["reference"]] = model.create_voice_clone_prompt(
                         ref_audio=os.path.join(inp, u["reference"]), ref_text=u.get("reference_text"))
                 kw["voice_clone_prompt"] = prompts[u["reference"]]
+            if u.get("instruct"):
+                kw["instruct"] = u["instruct"]  # voice design words, e.g. "female, young adult, high pitch"
             if u.get("speed"):
                 kw["speed"] = float(u["speed"])  # OmniVoice paces lines from the sample voice; >1 speaks faster
             audio = model.generate(text=u["text"], language="Amharic", generation_config=cfg, **kw)
