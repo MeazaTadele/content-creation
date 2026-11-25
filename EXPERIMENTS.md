@@ -4,6 +4,23 @@ Each entry: **hypothesis → change → result**, with the evidence (log lines, 
 the reason for the choice that followed. One thing is changed at a time; seeds are fixed when
 comparing prompts.
 
+## E4. Do more specific character descriptions fix the faces? (Wed 25 Nov)
+
+- **Hypothesis:** reference sheet round 1 used short descriptions ("an Ethiopian woman in her
+  forties…") and gave faces that read as South Asian or European, and a girl who looked 6–8. More
+  specific descriptions (skin tone, face shape, hair, exact clothing, "Habesha Ethiopian") should
+  give recognisably Ethiopian characters of the right age.
+- **Change:** descriptions rewritten in words from family photos (the photos themselves were not
+  given to the model; ETHICS.md); new seeds; same model (FLUX.2 klein 4B), same style block.
+- **Result:** clothing improved a lot: the mother's white kemis with a tibeb border and a
+  blue-and-maroon netela, the father's houndstooth jacket, the brother's plaid shirt all match.
+  Faces are still not clearly Ethiopian, and the girl still looks younger than twelve. The word
+  "Habesha" seems not to be understood by the model. Evidence: `outputs/refsheet/contact_sheet_v1.jpg`
+  and `contact_sheet_v2.jpg`.
+- **Next:** describe features directly instead of relying on the ethnic label (for example
+  "East African features, deep brown skin, tightly curled black hair"), and say the girl's height
+  and build, then compare round 3.
+
 ## E3. Can Wan 2.2 make video on a free Kaggle T4? (Wed 25 Nov)
 
 - **Hypothesis:** Wan 2.2 TI2V-5B can turn a keyframe into a short clip on a 16 GB T4 if memory
