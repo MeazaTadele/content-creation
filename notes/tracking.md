@@ -38,26 +38,31 @@ Every decision faced, open or made. Meaza chooses which one is "the hard decisio
 | 1 | Story, person, audience, language | Story, audience, language chosen | **Partly decided Tue 24 Nov.** Story: the Easter morning Meaza woke up and her mom was home, the first holiday she remembers celebrating with her mom (mom usually works on holidays). Audience: friends Yishak and Betty, and her brother (confirmed as tester Tue 24 Nov). Language: **Amharic** (decided Tue 24 Nov) | Tue 24 Nov |
 | 2 | Visual style | realistic, illustrated, painted, animated-looking (illustrated hides inconsistency better) | Open | Tue 24 Nov |
 | 3 | Code language | Python (FFmpeg, Kaggle, ACE-Step tooling are mostly Python) or Node/TypeScript | **Decided Wed 25 Nov: Python** | Tue 24 Nov |
-| 4 | Orchestrator | Makefile, Python CLI, other | **Delegated to Claude Wed 25 Nov.** Claude's pick: a Makefile (`make film`, as in the brief) that calls a Python CLI, so the same commands also work without `make` (e.g. on Windows) | Tue 24 Nov |
+| 4 | Orchestrator | Makefile, Python CLI, other | Open. Claude's suggestion (not a decision): a Makefile (`make film`, as in the brief) that calls a Python CLI, so the same commands also work without `make`. Awaiting Meaza's decision | Tue 24 Nov |
 | 5 | How Kaggle GPU stages fit "one command" | drive Kaggle via its API (push, wait, pull); run GPU stages manually and let the pipeline pick up cached outputs; make GPU stages optional with Ken Burns as default | **Decided Wed 25 Nov: automatic via the Kaggle API** (push notebook, wait, download outputs), with Ken Burns fallback for any missing clip | Tue 24 Nov |
 | 6 | How to produce both aspect ratios | generate in one ratio and crop; generate both; pad with blur | Open | Tue 24 Nov |
-| 7 | Generated media in git | Git LFS; compressed drafts; keep media out and document it (GitHub blocks files > 100 MB) | Open: Meaza asked what the brief requires (Wed 25 Nov) | Tue 24 Nov |
+| 7 | Generated media in git | Git LFS; compressed drafts; keep media out and document it (GitHub blocks files > 100 MB) | **Decided Wed 25 Nov by Meaza:** commit generated media to the repo as long as GitHub can handle it (every file under GitHub's 100 MB limit); anything too large stays out | Tue 24 Nov |
 | 8 | Music structure | one continuous track; one cue per section | Open | Tue 24 Nov |
 | 9 | Ken Burns fallback rule | number of attempts, quality bar | Open | Tue 24 Nov |
-| 10 | What each stage's cache hash includes | prompt, seed, model, settings, input file hash (chain effect: keyframe change → clip regenerates) | Open | Tue 24 Nov |
+| 10 | What each stage's cache hash includes | (a) whole shot entry; (b) per-stage relevant fields + model + settings + input file hashes + manual stage version; (c) (b) + code-file hash | Open. Options presented Wed 25 Nov: (a) hash the whole shot entry; (b) hash only the fields each stage uses + model + settings + input-file hashes + a manual stage version; (c) like (b) plus a hash of the stage's code files | Tue 24 Nov |
 | 11 | Ceiling work, if any | see research notes below | Open | Tue 24 Nov |
 | 12 | Reuse anything from Instant Vlog Clip | A: fork the app; B: new pipeline, borrow ideas only; C: new pipeline now, app as a front end later | **Decided Wed 25 Nov: borrow ideas only.** New Python pipeline; no client code copied into the public repo | Tue 24 Nov |
 | 13 | Which coding agent writes the pipeline code | Claude Code (paid) or the free agents the brief suggests (Antigravity CLI, OpenCode). Relevant to the report's "agent writes the scripts" practice | **Decided Tue 24 Nov: Claude Code.** Report must state this openly | Tue 24 Nov |
-| 14 | Model for each stage | Script: Gemini 3.8 Flash / Flash-Lite. Narration: Gemini TTS, ElevenLabs (Amharic listed; free tier to check), Azure am-ET Mekdes/Ameha (free tier; card requirement to check), OmniVoice Amharic, Chatterbox/CosyVoice2 Amharic fine-tunes; or compare several (Meaza raised comparing Gemini vs ElevenLabs, Tue 24 Nov). Keyframes: FLUX.2 klein 4B, FLUX.1 schnell. Video: Wan 2.2 TI2V-5B, HunyuanVideo 1.5, LTX-2 family. Music: ACE-Step 1.5 | **Partly decided Wed 25 Nov:** voice comparison includes Gemini TTS and ElevenLabs; Meaza asked which free open (transformer) Amharic models could be added. Open models researched: OmniVoice Amharic (Apache 2.0), MMS-TTS amh (Meta, CC BY-NC 4.0), CosyVoice2 Amharic, Chatterbox Amharic. Other stages: open | Tue 24 Nov |
+| 14 | Model for each stage | Script: Gemini 3.8 Flash / Flash-Lite. Narration: Gemini TTS, ElevenLabs (Amharic listed; free tier to check), Azure am-ET Mekdes/Ameha (free tier; card requirement to check), OmniVoice Amharic, Chatterbox/CosyVoice2 Amharic fine-tunes; or compare several (Meaza raised comparing Gemini vs ElevenLabs, Tue 24 Nov). Keyframes: FLUX.2 klein 4B, FLUX.1 schnell. Video: Wan 2.2 TI2V-5B, HunyuanVideo 1.5, LTX-2 family. Music: ACE-Step 1.5 | **Decided Wed 25 Nov (voices):** compare Gemini TTS, ElevenLabs, OmniVoice Amharic, MMS-TTS amh and CosyVoice2 Amharic, "if it's not too much to handle". Models for other stages: open | Tue 24 Nov |
 | 15 | Where the pipeline runs | This Claude Code cloud container (needs network access to providers + keys saved as environment secrets) or Meaza's own computer (needs Python/Node, FFmpeg installed) | **Decided Wed 25 Nov: both.** Build and test in the Claude Code container and push; Meaza later clones and installs on her own computer | Tue 24 Nov |
 | 16 | GPU platform for video and music | Kaggle (2x T4, ~30 GPU h/week, brief's main pick) or Colab (backup) | **Decided Wed 25 Nov: Kaggle** | Tue 24 Nov |
 | 18 | How to evaluate the Amharic voices | Meaza's own ear (native speaker, but not blind); blind listening by testers; automatic check (speech recognition back to text, error rate vs script); measured latency and cost; or a mix. Any number of models | **Decided Tue 24 Nov: all three** (own ear, blind listening by testers, automatic speech-recognition check); latency and cost logged as well | Tue 24 Nov |
 | 19 | Audience intent: what they should feel or understand at the end | To be worked out (see story open items) | Open | Tue 24 Nov |
 | 20 | Stage design: which stages, their order, how they depend on each other | Brief's shape (script, keyframes, shots, music, narration, assemble) or improved: narration before shots/music, extra stages (reference sheet, voice check, measurements), split assembly, dependency graph instead of a straight line, measured values kept in a separate file | **Decided Wed 25 Nov: keep all 7 suggested changes:** (1) narration first, shot lengths from measured narration; (2) swappable model providers per stage via config; (3) voice-check stage (TTS → speech recognition → error rate); (4) reference-sheet stage before keyframes; (5) `plan` dry-run command; (6) automatic Ken Burns fallback so it works without a GPU; (7) measured values in a separate generated file, storyboard never edited by the pipeline | Wed 25 Nov |
-| 17 | Branch workflow in the repo | merge `tracking-log` into `main` and work on `main`; or work on branches and merge | Open | Tue 24 Nov |
+| 17 | Branch workflow in the repo | merge `tracking-log` into `main` and work on `main`; or work on branches and merge | **Decided Wed 25 Nov:** keep working on the `tracking-log` branch; Meaza merges into `main` later (before submission) | Tue 24 Nov |
+
+## Rule (Meaza, Wed 25 Nov)
+Nothing is recorded as Claude's decision. Claude presents options and, when asked, a suggestion; Meaza decides. Graders are AI and read only text, so every step of the process must be tracked in writing.
 
 ## To-do
 
+- [ ] Merge `tracking-log` into `main` before submission (graders read the repo link, normally the default branch)
+- [ ] State in README/report that Claude Code wrote most of the code under Meaza's direction (commits are authored by Claude)
 - [ ] Prepare a questionnaire for the audience tests, beyond their general opinion of the video (requested by Meaza, Tue 24 Nov). Needed before user test 1.
 
 ### Story: open items (Tue 24 Nov)
@@ -71,6 +76,23 @@ Every decision faced, open or made. Meaza chooses which one is "the hard decisio
 - What stays out (mom's job specifics, the shop)
 - Title and the closing line
 - Cultural accuracy of the Easter details
+
+## Grader evidence map
+
+Assignment 1 is graded by an AI that reads code, text, logs and documents only. For each criterion, where the evidence will be:
+
+| Criterion (points) | What earns full marks | Evidence in the repo |
+|---|---|---|
+| Software engineering and reproducibility (20) | stage boundaries, validated storyboard, caching, retries, no secrets, complete runs.jsonl, one command from clean clone | `schema/`, `pipeline/`, `runs.jsonl`, `.env.example`, `.gitignore`, README run instructions, a logged fresh-clone run |
+| Documentation (10) | README a stranger can follow; ARCHITECTURE with contracts, caching, failure handling | `README.md`, `ARCHITECTURE.md`, `docs/SPEC.md` |
+| Design thinking and audience (10) | audience/intent before generating; two user tests with ≥3 people; storyboard changed by feedback; reason for every shot | `DESIGN.md` (dated, committed before first generation), test notes, storyboard commits referencing tests, `reason` field per shot |
+| Experimentation and iteration (10) | ≥10 experiments with hypotheses, evidence, reasons | `EXPERIMENTS.md`, linked `runs.jsonl` lines, voice-comparison results |
+| Troubleshooting and persistence (10) | real blockers, what was tried, how resolved | `FAILURES.md`, this log's challenges table |
+| Measurement (5) | latency and GPU minutes per stage, list-price equivalent, frontier comparison | `COSTS.md`, generated from `runs.jsonl` |
+| Consent, labelling, licences (5) | consent for every real person; licences; labelling plan | `ETHICS.md` |
+| Report: reflection and audience (10) | candid, tied to repo evidence | report, citing DESIGN/FAILURES |
+| Report: practices tested (10) | one practice that beat instinct, one that didn't, with evidence | report, §8 of this log |
+| Report: curiosity beyond the floor (10) | ceiling work that produced insight | report, Amharic voice benchmark results |
 
 ## 2. Challenges and blockers
 
