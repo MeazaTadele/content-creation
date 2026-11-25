@@ -709,6 +709,18 @@
       "seconds": 17.48,
       "lufs": -13.99,
       "true_peak_db": -1.48
+    },
+    "assemble/final/radio_cut_9x16": {
+      "fingerprint": "fa3f53fff3d619dd5769cc615c7e848adc6d7eca236e6aeb1e4b6a2d03888fe1",
+      "output": "outputs/final/radio_cut_9x16.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 99.711,
+      "ratio": "9x16",
+      "lufs": -14.04,
+      "true_peak_db": -1.42,
+      "bytes": 2880202
     }
   },
   "stage_versions": {},
