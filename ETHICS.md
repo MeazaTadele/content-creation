@@ -3,16 +3,52 @@
 ## Consent
 
 Consent is recorded here **before** anything depicting or voicing a real person is generated.
-Each record is informed: the person is told the film is AI-generated, what the narration says
-about them, and that it will be posted publicly with an AI label, and that they can say no.
+No real person's voice is cloned: the narration is an AI voice. The first generation of any
+kind in this project was on Wed 25 Nov (see `runs.jsonl`); all consent below was given earlier.
 
-| Person | Shown or voiced | Consent | Given how, when | Their words |
+### Records
+
+| Person | Role in the film | Asked | Replied | Status |
 |---|---|---|---|---|
-| Meaza (me) | shown as a child; narration is in my voice as narrator (AI text-to-speech, not a clone of my voice) | _pending_ | | |
-| My mother | shown as a character based on her | _pending_ | | |
-| Henok, my brother | _to be decided whether he appears_ | _pending_ | | |
+| Meaza (me) | narrator; shown as a child | — | — | I consent as the author of the film |
+| My father | not planned to appear; replied for both parents | Tue 24 Nov 2026, 20:02 EAT, Telegram | Tue 24 Nov 2026, 21:11 EAT | agreed, for himself and for my mother |
+| My mother | shown as a drawn character based on her; the story is about her | same message, sent to both parents | through my father's reply | agreed (relayed by my father) |
+| Henok, my brother | may appear as a drawn character | Tue 24 Nov 2026, 20:02 EAT, Telegram | Tue 24 Nov 2026, evening | agreed |
 
-No voice is cloned from a real person.
+### The messages, word for word
+
+**To my parents** (Amharic):
+
+> ሰላም ጋሼ እና እናት እንዴት ዋላችሁ፣ እየወሰድኩት ላለው ትሬኒንግ ፊልም ስሩ ተብለን ነበር እና እኔ የምሰራው
+> ፊልም እኛ ቤት ስላሳለፍነው አንድ ፋሲካ በዓል ነው እና ስለእናንተ ያወራል። ከመስራቴ በፊት የእናንተን ፈቃድ
+> መጠየቅ ስላለብኝ ነው፤ ፈቃደኛ ናችሁ?
+
+English: "Hello Dad and Mom, how was your day? For the training I'm taking, we were told to make
+a film. The film I'm making is about a Fasika holiday we spent at home, and it talks about you.
+Before I make it I need to ask for your permission. Do you agree?"
+
+**My father's reply:**
+
+> መልካም፣ እኔም እናትሽም ተስማምተናል። Good luck እምዬ
+
+English: "Good. Both your mother and I agree. Good luck, Emeye."
+
+**To Henok** (English):
+
+> hey bro i am making a short AI film for a course about a holiday morning in our house. and
+> you are gonna be part of it, wanted to get you consent first
+
+**Henok's reply:** "yeah go ahead"
+
+### Still to do before the film is final
+
+- **Informed about how it is made and shown.** My parents' message did not say that the pictures
+  and voice are made by AI, or that the film will be posted publicly with an AI label. Henok's
+  message said it is an AI film, but not that it will be public. A short follow-up message with
+  both points is planned, and the replies will be added here.
+- **The exact words.** The brief asks that the words shown about a person are ones they agreed to.
+  Once the narration is written, my mother will see the exact lines about her, and her reply will
+  be recorded here before the narration is generated.
 
 ## Licences
 

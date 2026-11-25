@@ -3,6 +3,34 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F7. Kaggle results could not be downloaded (Wed 25 Nov)
+
+- **What broke:** both Kaggle jobs finished, but downloading their outputs failed: Kaggle serves
+  job files from a separate host that this environment's network allowlist did not include.
+- **What was tried:** the error named the host.
+- **Fix:** the host was added to the environment's allowlist and the outputs were downloaded
+  again. The `runs.jsonl` lines written while they were missing are followed by corrected lines.
+
+## F6. CosyVoice2 Amharic could not be installed on Kaggle (Wed 25 Nov)
+
+- **What broke:** installing CosyVoice's pinned requirements failed on Kaggle's image (pip exited
+  with an error), so neither CosyVoice2 sample was produced. MMS and OmniVoice in the same job
+  worked, because each model is set up and saved separately.
+- **What was tried:** nothing yet beyond the documented install.
+- **Next:** read the pip error in the job log (`outputs/voicebench/kaggle_logs/`) and install only
+  what inference needs, or drop CosyVoice2 from the benchmark if it costs too much time; the
+  decision and its reason will be recorded here.
+
+## F5. Wan 2.2 ran out of GPU memory on a free T4 (Wed 25 Nov)
+
+- **What broke:** the first Wan 2.2 TI2V-5B test (480×832, 81 frames, 30 steps, half precision,
+  model CPU offload) loaded in 282 s and then failed after 15 s: CUDA out of memory, 14.54 GiB of
+  the T4's 14.56 GiB in use.
+- **What it means:** the reviewer's concern was right; the default settings don't fit a 16 GB T4.
+- **Next:** sequential CPU offload (weights moved layer by layer), VAE tiling, an allocator setting
+  that reduces fragmentation, and fewer frames (49). If it still doesn't fit, the shots fall back to
+  Ken Burns, which the pipeline already does automatically.
+
 ## F3. ElevenLabs' newest model refused Amharic as a language code (Wed 25 Nov)
 
 - **What broke:** the first ElevenLabs smoke call failed with HTTP 400: "Model 'eleven_v3' does

@@ -17,10 +17,11 @@ from . import keyframes
 from .base import Context, check_stage_version, out_path, rel, say
 
 STAGE = "shots"
-STAGE_VERSION = 1
+STAGE_VERSION = 2  # 2: memory settings for the T4 (FAILURES.md F5)
 MAX_ATTEMPTS = 2
 MODEL = "Wan-AI/Wan2.2-TI2V-5B-Diffusers"
-SETTINGS = {"width": 480, "height": 832, "frames": 81, "fps": 24, "steps": 30, "guidance": 5.0,
+SETTINGS = {"width": 480, "height": 832, "frames": 49, "fps": 24, "steps": 30, "guidance": 5.0,
+            "offload": "sequential",
             "negative": "blurry, distorted face, extra fingers, text, watermark, flicker"}
 
 

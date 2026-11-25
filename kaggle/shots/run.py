@@ -25,6 +25,7 @@ def find_inputs():
 
 def worker(gpu: int, unit_ids: list):
     os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu)
+    os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
     import torch
     from diffusers import AutoencoderKLWan, WanImageToVideoPipeline
     from diffusers.utils import export_to_video, load_image
@@ -36,7 +37,14 @@ def worker(gpu: int, unit_ids: list):
     t_load = time.time()
     vae = AutoencoderKLWan.from_pretrained(MODEL_ID, subfolder="vae", torch_dtype=torch.float32)
     pipe = WanImageToVideoPipeline.from_pretrained(MODEL_ID, vae=vae, torch_dtype=torch.float16)
-    pipe.enable_model_cpu_offload()
+    # a 16 GB T4 can't hold the model: move weights to the GPU layer by layer (F5)
+    if s.get("offload", "sequential") == "sequential":
+        pipe.enable_sequential_cpu_offload()
+    else:
+        pipe.enable_model_cpu_offload()
+    for fn in ("enable_tiling", "enable_slicing"):
+        if hasattr(pipe.vae, fn):
+            getattr(pipe.vae, fn)()
     load_s = time.time() - t_load
     print(f"[gpu{gpu}] model loaded in {load_s:.0f} s", flush=True)
     for u in units:
