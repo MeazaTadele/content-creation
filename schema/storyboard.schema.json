@@ -138,7 +138,7 @@
         },
         "references": {
           "type": "object",
-          "description": "Per provider, a SYNTHETIC reference clip (never a real person's voice) that voice-cloning models follow, so every line has the same narrator.",
+          "description": "Per provider, the reference clip that voice-cloning models follow so every line has the same narrator. Either AI-generated, or a real voice with that person's consent in ETHICS.md.",
           "additionalProperties": {
             "type": "object",
             "additionalProperties": false,
@@ -152,6 +152,10 @@
               },
               "text": {
                 "type": "string"
+              },
+              "audio_sha256": {
+                "type": "string",
+                "description": "Hash of a private reference clip that is not in the repository, so fingerprints stay stable on a fresh clone."
               }
             }
           }

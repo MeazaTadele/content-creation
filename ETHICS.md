@@ -3,14 +3,14 @@
 ## Consent
 
 Consent is recorded here **before** anything depicting or voicing a real person is generated.
-No real person's voice is cloned: the narration is an AI voice. OmniVoice is given a reference clip only to keep one narrator across lines, and that clip is itself AI-generated (`outputs/voicebench/samples/omnivoice_1.wav`). The first generation of any
+Since Wed 25 Nov 2026, 21:03 EAT, the AI narration voice (OmniVoice) copies **my own voice** from an 11-second sample of me telling lines 1–2 of the story, with my written consent above. This was a change made after user test 1, where all three testers found the narration script-like. My recording and the sample are kept private (`private/`, ignored by git) and are not in this repository; only the AI-generated narration is. Nobody else's voice is cloned. The first generation of any
 kind in this project was on Wed 25 Nov (see `runs.jsonl`); all consent below was given earlier.
 
 ### Records
 
 | Person | Role in the film | Asked | Replied | Status |
 |---|---|---|---|---|
-| Meaza (me) | narrator; shown as a girl of about twelve (shots 1, 4 and 8) | — | — | I consent as the author of the film |
+| Meaza (me) | narrator; shown as a girl of about twelve (shots 1, 4 and 8); my recorded voice is the sample the AI narrator copies | Wed 25 Nov 2026, 21:03 EAT, in writing | Wed 25 Nov 2026, 21:03 EAT | "I agree that my recorded voice is used as a sample for the AI narration voice of my film, which will be posted publicly with an AI label. The recording itself stays private." |
 | My father | appears seen from behind or as hands only (shots 3 and 7); replied for both parents | Tue 24 Nov 2026, 20:02 EAT, Telegram | Tue 24 Nov 2026, 21:11 EAT | agreed, for himself and for my mother |
 | My mother | shown as a drawn character based on her (shots 5 and 9); the story is about her | same message, sent to both parents | through my father's reply | agreed (relayed by my father) |
 | Henok, my brother | appears seen from behind or as hands only (shots 3 and 7) | Tue 24 Nov 2026, 20:02 EAT, Telegram | Tue 24 Nov 2026, evening | agreed |

@@ -64,8 +64,9 @@
     "style_instruction": "Read in Amharic, calm, warm and unhurried, like remembering a happy morning",
     "references": {
       "omnivoice": {
-        "audio": "outputs/voicebench/samples/omnivoice_1.wav",
-        "text": "ሰላም። ይህ የድምፅ ሙከራ ነው።"
+        "audio": "private/meaza_voice_sample.wav",
+        "text": "ዛሬ ፋሲካ ነው። ግን ከአልጋ የሚያስነሳ የሚያጓጓ ነገር የለኝም። በዓል እኛ ቤት ተመሳሳይ ነው። እናቴ ምግብ ሰራርታልን በጠዋት ወደ ሥራ ትሄዳለች።",
+        "audio_sha256": "9360a956fa4d8b1d394e61447a01d13a53686f55f3dc433366d30734ed5b8767"
       }
     }
   },
