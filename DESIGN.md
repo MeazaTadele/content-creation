@@ -14,8 +14,8 @@ first holiday I remember celebrating with her there.
 
 | Who | Relationship | Where and how they watch |
 |---|---|---|
-| Betty | friend | on her own phone, sent as a video on Telegram |
-| Yishak | friend | on his own phone, sent as a video on Telegram |
+| Betty | friend | on their own phone, sent as a video on Telegram |
+| Yishak | friend | on their own phone, sent as a video on Telegram |
 | Henok | my brother | on my phone, watching with me |
 
 ## Intent
