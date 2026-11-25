@@ -1,0 +1,130 @@
+{
+  "voice": "omnivoice",
+  "shots": [
+    {
+      "id": "s01",
+      "start": 0.0,
+      "duration": 12.482,
+      "narration_start": 0.3,
+      "narration_end": 11.882,
+      "speech_trim": [
+        0.189,
+        11.771
+      ],
+      "overlap_out": 0.0
+    },
+    {
+      "id": "s02",
+      "start": 12.482,
+      "duration": 10.257,
+      "narration_start": 12.782,
+      "narration_end": 22.139,
+      "speech_trim": [
+        0.134,
+        9.491
+      ],
+      "overlap_out": 0.0
+    },
+    {
+      "id": "s03",
+      "start": 22.739,
+      "duration": 11.155,
+      "narration_start": 23.039,
+      "narration_end": 33.294,
+      "speech_trim": [
+        0.156,
+        10.411
+      ],
+      "overlap_out": 0.0
+    },
+    {
+      "id": "s04",
+      "start": 33.894,
+      "duration": 9.05,
+      "narration_start": 34.194,
+      "narration_end": 42.344,
+      "speech_trim": [
+        0.12,
+        8.27
+      ],
+      "overlap_out": 0.5
+    },
+    {
+      "id": "s05",
+      "start": 42.444,
+      "duration": 8.242,
+      "narration_start": 42.744,
+      "narration_end": 50.086,
+      "speech_trim": [
+        0.129,
+        7.471
+      ],
+      "overlap_out": 0.5
+    },
+    {
+      "id": "s06",
+      "start": 50.186,
+      "duration": 7.021,
+      "narration_start": 50.486,
+      "narration_end": 56.607,
+      "speech_trim": [
+        0.117,
+        6.238
+      ],
+      "overlap_out": 0.0
+    },
+    {
+      "id": "s07",
+      "start": 57.207,
+      "duration": 7.488,
+      "narration_start": 57.507,
+      "narration_end": 64.095,
+      "speech_trim": [
+        0.122,
+        6.71
+      ],
+      "overlap_out": 0.0
+    },
+    {
+      "id": "s08",
+      "start": 64.695,
+      "duration": 12.258,
+      "narration_start": 64.995,
+      "narration_end": 76.353,
+      "speech_trim": [
+        0.152,
+        11.51
+      ],
+      "overlap_out": 0.0
+    },
+    {
+      "id": "s09",
+      "start": 76.953,
+      "duration": 14.907,
+      "narration_start": 77.253,
+      "narration_end": 91.26,
+      "speech_trim": [
+        0.184,
+        14.191
+      ],
+      "overlap_out": 0.5
+    },
+    {
+      "id": "s10",
+      "start": 91.36,
+      "duration": 5.851,
+      "narration_start": 91.66,
+      "narration_end": 96.611,
+      "speech_trim": [
+        0.158,
+        5.109
+      ],
+      "overlap_out": 0.5
+    }
+  ],
+  "end_card_start": 96.711,
+  "end_card_seconds": 3,
+  "film_seconds": 97.211,
+  "total_seconds": 99.711,
+  "crossfade_seconds": 0.5
+}

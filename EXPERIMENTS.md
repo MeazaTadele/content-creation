@@ -17,9 +17,16 @@ comparing prompts.
   Faces are still not clearly Ethiopian, and the girl still looks younger than twelve. The word
   "Habesha" seems not to be understood by the model. Evidence: `outputs/refsheet/contact_sheet_v1.jpg`
   and `contact_sheet_v2.jpg`.
-- **Next:** describe features directly instead of relying on the ethnic label (for example
-  "East African features, deep brown skin, tightly curled black hair"), and say the girl's height
-  and build, then compare round 3.
+- **Round 3** (my notes: brother is 19 with a beard; mother without a headscarf, in the specific
+  kemis from a reference photo of the dress): the dress came out close to the photo (tibeb panel,
+  crosses, sash, leaf motifs). Faces were still generic.
+- **Round 4** (named facial features instead of the label alone: slender oval face, large
+  almond-shaped eyes, narrow nose, tightly curled hair; the girl "tall, slim, on the edge of her
+  teens"): the girls now read as Ethiopian and older, with braids; the mother is closer, mostly in
+  candidates 0 and 2; the father and brother improved less. Evidence:
+  `outputs/refsheet/contact_sheet_v3.jpg`, `contact_sheet_v4.jpg`.
+- **What it taught me:** the model follows concrete visual words (features, clothing details) far
+  better than identity labels. Four rounds took about four minutes of generation in total.
 
 ## E3. Can Wan 2.2 make video on a free Kaggle T4? (Wed 25 Nov)
 

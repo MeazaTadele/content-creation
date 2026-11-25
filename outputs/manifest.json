@@ -281,124 +281,434 @@
       "shot": "s10"
     },
     "refsheet/girl/0": {
-      "fingerprint": "b459c778c36b3b1f9e80f8c5e7a00171e6a50fe5709021fc46abe70c4c2667d8",
-      "output": "outputs/refsheet/girl/0__b459c778.png",
+      "fingerprint": "eaaeeee8ea27fb58aa6e5eb0434b673a4fbd104610a2d7ec17617e85dd857776",
+      "output": "outputs/refsheet/girl/0__eaaeeee8.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 11.33,
+      "seconds": 16.56,
       "character": "girl",
       "candidate": 0
     },
     "refsheet/girl/1": {
-      "fingerprint": "8749b5bdaf00197140fb13bd77054bc51e1080f3fa25a529d06a99bc71b2d282",
-      "output": "outputs/refsheet/girl/1__8749b5bd.png",
+      "fingerprint": "3504ab02385584900e61d1804a4c3add39c5dce36a39b12f885c2423ca948335",
+      "output": "outputs/refsheet/girl/1__3504ab02.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 11.97,
+      "seconds": 10.22,
       "character": "girl",
       "candidate": 1
     },
     "refsheet/girl/2": {
-      "fingerprint": "60509a82785fea21bf3ef5c2df0435b2ddee708b3c9b1108057b12d8d4250329",
-      "output": "outputs/refsheet/girl/2__60509a82.png",
+      "fingerprint": "449ab1e0ddd400bc19fffe39a140f7b3e89fb117c251ac4c4585f92167e5ca4d",
+      "output": "outputs/refsheet/girl/2__449ab1e0.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 11.53,
+      "seconds": 9.09,
       "character": "girl",
       "candidate": 2
     },
     "refsheet/girl/3": {
-      "fingerprint": "d6a69634a1930512112cb287163c7f3559082f40a37ff4e413d2c74566a3eaaa",
-      "output": "outputs/refsheet/girl/3__d6a69634.png",
+      "fingerprint": "63d3a3d72fe23cc4d2f7dfb5fd41034c6cc7cee631a3aa0ef981071dca4716d8",
+      "output": "outputs/refsheet/girl/3__63d3a3d7.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 10.9,
+      "seconds": 10.81,
       "character": "girl",
       "candidate": 3
     },
     "refsheet/mother/0": {
-      "fingerprint": "7d3a8d118fdaebc005adbbc047db9a574dc0e3c553eb2bae5aa422597b52a390",
-      "output": "outputs/refsheet/mother/0__7d3a8d11.png",
+      "fingerprint": "1766b08cc2da3d661ce3998738ca172a98add6d789dd1d25841217d2739dd1ef",
+      "output": "outputs/refsheet/mother/0__1766b08c.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 12.02,
+      "seconds": 11.03,
       "character": "mother",
       "candidate": 0
     },
     "refsheet/mother/1": {
-      "fingerprint": "7b77db2a09208ca67e055bc298e4d49b1673b480a64ea8154e83dd48cba3ba44",
-      "output": "outputs/refsheet/mother/1__7b77db2a.png",
+      "fingerprint": "8367043ccab0b2335179099f8238312aadd945544477078f69e11e37c7da4b0a",
+      "output": "outputs/refsheet/mother/1__8367043c.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 12.15,
+      "seconds": 12.93,
       "character": "mother",
       "candidate": 1
     },
     "refsheet/mother/2": {
-      "fingerprint": "98bcaf5d362e9d0a655fb80a0ad23e4d233faaea8d7a00209accf6f5c09767b8",
-      "output": "outputs/refsheet/mother/2__98bcaf5d.png",
+      "fingerprint": "67ef90f4ff5b1fd7b56eedd8ad4213481223a0dd5fc32d5bb4606e69ca54fd99",
+      "output": "outputs/refsheet/mother/2__67ef90f4.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 10.88,
+      "seconds": 8.24,
       "character": "mother",
       "candidate": 2
     },
     "refsheet/mother/3": {
-      "fingerprint": "d899172a611a5b36cd5130a088f3213008162e00a4bc09b29720ea581abd5581",
-      "output": "outputs/refsheet/mother/3__d899172a.png",
-      "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 11.14,
-      "character": "mother",
-      "candidate": 3
-    },
-    "refsheet/father/0": {
-      "fingerprint": "76016298ca0b3baa2e91bdc234de9ac890d1e0b7cd5df4b560987ec40fe08b0e",
-      "output": "outputs/refsheet/father/0__76016298.png",
-      "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 10.74,
-      "character": "father",
-      "candidate": 0
-    },
-    "refsheet/father/1": {
-      "fingerprint": "b754ad41b3fa8c707a4494f609baee2e29b24cc7dd01031c4e6f7f035a8f2e24",
-      "output": "outputs/refsheet/father/1__b754ad41.png",
-      "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 9.39,
-      "character": "father",
-      "candidate": 1
-    },
-    "refsheet/brother/0": {
-      "fingerprint": "2bf1b105dcc615a538ca0c20b7adea66d119baa7461f173e7b35e8bacb8efc77",
-      "output": "outputs/refsheet/brother/0__2bf1b105.png",
-      "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 10.99,
-      "character": "brother",
-      "candidate": 0
-    },
-    "refsheet/brother/1": {
-      "fingerprint": "8faa516054cc5233359af895d4cc2ff755faca77a5b17944a44c9a05e121971e",
-      "output": "outputs/refsheet/brother/1__8faa5160.png",
+      "fingerprint": "4398579630f4ea587fae213e384c7292edad7a53eb5a922caac09bb565511b90",
+      "output": "outputs/refsheet/mother/3__43985796.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
       "seconds": 10.42,
+      "character": "mother",
+      "candidate": 3
+    },
+    "refsheet/father/0": {
+      "fingerprint": "eb247e73b63848f2db17d6549c7f5f9171e26d6a6203e19e3a99d82f459b7aa8",
+      "output": "outputs/refsheet/father/0__eb247e73.png",
+      "status": "generated",
+      "provider": "cloudflare-flux",
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "seconds": 9.49,
+      "character": "father",
+      "candidate": 0
+    },
+    "refsheet/father/1": {
+      "fingerprint": "4583f2c9c5d14c2712a7bd904c2f1e0c0ca1571cf3e35de9e56461310feed0f5",
+      "output": "outputs/refsheet/father/1__4583f2c9.png",
+      "status": "generated",
+      "provider": "cloudflare-flux",
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "seconds": 10.94,
+      "character": "father",
+      "candidate": 1
+    },
+    "refsheet/brother/0": {
+      "fingerprint": "375aaab3f364fb1d99742856bbbf9f5f25fadc609f6f0db0a386f00905033364",
+      "output": "outputs/refsheet/brother/0__375aaab3.png",
+      "status": "generated",
+      "provider": "cloudflare-flux",
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "seconds": 10.55,
+      "character": "brother",
+      "candidate": 0
+    },
+    "refsheet/brother/1": {
+      "fingerprint": "7d68f3a8a7acc63ebfe5bd0066b7163e856b671d86cc16da11720de9973d667d",
+      "output": "outputs/refsheet/brother/1__7d68f3a8.png",
+      "status": "generated",
+      "provider": "cloudflare-flux",
+      "model": "@cf/black-forest-labs/flux-2-klein-4b",
+      "seconds": 10.85,
       "character": "brother",
       "candidate": 1
+    },
+    "narration/omnivoice/s01": {
+      "fingerprint": "fe684bb137de6dd0d69a1f6b0b4f50ad513b679de95b22b0c8db8168b8ff5318",
+      "output": "outputs/narration/omnivoice/s01__fe684bb1.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 301.71,
+      "speech_start": 0.189,
+      "speech_end": 11.771,
+      "file_seconds": 11.88,
+      "speech_seconds": 11.582,
+      "voice": "omnivoice",
+      "shot": "s01"
+    },
+    "narration/omnivoice/s02": {
+      "fingerprint": "cf1737dfedfe94bb2cc9b901431c07776d216a6e9f3967bc3579774fff772abf",
+      "output": "outputs/narration/omnivoice/s02__cf1737df.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 246.01,
+      "speech_start": 0.134,
+      "speech_end": 9.491,
+      "file_seconds": 9.6,
+      "speech_seconds": 9.357,
+      "voice": "omnivoice",
+      "shot": "s02"
+    },
+    "narration/omnivoice/s03": {
+      "fingerprint": "761807109666f12b74cd80c541db371ed43ad75239925742f5de071bd9430c51",
+      "output": "outputs/narration/omnivoice/s03__76180710.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 264.05,
+      "speech_start": 0.156,
+      "speech_end": 10.411,
+      "file_seconds": 10.52,
+      "speech_seconds": 10.255,
+      "voice": "omnivoice",
+      "shot": "s03"
+    },
+    "narration/omnivoice/s04": {
+      "fingerprint": "8415316c583133b622bf8fb2be4fb8d1f5c22e577946609178c72841505644f9",
+      "output": "outputs/narration/omnivoice/s04__8415316c.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 216.63,
+      "speech_start": 0.12,
+      "speech_end": 8.27,
+      "file_seconds": 8.4,
+      "speech_seconds": 8.15,
+      "voice": "omnivoice",
+      "shot": "s04"
+    },
+    "narration/omnivoice/s05": {
+      "fingerprint": "a4b6c017d39e38a1deb9b8f31127085ce40f96d843014da59794e58a97a4f2d5",
+      "output": "outputs/narration/omnivoice/s05__a4b6c017.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 206.71,
+      "speech_start": 0.129,
+      "speech_end": 7.471,
+      "file_seconds": 7.6,
+      "speech_seconds": 7.342,
+      "voice": "omnivoice",
+      "shot": "s05"
+    },
+    "narration/omnivoice/s06": {
+      "fingerprint": "c20aa6d5b13de7c68fa0e980bf73bfe5d6b7160e2fbbbc39b8d6ef7aa6ea93ec",
+      "output": "outputs/narration/omnivoice/s06__c20aa6d5.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 179.03,
+      "speech_start": 0.117,
+      "speech_end": 6.238,
+      "file_seconds": 6.36,
+      "speech_seconds": 6.121,
+      "voice": "omnivoice",
+      "shot": "s06"
+    },
+    "narration/omnivoice/s07": {
+      "fingerprint": "3375e2b35fa024da4f5502c108e430b05b2de89ca5452d37d9e7ea4176f03ea5",
+      "output": "outputs/narration/omnivoice/s07__3375e2b3.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 187.71,
+      "speech_start": 0.122,
+      "speech_end": 6.71,
+      "file_seconds": 6.84,
+      "speech_seconds": 6.588,
+      "voice": "omnivoice",
+      "shot": "s07"
+    },
+    "narration/omnivoice/s08": {
+      "fingerprint": "c5a97667f5aa6a2d7a0f5c2a409a3e4ee7f4e527a61058905a0c4f13ada5cc8d",
+      "output": "outputs/narration/omnivoice/s08__c5a97667.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 286.27,
+      "speech_start": 0.152,
+      "speech_end": 11.51,
+      "file_seconds": 11.64,
+      "speech_seconds": 11.358,
+      "voice": "omnivoice",
+      "shot": "s08"
+    },
+    "narration/omnivoice/s09": {
+      "fingerprint": "d394d3070c1f422a463752483c0583a03e00411372a1cecd77a69a5f5f94cb75",
+      "output": "outputs/narration/omnivoice/s09__d394d307.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 341.63,
+      "speech_start": 0.184,
+      "speech_end": 14.191,
+      "file_seconds": 14.32,
+      "speech_seconds": 14.007,
+      "voice": "omnivoice",
+      "shot": "s09"
+    },
+    "narration/omnivoice/s10": {
+      "fingerprint": "055c351cde0129361f47220e67ce5a9768a103175908b14d336bf67300e27839",
+      "output": "outputs/narration/omnivoice/s10__055c351c.wav",
+      "status": "generated",
+      "provider": "omnivoice",
+      "model": "Lab-et/omnivoice-amharic",
+      "seconds": 158.85,
+      "speech_start": 0.158,
+      "speech_end": 5.109,
+      "file_seconds": 5.24,
+      "speech_seconds": 4.951,
+      "voice": "omnivoice",
+      "shot": "s10"
+    },
+    "narration/mms/s01": {
+      "fingerprint": "c1c36fa57195f314ed928048c66024443135f139e5b28a75b69d1e6a89101e2b",
+      "output": "outputs/narration/mms/s01__c1c36fa5.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 5.14,
+      "speech_start": 0.311,
+      "speech_end": 8.409,
+      "file_seconds": 8.752,
+      "speech_seconds": 8.098,
+      "voice": "mms",
+      "shot": "s01"
+    },
+    "narration/mms/s02": {
+      "fingerprint": "3c798c7b625eff62b52afbf12efd40cf6d20b827fdf5f3af1f99d5f6a05511ec",
+      "output": "outputs/narration/mms/s02__3c798c7b.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 3.09,
+      "speech_start": 0.137,
+      "speech_end": 6.041,
+      "file_seconds": 6.496,
+      "speech_seconds": 5.904,
+      "voice": "mms",
+      "shot": "s02"
+    },
+    "narration/mms/s03": {
+      "fingerprint": "a278d18be8c5c1293a528e23f13c8b99ece1f57b5cc39935fb9c8e15cc645071",
+      "output": "outputs/narration/mms/s03__a278d18b.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 3.53,
+      "speech_start": 0.086,
+      "speech_end": 6.98,
+      "file_seconds": 7.36,
+      "speech_seconds": 6.894,
+      "voice": "mms",
+      "shot": "s03"
+    },
+    "narration/mms/s04": {
+      "fingerprint": "63d6f33b3476daa340c326b68b8ff7eda5078820a0f440bd2be498d4fa5d7dfd",
+      "output": "outputs/narration/mms/s04__63d6f33b.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 3.43,
+      "speech_start": 0.087,
+      "speech_end": 6.583,
+      "file_seconds": 7.088,
+      "speech_seconds": 6.496,
+      "voice": "mms",
+      "shot": "s04"
+    },
+    "narration/mms/s05": {
+      "fingerprint": "c8b6b788931ec76b970b7599fd9383cf8ca877fea29bea7856e5758a22c496aa",
+      "output": "outputs/narration/mms/s05__c8b6b788.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 2.75,
+      "speech_start": 0.15,
+      "speech_end": 5.492,
+      "file_seconds": 5.792,
+      "speech_seconds": 5.342,
+      "voice": "mms",
+      "shot": "s05"
+    },
+    "narration/mms/s06": {
+      "fingerprint": "da347e4398979476238ace97f96390bb7718a9a8dccbb9e2627ca1579daf7585",
+      "output": "outputs/narration/mms/s06__da347e43.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 2.24,
+      "speech_start": 0.306,
+      "speech_end": 4.301,
+      "file_seconds": 4.688,
+      "speech_seconds": 3.995,
+      "voice": "mms",
+      "shot": "s06"
+    },
+    "narration/mms/s07": {
+      "fingerprint": "a901909dee5610854030f2428963192821e8a8bd1860dbd486657ca5d89b10fb",
+      "output": "outputs/narration/mms/s07__a901909d.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 2.58,
+      "speech_start": 0.296,
+      "speech_end": 5.065,
+      "file_seconds": 5.376,
+      "speech_seconds": 4.769,
+      "voice": "mms",
+      "shot": "s07"
+    },
+    "narration/mms/s08": {
+      "fingerprint": "0a386dcbed87ae25e667ecf4890b0bb07b940d37f8696acfd602ac852026f4e7",
+      "output": "outputs/narration/mms/s08__0a386dcb.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 4.59,
+      "speech_start": 0.0,
+      "speech_end": 8.468,
+      "file_seconds": 8.768,
+      "speech_seconds": 8.468,
+      "voice": "mms",
+      "shot": "s08"
+    },
+    "narration/mms/s09": {
+      "fingerprint": "3067fcd11d37854429cdd28a3f83f48771ae05366455c039e4965827aceb65a2",
+      "output": "outputs/narration/mms/s09__3067fcd1.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 5.1,
+      "speech_start": 0.086,
+      "speech_end": 9.852,
+      "file_seconds": 10.256,
+      "speech_seconds": 9.766,
+      "voice": "mms",
+      "shot": "s09"
+    },
+    "narration/mms/s10": {
+      "fingerprint": "322fa7a79713266816aeab11dd19f38fa20a34e76d70157b78d418cd293a5ca3",
+      "output": "outputs/narration/mms/s10__322fa7a7.wav",
+      "status": "generated",
+      "provider": "mms",
+      "model": "facebook/mms-tts-amh",
+      "seconds": 1.94,
+      "speech_start": 0.368,
+      "speech_end": 3.687,
+      "file_seconds": 3.856,
+      "speech_seconds": 3.319,
+      "voice": "mms",
+      "shot": "s10"
+    },
+    "music/before/0": {
+      "fingerprint": "b16746dfc26d665f21ee5094de7508defdfd701c21abc3680900c5d5f7e8b20a",
+      "output": "outputs/music/before/0__b16746df.wav",
+      "status": "generated",
+      "provider": "placeholder",
+      "model": "pad",
+      "seconds": 45.0,
+      "cue": "before",
+      "candidate": 0
+    },
+    "music/morning/0": {
+      "fingerprint": "e9ae94bef3b4acd7564a5dcd9136acc79eb4259fd0dc1e01cc388c72af098f78",
+      "output": "outputs/music/morning/0__e9ae94be.wav",
+      "status": "generated",
+      "provider": "placeholder",
+      "model": "pad",
+      "seconds": 60.0,
+      "cue": "morning",
+      "candidate": 0
+    },
+    "assemble/sound/radio": {
+      "fingerprint": "45284e7a46a6bd23f5b77ee4cb40280d84cd2d9b044352b66d8200f38eaad99c",
+      "output": "outputs/assemble/sound/radio__45284e7a.wav",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 17.48,
+      "lufs": -13.99,
+      "true_peak_db": -1.48
     }
   },
   "stage_versions": {},
@@ -414,7 +724,146 @@
     "keyframes": {
       "version": 1,
       "sha": "aa44275cf2e4ff40659b6bcc8da5f0e615faff4980bb67c656d3e64735efb742"
+    },
+    "music": {
+      "version": 1,
+      "sha": "3e37d363c171126160aa136a841611bccb3abd609deacd515f8883730273fd75"
+    },
+    "assemble": {
+      "version": 2,
+      "sha": "20c620b6e13db99b31c93302bd96f5e08b127d36f135ea070b6d25576a6e0a21"
     }
   },
-  "measured": {}
+  "measured": {
+    "timeline": {
+      "voice": "omnivoice",
+      "shots": [
+        {
+          "id": "s01",
+          "start": 0.0,
+          "duration": 12.482,
+          "narration_start": 0.3,
+          "narration_end": 11.882,
+          "speech_trim": [
+            0.189,
+            11.771
+          ],
+          "overlap_out": 0.0
+        },
+        {
+          "id": "s02",
+          "start": 12.482,
+          "duration": 10.257,
+          "narration_start": 12.782,
+          "narration_end": 22.139,
+          "speech_trim": [
+            0.134,
+            9.491
+          ],
+          "overlap_out": 0.0
+        },
+        {
+          "id": "s03",
+          "start": 22.739,
+          "duration": 11.155,
+          "narration_start": 23.039,
+          "narration_end": 33.294,
+          "speech_trim": [
+            0.156,
+            10.411
+          ],
+          "overlap_out": 0.0
+        },
+        {
+          "id": "s04",
+          "start": 33.894,
+          "duration": 9.05,
+          "narration_start": 34.194,
+          "narration_end": 42.344,
+          "speech_trim": [
+            0.12,
+            8.27
+          ],
+          "overlap_out": 0.5
+        },
+        {
+          "id": "s05",
+          "start": 42.444,
+          "duration": 8.242,
+          "narration_start": 42.744,
+          "narration_end": 50.086,
+          "speech_trim": [
+            0.129,
+            7.471
+          ],
+          "overlap_out": 0.5
+        },
+        {
+          "id": "s06",
+          "start": 50.186,
+          "duration": 7.021,
+          "narration_start": 50.486,
+          "narration_end": 56.607,
+          "speech_trim": [
+            0.117,
+            6.238
+          ],
+          "overlap_out": 0.0
+        },
+        {
+          "id": "s07",
+          "start": 57.207,
+          "duration": 7.488,
+          "narration_start": 57.507,
+          "narration_end": 64.095,
+          "speech_trim": [
+            0.122,
+            6.71
+          ],
+          "overlap_out": 0.0
+        },
+        {
+          "id": "s08",
+          "start": 64.695,
+          "duration": 12.258,
+          "narration_start": 64.995,
+          "narration_end": 76.353,
+          "speech_trim": [
+            0.152,
+            11.51
+          ],
+          "overlap_out": 0.0
+        },
+        {
+          "id": "s09",
+          "start": 76.953,
+          "duration": 14.907,
+          "narration_start": 77.253,
+          "narration_end": 91.26,
+          "speech_trim": [
+            0.184,
+            14.191
+          ],
+          "overlap_out": 0.5
+        },
+        {
+          "id": "s10",
+          "start": 91.36,
+          "duration": 5.851,
+          "narration_start": 91.66,
+          "narration_end": 96.611,
+          "speech_trim": [
+            0.158,
+            5.109
+          ],
+          "overlap_out": 0.5
+        }
+      ],
+      "end_card_start": 96.711,
+      "end_card_seconds": 3,
+      "film_seconds": 97.211,
+      "total_seconds": 99.711,
+      "crossfade_seconds": 0.5
+    }
+  }
 }
