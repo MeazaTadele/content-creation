@@ -1,0 +1,11 @@
+# secrets
+.env
+kaggle.json
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# temporary files from interrupted writes
+*.tmp
+outputs/tmp/
