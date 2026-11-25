@@ -56,6 +56,9 @@ English: "Good. Both your mother and I agree. Good luck, Emeye."
   clothing) in `storyboard.json`. The photos were not given to any image model, not uploaded to
   any service by the pipeline, and are not in this repository. The drawn characters are therefore
   closer to my family's likeness than before, which this record states openly.
+- **Clothing reference photos:** photos of traditional outfits (a dress in a shop, and two people
+  modelling clothes, strangers to me) were used only to describe the clothes in words. Their faces
+  were not described or used, and the photos were not given to any model or added to this repository.
 
 ## Licences
 

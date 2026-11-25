@@ -19,27 +19,26 @@
     },
     {
       "id": "mother",
-      "description": "the same woman as in the reference image, same face and hairstyle, now dressed in exactly this traditional outfit with no other additions: a long white handwoven cotton habesha kemis with long sleeves and a V neckline; one wide vertical tibeb panel down the centre from neckline to hem, dark navy and black with small yellow, red, blue and green chevron and diamond patterns; black cross motifs on the shoulders and upper chest; embroidered black and white cuffs; black leaf motifs on the skirt on both sides of the panel; a plain white cloth sash tied at the waist; and a white netela with wide blue and maroon striped fringed ends draped over both shoulders and hanging down the front",
-      "reference_seed": 711,
-      "reference_candidates": 3,
+      "description": "a slim Ethiopian woman in her forties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, gentle eyes, a calm closed-mouth smile, black hair pulled back neatly, no headscarf; wearing a long cream handwoven cotton habesha kemis with wide elbow-length sleeves and a V neckline; one central vertical tibeb panel from the neckline to below the waist, woven in red, blue and gold diamond and chevron patterns, ending in a tree-like cross motif with orange-gold flower rosettes and blue branches; large dark plum feather-like leaf motifs fanning across the skirt; orange-gold rosettes on the shoulders; embroidered cuffs; wide red bands edged in gold near the hem on both sides; a plain cream sash tied at the waist; a small cross pendant on a cord",
+      "reference_seed": 811,
+      "reference_candidates": 4,
       "reference_use": null,
-      "consent": "ETHICS.md#consent",
-      "edit_from": "references/mother_base.png"
+      "consent": "ETHICS.md#consent"
     },
     {
       "id": "father",
-      "description": "a slim Ethiopian man in his fifties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm brown skin, bald on top with short grey hair at the sides, short grey beard, wearing a dark collared shirt and a houndstooth jacket",
-      "reference_seed": 651,
+      "description": "a slim Ethiopian man in his fifties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm brown skin, bald on top with short grey hair at the sides, short grey beard, wearing a white long-sleeved traditional tunic with a short mandarin collar and small buttons down the front, wide blue embroidered panels with gold accents across the chest and running down both sides of the buttons, small blue cross motifs on the lower front, and plain white trousers",
+      "reference_seed": 751,
       "reference_candidates": 2,
-      "reference_use": 0,
+      "reference_use": null,
       "consent": "ETHICS.md#consent"
     },
     {
       "id": "brother",
-      "description": "a slim Ethiopian young man of about nineteen, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, short tightly curled black hair with a neat high fade, a full short black beard, wearing a blue plaid shirt over a dark t-shirt",
-      "reference_seed": 801,
+      "description": "a slim Ethiopian young man of about nineteen, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, short tightly curled black hair with a neat high fade, a full short black beard, wearing a white long-sleeved traditional tunic with a short mandarin collar and small buttons down the front, wide blue embroidered panels with gold accents across the chest and running down both sides of the buttons, small blue cross motifs on the lower front, and plain white trousers",
+      "reference_seed": 901,
       "reference_candidates": 2,
-      "reference_use": 0,
+      "reference_use": null,
       "consent": "ETHICS.md#consent"
     }
   ],
