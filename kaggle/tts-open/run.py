@@ -18,6 +18,7 @@ import time
 import traceback
 
 WORK = "/kaggle/working"
+DEVICE = "cuda"
 
 
 def pip(*pkgs):
@@ -57,7 +58,7 @@ def run_mms(units):
         import uroman as ur
         from transformers import AutoTokenizer, VitsModel
         rom = ur.Uroman()
-        model = VitsModel.from_pretrained(model_id).to("cuda")
+        model = VitsModel.from_pretrained(model_id).to(DEVICE)
         tok = AutoTokenizer.from_pretrained(model_id)
     except Exception as e:
         traceback.print_exc()
@@ -68,7 +69,7 @@ def run_mms(units):
             text = rom.romanize_string(u["text"], lcode="amh")
             torch.manual_seed(u.get("seed", 0))
             with torch.no_grad():
-                wav = model(**tok(text, return_tensors="pt").to("cuda")).waveform.cpu().numpy()
+                wav = model(**tok(text, return_tensors="pt").to(DEVICE)).waveform.cpu().numpy()
             save(u, model_id, t0, True, wav, model.config.sampling_rate)
         except Exception as e:
             traceback.print_exc()
@@ -84,7 +85,8 @@ def run_omnivoice(units, inp):
         model = None
         for rid in (model_id, "african-low-resource/omnivoice-amharic"):
             try:
-                model = OmniVoice.from_pretrained(rid, device_map="cuda:0", dtype=torch.float16)
+                model = OmniVoice.from_pretrained(rid, device_map="cuda:0" if DEVICE == "cuda" else "cpu",
+                                                  dtype=torch.float16 if DEVICE == "cuda" else torch.float32)
                 model_id = rid
                 break
             except Exception as e:  # the card's example names a second repo id
@@ -149,8 +151,11 @@ def run_cosyvoice2(units, inp):
 
 
 def main():
+    global DEVICE
     inp = inputs_dir()
     job = json.load(open(os.path.join(inp, "job.json")))
+    DEVICE = job.get("settings", {}).get("device", "cuda")
+    print("device:", DEVICE, flush=True)
     by_model = {}
     for u in job["units"]:
         by_model.setdefault(u["model"], []).append(u)

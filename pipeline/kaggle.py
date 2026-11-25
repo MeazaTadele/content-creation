@@ -79,7 +79,7 @@ def _wait_for_dataset(ds_id: str, timeout: int = 900) -> None:
 
 
 def run_job(stage: str, units: list[dict], files: dict[str, Path], timeout: int = DEFAULT_TIMEOUT,
-            settings: dict | None = None) -> tuple[str, Path]:
+            settings: dict | None = None, gpu: bool = True) -> tuple[str, Path]:
     """Run one batch job. Returns (job_id, folder holding the downloaded results)."""
     user = username()
     kernel_src = ROOT / "kaggle" / stage
@@ -99,14 +99,17 @@ def run_job(stage: str, units: list[dict], files: dict[str, Path], timeout: int 
     kernel = work / "kernel"
     kernel.mkdir()
     shutil.copy2(kernel_src / "run.py", kernel / "run.py")
-    slug = f"heritage-{stage}"
+    slug = f"heritage-{stage}" + ("" if gpu else "-cpu")
     (kernel / "kernel-metadata.json").write_text(json.dumps({
         "id": f"{user}/{slug}", "title": slug, "code_file": "run.py", "language": "python",
-        "kernel_type": "script", "is_private": True, "enable_gpu": True, "enable_internet": True,
+        "kernel_type": "script", "is_private": True, "enable_gpu": gpu, "enable_internet": True,
         "dataset_sources": [ds_id], "competition_sources": [], "kernel_sources": [], "model_sources": [],
     }))
-    say(f"  kaggle: pushing {user}/{slug} on GPU T4 x2")
-    _cli("kernels", "push", "-p", str(kernel), "--accelerator", "NvidiaTeslaT4", "-t", str(timeout))
+    say(f"  kaggle: pushing {user}/{slug} on " + ("GPU T4 x2" if gpu else "CPU (no GPU queue)"))
+    push = ["kernels", "push", "-p", str(kernel), "-t", str(timeout)]
+    if gpu:
+        push[3:3] = ["--accelerator", "NvidiaTeslaT4"]
+    _cli(*push)
     job_id = f"{user}/{slug}@{time.strftime('%Y%m%dT%H%M%S')}"
 
     t0 = time.time()

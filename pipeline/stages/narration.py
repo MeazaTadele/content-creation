@@ -5,6 +5,7 @@ Voices that run on Kaggle (MMS, OmniVoice, CosyVoice2) are produced by the voice
 """
 from __future__ import annotations
 
+import os
 import shutil
 
 from .. import calls, kaggle, media, providers
@@ -102,7 +103,10 @@ def run_batch(ctx: Context, voices: list[str] | None = None) -> dict:
             files[name] = t["reference"]
             ju.update(reference=name, reference_text=t["reference_text"])
         job_units.append(ju)
-    job_id, res = kaggle.run_job("tts-open", job_units, files, timeout=3600)
+    # KAGGLE_TTS_DEVICE=cpu skips the GPU queue: the open voices are small (OmniVoice ~3 GB)
+    on_gpu = os.environ.get("KAGGLE_TTS_DEVICE", "gpu") != "cpu"
+    job_id, res = kaggle.run_job("tts-open", job_units, files, timeout=3600, gpu=on_gpu,
+                                 settings={"device": "cuda" if on_gpu else "cpu"})
     for t, ju in zip(todo, job_units):
         r = kaggle.read_result(res, ju["unit"])
         dst = out_path(STAGE, t["unit"], t["fp"], "wav")
