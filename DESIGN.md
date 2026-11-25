@@ -53,7 +53,26 @@ The same core questions are asked in both user tests, before I say what I intend
 
 ## User test 1: radio cut
 
-_Not run yet._
+**What was tested:** `outputs/final/radio_cut_9x16.mp4`, OmniVoice narrating all ten lines over
+placeholder music with English subtitles on black (about 100 s). Asked the three questions in
+`docs/user-tests/questionnaire.md`.
+
+| Who | How | What they said |
+|---|---|---|
+| Henok (brother) | Wed 25 Nov, evening | "Okay got it, the story is nice, but if the Amharic version matters, it doesn't feel natural. Maybe if you have the time and the means, the Amharic needs a lot of change (the English version is nice). On the story demo, if you develop the story (explain a little more) at the beginning a little it would be nice, on the place that says 'For me every holiday is the same.'" |
+| Yishak (friend) | Wed 25 Nov, evening | It sounds robotic, like someone reading off a script; it doesn't sound natural at all. |
+| Betty (friend) | — | _Waiting for a reply._ |
+
+**What I take from it so far:**
+
+- Both found the **Amharic narration unnatural**. Yishak described the voice as robotic, like
+  reading a script; Henok said the Amharic itself needs a lot of change, while the English reads well.
+- Henok understood the story and liked it, but wants **more at the beginning**, around shot 2
+  ("For me every holiday is the same"), to explain the situation before the turn.
+- Nobody mentioned being confused about the order of events.
+
+**What will change:** _to be decided once Betty replies; see below._
+
 
 ## User test 2: near-final cut
 
