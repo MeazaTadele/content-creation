@@ -75,7 +75,7 @@ def run_mms(units):
             save(u, model_id, t0, False, err=e)
 
 
-def run_omnivoice(units):
+def run_omnivoice(units, inp):
     model_id = "Lab-et/omnivoice-amharic"
     try:
         pip("omnivoice", "soundfile")
@@ -95,11 +95,19 @@ def run_omnivoice(units):
     except Exception as e:
         traceback.print_exc()
         return setup_failed(units, model_id, e)
+    prompts = {}
     for u in units:
         t0 = time.time()
         try:
             torch.manual_seed(u.get("seed", 0))
-            audio = model.generate(text=u["text"], language="Amharic", generation_config=cfg)
+            kw = {}
+            if u.get("reference"):
+                # follow one SYNTHETIC reference voice so every line has the same narrator
+                if u["reference"] not in prompts:
+                    prompts[u["reference"]] = model.create_voice_clone_prompt(
+                        ref_audio=os.path.join(inp, u["reference"]), ref_text=u.get("reference_text"))
+                kw["voice_clone_prompt"] = prompts[u["reference"]]
+            audio = model.generate(text=u["text"], language="Amharic", generation_config=cfg, **kw)
             save(u, model_id, t0, True, audio[0], 24000)
         except Exception as e:
             traceback.print_exc()
@@ -152,7 +160,7 @@ def main():
         if m == "mms":
             run_mms(by_model[m])
         elif m == "omnivoice":
-            run_omnivoice(by_model[m])
+            run_omnivoice(by_model[m], inp)
         else:
             run_cosyvoice2(by_model[m], inp)
 

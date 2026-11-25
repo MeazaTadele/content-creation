@@ -1,21 +1,66 @@
 {
   "schema_version": 1,
-  "title": "Heritage Short (placeholder)",
+  "title": "Easter Morning",
   "language": "am",
   "subtitle_language": "en",
-  "placeholder": true,
+  "placeholder": false,
   "style": {
     "block": "warm soft painted illustration, gentle morning light, visible brush texture, muted earthy palette, calm and tender mood",
     "negative": "text, letters, watermark, logo, photorealistic, harsh light"
   },
-  "characters": [],
+  "characters": [
+    {
+      "id": "girl",
+      "description": "a girl about twelve years old, East African, short natural hair, simple home clothes",
+      "reference_seed": 301,
+      "reference_candidates": 4,
+      "reference_use": null,
+      "consent": "ETHICS.md#consent"
+    },
+    {
+      "id": "mother",
+      "description": "an Ethiopian woman in her forties, kind face, wearing a white traditional dress and a white shawl with a woven border",
+      "reference_seed": 401,
+      "reference_candidates": 4,
+      "reference_use": null,
+      "consent": "ETHICS.md#consent"
+    },
+    {
+      "id": "father",
+      "description": "an Ethiopian man in his fifties, seen from behind or only his hands, simple holiday clothes",
+      "reference_seed": 501,
+      "reference_candidates": 2,
+      "reference_use": null,
+      "consent": "ETHICS.md#consent"
+    },
+    {
+      "id": "brother",
+      "description": "an Ethiopian teenage boy, seen from behind or only his hands, simple holiday clothes",
+      "reference_seed": 601,
+      "reference_candidates": 2,
+      "reference_use": null,
+      "consent": "ETHICS.md#consent"
+    }
+  ],
   "voice": {
     "compare": [
-      "placeholder"
+      "gemini",
+      "omnivoice",
+      "mms",
+      "elevenlabs"
     ],
-    "use": "placeholder",
-    "voice_names": {},
-    "style_instruction": "Read in Amharic, calm, warm and unhurried, like remembering a happy morning"
+    "use": "omnivoice",
+    "voice_names": {
+      "gemini": "Kore",
+      "elevenlabs": "EXAVITQu4vr4xnSDxMaL"
+    },
+    "style_instruction": "Read in Amharic, calm, warm and unhurried, like remembering a happy morning",
+    "references": {
+      "omnivoice": {
+        "audio": "outputs/voicebench/samples/omnivoice_1.wav",
+        "text": "ሰላም። ይህ የድምፅ ሙከራ ነው።"
+      }
+    }
   },
   "music": {
     "candidates": 3,
@@ -32,7 +77,7 @@
       },
       {
         "id": "morning",
-        "from_shot": "s04",
+        "from_shot": "s05",
         "caption": "warm, hopeful acoustic guitar and soft strings, gentle Ethiopian-inspired rhythm, tender and bright",
         "bpm": 76,
         "key": "C major",
@@ -52,153 +97,205 @@
   },
   "providers": {
     "script": "gemini",
-    "keyframes": "placeholder",
-    "shots": "none",
-    "music": "placeholder",
+    "keyframes": "cloudflare-flux",
+    "shots": "kaggle-wan22",
+    "music": "kaggle-acestep",
     "asr": []
   },
   "shots": [
     {
       "id": "s01",
-      "reason": "Establish where the story happens before any person appears",
+      "reason": "Opens on her, flat and unexcited. The viewer wonders why a holiday feels like nothing.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 1. The real story text is still being written; this line only tests timing."
+        "am": "ዛሬ ጠዋት ፋሲካ ነው። ከእንቅልፌ ነቃሁ። እዛው አልጋዬ ላይ ነኝ፣ ምክንያቱም ምንም የሚያጓጓ ቀን አይደለም።",
+        "en": "It's Easter morning. I'm awake, but I stay in bed. There's nothing to look forward to."
       },
       "image": {
-        "prompt": "a quiet home at dawn seen from outside, soft blue light, a single window glowing",
-        "characters": [],
+        "prompt": "A girl about twelve lies in bed, centred, eyes open. Soft morning light on the blanket.",
+        "characters": [
+          "girl"
+        ],
         "seed": 1001
       },
       "motion": {
-        "prompt": "slow push-in toward the window",
+        "prompt": "a curtain moves slightly",
         "seed": 2001
       },
       "transition": "cut"
     },
     {
       "id": "s02",
-      "reason": "Show the ordinary holidays before, to set up the contrast",
+      "reason": "Before: we meet the mother through her absence. The food stays, she goes.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 2. The real story text is still being written; this line only tests timing."
+        "am": "ለእኔ ሁሉም የበዓል ቀን አንድ ነው። እኛ ቤት፣ እናቴ ምግብ ሰርታልን ወደ ሥራ ትሄዳለች።",
+        "en": "For me, every holiday is the same. At our house, Mom makes the food and leaves for work."
       },
       "image": {
-        "prompt": "an empty chair beside a small table with a coffee pot, early morning",
+        "prompt": "Blue light before dawn. A covered pot sits on the table in the foreground, with the front door behind it.",
         "characters": [],
         "seed": 1002
       },
       "motion": {
-        "prompt": "camera holds still, steam rises slowly from the pot",
+        "prompt": "the door slowly closes",
         "seed": 2002
       },
       "transition": "cut"
     },
     {
       "id": "s03",
-      "reason": "Mark time passing across several holidays",
+      "reason": "Shows that a holiday without her is just a normal day with good food.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 3. The real story text is still being written; this line only tests timing."
+        "am": "እኔ፣ አባቴና ወንድሜ ብቻ ቤት እንውላለን። ከሌላው ቀን የሚለየው፣ ጥሩ ጥሩ ምግብ ስላለ ብቻ ነው።",
+        "en": "It's just me, my dad and my brother at home. The only thing that makes it different from any other day is the special food."
       },
       "image": {
-        "prompt": "a wall calendar beside a doorway, morning light moving across it",
-        "characters": [],
+        "prompt": "An ordinary living room on a holiday: a man and a boy, seen from behind, the TV glowing, covered dishes on the table, nothing festive.",
+        "characters": [
+          "father",
+          "brother"
+        ],
         "seed": 1003
       },
       "motion": {
-        "prompt": "light slowly shifts across the wall",
+        "prompt": "slow push-in on the dishes",
         "seed": 2003
       },
-      "transition": "crossfade"
+      "transition": "cut"
     },
     {
       "id": "s04",
-      "reason": "The turning point: something is different this morning",
+      "reason": "The hinge. We hear her before we see her, which holds the reveal.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 4. The real story text is still being written; this line only tests timing."
+        "am": "አልጋዬ ላይ እያለሁ፣ የእናቴን ድምፅ የሰማሁ መሰለኝ። ለማረጋገጥ ተነሳሁ።",
+        "en": "Lying in bed, I think I hear my mother's voice. I get up to check."
       },
       "image": {
-        "prompt": "a doorway with warm light spilling into a dark corridor",
-        "characters": [],
+        "prompt": "A girl's bare feet step onto the floor. Ahead, a half-open door with warm light and a thin haze beyond it.",
+        "characters": [
+          "girl"
+        ],
         "seed": 1004
       },
       "motion": {
-        "prompt": "slow push-in toward the warm light",
+        "prompt": "the feet step toward the door",
         "seed": 2004
       },
       "transition": "crossfade"
     },
     {
       "id": "s05",
-      "reason": "The moment of seeing that someone is home",
+      "reason": "THE TURN. It's the first time we see her.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 5. The real story text is still being written; this line only tests timing."
+        "am": "ወጥቼ ሳይ፣ እናቴ እቤት ናት። በርጩማ ላይ ቁጭ ብላ፣ ቡና እያፈላች ነው።",
+        "en": "I walk out, and my mother is home. Sitting on a little stool, making coffee."
       },
       "image": {
-        "prompt": "a kitchen with warm golden light and freshly prepared food on the table",
-        "characters": [],
+        "prompt": "A mother in her forties, centred, in a white traditional dress and shawl. She sits on a low stool by a charcoal stove with a clay coffee pot.",
+        "characters": [
+          "mother"
+        ],
         "seed": 1005
       },
       "motion": {
-        "prompt": "gentle pan across the table",
+        "prompt": "slow push-in, steam rising",
         "seed": 2005
       },
-      "transition": "cut"
+      "transition": "crossfade"
     },
     {
       "id": "s06",
-      "reason": "The celebration itself",
+      "reason": "The house has changed. Texture and smell, no faces.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 6. The real story text is still being written; this line only tests timing."
+        "am": "ወለሉ ላይ ለምለም ቄጤማ አለ። ዕጣን ከቡናው ጋር ይጨሳል።",
+        "en": "There's fresh green grass on the floor. Incense burns beside the coffee."
       },
       "image": {
-        "prompt": "a festive table with bread, coffee cups and a small bouquet, morning sun",
+        "prompt": "Low angle on a floor covered with long fresh grass. Incense smoke drifts through a sunbeam past the coffee tray.",
         "characters": [],
         "seed": 1006
       },
       "motion": {
-        "prompt": "slow orbit around the table",
+        "prompt": "smoke drifting",
         "seed": 2006
       },
       "transition": "cut"
     },
     {
       "id": "s07",
-      "reason": "The feeling of that day, held for a moment",
+      "reason": "The whole family is home and busy together.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 7. The real story text is still being written; this line only tests timing."
+        "am": "የበዓል ዘፈን ይሰማል። አባቴና ወንድሜ፣ በጉን እያዘጋጁ ነው።",
+        "en": "Holiday music is playing. My dad and brother are getting the lamb ready."
       },
       "image": {
-        "prompt": "sunlight through a curtain moving in a light breeze",
-        "characters": [],
+        "prompt": "A man's hands and a teenage boy's hands work side by side at a wooden board with onions and spices. No meat cutting or blood visible.",
+        "characters": [
+          "father",
+          "brother"
+        ],
         "seed": 1007
       },
       "motion": {
-        "prompt": "curtain moves gently, camera still",
+        "prompt": "slow sideways slide",
         "seed": 2007
+      },
+      "transition": "cut"
+    },
+    {
+      "id": "s08",
+      "reason": "Her joy, shown through her stillness.",
+      "narration": {
+        "am": "እናቴ እየቆላች ያለው ቡና እና ዕጣኑ፣ ቤቱን ሞልቶታል። በሩ ላይ ቆሜ ስመለከታቸው፣ ደስታዬ ወሰን የለውም።",
+        "en": "The coffee Mom is roasting and the incense fill the house. Standing in the doorway watching them, I've never been happier."
+      },
+      "image": {
+        "prompt": "From behind: the girl stands centred in a doorway. The room beyond is warm and hazy with roasting smoke.",
+        "characters": [
+          "girl"
+        ],
+        "seed": 1008
+      },
+      "motion": {
+        "prompt": "smoke drifts across her",
+        "seed": 2008
+      },
+      "transition": "cut"
+    },
+    {
+      "id": "s09",
+      "reason": "The celebration at its fullest: everyone is there.",
+      "narration": {
+        "am": "ይሄ፣ ከእናቴ ጋር ያሳለፍኩት የማስታውሰው የመጀመሪያ በዓል ነው። እስካሁን ድረስ፣ በሕይወቴ በጣም ደስተኛ የሆንኩበት ቀን ነው።",
+        "en": "This is the first holiday I remember spending with my mother. To this day, it's the happiest day of my life."
+      },
+      "image": {
+        "prompt": "The mother's hands pour coffee from the clay pot into small cups. Four hands reach in and each takes a cup.",
+        "characters": [
+          "mother"
+        ],
+        "seed": 1009
+      },
+      "motion": {
+        "prompt": "steam rising",
+        "seed": 2009
       },
       "transition": "crossfade"
     },
     {
-      "id": "s08",
-      "reason": "Closing image that invites viewers to think of their own families",
+      "id": "s10",
+      "reason": "The meaning, said by you now. It's what Betty, Yishak and Henok take home to their own holidays.",
       "narration": {
-        "am": "ይህ የሙከራ ዓረፍተ ነገር ነው። ታሪኩ ገና አልተጻፈም። ይህ ጽሑፍ የድምፅ ርዝመትን እና የምስል ጊዜን ለመፈተሽ ብቻ ነው።",
-        "en": "Placeholder narration for shot 8. The real story text is still being written; this line only tests timing."
+        "am": "ከምንም ነገር በላይ፣ አብሮ መገኘት ዋጋ አለው።",
+        "en": "More than anything, showing up matters."
       },
       "image": {
-        "prompt": "an open door to a bright morning street, warm light",
+        "prompt": "Wide shot of the full living room: grass, cups, incense, warm light, the family soft in the background.",
         "characters": [],
-        "seed": 1008
+        "seed": 1010
       },
       "motion": {
-        "prompt": "slow pull-back from the open door",
-        "seed": 2008
+        "prompt": "slow pull-back; hold a few seconds after the voice ends",
+        "seed": 2010
       },
       "transition": "cut"
     }

@@ -43,6 +43,7 @@ def test_semantic_check_unknown_character():
 def test_placeholder_providers_need_placeholder_flag():
     sb = copy.deepcopy(SB)
     sb["placeholder"] = False
+    sb["providers"]["keyframes"] = "placeholder"
     with pytest.raises(contract.ContractError, match="placeholder"):
         contract.validate(sb)
 

@@ -10,6 +10,7 @@ import shutil
 from .. import calls, kaggle, media, providers
 from ..calls import log_job_unit
 from ..fingerprint import fingerprint
+from ..config import ROOT
 from .base import Context, Unit, check_stage_version, execute, out_path, rel, say
 
 STAGE = "narration"
@@ -67,14 +68,18 @@ def batch_units(ctx: Context, voices: list[str] | None = None) -> list[dict]:
         prov = providers.tts(v)
         if not getattr(prov, "batch", False):
             continue
+        ref = sb["voice"].get("references", {}).get(v)
+        ref_path = (ROOT / ref["audio"]) if ref else None
         for shot in sb["shots"]:
             text = shot["narration"]["am"]
-            fp = fingerprint(STAGE, STAGE_VERSION, {"text": text, "provider": v, "model": prov.model, "seed": 7})
+            fp = fingerprint(STAGE, STAGE_VERSION, {"text": text, "provider": v, "model": prov.model, "seed": 7,
+                                                     "reference": ref_path, "reference_text": ref and ref["text"]})
             unit = f"{v}/{shot['id']}"
             if ctx.manifest.is_fresh(STAGE, unit, fp):
                 say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
                 continue
-            out.append({"voice": v, "shot": shot["id"], "unit": unit, "fp": fp, "text": text, "model": prov.model})
+            out.append({"voice": v, "shot": shot["id"], "unit": unit, "fp": fp, "text": text, "model": prov.model,
+                        "reference": ref_path, "reference_text": ref and ref["text"]})
     return out
 
 
@@ -88,9 +93,16 @@ def run_batch(ctx: Context, voices: list[str] | None = None) -> dict:
             say(f"  would run  {STAGE}/{t['unit']}  ({t['voice']} on Kaggle)")
         stats["generated"] = len(todo)
         return stats
-    job_units = [{"unit": f"{t['voice']}_{t['shot']}", "model": t["voice"], "text": t["text"], "seed": 7,
-                  "fingerprint": t["fp"]} for t in todo]
-    job_id, res = kaggle.run_job("tts-open", job_units, {}, timeout=3600)
+    files, job_units = {}, []
+    for t in todo:
+        ju = {"unit": f"{t['voice']}_{t['shot']}", "model": t["voice"], "text": t["text"], "seed": 7,
+              "fingerprint": t["fp"]}
+        if t["reference"]:
+            name = f"reference_{t['voice']}.wav"
+            files[name] = t["reference"]
+            ju.update(reference=name, reference_text=t["reference_text"])
+        job_units.append(ju)
+    job_id, res = kaggle.run_job("tts-open", job_units, files, timeout=3600)
     for t, ju in zip(todo, job_units):
         r = kaggle.read_result(res, ju["unit"])
         dst = out_path(STAGE, t["unit"], t["fp"], "wav")
