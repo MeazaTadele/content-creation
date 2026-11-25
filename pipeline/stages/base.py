@@ -50,8 +50,9 @@ def say(msg: str) -> None:
     print(msg, file=sys.stderr, flush=True)
 
 
-def execute(ctx: Context, units: list[Unit]) -> dict:
-    """Run every unit whose fingerprint is not already in the manifest. Returns counts."""
+def execute(ctx: Context, units: list[Unit], keep_going: bool = False) -> dict:
+    """Run every unit whose fingerprint is not already in the manifest. Returns counts.
+    keep_going: a unit that fails is reported and skipped, and the others still run."""
     stats = {"cached": 0, "generated": 0, "failed": 0}
     for u in units:
         if ctx.manifest.is_fresh(u.stage, u.unit, u.fingerprint):
@@ -68,10 +69,13 @@ def execute(ctx: Context, units: list[Unit]) -> dict:
         try:
             extra = u.run(tmp, ctx.tmp_dir) or {}
             atomic.commit(tmp, u.output)
-        except Exception:
+        except Exception as e:
             tmp.unlink(missing_ok=True)
             stats["failed"] += 1
-            raise
+            if not keep_going:
+                raise
+            say(f"  FAILED     {u.stage}/{u.unit}: {str(e)[:160]}")
+            continue
         ctx.manifest.put(u.stage, u.unit, {
             "fingerprint": u.fingerprint, "output": rel(u.output), "status": "generated",
             "provider": u.provider, "model": u.model, "seconds": round(time.monotonic() - t0, 2),

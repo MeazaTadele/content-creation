@@ -11,14 +11,23 @@ from . import refsheet
 from .base import Context, Unit, check_stage_version, execute, out_path, rel, say
 
 STAGE = "keyframes"
-STAGE_VERSION = 1
+STAGE_VERSION = 2  # 2: scene-first prompt, no character-sheet layout (F12)
 SIZES = {"9x16": (768, 1344), "16x9": (1344, 768)}
 
 
+SCENE = ("One single full-frame illustrated scene from a film, with a real setting filling the whole frame. "
+         "Not a character sheet: no plain background, no inset portraits, no multiple views of the same person")
+
+
 def full_prompt(sb: dict, shot: dict) -> str:
+    """The scene comes first; the reference images only say what the people look like (FAILURES.md F12)."""
     chars = {c["id"]: c for c in sb["characters"]}
-    who = " ".join(chars[c]["description"] for c in shot["image"].get("characters", []) if c in chars)
-    parts = [shot["image"]["prompt"], who, sb["style"]["block"]]
+    ids = [c for c in shot["image"].get("characters", []) if c in chars]
+    who = ""
+    if ids:
+        who = ("The people look like the reference images (same face and clothes), placed into this scene: "
+               + "; ".join(chars[c]["description"] for c in ids))
+    parts = [SCENE, shot["image"]["prompt"], who, sb["style"]["block"]]
     return ". ".join(p.strip().rstrip(".") for p in parts if p and p.strip())
 
 
@@ -67,4 +76,5 @@ def path(ctx: Context, shot_id: str, ratio: str):
 
 def run(ctx: Context) -> dict:
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
-    return execute(ctx, units(ctx))
+    # one image blocked by the provider's safety filter must not stop the other shots (FAILURES.md F10)
+    return execute(ctx, units(ctx), keep_going=True)
