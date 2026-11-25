@@ -19,6 +19,7 @@ at the bottom of each section.
 
 | # | Decision | Options considered | Chosen | Date |
 |---|---|---|---|---|
+| 6 | Commit author | Claude as author; me as author with Claude as co-author | Me as author, Claude credited as co-author in every commit message (from Wed 25 Nov; earlier commits stay as they were) | Wed 25 Nov |
 | 13 | Coding agent | Claude Code; Antigravity CLI; OpenCode; a mix | Claude Code writes most of the code under my direction | Tue 24 Nov |
 | 3 | Code language | Python; Node/TypeScript | Python | Wed 25 Nov |
 | 16 | GPU platform | Kaggle; Colab | Kaggle | Wed 25 Nov |
