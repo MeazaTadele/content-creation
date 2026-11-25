@@ -61,7 +61,7 @@ placeholder music with English subtitles on black (about 100 s). Asked the three
 |---|---|---|
 | Henok (brother) | Wed 25 Nov, evening | "Okay got it, the story is nice, but if the Amharic version matters, it doesn't feel natural. Maybe if you have the time and the means, the Amharic needs a lot of change (the English version is nice). On the story demo, if you develop the story (explain a little more) at the beginning a little it would be nice, on the place that says 'For me every holiday is the same.'" |
 | Yishak (friend) | Wed 25 Nov, evening | It sounds robotic, like someone reading off a script; it doesn't sound natural at all. |
-| Betty (friend) | — | _Waiting for a reply._ |
+| Betty (friend) | Wed 25 Nov, evening | Same as Yishak: it sounds like someone reading from a script. The transcript could be a little better, with better storytelling, and there are a lot of noticeable pauses. |
 
 **What I take from it so far:**
 
@@ -69,7 +69,10 @@ placeholder music with English subtitles on black (about 100 s). Asked the three
   reading a script; Henok said the Amharic itself needs a lot of change, while the English reads well.
 - Henok understood the story and liked it, but wants **more at the beginning**, around shot 2
   ("For me every holiday is the same"), to explain the situation before the turn.
-- Nobody mentioned being confused about the order of events.
+- Betty agreed about the script-like reading, asked for **better storytelling in the text**, and
+  noticed **a lot of pauses**.
+- All three understood the order of events; nobody was confused about what happened.
+- **All three** heard the narration as unnatural. That is the clearest finding of this test.
 
 **What will change:** _to be decided once Betty replies; see below._
 
