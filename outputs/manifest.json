@@ -1,0 +1,19 @@
+{
+  "units": {},
+  "stage_versions": {},
+  "stage_sources": {
+    "narration": {
+      "version": 1,
+      "sha": "73c9e91500dcb9073d495d836f161c43a2db4caeb821caab5dda825c2e58b206"
+    },
+    "refsheet": {
+      "version": 1,
+      "sha": "2232cb5caf18a01ddfa4c8199f760580a30c176acc65fd51ce90461bb4082e2a"
+    },
+    "keyframes": {
+      "version": 1,
+      "sha": "aa44275cf2e4ff40659b6bcc8da5f0e615faff4980bb67c656d3e64735efb742"
+    }
+  },
+  "measured": {}
+}
