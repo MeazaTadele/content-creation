@@ -79,7 +79,7 @@ def _wait_for_dataset(ds_id: str, timeout: int = 900) -> None:
 
 
 def run_job(stage: str, units: list[dict], files: dict[str, Path], timeout: int = DEFAULT_TIMEOUT,
-            settings: dict | None = None, gpu: bool = True) -> tuple[str, Path]:
+            settings: dict | None = None, gpu: bool = True, slug: str | None = None) -> tuple[str, Path]:
     """Run one batch job. Returns (job_id, folder holding the downloaded results)."""
     user = username()
     kernel_src = ROOT / "kaggle" / stage
@@ -99,7 +99,7 @@ def run_job(stage: str, units: list[dict], files: dict[str, Path], timeout: int 
     kernel = work / "kernel"
     kernel.mkdir()
     shutil.copy2(kernel_src / "run.py", kernel / "run.py")
-    slug = f"heritage-{stage}" + ("" if gpu else "-cpu")
+    slug = slug or (f"heritage-{stage}" + ("" if gpu else "-cpu"))
     (kernel / "kernel-metadata.json").write_text(json.dumps({
         "id": f"{user}/{slug}", "title": slug, "code_file": "run.py", "language": "python",
         "kernel_type": "script", "is_private": True, "enable_gpu": gpu, "enable_internet": True,
