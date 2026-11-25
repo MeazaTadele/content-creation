@@ -14,8 +14,9 @@
       "description": "a tall, slim Ethiopian girl of twelve on the edge of her teens, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm brown skin, tightly curled black hair pulled back in short braids, simple cotton home clothes",
       "reference_seed": 451,
       "reference_candidates": 4,
-      "reference_use": 3,
-      "consent": "ETHICS.md#consent"
+      "reference_use": null,
+      "consent": "ETHICS.md#consent",
+      "reference_image": "references/girl_final.png"
     },
     {
       "id": "mother",
@@ -24,7 +25,8 @@
       "reference_candidates": 2,
       "reference_use": null,
       "consent": "ETHICS.md#consent",
-      "edit_from": "references/mother_pick_v7.png"
+      "edit_from": "references/mother_pick_v7.png",
+      "reference_image": "references/mother_final.png"
     },
     {
       "id": "father",
@@ -33,7 +35,8 @@
       "reference_candidates": 2,
       "reference_use": null,
       "consent": "ETHICS.md#consent",
-      "edit_from": "references/father_pick_v7.png"
+      "edit_from": "references/father_pick_v7.png",
+      "reference_image": "references/father_final.png"
     },
     {
       "id": "brother",
@@ -42,7 +45,8 @@
       "reference_candidates": 2,
       "reference_use": null,
       "consent": "ETHICS.md#consent",
-      "edit_from": "references/brother_pick_v7.png"
+      "edit_from": "references/brother_pick_v7.png",
+      "reference_image": "references/brother_final.png"
     }
   ],
   "voice": {

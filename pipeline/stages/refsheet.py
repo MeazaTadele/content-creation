@@ -28,6 +28,8 @@ def units(ctx: Context) -> list[Unit]:
     prov = providers.image(sb["providers"]["keyframes"])
     out = []
     for ch in sb["characters"]:
+        if ch.get("reference_image"):
+            continue  # locked: the chosen image is used as is
         refs = [ROOT / ch["edit_from"]] if ch.get("edit_from") else []
         n = ch.get("reference_candidates", 4)
         base_seed = ch.get("reference_seed", 1000)
@@ -61,11 +63,12 @@ def units(ctx: Context) -> list[Unit]:
 def chosen(ctx: Context, char_id: str):
     """Path of the reference image the author chose for a character, or None if not chosen yet."""
     ch = next(c for c in ctx.sb["characters"] if c["id"] == char_id)
+    if ch.get("reference_image"):
+        return ROOT / ch["reference_image"]
     k = ch.get("reference_use")
     if k is None:
         return None
     e = ctx.manifest.get(STAGE, f"{char_id}/{k}")
-    from ..config import ROOT
     return (ROOT / e["output"]) if e else None
 
 

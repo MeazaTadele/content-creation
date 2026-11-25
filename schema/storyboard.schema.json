@@ -100,6 +100,10 @@
           "edit_from": {
             "type": "string",
             "description": "An AI-generated image (repo path) the new candidates are edited from, keeping the same face; never a photo of a real person."
+          },
+          "reference_image": {
+            "type": "string",
+            "description": "The locked, chosen reference image (repo path). When set, no new candidates are generated and keyframes use this image."
           }
         }
       }
