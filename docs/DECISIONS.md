@@ -29,6 +29,7 @@ at the bottom of each section.
 | 24 | Voice benchmark order | all five now; phased; fewer | Gemini, ElevenLabs and MMS first; OmniVoice and CosyVoice2 after the film works (suggested, adopted) | Wed 25 Nov |
 | 18 | How voices are judged | my ear; blind listening by testers; speech-recognition check | All three, plus latency and cost | Tue 24 Nov |
 | 25 | How the three checks are weighed | equal; blind listening decides; my ear decides | Blind listening decides; speech recognition and my ear support it (suggested, adopted). Speech recognition for Amharic is itself unreliable | Wed 25 Nov |
+| 25b | The film's voice (update to 25) | blind test by testers; my choice | OmniVoice, chosen by me after user test 1 (Wed 25 Nov): all three testers commented on how natural the narration sounded rather than on which voice, and I did not like Gemini's Amharic pronunciation in the samples. The blind test was dropped to save the testers' time | Wed 25 Nov |
 | 12 | Reuse an earlier project of mine | fork it; borrow ideas only; use it as a front end later | Borrow ideas only; no code reused | Wed 25 Nov |
 
 ## Pipeline design
