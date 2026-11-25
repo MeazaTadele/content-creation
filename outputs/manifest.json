@@ -321,32 +321,32 @@
       "candidate": 3
     },
     "refsheet/mother/0": {
-      "fingerprint": "1766b08cc2da3d661ce3998738ca172a98add6d789dd1d25841217d2739dd1ef",
-      "output": "outputs/refsheet/mother/0__1766b08c.png",
+      "fingerprint": "704c7069ac871e36483f16cb127d5db17c81d96e7628cd6bc6110f67625ae37e",
+      "output": "outputs/refsheet/mother/0__704c7069.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 11.03,
+      "seconds": 5.19,
       "character": "mother",
       "candidate": 0
     },
     "refsheet/mother/1": {
-      "fingerprint": "8367043ccab0b2335179099f8238312aadd945544477078f69e11e37c7da4b0a",
-      "output": "outputs/refsheet/mother/1__8367043c.png",
+      "fingerprint": "4337fa4b8d493b03d12183e05692766fcfadc0042b94ae6adb7c5a5f1bbedbdb",
+      "output": "outputs/refsheet/mother/1__4337fa4b.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 12.93,
+      "seconds": 5.87,
       "character": "mother",
       "candidate": 1
     },
     "refsheet/mother/2": {
-      "fingerprint": "67ef90f4ff5b1fd7b56eedd8ad4213481223a0dd5fc32d5bb4606e69ca54fd99",
-      "output": "outputs/refsheet/mother/2__67ef90f4.png",
+      "fingerprint": "67cef34db99c29214c32707b47466b585d8798f509d674666594e0bca97c1066",
+      "output": "outputs/refsheet/mother/2__67cef34d.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 8.24,
+      "seconds": 6.23,
       "character": "mother",
       "candidate": 2
     },
@@ -731,7 +731,7 @@
     },
     "refsheet": {
       "version": 1,
-      "sha": "2232cb5caf18a01ddfa4c8199f760580a30c176acc65fd51ce90461bb4082e2a"
+      "sha": "90dc5d5c21855adac3db15f64b30740b3c9ddce619bd9b34ede4da205ba38b4b"
     },
     "keyframes": {
       "version": 1,
@@ -744,6 +744,10 @@
     "assemble": {
       "version": 2,
       "sha": "20c620b6e13db99b31c93302bd96f5e08b127d36f135ea070b6d25576a6e0a21"
+    },
+    "shots": {
+      "version": 2,
+      "sha": "36ebe1d7f9a006caa8db4ec0bcfd7cccf9e9e8278c2a5ffd59376c687a670048"
     }
   },
   "measured": {

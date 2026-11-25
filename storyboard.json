@@ -14,23 +14,24 @@
       "description": "a tall, slim Ethiopian girl of twelve on the edge of her teens, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm brown skin, tightly curled black hair pulled back in short braids, simple cotton home clothes",
       "reference_seed": 451,
       "reference_candidates": 4,
-      "reference_use": null,
+      "reference_use": 3,
       "consent": "ETHICS.md#consent"
     },
     {
       "id": "mother",
-      "description": "a slim Ethiopian woman in her forties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, gentle eyes, a calm closed-mouth smile, no headscarf, tightly curled dark hair pulled back neatly; wearing a long white handwoven habesha kemis with long sleeves and a V neckline, a wide vertical tibeb panel down the front woven in dark navy with small yellow, red and blue diamond and chevron patterns, black cross motifs on the shoulders and chest, embroidered cuffs, black leaf motifs on the skirt, a white sash tied at the waist, and a white netela draped over the shoulders with wide blue and maroon striped fringed borders",
-      "reference_seed": 601,
-      "reference_candidates": 4,
+      "description": "the same woman as in the reference image, same face and hairstyle, now dressed in exactly this traditional outfit with no other additions: a long white handwoven cotton habesha kemis with long sleeves and a V neckline; one wide vertical tibeb panel down the centre from neckline to hem, dark navy and black with small yellow, red, blue and green chevron and diamond patterns; black cross motifs on the shoulders and upper chest; embroidered black and white cuffs; black leaf motifs on the skirt on both sides of the panel; a plain white cloth sash tied at the waist; and a white netela with wide blue and maroon striped fringed ends draped over both shoulders and hanging down the front",
+      "reference_seed": 711,
+      "reference_candidates": 3,
       "reference_use": null,
-      "consent": "ETHICS.md#consent"
+      "consent": "ETHICS.md#consent",
+      "edit_from": "references/mother_base.png"
     },
     {
       "id": "father",
       "description": "a slim Ethiopian man in his fifties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm brown skin, bald on top with short grey hair at the sides, short grey beard, wearing a dark collared shirt and a houndstooth jacket",
       "reference_seed": 651,
       "reference_candidates": 2,
-      "reference_use": null,
+      "reference_use": 0,
       "consent": "ETHICS.md#consent"
     },
     {
@@ -38,7 +39,7 @@
       "description": "a slim Ethiopian young man of about nineteen, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, short tightly curled black hair with a neat high fade, a full short black beard, wearing a blue plaid shirt over a dark t-shirt",
       "reference_seed": 801,
       "reference_candidates": 2,
-      "reference_use": null,
+      "reference_use": 0,
       "consent": "ETHICS.md#consent"
     }
   ],

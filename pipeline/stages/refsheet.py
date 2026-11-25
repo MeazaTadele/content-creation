@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from .. import calls, providers
 from ..fingerprint import fingerprint
+from ..config import ROOT
 from .base import Context, Unit, check_stage_version, execute, out_path, rel
 
 STAGE = "refsheet"
@@ -15,6 +16,9 @@ SIZE = (768, 1024)
 
 
 def prompt_for(sb: dict, ch: dict) -> str:
+    if ch.get("edit_from"):
+        return (f"Edit the reference image: {ch['description']}. Keep the pose, framing, background and painting style; "
+                f"change nothing else. {sb['style']['block']}")
     return (f"Character reference sheet, full body front view and a head-and-shoulders close-up, "
             f"plain background. {ch['description']}. {sb['style']['block']}")
 
@@ -24,23 +28,26 @@ def units(ctx: Context) -> list[Unit]:
     prov = providers.image(sb["providers"]["keyframes"])
     out = []
     for ch in sb["characters"]:
+        refs = [ROOT / ch["edit_from"]] if ch.get("edit_from") else []
         n = ch.get("reference_candidates", 4)
         base_seed = ch.get("reference_seed", 1000)
         for k in range(n):
             seed = base_seed + k
             prompt = prompt_for(sb, ch)
-            fp = fingerprint(STAGE, STAGE_VERSION, {"prompt": prompt, "negative": sb["style"].get("negative"),
-                                                     "seed": seed, "size": SIZE, "provider": prov.name,
-                                                     "model": prov.model})
+            inputs = {"prompt": prompt, "negative": sb["style"].get("negative"), "seed": seed, "size": SIZE,
+                      "provider": prov.name, "model": prov.model}
+            if refs:  # only edited candidates depend on an input image; leave every other fingerprint unchanged
+                inputs["refs"] = refs
+            fp = fingerprint(STAGE, STAGE_VERSION, inputs)
             unit = f"{ch['id']}/{k}"
             dst = out_path(STAGE, unit, fp, "png")
 
-            def run(tmp, tmp_dir, prompt=prompt, seed=seed, unit=unit, fp=fp, dst=dst):
-                gen = lambda: prov.generate(prompt, sb["style"].get("negative"), seed, *SIZE, [], tmp, tmp_dir)
+            def run(tmp, tmp_dir, prompt=prompt, seed=seed, unit=unit, fp=fp, dst=dst, refs=refs):
+                gen = lambda: prov.generate(prompt, sb["style"].get("negative"), seed, *SIZE, refs, tmp, tmp_dir)
                 if prov.is_model:
                     prov.check_ready()
                     calls.call_model(stage=STAGE, unit=unit, provider=prov.name, model=prov.model,
-                                     params={"size": SIZE}, seed=seed, fn=gen, fingerprint=fp,
+                                     params={"size": SIZE, "refs": len(refs)}, seed=seed, fn=gen, fingerprint=fp,
                                      output=rel(dst), price=prov.price)
                 else:
                     gen()
