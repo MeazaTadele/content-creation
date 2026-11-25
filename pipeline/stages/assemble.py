@@ -197,9 +197,10 @@ def music_inputs(ctx: Context, timeline: dict, placeholder: bool) -> list[dict]:
 def soundtrack_unit(ctx: Context, timeline: dict, music_items: list[dict], name: str) -> Unit:
     narr = narration_inputs(ctx, timeline)
     total = timeline["total_seconds"]
+    tempo = ctx.sb["voice"].get("tempo", 1.0)
     fp = fingerprint(STAGE, STAGE_VERSION, {
         "part": "soundtrack", "narration": [{**n, "path": n["path"]} for n in narr],
-        "music": [{**m, "path": m["path"]} for m in music_items], "total": total, "duck": DUCK,
+        "music": [{**m, "path": m["path"]} for m in music_items], "total": total, "duck": DUCK, "tempo": tempo,
         "targets": [NARRATION_STEM_LUFS, MUSIC_STEM_LUFS, TARGET_LUFS, TARGET_TP]})
     unit = f"sound/{name}"
     dst = out_path(STAGE, unit, fp, "wav")
@@ -211,7 +212,8 @@ def soundtrack_unit(ctx: Context, timeline: dict, music_items: list[dict], name:
         for i, n in enumerate(narr):
             args += ["-i", str(n["path"])]
             a, b = n["trim"]
-            parts.append(f"[{i}:a]atrim=start={a}:end={b},asetpts=PTS-STARTPTS,"
+            stretch = f"atempo={tempo}," if tempo != 1.0 else ""
+            parts.append(f"[{i}:a]atrim=start={a}:end={b},asetpts=PTS-STARTPTS,{stretch}"
                          f"adelay={int(n['at'] * 1000)}:all=1[n{i}]")
         mix = "".join(f"[n{i}]" for i in range(len(narr)))
         parts.append(f"{mix}amix=inputs={len(narr)}:normalize=0,apad=whole_dur={total:.3f}[out]")

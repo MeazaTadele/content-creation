@@ -401,144 +401,144 @@
       "candidate": 1
     },
     "narration/omnivoice/s01": {
-      "fingerprint": "96156d3383f62717c95f37143d8482c4dbcdedf0bd1eef5f6dd740f8b4c3f382",
-      "output": "outputs/narration/omnivoice/s01__96156d33.wav",
+      "fingerprint": "0734af1a0cee33dbb5614f34afa69f763ba9e00e8f8a80c5a6cbf838bbe5ede1",
+      "output": "outputs/narration/omnivoice/s01__0734af1a.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 3.36,
-      "speech_start": 0.192,
-      "speech_end": 5.029,
-      "file_seconds": 5.24,
-      "speech_seconds": 4.837,
+      "speech_start": 0.553,
+      "speech_end": 4.272,
+      "file_seconds": 4.67,
+      "speech_seconds": 3.719,
       "voice": "omnivoice",
-      "shot": "s01"
+      "shot": "s01",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s02": {
-      "fingerprint": "909fee55ca0053e44a5e3ae751ebdcb01423011bcde67f93013ed2c2cbf78435",
-      "output": "outputs/narration/omnivoice/s02__909fee55.wav",
+      "fingerprint": "bfcbd793beb0ded9d8f6cc66043f58c4f7987ec877aa99e0a605f024d525a2ac",
+      "output": "outputs/narration/omnivoice/s02__bfcbd793.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 2.83,
-      "speech_start": 0.353,
-      "speech_end": 6.465,
-      "file_seconds": 6.67,
-      "speech_seconds": 6.112,
+      "speech_start": 0.475,
+      "speech_end": 5.75,
+      "file_seconds": 6.28,
+      "speech_seconds": 5.275,
       "voice": "omnivoice",
-      "shot": "s02"
+      "shot": "s02",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s03": {
-      "fingerprint": "981401a53a4271af0e5db511ddf5bb0ea4f1fb59b592d63005821f56a4fd2e40",
-      "output": "outputs/narration/omnivoice/s03__981401a5.wav",
+      "fingerprint": "437231cce51546f3ed1b97dd27126a7beccef3af3a9e5eedad7ebbfe86917ec1",
+      "output": "outputs/narration/omnivoice/s03__437231cc.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 2.66,
-      "speech_start": 0.12,
-      "speech_end": 5.673,
-      "file_seconds": 5.88,
-      "speech_seconds": 5.553,
+      "speech_start": 0.493,
+      "speech_end": 5.491,
+      "file_seconds": 5.68,
+      "speech_seconds": 4.998,
       "voice": "omnivoice",
-      "shot": "s03"
+      "shot": "s03",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s04": {
-      "fingerprint": "4309f200ac57eceed8391852ed20f3131ec42dd84a8b468a23da8149f1f19bb1",
-      "output": "outputs/narration/omnivoice/s04__4309f200.wav",
+      "fingerprint": "b2a79ab44fdb587f8f6e969185f6512715b23d978f6de72212e3bd88adb02b2c",
+      "output": "outputs/narration/omnivoice/s04__b2a79ab4.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 2.96,
-      "speech_start": 0.306,
-      "speech_end": 6.975,
-      "file_seconds": 7.19,
-      "speech_seconds": 6.669,
+      "speech_start": 0.673,
+      "speech_end": 6.131,
+      "file_seconds": 6.78,
+      "speech_seconds": 5.458,
       "voice": "omnivoice",
-      "shot": "s04"
+      "shot": "s04",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s05": {
-      "fingerprint": "c3b1f1c4fe8540a695362d9a3b1a38349c86207a77a386c5ecdbbe6bedfcac8a",
-      "output": "outputs/narration/omnivoice/s05__c3b1f1c4.wav",
+      "fingerprint": "6e23be6f78994de3c8425c679bf1d5db6bec892d4a1226010866d58a7ff95a2c",
+      "output": "outputs/narration/omnivoice/s05__6e23be6f.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 1.97,
-      "speech_start": 0.134,
-      "speech_end": 2.279,
-      "file_seconds": 2.49,
-      "speech_seconds": 2.145,
+      "speech_start": 0.246,
+      "speech_end": 2.008,
+      "file_seconds": 2.52,
+      "speech_seconds": 1.762,
       "voice": "omnivoice",
-      "shot": "s05"
+      "shot": "s05",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s06": {
-      "fingerprint": "c1fae83342878a4383dffd54732342337a04f04f00b45069aeaeb2efa80cf11f",
-      "output": "outputs/narration/omnivoice/s06__c1fae833.wav",
+      "fingerprint": "4e43460eacdab3921bbc68c0871607fdcf9ae18ef1a0ca799d7027eb62ceb8e0",
+      "output": "outputs/narration/omnivoice/s06__4e43460e.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 2.06,
-      "speech_start": 0.189,
-      "speech_end": 2.838,
-      "file_seconds": 3.07,
-      "speech_seconds": 2.649,
+      "speech_start": 0.202,
+      "speech_end": 2.591,
+      "file_seconds": 3.0,
+      "speech_seconds": 2.389,
       "voice": "omnivoice",
-      "shot": "s06"
+      "shot": "s06",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s07": {
-      "fingerprint": "dc68ab87a8140a94fea4fdc5bde80545a099e5cd21bc321aad5736c7727a24df",
-      "output": "outputs/narration/omnivoice/s07__dc68ab87.wav",
+      "fingerprint": "2f92d5b31c61de3d077ba9ed67676b5c3182b5b3af7eb736f7964cdbc194c53a",
+      "output": "outputs/narration/omnivoice/s07__2f92d5b3.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 2.95,
-      "speech_start": 0.121,
-      "speech_end": 6.66,
-      "file_seconds": 6.87,
-      "speech_seconds": 6.539,
+      "speech_start": 0.175,
+      "speech_end": 5.785,
+      "file_seconds": 6.72,
+      "speech_seconds": 5.61,
       "voice": "omnivoice",
-      "shot": "s07"
+      "shot": "s07",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s08": {
-      "fingerprint": "e28e9f81dee6be9644d435c1666242fb168cc6c22d5f554d04ce355429bf21a0",
-      "output": "outputs/narration/omnivoice/s08__e28e9f81.wav",
+      "fingerprint": "3c5b9512a1b7456163db90991988d164423b4fb71388765995464896f6520dbd",
+      "output": "outputs/narration/omnivoice/s08__3c5b9512.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 1.68,
-      "speech_start": 0.251,
-      "speech_end": 1.7,
-      "file_seconds": 1.88,
-      "speech_seconds": 1.449,
+      "speech_start": 0.423,
+      "speech_end": 1.524,
+      "file_seconds": 2.04,
+      "speech_seconds": 1.101,
       "voice": "omnivoice",
-      "shot": "s08"
+      "shot": "s08",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s09": {
-      "fingerprint": "6a91da8ee1970c6c54d72a142eca803977fc45b29ea844077a2ed2e0c51a809f",
-      "output": "outputs/narration/omnivoice/s09__6a91da8e.wav",
+      "fingerprint": "a6665e2176fc11ff12b17dfdad8d368d94d7afb914fc0fa065edfa5b00b133e2",
+      "output": "outputs/narration/omnivoice/s09__a6665e21.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 3.19,
-      "speech_start": 0.189,
-      "speech_end": 7.664,
-      "file_seconds": 7.89,
-      "speech_seconds": 7.475,
+      "speech_start": 0.625,
+      "speech_end": 6.49,
+      "file_seconds": 6.97,
+      "speech_seconds": 5.865,
       "voice": "omnivoice",
-      "shot": "s09"
+      "shot": "s09",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/omnivoice/s10": {
-      "fingerprint": "e44c374e3585e66504970f86026f176ee3a690f6113a049d9e769cf30da42f12",
-      "output": "outputs/narration/omnivoice/s10__e44c374e.wav",
+      "fingerprint": "5957bc14c2656113cf755b3f2d0bd15f90d4a4910eab77935185f7fa105a192e",
+      "output": "outputs/narration/omnivoice/s10__5957bc14.wav",
       "status": "generated",
       "provider": "omnivoice",
       "model": "Lab-et/omnivoice-amharic",
-      "seconds": 2.18,
-      "speech_start": 0.127,
-      "speech_end": 3.277,
-      "file_seconds": 3.48,
-      "speech_seconds": 3.15,
+      "speech_start": 0.549,
+      "speech_end": 2.843,
+      "file_seconds": 3.64,
+      "speech_seconds": 2.294,
       "voice": "omnivoice",
-      "shot": "s10"
+      "shot": "s10",
+      "note": "restored from radio cut v3 (Wed 25 Nov, CPU run)"
     },
     "narration/mms/s01": {
       "fingerprint": "b8228cbc2a875a1137d8a8224f37effa7e12273c1f635b354a2855bea787db6d",
@@ -681,12 +681,12 @@
       "shot": "s10"
     },
     "music/before/0": {
-      "fingerprint": "b16746dfc26d665f21ee5094de7508defdfd701c21abc3680900c5d5f7e8b20a",
-      "output": "outputs/music/before/0__b16746df.wav",
+      "fingerprint": "c107c3b2a84fc4a3a5a9a6b626f684c75b98cb6f38daa66d4ab9c5d2fea13858",
+      "output": "outputs/music/before/0__c107c3b2.wav",
       "status": "generated",
       "provider": "placeholder",
       "model": "pad",
-      "seconds": 45.0,
+      "seconds": 30.0,
       "cue": "before",
       "candidate": 0
     },
@@ -701,26 +701,26 @@
       "candidate": 0
     },
     "assemble/sound/radio": {
-      "fingerprint": "9c8ff7a72a30138f3207418131f28de866feb87f0deb2fbf49f677993f75a7f8",
-      "output": "outputs/assemble/sound/radio__9c8ff7a7.wav",
+      "fingerprint": "29ffd9a1b4ff266068cf8ca4925e3671d4a19063db7d08afbe81a93e36260a1c",
+      "output": "outputs/assemble/sound/radio__29ffd9a1.wav",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 10.63,
-      "lufs": -14.0,
-      "true_peak_db": -1.83
+      "seconds": 12.97,
+      "lufs": -14.18,
+      "true_peak_db": -1.0
     },
     "assemble/final/radio_cut_9x16": {
-      "fingerprint": "ef49ed0f83c30c47910df88b57cef89728758c74f0ae2ff84079c3578fa90244",
+      "fingerprint": "16d8c49253823e430cace414c542a00aed86d5bd6adb5fc57c05662d4f463907",
       "output": "outputs/final/radio_cut_9x16.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 67.792,
+      "seconds": 64.961,
       "ratio": "9x16",
-      "lufs": -14.01,
-      "true_peak_db": -1.83,
-      "bytes": 1975464
+      "lufs": -14.19,
+      "true_peak_db": -0.93,
+      "bytes": 1893159
     },
     "keyframes/s01/9x16": {
       "fingerprint": "0fc804d6ef6f73024fa1daedb57b05f081933765786ee31efa5b38e51208e8fd",
@@ -943,7 +943,7 @@
     },
     "assemble": {
       "version": 2,
-      "sha": "20c620b6e13db99b31c93302bd96f5e08b127d36f135ea070b6d25576a6e0a21"
+      "sha": "a73d4818f43b344daaeb546c5e6c50db07aa5cb0c4323e36c39e534f60ede184"
     },
     "shots": {
       "version": 2,
@@ -957,128 +957,128 @@
         {
           "id": "s01",
           "start": 0.0,
-          "duration": 6.437,
+          "duration": 5.732,
           "narration_start": 0.6,
-          "narration_end": 5.437,
+          "narration_end": 4.732,
           "speech_trim": [
-            0.192,
-            5.029
+            0.553,
+            4.272
           ],
           "overlap_out": 0.0
         },
         {
           "id": "s02",
-          "start": 6.437,
-          "duration": 7.712,
-          "narration_start": 7.037,
-          "narration_end": 13.149,
+          "start": 5.732,
+          "duration": 7.461,
+          "narration_start": 6.332,
+          "narration_end": 12.193,
           "speech_trim": [
-            0.353,
-            6.465
+            0.475,
+            5.75
           ],
           "overlap_out": 0.0
         },
         {
           "id": "s03",
-          "start": 14.149,
+          "start": 13.193,
           "duration": 7.153,
-          "narration_start": 14.749,
-          "narration_end": 20.302,
+          "narration_start": 13.793,
+          "narration_end": 19.347,
           "speech_trim": [
-            0.12,
-            5.673
+            0.493,
+            5.491
           ],
           "overlap_out": 0.0
         },
         {
           "id": "s04",
-          "start": 21.302,
-          "duration": 8.269,
-          "narration_start": 21.902,
-          "narration_end": 28.571,
+          "start": 20.347,
+          "duration": 7.664,
+          "narration_start": 20.947,
+          "narration_end": 27.011,
           "speech_trim": [
-            0.306,
-            6.975
+            0.673,
+            6.131
           ],
           "overlap_out": 0.5
         },
         {
           "id": "s05",
-          "start": 29.071,
+          "start": 27.511,
           "duration": 5.0,
-          "narration_start": 29.671,
-          "narration_end": 31.816,
+          "narration_start": 28.111,
+          "narration_end": 30.069,
           "speech_trim": [
-            0.134,
-            2.279
+            0.246,
+            2.008
           ],
           "overlap_out": 0.5
         },
         {
           "id": "s06",
-          "start": 33.571,
+          "start": 32.011,
           "duration": 5.0,
-          "narration_start": 34.171,
-          "narration_end": 36.82,
+          "narration_start": 32.611,
+          "narration_end": 35.266,
           "speech_trim": [
-            0.189,
-            2.838
+            0.202,
+            2.591
           ],
           "overlap_out": 0.0
         },
         {
           "id": "s07",
-          "start": 38.571,
-          "duration": 8.139,
-          "narration_start": 39.171,
-          "narration_end": 45.71,
+          "start": 37.011,
+          "duration": 7.833,
+          "narration_start": 37.611,
+          "narration_end": 43.844,
           "speech_trim": [
-            0.121,
-            6.66
+            0.175,
+            5.785
           ],
           "overlap_out": 0.0
         },
         {
           "id": "s08",
-          "start": 46.71,
+          "start": 44.844,
           "duration": 5.0,
-          "narration_start": 47.31,
-          "narration_end": 48.759,
+          "narration_start": 45.444,
+          "narration_end": 46.668,
           "speech_trim": [
-            0.251,
-            1.7
+            0.423,
+            1.524
           ],
           "overlap_out": 0.0
         },
         {
           "id": "s09",
-          "start": 51.71,
-          "duration": 9.075,
-          "narration_start": 52.31,
-          "narration_end": 59.785,
+          "start": 49.844,
+          "duration": 8.117,
+          "narration_start": 50.444,
+          "narration_end": 56.961,
           "speech_trim": [
-            0.189,
-            7.664
+            0.625,
+            6.49
           ],
           "overlap_out": 0.5
         },
         {
           "id": "s10",
-          "start": 60.285,
+          "start": 57.461,
           "duration": 5.0,
-          "narration_start": 60.885,
-          "narration_end": 64.035,
+          "narration_start": 58.061,
+          "narration_end": 60.61,
           "speech_trim": [
-            0.127,
-            3.277
+            0.549,
+            2.843
           ],
           "overlap_out": 0.5
         }
       ],
-      "end_card_start": 64.785,
+      "end_card_start": 61.961,
       "end_card_seconds": 3,
-      "film_seconds": 65.285,
-      "total_seconds": 67.785,
+      "film_seconds": 62.461,
+      "total_seconds": 64.961,
       "crossfade_seconds": 0.5
     }
   }

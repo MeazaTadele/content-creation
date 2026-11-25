@@ -4,6 +4,23 @@ Each entry: **hypothesis → change → result**, with the evidence (log lines, 
 the reason for the choice that followed. One thing is changed at a time; seeds are fixed when
 comparing prompts.
 
+## E7. Can the narrator keep my delivery without my voice? (Wed 25 Nov)
+
+- **Hypothesis:** radio cut v3 (OmniVoice copying my own 11 s sample) had the natural Amharic
+  delivery and pronunciation that user test 1 asked for, but sounded like me. Another sample voice,
+  or OmniVoice's voice-design words, might keep the delivery with a different voice.
+- **Changes and results:**
+  1. A synthetic female sample (Gemini Kore): first attempt broken by F15 (Gemini read its English
+     instruction aloud); with a clean sample, the voice was a woman's but the Amharic pronunciation
+     and pace were wrong to my ear, even at speed 1.25 (radio cuts v4-v7).
+  2. My sample plus voice-design words ("female, young adult, high pitch" and two others) on one
+     line: the three clips differ, but all still sounded like me.
+- **What it taught me:** OmniVoice takes timbre and delivery from the same sample; they can't be
+  separated with its own options. The pace also comes from the sample (its duration estimator
+  scales by the sample's speaking rate).
+- **Decision:** keep v3 (my voice, with consent), slowed to tempo 0.9 with FFmpeg so nothing is
+  re-voiced.
+
 ## E6. Does a different OmniVoice voice remove the "reading a script" feeling? (Wed 25 Nov)
 
 - **Hypothesis:** user test 1 (all three testers) heard the narration as script-like. OmniVoice

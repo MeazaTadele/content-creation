@@ -31,7 +31,7 @@ def compute(ctx: Context) -> dict:
         pace = sb.get("pacing", {})
         lead = t.get("lead_in", pace.get("lead_in", DEFAULT_LEAD_IN))
         tail = t.get("tail", pace.get("tail", DEFAULT_TAIL))
-        speech = e["speech_seconds"]
+        speech = e["speech_seconds"] / sb["voice"].get("tempo", 1.0)
         narr_start = start + lead
         if prev_narr_end is not None and narr_start < prev_narr_end + MIN_GAP:
             # a crossfade pulled this shot's words too close to the last shot's: push them later

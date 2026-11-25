@@ -165,6 +165,12 @@
           "minimum": 0.7,
           "maximum": 1.6,
           "description": "Speaking speed for voices that support it (OmniVoice); >1 is faster."
+        },
+        "tempo": {
+          "type": "number",
+          "minimum": 0.7,
+          "maximum": 1.3,
+          "description": "Play the finished narration slower (<1) or faster (>1) without changing pitch (FFmpeg atempo); nothing is re-voiced."
         }
       }
     },

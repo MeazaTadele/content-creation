@@ -63,11 +63,12 @@
     },
     "references": {
       "omnivoice": {
-        "audio": "outputs/voicebench/samples/gemini_kore_clean_tight.wav",
-        "text": "ሰላም። ይህ የድምፅ ሙከራ ነው። በበዓሉ ጠዋት ቤቱ በቡና መዓዛ ተሞላ።"
+        "audio": "private/meaza_voice_sample.wav",
+        "text": "ዛሬ ፋሲካ ነው። ግን ከአልጋ የሚያስነሳ የሚያጓጓ ነገር የለኝም። በዓል እኛ ቤት ተመሳሳይ ነው። እናቴ ምግብ ሰራርታልን በጠዋት ወደ ሥራ ትሄዳለች።",
+        "audio_sha256": "9360a956fa4d8b1d394e61447a01d13a53686f55f3dc433366d30734ed5b8767"
       }
     },
-    "speed": 1.25
+    "tempo": 0.9
   },
   "music": {
     "candidates": 3,

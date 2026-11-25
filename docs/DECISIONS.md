@@ -29,7 +29,7 @@ at the bottom of each section.
 | 24 | Voice benchmark order | all five now; phased; fewer | Gemini, ElevenLabs and MMS first; OmniVoice and CosyVoice2 after the film works (suggested, adopted) | Wed 25 Nov |
 | 18 | How voices are judged | my ear; blind listening by testers; speech-recognition check | All three, plus latency and cost | Tue 24 Nov |
 | 25 | How the three checks are weighed | equal; blind listening decides; my ear decides | Blind listening decides; speech recognition and my ear support it (suggested, adopted). Speech recognition for Amharic is itself unreliable | Wed 25 Nov |
-| 25b | The film's voice (update to 25) | blind test; my own voice as the sample; a synthetic warm female voice as the sample | A warm way of telling it, but not my own voice: OmniVoice follows a synthetic female voice (Gemini Kore reading shot 9 with a warm storytelling instruction). My own voice (radio cut v3) sounded like me, which I did not want. Blind test dropped | Wed 25 Nov |
+| 25b | The film's voice (update to 25) | blind test; my own voice as the sample; a synthetic female sample; my sample plus voice-design words | My own voice as OmniVoice's sample (radio cut v3), slowed to tempo 0.9. It had the most natural Amharic pronunciation and delivery; the alternatives either lost that or still sounded like me. Consent recorded in ETHICS.md | Wed 25 Nov |
 | 12 | Reuse an earlier project of mine | fork it; borrow ideas only; use it as a front end later | Borrow ideas only; no code reused | Wed 25 Nov |
 
 ## Pipeline design
