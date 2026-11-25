@@ -119,14 +119,14 @@
         "en": "It's Easter today. But there's nothing exciting enough to get me out of bed."
       },
       "image": {
-        "prompt": "A girl about twelve lies in bed, centred, eyes open. Soft morning light on the blanket.",
+        "prompt": "Close side view of a girl of about twelve lying in bed under a thick blanket, her head on the pillow, eyes open, looking up at the ceiling, both arms hidden under the blanket; flat, unexcited mood; soft grey-blue early morning light; a simple Ethiopian bedroom",
         "characters": [
           "girl"
         ],
-        "seed": 1001
+        "seed": 1101
       },
       "motion": {
-        "prompt": "a curtain moves slightly",
+        "prompt": "the curtain moves slightly, the camera stays still",
         "seed": 2001,
         "kenburns": true
       },
@@ -202,14 +202,14 @@
         "en": "Mom is in the living room, making coffee."
       },
       "image": {
-        "prompt": "A mother in her forties, centred, in a white traditional dress and shawl. She sits on a low stool by a charcoal stove with a clay coffee pot.",
+        "prompt": "Inside a modest Ethiopian living room, no Christmas tree and no Western decorations: the mother sits on a low wooden stool beside a small clay charcoal brazier with glowing coals, roasting coffee beans in a flat long-handled metal pan, stirring them with a thin wooden stick; beside her a low carved wooden tray-table (rekebot) holding small white handleless coffee cups (sini) in rows and a round-bellied black clay jebena coffee pot with a long narrow neck, a spout and a handle, standing upright on a small woven straw ring; a small clay incense burner with a thin curl of white smoke; freshly cut long, thin green grass blades (ketema) scattered loosely and flat across the indoor floor like a light carpet, the floor visible between the blades; cut grass only, no lawn, no soil, nothing growing; warm morning light from a window",
         "characters": [
           "mother"
         ],
         "seed": 1005
       },
       "motion": {
-        "prompt": "slow push-in, steam rising",
+        "prompt": "slow push-in, smoke rising from the roasting beans",
         "seed": 2005
       },
       "transition": "crossfade"
@@ -222,12 +222,12 @@
         "en": "Fresh grass covers the floor, and incense is burning."
       },
       "image": {
-        "prompt": "Low angle on a floor covered with long fresh grass. Incense smoke drifts through a sunbeam past the coffee tray.",
+        "prompt": "Low angle close to the floor: freshly cut long, thin green grass blades (ketema) scattered loosely and flat across the indoor floor like a light carpet, the floor visible between the blades; cut grass only, no lawn, no soil, nothing growing; in the foreground a small clay incense burner with a thin curl of white smoke, its smoke drifting through a sunbeam; behind it the corner of a low carved wooden tray-table (rekebot) holding small white handleless coffee cups (sini) in rows and a round-bellied black clay jebena coffee pot with a long narrow neck, a spout and a handle, standing upright on a small woven straw ring; no people",
         "characters": [],
         "seed": 1006
       },
       "motion": {
-        "prompt": "smoke drifting",
+        "prompt": "incense smoke drifting through the sunbeam",
         "seed": 2006
       },
       "transition": "cut"
@@ -240,7 +240,7 @@
         "en": "My brother and my dad sit holding their coffee. You can tell they're as happy as I am."
       },
       "image": {
-        "prompt": "Inside a modest Ethiopian home, no Christmas tree and no Western holiday decorations on Fasika morning: two men sit side by side on low wooden stools, seen from behind and slightly to the side so their faces are not visible, an older bald man with grey hair and a young man with a short black fade, both in white traditional tunics with red embroidered borders and striped gabi shawls, each holding a small white coffee cup; fresh green grass on the floor, warm golden light",
+        "prompt": "Inside a modest Ethiopian living room, no Christmas tree and no Western decorations on Fasika morning: two men sit side by side on low wooden stools, seen from behind and slightly to the side so their faces are not visible, an older bald man with grey hair and a young man with a short black fade, both in white traditional tunics with red embroidered borders and striped gabi shawls, each holding one of the small white handleless coffee cups (sini); freshly cut long, thin green grass blades (ketema) scattered loosely and flat across the indoor floor like a light carpet, the floor visible between the blades; cut grass only, no lawn, no soil, nothing growing; warm golden light",
         "characters": [],
         "seed": 1007
       },
@@ -259,14 +259,14 @@
         "en": "I looked at them, and I was so happy."
       },
       "image": {
-        "prompt": "From behind: the girl stands centred in a doorway, looking into the living room. The room beyond is warm and softly hazy with coffee and incense smoke drifting in golden light; no fire, no flames",
+        "prompt": "From behind: the girl stands centred in a doorway, looking into the living room. Beyond her, a modest Ethiopian living room, no Christmas tree and no Western decorations is warm and softly hazy with roasting-coffee and incense smoke in golden light; in the distance the mother sits by a small clay charcoal brazier with glowing coals with a low carved wooden tray-table (rekebot) holding small white handleless coffee cups (sini) in rows; freshly cut long, thin green grass blades (ketema) scattered loosely and flat across the indoor floor like a light carpet, the floor visible between the blades; cut grass only, no lawn, no soil, nothing growing; no fire, no flames",
         "characters": [
           "girl"
         ],
         "seed": 1008
       },
       "motion": {
-        "prompt": "smoke drifts across her",
+        "prompt": "smoke drifts slowly across the doorway",
         "seed": 2008,
         "kenburns": true
       },
@@ -280,12 +280,12 @@
         "en": "This is my first holiday memory with my mother. To this day, it's the best day of my life."
       },
       "image": {
-        "prompt": "Close-up of a woman's hands, with the cream sleeve of a traditional dress with a woven tibeb cuff, pouring coffee from a black clay jebena pot into small white handleless cups on a wooden tray; only hands are visible, no faces, no other people; steam rising, fresh green grass beneath the tray, warm light",
+        "prompt": "Close-up: a woman's hand, with the cream sleeve and woven tibeb cuff of a traditional dress, holds a round-bellied black clay jebena coffee pot with a long narrow neck, a spout and a handle by its handle and pours a thin stream of dark coffee from high above into small white handleless coffee cups (sini) lined up on a low carved wooden tray-table (rekebot); only the hand is visible, no faces, no other people; freshly cut long, thin green grass blades (ketema) scattered loosely and flat across the indoor floor like a light carpet, the floor visible between the blades; cut grass only, no lawn, no soil, nothing growing beneath; incense smoke; warm light",
         "characters": [],
         "seed": 1009
       },
       "motion": {
-        "prompt": "steam rising",
+        "prompt": "the coffee pours, steam rising",
         "seed": 2009
       },
       "transition": "crossfade"
@@ -298,7 +298,7 @@
         "en": "More than anything, showing up matters."
       },
       "image": {
-        "prompt": "Wide shot of a modest Ethiopian home, no Christmas tree and no Western holiday decorations on Fasika morning: fresh long green grass spread on the floor, a low wooden table with a black clay jebena and small white cups, incense smoke, warm golden light through a window, simple cushioned seats along the walls; no people visible, the room feels full and warm, as if the family just stepped away",
+        "prompt": "Wide shot of a modest Ethiopian living room, no Christmas tree and no Western decorations on Fasika morning: freshly cut long, thin green grass blades (ketema) scattered loosely and flat across the indoor floor like a light carpet, the floor visible between the blades; cut grass only, no lawn, no soil, nothing growing; a low carved wooden tray-table (rekebot) holding small white handleless coffee cups (sini) in rows; a round-bellied black clay jebena coffee pot with a long narrow neck, a spout and a handle, standing upright on a small woven straw ring; a small clay charcoal brazier with glowing coals; a small clay incense burner with a thin curl of white smoke; woven straw baskets with popcorn and bread; warm golden light through a window; simple cushioned seats along the walls; no people visible, the room feels full and warm, as if the family has just stepped away",
         "characters": [],
         "seed": 1010
       },

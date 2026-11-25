@@ -59,6 +59,8 @@ English: "Good. Both your mother and I agree. Good luck, Emeye."
 - **Clothing reference photos:** photos of traditional outfits (a dress in a shop, and two people
   modelling clothes, strangers to me) were used only to describe the clothes in words. Their faces
   were not described or used, and the photos were not given to any model or added to this repository.
+  The same applies to photos of coffee ceremonies, used to describe the jebena, rekebot, brazier,
+  cups and ketema accurately.
 
 ## Licences
 

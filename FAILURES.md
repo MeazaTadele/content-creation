@@ -3,6 +3,23 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F14. The keyframes got Ethiopian culture wrong (Wed 25 Nov, caught by me)
+
+- **What broke:** looking at the keyframes, I found: "fresh grass" on the floor came out as a
+  growing lawn, but ketema is freshly cut long grass scattered on an indoor floor; the coffee
+  ceremony showed a Western iron stove, a copper kettle and mugs with handles, instead of a clay
+  charcoal brazier, a flat roasting pan, a black clay jebena on a straw ring, a carved rekebot
+  tray-table and small handleless cups; one shot had a Christmas tree; and the girl in shot 1 was
+  deformed.
+- **What was tried:** I gave Claude photos of real coffee ceremonies. They were used only to write
+  exact word descriptions of the objects (the people in them were not described or used, and the
+  photos were not given to the image model or committed). One shared description for each object
+  is now used in every shot where it appears, so the ceremony looks the same throughout.
+- **Shot 1:** reframed to a side view with the arms under the blanket, so there is less body for
+  the model to get wrong, and a new seed.
+- **Lesson:** the image model's default for "holiday", "grass" or "coffee" is Western. Cultural
+  objects have to be named and described concretely, and checked by someone who knows them.
+
 ## F13. Cloudflare's daily free allowance ran out mid-run (Wed 25 Nov, 20:45 EAT)
 
 - **What broke:** while regenerating four keyframes, Cloudflare Workers AI answered HTTP 429: "you
