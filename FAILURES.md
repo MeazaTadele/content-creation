@@ -3,6 +3,19 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F9. The narration job waited 45 minutes in Kaggle's GPU queue (Wed 25 Nov)
+
+- **What broke:** the OmniVoice and MMS narration job was pushed to Kaggle on GPU T4 x2 and stayed
+  "queued" for about 45 minutes without starting. Earlier jobs had waited about a minute. Kaggle
+  reported no error; the likely cause is demand for the shared free GPUs at that moment (Kaggle
+  doesn't say why a job waits).
+- **What was tried:** waiting, then checking the kernel status directly (still `QUEUED`).
+- **Workaround:** the open voices are small (OmniVoice about 3 GB), so the job was cancelled and
+  pushed again as a CPU-only job, which doesn't wait for a GPU. The pipeline now has a CPU option
+  for these voices (`KAGGLE_TTS_DEVICE=cpu`).
+- **Lesson for the GPU stages:** video and music can't move to CPU, so they are run early and as
+  one batch each, and every shot still has the Ken Burns fallback if video never runs.
+
 ## F8. Gemini's per-minute limit stopped the narration run (Wed 25 Nov)
 
 - **What broke:** generating the real narration, Gemini TTS returned HTTP 429 ("You exceeded your

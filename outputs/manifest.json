@@ -251,6 +251,20 @@
       "speech_seconds": 3.68,
       "voice": "elevenlabs",
       "shot": "s10"
+    },
+    "narration/gemini/s09": {
+      "fingerprint": "547f39a0ec635f30dc66754bb019c0d33107e493d135d1fae7ef677f02bf30b5",
+      "output": "outputs/narration/gemini/s09__547f39a0.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 142.49,
+      "speech_start": 0.0,
+      "speech_end": 15.621,
+      "file_seconds": 15.621,
+      "speech_seconds": 15.621,
+      "voice": "gemini",
+      "shot": "s09"
     }
   },
   "stage_versions": {},
