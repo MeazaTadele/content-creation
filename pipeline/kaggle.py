@@ -108,7 +108,7 @@ def run_job(stage: str, units: list[dict], files: dict[str, Path], timeout: int 
     say(f"  kaggle: pushing {user}/{slug} on " + ("GPU T4 x2" if gpu else "CPU (no GPU queue)"))
     push = ["kernels", "push", "-p", str(kernel), "-t", str(timeout)]
     if gpu:
-        push[3:3] = ["--accelerator", "NvidiaTeslaT4"]
+        push += ["--accelerator", "NvidiaTeslaT4"]
     _cli(*push)
     job_id = f"{user}/{slug}@{time.strftime('%Y%m%dT%H%M%S')}"
 
