@@ -50,8 +50,12 @@ English: "Good. Both your mother and I agree. Good luck, Emeye."
   course, is about a Fasika holiday at home, and talks about them. It did not say that the pictures
   and voice are made by AI or that the film will be posted publicly. Henok's message said it is an
   AI film, but not that it will be public. I am recording this openly rather than leaving it out.
-- **No likeness is copied from a photo:** characters are described in words and drawn by an image
-  model; no photograph of any family member is given to a model.
+- **Photos were used only to write descriptions (Wed 25 Nov):** to make the characters look more
+  like my family, I showed Claude Code photos of my mother, father and brother, plus a photo of a
+  traditional dress. Claude turned them into word descriptions (skin tone, face shape, hair,
+  clothing) in `storyboard.json`. The photos were not given to any image model, not uploaded to
+  any service by the pipeline, and are not in this repository. The drawn characters are therefore
+  closer to my family's likeness than before, which this record states openly.
 
 ## Licences
 
