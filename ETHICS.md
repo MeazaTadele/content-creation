@@ -3,7 +3,13 @@
 ## Consent
 
 Consent is recorded here **before** anything depicting or voicing a real person is generated.
-Since Wed 25 Nov 2026, 21:03 EAT, the AI narration voice (OmniVoice) copies **my own voice** from an 11-second sample of me telling lines 1–2 of the story, with my written consent above. This was a change made after user test 1, where all three testers found the narration script-like. My recording and the sample are kept private (`private/`, ignored by git) and are not in this repository; only the AI-generated narration is. Nobody else's voice is cloned. The first generation of any
+Since Wed 25 Nov 2026, 21:03 EAT, the AI narration voice (OmniVoice) copies **my own voice** from an 11-second sample of me telling lines 1–2 of the story, with my written consent above. This was a change made after user test 1, where all three testers found the narration script-like. My recording and the sample are kept private (`private/`, ignored by git) and are not in this repository; only the AI-generated narration is. Nobody else's voice is cloned.
+
+**Change (Wed 25 Nov, about 22:30 EAT):** after hearing radio cut v3, I decided I want the warm way
+of telling it, but not my own voice. My sample is no longer used: OmniVoice now copies a synthetic
+female voice (Gemini's "Kore", reading the shot 9 line with a warm storytelling instruction,
+`outputs/voicebench/samples/gemini_kore_warm_s09.wav`). No real person's voice is used for the
+narration. My recording stays private and unused. The first generation of any
 kind in this project was on Wed 25 Nov (see `runs.jsonl`); all consent below was given earlier.
 
 ### Records

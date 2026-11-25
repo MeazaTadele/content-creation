@@ -64,9 +64,8 @@
     "style_instruction": "Read in Amharic, calm, warm and unhurried, like remembering a happy morning",
     "references": {
       "omnivoice": {
-        "audio": "private/meaza_voice_sample.wav",
-        "text": "ዛሬ ፋሲካ ነው። ግን ከአልጋ የሚያስነሳ የሚያጓጓ ነገር የለኝም። በዓል እኛ ቤት ተመሳሳይ ነው። እናቴ ምግብ ሰራርታልን በጠዋት ወደ ሥራ ትሄዳለች።",
-        "audio_sha256": "9360a956fa4d8b1d394e61447a01d13a53686f55f3dc433366d30734ed5b8767"
+        "audio": "outputs/voicebench/samples/gemini_kore_warm_s09.wav",
+        "text": "ከእናቴ ጋር ያለኝ የመጀመሪያ የበዓል ትውስታ ይሄ ነው። እስከዛሬ ድረስ የሕይወቴ ምርጥ ቀን ነው።"
       }
     }
   },
@@ -115,8 +114,8 @@
       "id": "s01",
       "reason": "Opens on her, flat and unexcited. The viewer wonders why a holiday feels like nothing.",
       "narration": {
-        "am": "ዛሬ ፋሲካ ነው። ግን ከአልጋ የሚያስነሳ የሚያጓጓ ነገር የለኝም።",
-        "en": "It's Easter today. But there's nothing exciting enough to get me out of bed."
+        "am": "ዛሬ ፋሲካ በዓል ነው፣ እኔ ግን አሁንም አልጋዬ ላይ ነኝ። ለምን ይሆን ብላችሁ እያሰባችሁ ይሆናል፤ ምክንያቱም ከአልጋ የሚያስነሳ የሚያጓጓ ነገር የለኝም።",
+        "en": "It's Easter today, but I'm still in bed. You might be wondering why. It's because there's nothing exciting enough to get me up."
       },
       "image": {
         "prompt": "Close side view of a girl of about twelve lying on her back in a simple wooden bed with plain cotton sheets and a thick woven blanket pulled up to her shoulders; only her head and shoulders show above the blanket, her head on a white pillow, eyes open, looking up at the ceiling, both arms under the blanket; flat, unexcited expression; soft grey-blue early morning light from a small window; a plain Ethiopian bedroom",
@@ -136,8 +135,8 @@
       "id": "s02",
       "reason": "Before: we meet the mother through her absence. The food stays, she goes.",
       "narration": {
-        "am": "በዓል እኛ ቤት ተመሳሳይ ነው። እናቴ ምግብ ሰራርታልን በጠዋት ወደ ሥራ ትሄዳለች።",
-        "en": "At our house, holidays are always the same. Mom cooks for us and leaves for work early in the morning."
+        "am": "በዓል እኛ ቤት ተመሳሳይ ነው። እናቴ ሥራ ስለምትገባ፣ በጠዋት ምግብ ሰራርታልን ወደ ሥራዋ ትሄዳለች።",
+        "en": "At our house, holidays are always the same. Mom has to work, so she cooks for us early in the morning and leaves for her job."
       },
       "image": {
         "prompt": "Blue light before dawn. A covered pot sits on the table in the foreground, with the front door behind it.",
