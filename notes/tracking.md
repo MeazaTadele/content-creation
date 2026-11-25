@@ -53,6 +53,7 @@ Every decision faced, open or made. Meaza chooses which one is "the hard decisio
 | 16 | GPU platform for video and music | Kaggle (2x T4, ~30 GPU h/week, brief's main pick) or Colab (backup) | Open | Tue 24 Nov |
 | 18 | How to evaluate the Amharic voices | Meaza's own ear (native speaker, but not blind); blind listening by testers; automatic check (speech recognition back to text, error rate vs script); measured latency and cost; or a mix. Any number of models | **Decided Tue 24 Nov: all three** (own ear, blind listening by testers, automatic speech-recognition check); latency and cost logged as well | Tue 24 Nov |
 | 19 | Audience intent: what they should feel or understand at the end | To be worked out (see story open items) | Open | Tue 24 Nov |
+| 20 | Stage design: which stages, their order, how they depend on each other | Brief's shape (script, keyframes, shots, music, narration, assemble) or improved: narration before shots/music, extra stages (reference sheet, voice check, measurements), split assembly, dependency graph instead of a straight line, measured values kept in a separate file | Open | Wed 25 Nov |
 | 17 | Branch workflow in the repo | merge `tracking-log` into `main` and work on `main`; or work on branches and merge | Open | Tue 24 Nov |
 
 ## To-do
