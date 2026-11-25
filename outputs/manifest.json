@@ -97,6 +97,20 @@
       "speech_seconds": 12.481,
       "voice": "gemini",
       "shot": "s07"
+    },
+    "narration/gemini/s08": {
+      "fingerprint": "8f2b985d7edc96f10b83f64ea1c1b0363e54688a2a3133836f008814531aed04",
+      "output": "outputs/narration/gemini/s08__8f2b985d.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 157.56,
+      "speech_start": 0.0,
+      "speech_end": 16.931,
+      "file_seconds": 16.931,
+      "speech_seconds": 16.931,
+      "voice": "gemini",
+      "shot": "s08"
     }
   },
   "stage_versions": {},
