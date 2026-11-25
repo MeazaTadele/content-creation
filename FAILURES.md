@@ -3,6 +3,28 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F3. ElevenLabs' newest model refused Amharic as a language code (Wed 25 Nov)
+
+- **What broke:** the first ElevenLabs smoke call failed with HTTP 400: "Model 'eleven_v3' does
+  not support language_code 'am'." The API key also lacks permission to list models, so the
+  supported languages could not be read from the API.
+- **What was tried:** the same Amharic test sentence was sent to four models (eleven_v3,
+  eleven_multilingual_v2, eleven_flash_v2_5, eleven_turbo_v2_5) without a language code. All
+  four returned audio (logged in `runs.jsonl`, audio in `outputs/smoke/`).
+- **Workaround:** the provider no longer sends a language code unless one is configured. Whether
+  the audio is actually understandable Amharic is not known from a 200 response: it goes to a
+  native-speaker listen and the speech-recognition check.
+
+## F4. The Kaggle command-line tool would not accept a proxy-injected token (Wed 25 Nov)
+
+- **What broke:** API keys in this setup are injected into request headers by a network proxy,
+  so the code never holds them. Kaggle CLI 2.x first checks a new-style token by sending it
+  in a request body, which a header-injecting proxy cannot fill in, so it refused to start.
+- **What was tried:** skipping that check still failed (HTTP 401), because the saved credential
+  was a legacy `kaggle.json` key, not a new-style token.
+- **Fix:** the legacy username + key are saved as Basic authentication, which travels in a
+  header. The pipeline runs the CLI with the legacy key path; listing kernels then worked.
+
 ## F2. Crossfades refused to join segments (Wed 25 Nov)
 
 - **What broke:** the first full film run stopped in the join step. FFmpeg's `xfade` filter
