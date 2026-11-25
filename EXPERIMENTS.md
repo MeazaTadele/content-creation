@@ -4,6 +4,21 @@ Each entry: **hypothesis → change → result**, with the evidence (log lines, 
 the reason for the choice that followed. One thing is changed at a time; seeds are fixed when
 comparing prompts.
 
+## E2. Do the open Amharic models beat the hosted ones? (Wed 25 Nov)
+
+- **Hypothesis:** models built or fine-tuned for Amharic (OmniVoice Amharic, MMS-TTS Amharic,
+  CosyVoice2 Amharic) should sound more natural than general multilingual voices.
+- **Change:** the same two neutral sentences ("ሰላም። ይህ የድምፅ ሙከራ ነው።" and "በበዓሉ ጠዋት ቤቱ በቡና
+  መዓዛ ተሞላ።") were read by Gemini 3.8 Flash TTS (API) and by MMS and OmniVoice (one Kaggle job,
+  GPU T4). CosyVoice2 could not be installed (FAILURES.md F6).
+- **Result:** OmniVoice was my clear favourite as a native speaker; Gemini was also good.
+  Generation time per sentence on the T4: OmniVoice 1.4–1.9 s, MMS 0.3 s after an 11 s warm-up
+  (`runs.jsonl`, stage `voicebench`).
+- **Caveat:** this is my own, non-blind first listen on two sentences. Decision 25 says blind
+  listening by the testers decides the film's voice; the speech-recognition check and this note
+  support it.
+- **Next:** generate the real narration lines with the leading voices and run the blind test.
+
 ## E1. Which ElevenLabs model can read Amharic? (Wed 25 Nov)
 
 - **Hypothesis:** ElevenLabs lists Amharic among its text-to-speech languages, so at least one of
