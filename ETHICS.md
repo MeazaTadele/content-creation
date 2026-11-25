@@ -22,10 +22,10 @@ No voice is cloned from a real person.
 | ACE-Step 1.5 | music | MIT; outputs usable commercially | |
 | FLUX.2 klein 4B | keyframes | Apache 2.0 (the 9B model is non-commercial and not used) | via Cloudflare Workers AI |
 | OmniVoice Amharic | voice benchmark | Apache 2.0 | |
-| MMS-TTS (Amharic) | voice benchmark | CC BY-NC 4.0, non-commercial | fine for this non-commercial film |
+| MMS-TTS (Amharic) | voice benchmark | CC BY-NC 4.0, non-commercial | fine for this non-commercial film; text is romanised with uroman first |
 | Gemini, Gemini TTS | script, narration | Google API terms | _to check_ |
 | ElevenLabs | voice benchmark | ElevenLabs terms (free plan) | _to check: attribution and commercial-use terms_ |
-| CosyVoice2 Amharic | voice benchmark | _to check_ | |
+| CosyVoice2 Amharic | voice benchmark | CC BY-SA 4.0 (base model Apache 2.0); adds a PerTh watermark to its audio | needs a reference voice: a synthetic Gemini clip is used, never a real person's voice |
 | FFmpeg | assembly | LGPL/GPL | |
 
 ## Labelling
