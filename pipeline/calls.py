@@ -54,8 +54,15 @@ class CallResult:
     model: str | None = None                   # the model actually served, if the API says
 
 
+class QuotaExhausted(FatalError):
+    """A daily or monthly free allowance is used up: retrying within minutes cannot help (decision 28a)."""
+
+
 def classify_http(status: int, body: str, retry_after: str | None = None) -> Exception:
     msg = f"HTTP {status}: {redact(body[:300])}"
+    low = body.lower()
+    if status == 429 and any(k in low for k in ("daily free allocation", "per day", "perday", "daily limit")):
+        return QuotaExhausted(msg)
     if status == 429 or status >= 500 or status == 408:
         ra = None
         if retry_after:

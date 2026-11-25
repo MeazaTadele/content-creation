@@ -3,6 +3,33 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F13. Cloudflare's daily free allowance ran out mid-run (Wed 25 Nov, 20:45 EAT)
+
+- **What broke:** while regenerating four keyframes, Cloudflare Workers AI answered HTTP 429: "you
+  have used up your daily free allocation of 10,000 neurons". By then 124 images had been made
+  that day (reference sheet rounds and two keyframe passes). The pipeline treated the 429 like a
+  per-minute limit and retried each image four times, a minute apart, which could never succeed.
+- **What was tried:** the job was stopped; the error text showed it was the daily allowance, which
+  resets at 00:00 UTC (03:00 EAT).
+- **Fix:** a 429 whose message names a daily allowance is now a `QuotaExhausted` error: the
+  pipeline stops at once with a clear message instead of retrying (decision 28a). The remaining
+  keyframes run after the reset; finished ones are cached.
+- **Measured:** about 10,000 neurons for 124 FLUX.2 klein images, so roughly 80 neurons per image
+  (COSTS.md).
+
+## F12. Keyframes came out as character sheets (Wed 25 Nov)
+
+- **What broke:** keyframes for shots with people copied the layout of the reference images they
+  were conditioned on: a person on a plain background with portrait insets, not a scene. One
+  shot merged the father and brother into one man; one turned "roasting smoke" into fire; one
+  added a Christmas tree for "holiday"; one added strangers around the mother.
+- **What was tried:** a scene-first prompt ("one single full-frame scene… not a character sheet")
+  fixed most shots. Shots where faces don't matter (hands, people from behind, the empty room)
+  dropped the reference images and describe the people in words instead. "No fire, no flames"
+  and "no Christmas tree, no Western holiday decorations" were added where needed.
+- **Lesson:** reference images carry their layout, not only the face. Character sheets made good
+  references for the people but the wrong template for a scene.
+
 ## F10. Cloudflare's safety filter blocked a harmless image edit (Wed 25 Nov)
 
 - **What broke:** editing the mother's reference image with the prompt "the same woman as in the
