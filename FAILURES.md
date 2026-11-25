@@ -27,9 +27,11 @@ memory, consistency and language problems, and tools that changed or disappeared
   model CPU offload) loaded in 282 s and then failed after 15 s: CUDA out of memory, 14.54 GiB of
   the T4's 14.56 GiB in use.
 - **What it means:** the reviewer's concern was right; the default settings don't fit a 16 GB T4.
-- **Next:** sequential CPU offload (weights moved layer by layer), VAE tiling, an allocator setting
-  that reduces fragmentation, and fewer frames (49). If it still doesn't fit, the shots fall back to
-  Ken Burns, which the pipeline already does automatically.
+- **Tried:** sequential CPU offload (weights moved to the GPU layer by layer), VAE tiling and
+  slicing, `expandable_segments` to reduce fragmentation, and 49 frames instead of 81.
+- **Fixed:** the second test produced a clean 2.0 s clip at 480×832 (49 frames, 24 fps). It took
+  781 s of GPU time for one clip, plus about 40 minutes of job overhead (installs and the model
+  download) per job. Cost: much slower generation in exchange for fitting in memory.
 
 ## F3. ElevenLabs' newest model refused Amharic as a language code (Wed 25 Nov)
 
