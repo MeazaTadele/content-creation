@@ -4,6 +4,21 @@ Each entry: **hypothesis → change → result**, with the evidence (log lines, 
 the reason for the choice that followed. One thing is changed at a time; seeds are fixed when
 comparing prompts.
 
+## E6. Does a different OmniVoice voice remove the "reading a script" feeling? (Wed 25 Nov)
+
+- **Hypothesis:** user test 1 (all three testers) heard the narration as script-like. OmniVoice
+  copies the delivery of its sample voice, and the sample was a test sentence, so a voice
+  generated without that sample might sound more natural.
+- **Change:** five OmniVoice voices, each with a different seed and no sample voice, read the same
+  line (shot 9) on Kaggle's CPU (`outputs/voicebench/casting/`, `runs.jsonl` stage
+  `voicecasting`). Everything else unchanged.
+- **Result:** my judgement as a native speaker: all five still sound like someone reading a
+  script, and the narrator needs to be a woman's voice. All five clips were exactly 10.4 s, so
+  OmniVoice appears to set the length from the text alone, which may be part of the flat,
+  read-aloud rhythm.
+- **Decision:** move on with the pictures and come back to the voice before user test 2 (only the
+  narration, timing and assembly rerun). Next to try: a female AI sample voice for OmniVoice to follow.
+
 ## E5. Can image editing change clothes but keep a face? (Wed 25 Nov)
 
 - **Hypothesis:** giving FLUX.2 klein an already-chosen character image plus "the same person, only
