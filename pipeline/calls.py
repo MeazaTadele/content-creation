@@ -18,6 +18,7 @@ from . import runlog
 MAX_ATTEMPTS = 4
 BASE_DELAY = 2.0
 MAX_DELAY = 60.0
+RATE_LIMIT_DELAY = 65.0  # HTTP 429 without Retry-After: wait out a per-minute window (FAILURES.md F8)
 
 # Patterns that must never reach the log, whatever a provider puts in an error message.
 _SECRET_PATTERNS = [
@@ -88,7 +89,10 @@ def call_model(*, stage: str, unit: str, provider: str, model: str, params: dict
             })
             if last:
                 raise
-            delay = getattr(exc, "retry_after", None) or min(MAX_DELAY, BASE_DELAY * 2 ** (attempt - 1))
+            delay = getattr(exc, "retry_after", None)
+            if delay is None and "429" in str(exc):
+                delay = RATE_LIMIT_DELAY  # per-minute limits need about a minute, not a few seconds
+            delay = delay or min(MAX_DELAY, BASE_DELAY * 2 ** (attempt - 1))
             time.sleep(delay + random.uniform(0, delay / 4))
             continue
         latency = int((time.monotonic() - t0) * 1000)

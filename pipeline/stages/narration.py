@@ -129,7 +129,21 @@ def run_batch(ctx: Context, voices: list[str] | None = None) -> dict:
 
 
 def run(ctx: Context, voices: list[str] | None = None) -> dict:
+    """Each voice runs on its own: one voice hitting a quota never stops the others.
+    Only a failure of the film's chosen voice (voice.use) stops the run."""
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
-    stats = execute(ctx, units(ctx, voices))
+    voices = voices or ctx.sb["voice"]["compare"]
+    total = {"generated": 0, "cached": 0, "failed": 0}
+    for v in voices:
+        if getattr(providers.tts(v), "batch", False):
+            continue
+        try:
+            s = execute(ctx, units(ctx, [v]))
+        except Exception as e:  # noqa: BLE001
+            if v == ctx.sb["voice"]["use"]:
+                raise
+            say(f"  {v}: stopped ({calls.redact(str(e))[:160]}); other voices continue, rerun later for the rest")
+            s = {"generated": 0, "cached": 0, "failed": 1}
+        total = {k: total[k] + s[k] for k in total}
     b = run_batch(ctx, voices)
-    return {k: stats[k] + b[k] for k in stats}
+    return {k: total[k] + b[k] for k in total}

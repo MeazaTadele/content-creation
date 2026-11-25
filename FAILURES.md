@@ -3,6 +3,19 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F8. Gemini's per-minute limit stopped the narration run (Wed 25 Nov)
+
+- **What broke:** generating the real narration, Gemini TTS returned HTTP 429 ("You exceeded your
+  current quota") after 6 of 10 lines. The four automatic retries waited 2, 4 and 8 seconds, all
+  inside the same minute, so all four failed, and the whole narration run stopped, including the
+  voices that had nothing to do with Gemini.
+- **What was tried:** one tiny request a minute later succeeded (logged in `runs.jsonl`), which
+  showed it was a per-minute rate limit, not the daily quota.
+- **Fix:** an HTTP 429 without a `Retry-After` header now waits 65 seconds before retrying, and
+  each voice runs on its own: a voice that runs out of quota is reported and skipped, and the other
+  voices continue. Only a failure of the film's chosen voice stops the run. This is decision 28 (a)
+  in practice.
+
 ## F7. Kaggle results could not be downloaded (Wed 25 Nov)
 
 - **What broke:** both Kaggle jobs finished, but downloading their outputs failed: Kaggle serves
