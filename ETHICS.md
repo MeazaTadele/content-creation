@@ -40,15 +40,18 @@ English: "Good. Both your mother and I agree. Good luck, Emeye."
 
 **Henok's reply:** "yeah go ahead"
 
-### Still to do before the film is final
+### Notes on these records (Wed 25 Nov)
 
-- **Informed about how it is made and shown.** My parents' message did not say that the pictures
-  and voice are made by AI, or that the film will be posted publicly with an AI label. Henok's
-  message said it is an AI film, but not that it will be public. A short follow-up message with
-  both points is planned, and the replies will be added here.
-- **The exact words.** The brief asks that the words shown about a person are ones they agreed to.
-  Once the narration is written, my mother will see the exact lines about her, and her reply will
-  be recorded here before the narration is generated.
+- **Why my mother's consent came through my father:** my mother does not text, and my parents live
+  in a different city from me, so she could not reply in writing herself. The message was addressed
+  to both of my parents, and my father replied for both of them. I decided to keep the record as it
+  is rather than send a further follow-up.
+- **What the messages said and didn't say:** my parents' message explained that the film is for my
+  course, is about a Fasika holiday at home, and talks about them. It did not say that the pictures
+  and voice are made by AI or that the film will be posted publicly. Henok's message said it is an
+  AI film, but not that it will be public. I am recording this openly rather than leaving it out.
+- **No likeness is copied from a photo:** characters are described in words and drawn by an image
+  model; no photograph of any family member is given to a model.
 
 ## Licences
 
