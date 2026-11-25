@@ -310,7 +310,8 @@
     }
   ],
   "pacing": {
-    "lead_in": 0.15,
-    "tail": 0.3
+    "lead_in": 0.6,
+    "tail": 1.0,
+    "min": 5.0
   }
 }

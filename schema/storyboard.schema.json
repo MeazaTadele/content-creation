@@ -434,6 +434,11 @@
           "type": "number",
           "minimum": 0,
           "maximum": 3
+        },
+        "min": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 15
         }
       }
     }

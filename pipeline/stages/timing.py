@@ -37,7 +37,7 @@ def compute(ctx: Context) -> dict:
             # a crossfade pulled this shot's words too close to the last shot's: push them later
             lead += prev_narr_end + MIN_GAP - narr_start
             narr_start = start + lead
-        dur = max(t.get("min", DEFAULT_MIN_SHOT), lead + speech + tail)
+        dur = max(t.get("min", pace.get("min", DEFAULT_MIN_SHOT)), lead + speech + tail)
         overlap = CROSSFADE_SEC if (s.get("transition", "cut") == "crossfade" or i == n - 1) else 0.0
         shots.append({
             "id": s["id"], "start": round(start, 3), "duration": round(dur, 3),

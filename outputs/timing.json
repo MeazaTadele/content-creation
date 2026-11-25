@@ -4,127 +4,127 @@
     {
       "id": "s01",
       "start": 0.0,
-      "duration": 6.543,
-      "narration_start": 0.15,
-      "narration_end": 6.243,
+      "duration": 6.437,
+      "narration_start": 0.6,
+      "narration_end": 5.437,
       "speech_trim": [
-        0.103,
-        6.196
+        0.192,
+        5.029
       ],
       "overlap_out": 0.0
     },
     {
       "id": "s02",
-      "start": 6.543,
-      "duration": 7.573,
-      "narration_start": 6.693,
-      "narration_end": 13.816,
+      "start": 6.437,
+      "duration": 7.712,
+      "narration_start": 7.037,
+      "narration_end": 13.149,
       "speech_trim": [
-        0.102,
-        7.225
+        0.353,
+        6.465
       ],
       "overlap_out": 0.0
     },
     {
       "id": "s03",
-      "start": 14.116,
-      "duration": 6.771,
-      "narration_start": 14.266,
-      "narration_end": 20.587,
+      "start": 14.149,
+      "duration": 7.153,
+      "narration_start": 14.749,
+      "narration_end": 20.302,
       "speech_trim": [
-        0.105,
-        6.426
+        0.12,
+        5.673
       ],
       "overlap_out": 0.0
     },
     {
       "id": "s04",
-      "start": 20.887,
-      "duration": 8.185,
-      "narration_start": 21.037,
-      "narration_end": 28.772,
+      "start": 21.302,
+      "duration": 8.269,
+      "narration_start": 21.902,
+      "narration_end": 28.571,
       "speech_trim": [
-        0.103,
-        7.838
+        0.306,
+        6.975
       ],
       "overlap_out": 0.5
     },
     {
       "id": "s05",
-      "start": 28.572,
-      "duration": 3.363,
-      "narration_start": 29.022,
-      "narration_end": 31.635,
+      "start": 29.071,
+      "duration": 5.0,
+      "narration_start": 29.671,
+      "narration_end": 31.816,
       "speech_trim": [
-        0.103,
-        2.716
+        0.134,
+        2.279
       ],
       "overlap_out": 0.5
     },
     {
       "id": "s06",
-      "start": 31.435,
-      "duration": 3.706,
-      "narration_start": 31.885,
-      "narration_end": 34.841,
+      "start": 33.571,
+      "duration": 5.0,
+      "narration_start": 34.171,
+      "narration_end": 36.82,
       "speech_trim": [
-        0.142,
-        3.098
+        0.189,
+        2.838
       ],
       "overlap_out": 0.0
     },
     {
       "id": "s07",
-      "start": 35.141,
-      "duration": 8.163,
-      "narration_start": 35.291,
-      "narration_end": 43.004,
+      "start": 38.571,
+      "duration": 8.139,
+      "narration_start": 39.171,
+      "narration_end": 45.71,
       "speech_trim": [
-        0.138,
-        7.851
+        0.121,
+        6.66
       ],
       "overlap_out": 0.0
     },
     {
       "id": "s08",
-      "start": 43.304,
-      "duration": 3.0,
-      "narration_start": 43.454,
-      "narration_end": 44.958,
+      "start": 46.71,
+      "duration": 5.0,
+      "narration_start": 47.31,
+      "narration_end": 48.759,
       "speech_trim": [
-        0.103,
-        1.607
+        0.251,
+        1.7
       ],
       "overlap_out": 0.0
     },
     {
       "id": "s09",
-      "start": 46.304,
-      "duration": 9.229,
-      "narration_start": 46.454,
-      "narration_end": 55.233,
+      "start": 51.71,
+      "duration": 9.075,
+      "narration_start": 52.31,
+      "narration_end": 59.785,
       "speech_trim": [
-        0.119,
-        8.898
+        0.189,
+        7.664
       ],
       "overlap_out": 0.5
     },
     {
       "id": "s10",
-      "start": 55.033,
-      "duration": 4.825,
-      "narration_start": 55.483,
-      "narration_end": 59.558,
+      "start": 60.285,
+      "duration": 5.0,
+      "narration_start": 60.885,
+      "narration_end": 64.035,
       "speech_trim": [
-        0.103,
-        4.178
+        0.127,
+        3.277
       ],
       "overlap_out": 0.5
     }
   ],
-  "end_card_start": 59.358,
+  "end_card_start": 64.785,
   "end_card_seconds": 3,
-  "film_seconds": 59.858,
-  "total_seconds": 62.358,
+  "film_seconds": 65.285,
+  "total_seconds": 67.785,
   "crossfade_seconds": 0.5
 }
