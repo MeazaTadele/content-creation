@@ -1,10 +1,67 @@
 {
-  "units": {},
+  "units": {
+    "narration/gemini/s01": {
+      "fingerprint": "4cf49c2dcf48d730768b31bed861bbe6d382b8c0f52b8715aa83eb32ccdba4bd",
+      "output": "outputs/narration/gemini/s01__4cf49c2d.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 6.46,
+      "speech_start": 0.0,
+      "speech_end": 17.701,
+      "file_seconds": 17.701,
+      "speech_seconds": 17.701,
+      "voice": "elevenlabs",
+      "shot": "s01"
+    },
+    "narration/gemini/s02": {
+      "fingerprint": "17539c219f78f1a16f32a04f2d40f1322cbbc21b546daa46c2e7a9eb85705294",
+      "output": "outputs/narration/gemini/s02__17539c21.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 6.59,
+      "speech_start": 0.0,
+      "speech_end": 14.031,
+      "file_seconds": 14.031,
+      "speech_seconds": 14.031,
+      "voice": "elevenlabs",
+      "shot": "s02"
+    },
+    "narration/gemini/s03": {
+      "fingerprint": "8f5b03664153756dc1492b0f1c81208b0520751f832f3f18e6032ad1989c2811",
+      "output": "outputs/narration/gemini/s03__8f5b0366.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 5.15,
+      "speech_start": 0.0,
+      "speech_end": 14.371,
+      "file_seconds": 14.371,
+      "speech_seconds": 14.371,
+      "voice": "elevenlabs",
+      "shot": "s03"
+    },
+    "narration/gemini/s04": {
+      "fingerprint": "b5e6db16f736d12f09b822b83a6c7573b3c10281fab9178ded15ac1385496fe2",
+      "output": "outputs/narration/gemini/s04__b5e6db16.wav",
+      "status": "generated",
+      "provider": "gemini",
+      "model": "",
+      "seconds": 5.4,
+      "speech_start": 0.0,
+      "speech_end": 15.041,
+      "file_seconds": 15.041,
+      "speech_seconds": 15.041,
+      "voice": "elevenlabs",
+      "shot": "s04"
+    }
+  },
   "stage_versions": {},
   "stage_sources": {
     "narration": {
       "version": 1,
-      "sha": "73c9e91500dcb9073d495d836f161c43a2db4caeb821caab5dda825c2e58b206"
+      "sha": "3b6a5ce2938bbb122a514745670339cc64b18cf4ae3b9a0434fdce5278ad39f4"
     },
     "refsheet": {
       "version": 1,
