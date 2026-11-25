@@ -321,22 +321,22 @@
       "candidate": 3
     },
     "refsheet/mother/0": {
-      "fingerprint": "9ac8505d3569f938b327a73f8a5dfd5cf7b86431b9cb01015e71398b31a97533",
-      "output": "outputs/refsheet/mother/0__9ac8505d.png",
+      "fingerprint": "9acb27c3a418f5590e680fb45ceb1bb7f49c116bef3a29d61fb25c24a3659002",
+      "output": "outputs/refsheet/mother/0__9acb27c3.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 12.44,
+      "seconds": 6.35,
       "character": "mother",
       "candidate": 0
     },
     "refsheet/mother/1": {
-      "fingerprint": "30b1c9e5e27bb5d02a2724a0216a4f14ed7369a1fe48cfae28fa94e8eca31be5",
-      "output": "outputs/refsheet/mother/1__30b1c9e5.png",
+      "fingerprint": "199646aa58589de1242ed6fcff0e300fade3e54a0a4b80e78cd4c92d200d74bb",
+      "output": "outputs/refsheet/mother/1__199646aa.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 9.98,
+      "seconds": 4.35,
       "character": "mother",
       "candidate": 1
     },
@@ -361,42 +361,42 @@
       "candidate": 3
     },
     "refsheet/father/0": {
-      "fingerprint": "6e4eb2f285200ef2687550453c0cd0c51057c927d1b05e26a858a90367f2157b",
-      "output": "outputs/refsheet/father/0__6e4eb2f2.png",
+      "fingerprint": "d780cc11256f252f78331f3f17469cf3c9cfcb6404e11b0ea02d6b10b013eed1",
+      "output": "outputs/refsheet/father/0__d780cc11.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 4.06,
+      "seconds": 4.73,
       "character": "father",
       "candidate": 0
     },
     "refsheet/father/1": {
-      "fingerprint": "a9fbfa1b097a197e7f56da828b9a41ced199ae18d77ebea2e5285fcba211e197",
-      "output": "outputs/refsheet/father/1__a9fbfa1b.png",
+      "fingerprint": "9668be7f20c242caebce4558b0d593bf7a63708b5368ecef74b8e09d3917d813",
+      "output": "outputs/refsheet/father/1__9668be7f.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 5.97,
+      "seconds": 4.56,
       "character": "father",
       "candidate": 1
     },
     "refsheet/brother/0": {
-      "fingerprint": "de0692e7d32a106866f01fbf7a8b4771b1057cee6be1e0c156778edc5873feef",
-      "output": "outputs/refsheet/brother/0__de0692e7.png",
+      "fingerprint": "cee4913f5283951872f10d35d5cb4859d2838d729702b64e5cb7edac455a7c09",
+      "output": "outputs/refsheet/brother/0__cee4913f.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 5.5,
+      "seconds": 6.43,
       "character": "brother",
       "candidate": 0
     },
     "refsheet/brother/1": {
-      "fingerprint": "813cf33e2d01a33b7ed3b3b906a6a9f00c4c6420e708f53e87bc31e54c1562a0",
-      "output": "outputs/refsheet/brother/1__813cf33e.png",
+      "fingerprint": "7050d20efec930eef25604c181b09b8721f0380b06a0df91502344a8d0c56897",
+      "output": "outputs/refsheet/brother/1__7050d20e.png",
       "status": "generated",
       "provider": "cloudflare-flux",
       "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 4.72,
+      "seconds": 4.36,
       "character": "brother",
       "candidate": 1
     },

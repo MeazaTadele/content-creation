@@ -19,29 +19,30 @@
     },
     {
       "id": "mother",
-      "description": "a slim Ethiopian woman in her forties, Ethiopian (Habesha) facial features: slender oval face, large almond-shaped dark eyes, straight narrow nose, defined cheekbones, warm medium-brown skin, gentle eyes, a calm closed-mouth smile, black hair pulled back neatly, no headscarf; wearing a long cream crinkled handwoven cotton habesha dress with long sleeves, a V neckline and a gathered high waist; one narrow tibeb stripe running straight down the centre from the neckline to the hem, woven in yellow, green, navy and black zigzag and chevron patterns, ending in a large black, green and gold cross motif near the hem; matching tibeb bands on the cuffs; a matching cream netela over one shoulder with a yellow-orange border",
-      "reference_seed": 821,
-      "reference_candidates": 4,
+      "description": "the same woman as in the reference image, with her black hair still pulled back neatly in a low bun, same clothes, same hairstyle, same pose, same framing, same background and same painting style; change only the facial features so the person looks clearly Ethiopian (Habesha): warm deep-brown skin, slender long face, large almond-shaped dark eyes, straight narrow nose, high defined cheekbones",
+      "reference_seed": 841,
+      "reference_candidates": 2,
       "reference_use": null,
-      "consent": "ETHICS.md#consent"
+      "consent": "ETHICS.md#consent",
+      "edit_from": "references/mother_pick_v7.png"
     },
     {
       "id": "father",
-      "description": "the same man as in the reference image, same face, hairstyle and beard, now dressed in a white long cotton tunic shirt with a red embroidered border around the neck opening and on the cuffs, a white gabi shawl with thin green, yellow and red stripes draped over one shoulder, light beige trousers and brown sandals, with no other changes",
-      "reference_seed": 761,
+      "description": "the same man as in the reference image, still bald on top with short grey hair at the sides and a short grey beard, same clothes, same hairstyle, same pose, same framing, same background and same painting style; change only the facial features so the person looks clearly Ethiopian (Habesha): warm deep-brown skin, slender long face, large almond-shaped dark eyes, straight narrow nose, high defined cheekbones",
+      "reference_seed": 781,
       "reference_candidates": 2,
       "reference_use": null,
       "consent": "ETHICS.md#consent",
-      "edit_from": "references/father_base.png"
+      "edit_from": "references/father_pick_v7.png"
     },
     {
       "id": "brother",
-      "description": "the same man as in the reference image, same face, hairstyle and beard, now dressed in a white long cotton tunic shirt with a red embroidered border around the neck opening and on the cuffs, a white gabi shawl with thin green, yellow and red stripes draped over one shoulder, light beige trousers and brown sandals, with no other changes",
-      "reference_seed": 911,
+      "description": "the same young man as in the reference image, keeping his beard and high fade, same clothes, same pose, same framing, same background and same painting style; change only the face and hair so the person looks clearly Ethiopian (Habesha): warm deep-brown skin, slender long face, large almond-shaped dark eyes, straight narrow nose, high defined cheekbones, full lips, tightly curled black hair",
+      "reference_seed": 921,
       "reference_candidates": 2,
       "reference_use": null,
       "consent": "ETHICS.md#consent",
-      "edit_from": "references/brother_base.png"
+      "edit_from": "references/brother_pick_v7.png"
     }
   ],
   "voice": {
