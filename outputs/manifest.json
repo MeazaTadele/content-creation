@@ -113,44 +113,44 @@
       "shot": "s08"
     },
     "narration/elevenlabs/s01": {
-      "fingerprint": "6851e8032db6bc953aa8957c25d403ef98174537419fce49179e4602bb51e4c1",
-      "output": "outputs/narration/elevenlabs/s01__6851e803.wav",
+      "fingerprint": "43eca48da81bd51f805ead7f9b4ac7fdbcab4c394cb4cbe501470d4facb1b8af",
+      "output": "outputs/narration/elevenlabs/s01__43eca48d.wav",
       "status": "generated",
       "provider": "elevenlabs",
       "model": "eleven_v3",
-      "seconds": 3.65,
-      "speech_start": 0.0,
-      "speech_end": 5.52,
-      "file_seconds": 5.52,
-      "speech_seconds": 5.52,
+      "seconds": 3.3,
+      "speech_start": 0.229,
+      "speech_end": 3.28,
+      "file_seconds": 3.28,
+      "speech_seconds": 3.051,
       "voice": "elevenlabs",
       "shot": "s01"
     },
     "narration/elevenlabs/s02": {
-      "fingerprint": "cf3c2d1ba3df768ec4b9688885d705a8e0cbf2041943839f2ff85915398f923f",
-      "output": "outputs/narration/elevenlabs/s02__cf3c2d1b.wav",
+      "fingerprint": "3f2aff24cfe85cc051939f7e6d08f8249dd6f2d888022dd618f0ef2a56dc1b8b",
+      "output": "outputs/narration/elevenlabs/s02__3f2aff24.wav",
       "status": "generated",
       "provider": "elevenlabs",
       "model": "eleven_v3",
-      "seconds": 4.11,
+      "seconds": 5.33,
       "speech_start": 0.0,
-      "speech_end": 6.16,
-      "file_seconds": 6.16,
-      "speech_seconds": 6.16,
+      "speech_end": 6.855,
+      "file_seconds": 7.04,
+      "speech_seconds": 6.855,
       "voice": "elevenlabs",
       "shot": "s02"
     },
     "narration/elevenlabs/s03": {
-      "fingerprint": "dd4aa99fb9d6db26900f708f309485e6ef990f2127ee872ca1278151b0f15699",
-      "output": "outputs/narration/elevenlabs/s03__dd4aa99f.wav",
+      "fingerprint": "f21bf6940fb81cc06d664932244921fe70801300346594aec8e17c46d78a1d04",
+      "output": "outputs/narration/elevenlabs/s03__f21bf694.wav",
       "status": "generated",
       "provider": "elevenlabs",
       "model": "eleven_v3",
-      "seconds": 3.34,
-      "speech_start": 0.134,
-      "speech_end": 4.314,
-      "file_seconds": 4.48,
-      "speech_seconds": 4.18,
+      "seconds": 4.13,
+      "speech_start": 0.0,
+      "speech_end": 4.16,
+      "file_seconds": 4.16,
+      "speech_seconds": 4.16,
       "voice": "elevenlabs",
       "shot": "s03"
     },
@@ -927,7 +927,7 @@
   "stage_sources": {
     "narration": {
       "version": 1,
-      "sha": "1033be5a91d3b2ad33fa49a2ce22502f3ffc42386fa7c331b11c3265526ae219"
+      "sha": "ce4b3db96b310b16b9529c329b39f30cf4e2316ce2d47d2f47bc649a174702ec"
     },
     "refsheet": {
       "version": 1,
