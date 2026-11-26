@@ -733,15 +733,15 @@
       "seconds": 38.8
     },
     "keyframes/s01/16x9": {
-      "fingerprint": "8536e77c1753a5323482467369aca7737430a3c5d2479a959ab085b1cdac77a8",
-      "output": "outputs/keyframes/s01/16x9__8536e77c.png",
+      "fingerprint": "ba74f32f6b32214d812a593c900c4c8b8719334d60723d2330e7911147e91ba0",
+      "output": "outputs/keyframes/s01/16x9__ba74f32f.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s01",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 30.8
+      "seconds": 31.7
     },
     "keyframes/s02/9x16": {
       "fingerprint": "ef6e360031f400536b6f8c477366bbb35e1478bc71813b189142c98e9b060c94",
@@ -754,15 +754,15 @@
       "seconds": 27.5
     },
     "keyframes/s02/16x9": {
-      "fingerprint": "2b353b597bf44ae1a027d5ffdffb60e78a1309d302d1af7757ba0ff867146606",
-      "output": "outputs/keyframes/s02/16x9__2b353b59.png",
+      "fingerprint": "7e9529ac5201e786fce5a46b52e3144e2704b1c8e4d837af48a4d0e6bcc821b2",
+      "output": "outputs/keyframes/s02/16x9__7e9529ac.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s02",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 27.6
+      "seconds": 31.1
     },
     "keyframes/s03/9x16": {
       "fingerprint": "8f008b84ec86a49504b1db87434e2851461ab551d8023d7c2af2bf3cc34b5722",
@@ -775,15 +775,15 @@
       "seconds": 48.3
     },
     "keyframes/s03/16x9": {
-      "fingerprint": "1199fd7e443bee49781baa37ed7b2f6a7915df8e12b25467f8c8dee7589344c1",
-      "output": "outputs/keyframes/s03/16x9__1199fd7e.png",
+      "fingerprint": "df314d58351d3d8bec575ace762ea8ced3874647025f643361fd42639df60d3f",
+      "output": "outputs/keyframes/s03/16x9__df314d58.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s03",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.6
+      "seconds": 33.4
     },
     "keyframes/s04/9x16": {
       "fingerprint": "af54a62cbfc34cfea91b632d651d4266519244662a4874469d310c89d7d518f5",
@@ -796,15 +796,15 @@
       "seconds": 33.4
     },
     "keyframes/s04/16x9": {
-      "fingerprint": "d4554d202caec7e3fb43cd4c2a4297cab2f95b408075344013bd7eada7f096d7",
-      "output": "outputs/keyframes/s04/16x9__d4554d20.png",
+      "fingerprint": "f70f87944632b161825a9c881f081630a203555759a3fc97ca0a2b1bcdc1a87d",
+      "output": "outputs/keyframes/s04/16x9__f70f8794.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s04",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 30.2
+      "seconds": 30.9
     },
     "keyframes/s05/9x16": {
       "fingerprint": "710ee15fd72108c4509ecbb2f5e6780c0e1bcca7fa3e53867702f2619eeb45d3",
@@ -817,15 +817,15 @@
       "seconds": 37.8
     },
     "keyframes/s05/16x9": {
-      "fingerprint": "7585dca5fb517f8bf117ba1d2dea7cdbdd8fa68791d2165865ac5f4f995bbe47",
-      "output": "outputs/keyframes/s05/16x9__7585dca5.png",
+      "fingerprint": "c1f74df92bdc913f7599b2cd0ffa5ecd09de861d3187e54feb915b9b6928a51e",
+      "output": "outputs/keyframes/s05/16x9__c1f74df9.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s05",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.2
+      "seconds": 32.4
     },
     "keyframes/s06/9x16": {
       "fingerprint": "567a913a886a7cb2068e8537d55fc0dc3b4ec1b10ac11d3ded8fe0cc44916eb6",
@@ -838,15 +838,15 @@
       "seconds": 32.9
     },
     "keyframes/s06/16x9": {
-      "fingerprint": "433bc454268d4c206d09e574f1122d1e7512bad6991bbebef8a00ee51e3cb704",
-      "output": "outputs/keyframes/s06/16x9__433bc454.png",
+      "fingerprint": "ddac61eed1cb12594458e82fe677a745f3ff8c7167ad92fa750e7196fc837ae9",
+      "output": "outputs/keyframes/s06/16x9__ddac61ee.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s06",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.2
+      "seconds": 32.1
     },
     "keyframes/s07/9x16": {
       "fingerprint": "e950b36e60b4c1d379a793a99f6033dd5728920429f18f9468debb1cd76fb572",
@@ -857,15 +857,15 @@
       "ratio": "9x16"
     },
     "keyframes/s07/16x9": {
-      "fingerprint": "746d59c6a6fcdde3ed27fa21cd46981b001c1fa2323c2093503be5dc92f284c9",
-      "output": "outputs/keyframes/s07/16x9__746d59c6.png",
+      "fingerprint": "290842313f323a837477cb29ffedd6aaf127d5da63859fb531e4c7bc450931e5",
+      "output": "outputs/keyframes/s07/16x9__29084231.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s07",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.6
+      "seconds": 31.7
     },
     "keyframes/s08/9x16": {
       "fingerprint": "5834432f3db9038bf03c5d20c19e2e9b57057080b8d0a90dd7fb22ec253d73ea",
@@ -879,15 +879,15 @@
       "chosen_from": "s08/9x16/try3208"
     },
     "keyframes/s08/16x9": {
-      "fingerprint": "ac10c9a6f80a88979790ed20d6f0961606b68b13f308dc86cc4f1b3975230fdf",
-      "output": "outputs/keyframes/s08/16x9__ac10c9a6.png",
+      "fingerprint": "d0e33d5d01d4c589b8d3662a082f62450c680c797a04e3941cf8af59f997f3a3",
+      "output": "outputs/keyframes/s08/16x9__d0e33d5d.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s08",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.5
+      "seconds": 32.2
     },
     "keyframes/s09/9x16": {
       "fingerprint": "7a96126d6dbdda12a343828a4c8b381c02b1a51729e10bb080a474066c11ebbe",
@@ -898,15 +898,15 @@
       "ratio": "9x16"
     },
     "keyframes/s09/16x9": {
-      "fingerprint": "874989a4efd410ed52b86c7c27c802aa8f06cab550182183842b83cc4fb7357c",
-      "output": "outputs/keyframes/s09/16x9__874989a4.png",
+      "fingerprint": "feeef714fd7cb013d82460673eff550d2bde9a77e8e2e830c93b01a9614aba55",
+      "output": "outputs/keyframes/s09/16x9__feeef714.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s09",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.5
+      "seconds": 31.9
     },
     "keyframes/s10/9x16": {
       "fingerprint": "7a96126d6dbdda12a343828a4c8b381c02b1a51729e10bb080a474066c11ebbe",
@@ -917,15 +917,15 @@
       "ratio": "9x16"
     },
     "keyframes/s10/16x9": {
-      "fingerprint": "26c47366c872e7e573096b6201d7dc64efb1541ed5690bd0fce150f79d4ff1cf",
-      "output": "outputs/keyframes/s10/16x9__26c47366.png",
+      "fingerprint": "93ede034f19ef9c1b8d897675b45c6c5191ae237a92c01ada6b679c88dfc699b",
+      "output": "outputs/keyframes/s10/16x9__93ede034.png",
       "status": "generated",
       "provider": "kaggle-inpaint",
       "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s10",
       "ratio": "16x9",
       "wide_from": "9x16",
-      "seconds": 29.6
+      "seconds": 31.7
     },
     "keyframes/s07/9x16/try1007": {
       "fingerprint": "0f3e5b80c9e9df70e6a575985656ad8c923e0db7278f942d11d06121cf8a3f11",
