@@ -843,14 +843,14 @@
       "seconds": 26.1
     },
     "keyframes/s07/9x16": {
-      "fingerprint": "cf8ef39d94251b914e034b7adb30e371b80b59905032de12b3630d2cda763bd4",
-      "output": "outputs/keyframes/s07/9x16__cf8ef39d.png",
+      "fingerprint": "f401feefeb90f93ad9ea5d9c25c31539f4abbbdbac86589d9e3915f893d8e143",
+      "output": "outputs/keyframes/s07/9x16__f401feef.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
       "ratio": "9x16",
-      "seconds": 56.6
+      "seconds": 37.9
     },
     "keyframes/s07/16x9": {
       "fingerprint": "9a4e95c5524f658aefa29c399b4bcde436999a4b2bbfb5d89f2ee505e15679ba",
@@ -863,14 +863,14 @@
       "seconds": 25.5
     },
     "keyframes/s08/9x16": {
-      "fingerprint": "ccc143b4deace3321e82dfb48830ddd55f6e7fefe940fd21734cfa0f6ed4b345",
-      "output": "outputs/keyframes/s08/9x16__ccc143b4.png",
+      "fingerprint": "d4a3123f084478773ff67123e88142fc5c0c237259dace77240e33628400b23e",
+      "output": "outputs/keyframes/s08/9x16__d4a3123f.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s08",
       "ratio": "9x16",
-      "seconds": 68.1
+      "seconds": 36.9
     },
     "keyframes/s08/16x9": {
       "fingerprint": "3fe879199604677029275b179feae2c87a8fd803865a38981507a3ec11dc64ce",
@@ -883,14 +883,14 @@
       "seconds": 33.8
     },
     "keyframes/s09/9x16": {
-      "fingerprint": "89e8e14f2764010a0640ca34ad34c8a59cb529c34c52fca32d18267b1e9f7313",
-      "output": "outputs/keyframes/s09/9x16__89e8e14f.png",
+      "fingerprint": "cb6541933232d135d594ad6c19fea46573037b6fb96f33ef87a2753223167472",
+      "output": "outputs/keyframes/s09/9x16__cb654193.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s09",
       "ratio": "9x16",
-      "seconds": 67.5
+      "seconds": 31.5
     },
     "keyframes/s09/16x9": {
       "fingerprint": "49641ed7bf5015005eb9f632f03ca8629b52c6b903f389b6e7ca17967dc63f12",
