@@ -998,14 +998,14 @@
       "gpu_seconds": 781.5
     },
     "shots/s06": {
-      "fingerprint": "2d08c6ee8da5ee80b0183fb70475b1a34a57a2c10ab18764f736f430ff65434c",
-      "output": "outputs/shots/s06__2d08c6ee.mp4",
+      "fingerprint": "e5ab69619f2cba26502a9ccb7d860e7631dcba62840d42c83b1046b3daed835a",
+      "output": "outputs/shots/s06__e5ab6961.mp4",
       "status": "generated",
       "provider": "kaggle-wan22",
       "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
-      "attempts": 2,
-      "seconds": 800.9,
-      "gpu_seconds": 800.9
+      "attempts": 1,
+      "seconds": 803.7,
+      "gpu_seconds": 803.7
     },
     "shots/s09": {
       "fingerprint": "28204f001e29a5ea936a332f62578e82c0ef48c9fc1b0f9befda50f7be2ff6fd",
