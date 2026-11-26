@@ -103,7 +103,8 @@ def cmd_film(_):
     say("3/7 reference sheet")
     _report("refsheet", refsheet.run(ctx))
     say("4/7 keyframes")
-    _report("keyframes", keyframes.run(ctx))
+    # the 16:9 film shows the 9:16 picture over a blurred copy (decision 6), so only 9:16 is needed
+    _report("keyframes", keyframes.run(ctx, ["9x16"]))
     say("5/7 video clips")
     _report("shots", shots.run(ctx))
     say("6/7 music")
@@ -116,7 +117,7 @@ def cmd_plan(_):
     ctx = _ctx(dry=True)
     say("plan (nothing is generated or called)")
     for name, fn in (("narration", lambda: narration.run(ctx)), ("refsheet", lambda: refsheet.run(ctx)),
-                     ("keyframes", lambda: keyframes.run(ctx))):
+                     ("keyframes", lambda: keyframes.run(ctx, ["9x16"]))):
         say(name)
         _report(name, fn())
     try:

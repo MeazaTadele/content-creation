@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from .config import SCHEMA_PATH, STORYBOARD_PATH
+from .config import ROOT, SCHEMA_PATH, STORYBOARD_PATH
 
 
 class ContractError(ValueError):
@@ -46,6 +46,17 @@ def _semantic_checks(sb: dict) -> list[str]:
         for c in s["image"].get("characters", []):
             if c not in char_ids:
                 out.append(f"shots/{s['id']}: unknown character '{c}'")
+    for i, s in enumerate(sb["shots"]):
+        im = s["image"]
+        src = im.get("scene_from")
+        if src and src not in shot_ids[:i]:
+            out.append(f"shots/{s['id']}: scene_from '{src}' must be an earlier shot")
+        for field in ("edit_from", "locked"):
+            for ratio, f in (im.get(field) or {}).items():
+                if not (ROOT / f).exists():
+                    out.append(f"shots/{s['id']}: image.{field}.{ratio} file not found: {f}")
+        if im.get("provider") == "kaggle-inpaint" and not (im.get("inpaint") and im.get("edit_from")):
+            out.append(f"shots/{s['id']}: kaggle-inpaint needs image.inpaint and image.edit_from")
     if sb["voice"]["use"] not in sb["voice"]["compare"]:
         out.append("voice/use must be one of voice/compare")
     cues = sb["music"]["cues"]

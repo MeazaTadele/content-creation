@@ -843,14 +843,12 @@
       "seconds": 26.1
     },
     "keyframes/s07/9x16": {
-      "fingerprint": "f401feefeb90f93ad9ea5d9c25c31539f4abbbdbac86589d9e3915f893d8e143",
-      "output": "outputs/keyframes/s07/9x16__f401feef.png",
-      "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "fingerprint": "e950b36e60b4c1d379a793a99f6033dd5728920429f18f9468debb1cd76fb572",
+      "output": "outputs/keyframes/s07/9x16__e950b36e.png",
+      "status": "locked",
+      "source": "references/keyframes/s07_9x16_v4.png",
       "shot": "s07",
-      "ratio": "9x16",
-      "seconds": 37.9
+      "ratio": "9x16"
     },
     "keyframes/s07/16x9": {
       "fingerprint": "9a4e95c5524f658aefa29c399b4bcde436999a4b2bbfb5d89f2ee505e15679ba",
@@ -957,6 +955,36 @@
       "shot": "s07",
       "ratio": "9x16",
       "seconds": 55.0
+    },
+    "keyframes/s08/9x16/try1008": {
+      "fingerprint": "9eef40932442ad6894c9644f0ba9d52ef29d5ca8f4deee3f3e72ec7ee0bff035",
+      "output": "outputs/keyframes/s08/9x16/try1008__9eef4093.png",
+      "status": "generated",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+      "shot": "s08",
+      "ratio": "9x16",
+      "seconds": 59.9
+    },
+    "keyframes/s08/9x16/try2108": {
+      "fingerprint": "2f199e6f1fae6df0b1206b51f0663346d62ca4f1b4c106bb81ed557148fc67f0",
+      "output": "outputs/keyframes/s08/9x16/try2108__2f199e6f.png",
+      "status": "generated",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+      "shot": "s08",
+      "ratio": "9x16",
+      "seconds": 60.5
+    },
+    "keyframes/s08/9x16/try3208": {
+      "fingerprint": "5834432f3db9038bf03c5d20c19e2e9b57057080b8d0a90dd7fb22ec253d73ea",
+      "output": "outputs/keyframes/s08/9x16/try3208__5834432f.png",
+      "status": "generated",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+      "shot": "s08",
+      "ratio": "9x16",
+      "seconds": 59.1
     }
   },
   "stage_versions": {},
