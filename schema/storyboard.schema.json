@@ -506,6 +506,12 @@
                         },
                         "ref_scale": {
                           "type": "number"
+                        },
+                        "face_ref": {
+                          "type": "string"
+                        },
+                        "face_scale": {
+                          "type": "number"
                         }
                       }
                     }

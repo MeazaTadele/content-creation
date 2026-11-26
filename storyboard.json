@@ -231,9 +231,10 @@
         "wide_fix": {
           "base": "references/keyframes/s06_16x9_wide_v2.png",
           "try_seeds": [
-            1606,
-            2606,
-            3606
+            4606,
+            5606,
+            6606,
+            7606
           ],
           "inpaint": [
             {
@@ -275,10 +276,12 @@
                   672
                 ]
               ],
-              "prompt": "the mother from the reference image standing, the same face, the same black hair in a low bun, an Ethiopian woman, wearing a long white cotton dress with a narrow green and gold woven tibeb border at the cuffs and hem, warm soft painted illustration, gentle morning light, visible brush texture",
-              "negative": "different face, green dress, blonde hair, extra person, text, blurry, deformed hands",
+              "prompt": "the mother from the reference images standing, the same woman: warm deep-brown skin, slender long face, large almond-shaped dark eyes, straight narrow nose, high defined cheekbones, a gentle smile, black hair pulled back neatly in a low bun; wearing her cream dress with a gold V-neck trim, a woven stripe down the front and a green and gold zigzag tibeb border at the hem and cuffs; warm soft painted illustration, gentle morning light",
+              "negative": "different woman, loose hair, curly hair, green dress, blonde hair, extra person, text, blurry, deformed hands, deformed face",
               "ref": "mother",
-              "ref_scale": 0.65
+              "ref_scale": 0.5,
+              "face_ref": "references/mother_face.png",
+              "face_scale": 0.8
             }
           ]
         }

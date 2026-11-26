@@ -31,12 +31,13 @@ def main():
     t0 = time.time()
     pipe = AutoPipelineForInpainting.from_pretrained(MODEL_ID, torch_dtype=torch.float16, variant="fp16").to("cuda")
     print(f"{type(pipe).__name__} loaded in {time.time() - t0:.0f} s", flush=True)
-    uses_ref = any(st.get("ref") for u in job["units"] for st in u["steps"])
-    if uses_ref:  # decision 46: IP-Adapter lets the repaint follow a person's reference image
+    uses_ref = any(st.get("ref") or st.get("face_ref") for u in job["units"] for st in u["steps"])
+    if uses_ref:  # decisions 46-47: IP-Adapter lets the repaint follow a person's look and face
         pipe.load_ip_adapter("h94/IP-Adapter", subfolder="sdxl_models",
-                             weight_name="ip-adapter-plus_sdxl_vit-h.safetensors",
+                             weight_name=["ip-adapter-plus_sdxl_vit-h.safetensors",
+                                          "ip-adapter-plus-face_sdxl_vit-h.safetensors"],
                              image_encoder_folder="models/image_encoder")
-        print("IP-Adapter loaded", flush=True)
+        print("IP-Adapters loaded (look + face)", flush=True)
     for u in job["units"]:
         res = {"unit": u["unit"], "fingerprint": u["fingerprint"], "model": MODEL_ID}
         t1 = time.time()
@@ -48,9 +49,12 @@ def main():
                 g = torch.Generator(device="cuda").manual_seed(u["seed"] + k)
                 extra = {}
                 if uses_ref:
-                    ref = step.get("ref")
-                    pipe.set_ip_adapter_scale(step.get("ref_scale", 0.6) if ref else 0.0)
-                    extra["ip_adapter_image"] = Image.open(os.path.join(inp, ref)).convert("RGB") if ref else img
+                    ref, face = step.get("ref"), step.get("face_ref")
+                    pipe.set_ip_adapter_scale([step.get("ref_scale", 0.6) if ref else 0.0,
+                                               step.get("face_scale", 0.7) if face else 0.0])
+                    extra["ip_adapter_image"] = [
+                        Image.open(os.path.join(inp, ref)).convert("RGB") if ref else img,
+                        Image.open(os.path.join(inp, face)).convert("RGB") if face else img]
                 out = pipe(prompt=step["prompt"], negative_prompt=step.get("negative", ""), image=img, mask_image=mask,
                            height=h, width=w, strength=0.99, guidance_scale=7.0, num_inference_steps=30,
                            generator=g, **extra).images[0].resize((w, h))

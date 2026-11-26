@@ -312,9 +312,12 @@ def run_wide(ctx: Context) -> dict:
                 steps, refs = [], []
                 for k, st in enumerate(fix["inpaint"]):
                     rp = refsheet.chosen(ctx, st["ref"]) if st.get("ref") else None
+                    fr = ROOT / st["face_ref"] if st.get("face_ref") else None
                     refs.append(rp)
+                    refs.append(fr)
                     steps.append({"prompt": st["prompt"], "negative": st.get("negative", ""), "area": st["area"],
-                                  **({"ref": rp.name, "ref_scale": st.get("ref_scale", 0.6)} if rp else {})})
+                                  **({"ref": rp.name, "ref_scale": st.get("ref_scale", 0.6)} if rp else {}),
+                                  **({"face_ref": fr.name, "face_scale": st.get("face_scale", 0.7)} if fr else {})})
                 fp = fingerprint(STAGE, STAGE_VERSION, {"wide_fix_base": fbase, "steps": steps, "refs": [r for r in refs if r],
                                                          "seed": seed, "provider": "kaggle-inpaint", "model": INPAINT_MODEL})
                 unit = f"{shot['id']}/16x9" + (f"/try{seed}" if fix.get("try_seeds") else "")
@@ -328,8 +331,9 @@ def run_wide(ctx: Context) -> dict:
                     mp = tmpd / f"{uname}_fix{k}.png"
                     _mask_png({"area": st["area"]}, WIDE_SIZE, mp)
                     files[mp.name] = mp
-                    if refs[k]:
-                        files[refs[k].name] = refs[k]
+                    for r in refs[2 * k:2 * k + 2]:
+                        if r:
+                            files[r.name] = r
                     job_steps.append({kk: vv for kk, vv in st.items() if kk != "area"} | {"mask": mp.name})
                 todo.append({"unit": uname, "key": unit, "fingerprint": fp, "base": fbase.name, "seed": seed,
                              "steps": job_steps, "shot": shot["id"]})
