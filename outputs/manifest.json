@@ -921,44 +921,44 @@
       "seconds": 24.7
     },
     "keyframes/s07/9x16/try1007": {
-      "fingerprint": "50fbddb91fcaba303bb648f7973e5de904cfd4671cee75125bbe6f0eaeab1c1c",
-      "output": "outputs/keyframes/s07/9x16/try1007__50fbddb9.png",
+      "fingerprint": "0f3e5b80c9e9df70e6a575985656ad8c923e0db7278f942d11d06121cf8a3f11",
+      "output": "outputs/keyframes/s07/9x16/try1007__0f3e5b80.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
       "ratio": "9x16",
-      "seconds": 48.9
+      "seconds": 56.5
     },
     "keyframes/s07/9x16/try2107": {
-      "fingerprint": "20eea5766b62cbf6d2a73c48a61d045e682c27a55bb99e71e5899dd4627a6f6b",
-      "output": "outputs/keyframes/s07/9x16/try2107__20eea576.png",
+      "fingerprint": "1ff0b4933b4b907d60a1d44f8df9f31ed78bc9cf2ce2f1a2ae99501815600613",
+      "output": "outputs/keyframes/s07/9x16/try2107__1ff0b493.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
       "ratio": "9x16",
-      "seconds": 44.0
+      "seconds": 52.4
     },
     "keyframes/s07/9x16/try3207": {
-      "fingerprint": "6a46d9afcbdd5c1fed6c11ef5130316407de2e2d7185be7e085402b120caabdb",
-      "output": "outputs/keyframes/s07/9x16/try3207__6a46d9af.png",
+      "fingerprint": "06e9997b4281b8ba464d2f9ecd74b0034c3cf8640f750ceb110b4555743d5e1b",
+      "output": "outputs/keyframes/s07/9x16/try3207__06e9997b.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
       "ratio": "9x16",
-      "seconds": 45.1
+      "seconds": 56.2
     },
     "keyframes/s07/9x16/try4307": {
-      "fingerprint": "e666f8d6c17725493d037dd26d94af59d49d29b3a152b427f98a129879515ab4",
-      "output": "outputs/keyframes/s07/9x16/try4307__e666f8d6.png",
+      "fingerprint": "8e1c7a9acd7245d45d27ac59a944d71c608165eef47a0311a3fa56979bb7fb22",
+      "output": "outputs/keyframes/s07/9x16/try4307__8e1c7a9a.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
       "ratio": "9x16",
-      "seconds": 44.8
+      "seconds": 55.0
     }
   },
   "stage_versions": {},
