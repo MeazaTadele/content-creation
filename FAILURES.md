@@ -11,6 +11,10 @@ memory, consistency and language problems, and tools that changed or disappeared
   container had never run the install from a clean clone.
 - **Fix:** `pyproject.toml` now names the build backend and includes only `pipeline*`; tested with
   a clean virtual environment. The four dependencies can also be installed directly, as the README says.
+- **Two more on the same machine:** pip could not write to the system Python in `C:\Python312` (a
+  permissions error), so the project now uses its own virtual environment (`python -m venv .venv`);
+  and the Kaggle CLI 2.2.5 crashed with "No module named 'six'": it imports `six` without listing it,
+  so `six` is now a dependency here.
 - **Lesson:** "one command from a fresh clone" has to be tested on a fresh machine, not only where the
   code was written.
 
