@@ -281,6 +281,83 @@ def run_inpaint(ctx: Context, ratios: list[str] | None, shots: list[str] | None,
     return stats
 
 
+WIDE_SIZE = (1344, 768)  # SDXL works in multiples of 8; assembly scales it to 1920x1080
+WIDE_PROMPT = ("the same room continues to the left and to the right: the same walls, floor, light and colours, "
+               "warm soft painted illustration, gentle morning light, visible brush texture")
+WIDE_NEGATIVE = "people, person, face, child, text, letters, frame, border, split screen, panel, blurry"
+
+
+def run_wide(ctx: Context) -> dict:
+    """Decision 43: each 16:9 keyframe is its 9:16 keyframe, unchanged in the middle, with the room
+    painted on both sides (outpainting with SDXL inpainting on Kaggle)."""
+    import shutil
+    import tempfile
+    from pathlib import Path
+    from PIL import Image, ImageDraw, ImageFilter
+    from .. import kaggle
+    from ..calls import log_job_unit
+    if ctx.sb.get("wide") != "outpaint":
+        return {"generated": 0, "cached": 0, "failed": 0}
+    W, H = WIDE_SIZE
+    todo, files = [], {}
+    tmpd = Path(tempfile.mkdtemp(prefix="wide-"))
+    for shot in ctx.sb["shots"]:
+        base = path(ctx, shot["id"], "9x16")
+        if base is None:
+            continue
+        fp = fingerprint(STAGE, STAGE_VERSION, {"wide_from": base, "prompt": WIDE_PROMPT, "negative": WIDE_NEGATIVE,
+                                                 "size": WIDE_SIZE, "seed": shot["image"]["seed"],
+                                                 "provider": "kaggle-inpaint", "model": INPAINT_MODEL})
+        unit = f"{shot['id']}/16x9"
+        if ctx.manifest.is_fresh(STAGE, unit, fp):
+            say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
+            continue
+        uname = unit.replace("/", "_")
+        img = Image.open(base).convert("RGB")
+        w = round(img.width * H / img.height / 2) * 2
+        img = img.resize((w, H), Image.LANCZOS)
+        x0 = (W - w) // 2
+        canvas = img.resize((W, H), Image.LANCZOS).filter(ImageFilter.GaussianBlur(30))  # colour hint only
+        canvas.paste(img, (x0, 0))
+        cp, mp = tmpd / f"{uname}_canvas.png", tmpd / f"{uname}_mask.png"
+        canvas.save(cp)
+        m = Image.new("L", (W, H), 255)
+        ImageDraw.Draw(m).rectangle([x0 + 6, 0, x0 + w - 7, H], fill=0)  # the 9:16 picture is kept
+        m.save(mp)
+        files[cp.name], files[mp.name] = cp, mp
+        todo.append({"unit": uname, "key": unit, "fingerprint": fp, "base": cp.name, "seed": shot["image"]["seed"],
+                     "steps": [{"mask": mp.name, "prompt": WIDE_PROMPT, "negative": WIDE_NEGATIVE}], "shot": shot["id"]})
+    if not todo:
+        return {"generated": 0, "cached": len(ctx.sb["shots"]), "failed": 0}
+    if ctx.dry_run:
+        for t in todo:
+            say(f"  would run  {STAGE}/{t['key']}  (9:16 picture widened by outpainting on Kaggle)")
+        return {"generated": len(todo), "cached": 0, "failed": 0}
+    job_id, res = kaggle.run_job("inpaint", [{k: v for k, v in t.items() if k not in ("key", "shot")} for t in todo],
+                                 files, timeout=2 * 3600, gpu=True)
+    stats = {"generated": 0, "cached": 0, "failed": 0}
+    for t in todo:
+        r = kaggle.read_result(res, t["unit"])
+        dst = out_path(STAGE, t["key"], t["fingerprint"], "png")
+        ok = bool(r and r.get("status") == "ok" and (res / r["output"]).exists())
+        if ok:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(res / r["output"], dst)
+            ctx.manifest.put(STAGE, t["key"], {"fingerprint": t["fingerprint"], "output": rel(dst), "status": "generated",
+                                               "provider": "kaggle-inpaint", "model": INPAINT_MODEL, "shot": t["shot"],
+                                               "ratio": "16x9", "wide_from": "9x16", "seconds": r.get("seconds")})
+            stats["generated"] += 1
+        else:
+            stats["failed"] += 1
+            say(f"  {STAGE}/{t['key']}: failed on Kaggle: {(r or {}).get('error', 'no result')[:150]}")
+        log_job_unit(stage=STAGE, unit=t["key"], provider="kaggle-inpaint", model=INPAINT_MODEL,
+                     params={"outpaint": "9x16 to 16x9", "size": list(WIDE_SIZE), "steps": 30}, seed=t["seed"],
+                     status=(r or {}).get("status", "missing"), latency_ms=int(((r or {}).get("seconds") or 0) * 1000),
+                     gpu_seconds=(r or {}).get("gpu_seconds") or 0, fingerprint=t["fingerprint"],
+                     output=rel(dst) if ok else None, job_id=job_id, error=(r or {}).get("error"))
+    return stats
+
+
 def run_gemini_edits(ctx: Context, ratios: list[str] | None, shots: list[str] | None) -> dict:
     """Decision 36: shots with image.provider "gemini-image" are edits of a chosen keyframe, made by Gemini."""
     import shutil

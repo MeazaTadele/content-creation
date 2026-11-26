@@ -110,6 +110,7 @@
     "music": "kaggle-acestep",
     "asr": []
   },
+  "wide": "outpaint",
   "shots": [
     {
       "id": "s01",

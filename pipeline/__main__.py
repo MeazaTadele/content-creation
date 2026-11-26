@@ -56,6 +56,12 @@ def cmd_refsheet(_):
     _report("refsheet", refsheet.run(ctx))
 
 
+def cmd_wide(_):
+    ctx = _ctx()
+    say("16:9 keyframes (the 9:16 pictures widened)")
+    _report("wide keyframes", keyframes.run_wide(ctx))
+
+
 def cmd_keyframes(args):
     ctx = _ctx()
     say("keyframes")
@@ -106,6 +112,9 @@ def cmd_film(_):
     say("4/7 keyframes")
     # the 16:9 film shows the 9:16 picture over a blurred copy (decision 6), so only 9:16 is needed
     _report("keyframes", keyframes.run(ctx, ["9x16"]))
+    if ctx.sb.get("wide") == "outpaint":
+        say("4b/7 16:9 keyframes (the 9:16 pictures widened)")
+        _report("wide keyframes", keyframes.run_wide(ctx))
     say("5/7 video clips")
     _report("shots", shots.run(ctx))
     say("6/7 music")
@@ -142,7 +151,7 @@ def cmd_smoke(_):
 def main(argv=None):
     p = argparse.ArgumentParser(prog="pipeline", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("validate", "plan", "narration", "timing", "refsheet", "keyframes", "shots", "music", "radio", "film",
+    for name in ("validate", "plan", "narration", "timing", "refsheet", "keyframes", "wide", "shots", "music", "radio", "film",
                  "smoke"):
         sp = sub.add_parser(name)
         if name == "keyframes":

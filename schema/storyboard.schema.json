@@ -364,31 +364,81 @@
                 "description": "with provider kaggle-inpaint: areas to repaint, in order; everything else stays as it is",
                 "items": {
                   "type": "object",
-                  "required": ["area", "prompt"],
+                  "required": [
+                    "area",
+                    "prompt"
+                  ],
                   "additionalProperties": false,
                   "properties": {
-                    "area": {"type": "array", "minItems": 3, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}},
-                    "keep": {"type": "array", "items": {"type": "array", "minItems": 3, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}}},
-                    "prompt": {"type": "string", "minLength": 1},
-                    "negative": {"type": "string"}
+                    "area": {
+                      "type": "array",
+                      "minItems": 3,
+                      "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "keep": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "minItems": 3,
+                        "items": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    },
+                    "prompt": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "negative": {
+                      "type": "string"
+                    }
                   }
                 }
               },
               "provider": {
-                "enum": ["gemini-image", "kaggle-inpaint"],
+                "enum": [
+                  "gemini-image",
+                  "kaggle-inpaint"
+                ],
                 "description": "per-shot override: gemini-image edits edit_from with Gemini (decision 36)"
               },
               "edit_from": {
                 "type": "object",
                 "description": "per aspect ratio: an image to edit (given first to the model); the prompt describes only the changes",
-                "propertyNames": {"enum": ["9x16", "16x9"]},
-                "additionalProperties": {"type": "string"}
+                "propertyNames": {
+                  "enum": [
+                    "9x16",
+                    "16x9"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
               },
               "locked": {
                 "type": "object",
                 "description": "per aspect ratio: a chosen image used as it is, never regenerated",
-                "propertyNames": {"enum": ["9x16", "16x9"]},
-                "additionalProperties": {"type": "string"}
+                "propertyNames": {
+                  "enum": [
+                    "9x16",
+                    "16x9"
+                  ]
+                },
+                "additionalProperties": {
+                  "type": "string"
+                }
               },
               "scene_from": {
                 "$ref": "#/$defs/id",
@@ -487,6 +537,13 @@
           "maximum": 15
         }
       }
+    },
+    "wide": {
+      "enum": [
+        "outpaint",
+        "blur"
+      ],
+      "description": "how the 16:9 film gets its pictures: the 9:16 keyframe widened by outpainting, or over a blurred copy (decision 43)"
     }
   },
   "$defs": {
