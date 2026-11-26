@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Easter Morning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=JetBrains+Mono:wght@400&display=block" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 20mm 21mm 19mm 21mm; }
+  * { box-sizing: border-box; }
+  html { color: #000; background: #fff; }
+  body {
+    font-family: "Source Serif 4", "Liberation Serif", serif;
+    font-size: 10.4pt; line-height: 1.47; margin: 0;
+    font-variant-numeric: oldstyle-nums proportional-nums;
+    hyphens: auto; text-rendering: optimizeLegibility;
+  }
+  h1 { font-size: 26pt; font-weight: 600; letter-spacing: -0.01em; line-height: 1.1; margin: 0 0 4pt; }
+  .subtitle { font-size: 11pt; font-style: italic; margin: 0 0 18pt; }
+  h2 {
+    font-size: 13.5pt; font-weight: 600; margin: 22pt 0 7pt; padding-bottom: 3pt;
+    border-bottom: 0.6pt solid #000; break-after: avoid;
+  }
+  h2 .n { display: inline-block; width: 1.6em; font-variant-numeric: lining-nums; }
+  h3 { font-size: 11pt; font-weight: 600; margin: 13pt 0 4pt; break-after: avoid; }
+  p { margin: 0 0 7pt; text-align: justify; }
+  ul, ol { margin: 0 0 8pt; padding-left: 1.3em; }
+  li { margin: 0 0 3pt; text-align: justify; }
+  li::marker { font-variant-numeric: lining-nums; }
+  em { font-style: italic; }
+  strong { font-weight: 600; }
+  a { color: #000; text-decoration: underline; text-decoration-thickness: 0.5pt; text-underline-offset: 1.5pt; }
+  code { font-family: "JetBrains Mono", monospace; font-size: 8.6pt; }
+  table { width: 100%; border-collapse: collapse; margin: 4pt 0 10pt; font-size: 9.4pt; line-height: 1.4; break-inside: avoid; }
+  th, td { text-align: left; vertical-align: top; padding: 4pt 8pt 4pt 0; }
+  thead th { font-weight: 600; border-top: 0.9pt solid #000; border-bottom: 0.5pt solid #000; }
+  tbody tr:last-child td { border-bottom: 0.9pt solid #000; }
+  tbody td { border-bottom: 0.25pt solid #999; }
+  .glance th { width: 24%; font-weight: 600; border: 0; border-bottom: 0.25pt solid #999; }
+  .glance td { border-bottom: 0.25pt solid #999; }
+  .glance tr:first-child th, .glance tr:first-child td { border-top: 0.9pt solid #000; }
+  .glance tr:last-child th, .glance tr:last-child td { border-bottom: 0.9pt solid #000; }
+  .lead { font-size: 11.2pt; }
+  .note { font-size: 9.4pt; font-style: italic; }
+  .keep { }
+  h3 + p, h3 + ol, h3 + ul { break-before: avoid; }
+  p, li { orphans: 3; widows: 3; }
+</style>
+</head>
+<body>
+
+<h1>Easter Morning</h1>
+<p class="subtitle">Report · B2W0 AI-Content Generation: Codebase and Report</p>
+
+<p class="lead">A 63-second Amharic short film about the Fasika morning my mother was home, the first
+holiday remembered with her, because she usually worked on holidays. Built by a code pipeline from one
+file, <code>storyboard.json</code>, with one command, <code>make film</code>.</p>
+
+<table class="glance">
+  <tr><th>Audience</th><td>My brother Henok and my friends Yishak and Betty</td></tr>
+  <tr><th>Intent</th><td>To make them feel that being there matters more than providing</td></tr>
+  <tr><th>Film</th><td>62.8 s, Amharic narration, English subtitles, 9:16 and 16:9, −14 LUFS</td></tr>
+  <tr><th>Models</th><td>OmniVoice (voice), FLUX.2 klein (pictures), Wan 2.2 (video), ACE-Step 1.5 (music), SDXL inpainting (repainting), FFmpeg (assembly)</td></tr>
+  <tr><th>Compute</th><td>About 4 hours of free Kaggle T4 GPU time; about $1.60 at paid list prices</td></tr>
+  <tr><th>Links</th><td><a href="https://github.com/MeazaTadele/content-creation">Repository</a> ·
+    <a href="https://drive.google.com/file/d/1twXHqIaS-cN-A5olPJ7U1uYYv16567BI/view?usp=sharing">Film 9:16</a> ·
+    <a href="https://drive.google.com/file/d/1uJQOa8DJli_I0rhymMmdJ6eRopjfRdmN/view?usp=sharing">Film 16:9</a> ·
+    <a href="https://youtube.com/shorts/CB9pj5Bhc80">Public post</a> (AI label on) · walkthrough submitted with assignment 2</td></tr>
+</table>
+
+<h2><span class="n">1</span>What was made and for whom</h2>
+
+<p>The film tells a small family story in ten shots: waking up on Fasika expecting another holiday
+without my mother, and finding her home, making coffee for the family. It is for Henok, who was there that
+morning, and for Yishak and Betty.</p>
+
+<p>Every part of the film comes from the storyboard:</p>
+<ul>
+  <li><strong>Narration:</strong> my own lines in Amharic, voiced by OmniVoice with my own recorded voice
+    as its sample (with my written consent), slowed to tempo 0.9.</li>
+  <li><strong>Pictures:</strong> ten keyframes from FLUX.2 klein, conditioned on locked portraits of my
+    family, which my parents and brother consented to.</li>
+  <li><strong>Video:</strong> three shots turned into video with Wan 2.2 on Kaggle's free GPU; the other
+    seven use slow camera moves.</li>
+  <li><strong>Music:</strong> two cues from ACE-Step 1.5, a quiet “before” and a warm “Easter morning”,
+    ducked under the voice.</li>
+  <li><strong>Assembly:</strong> FFmpeg only: subtitles, loudness, the AI end card, and both aspect ratios.</li>
+</ul>
+
+<h2 style="break-before: page; margin-top: 0"><span class="n">2</span>What my audience told me</h2>
+
+<p>The first test said the narration sounded robotic. The second test, after the changes, said the sound
+was much better and the story made them think of their own families. Both tests used the same three
+people and the same three questions.</p>
+
+<table>
+  <thead><tr><th style="width:17%">Who</th><th style="width:41%">Test 1: radio cut, voice only (25 Nov)</th><th>Test 2: near-final cut (26 Nov)</th></tr></thead>
+  <tbody>
+    <tr><td>Henok, my brother</td><td>The story is nice, but the Amharic doesn't feel natural; explain more at the beginning</td><td>“I actually forgot about that day and how holidays looked like back then, it's very nice.”</td></tr>
+    <tr><td>Yishak, friend</td><td>Sounds robotic, like someone reading off a script</td><td>“The characters look Ethiopian, the clothes, the ketema looks nice, the story as well is very sweet.”</td></tr>
+    <tr><td>Betty, friend</td><td>Like someone reading a script; the storytelling could be better; a lot of noticeable pauses</td><td>“It is a very sweet story, made me miss my mom.”</td></tr>
+  </tbody>
+</table>
+
+<p>What changed because of test 1, all in <code>storyboard.json</code>:</p>
+<ul>
+  <li>Rewrote every narration line by hand, warmer and less like a script.</li>
+  <li>Made lines 1 and 2 longer, to explain why the girl stays in bed (Henok).</li>
+  <li>Made the narrator follow my own recorded voice, slowed to tempo 0.9 (all three).</li>
+  <li>Cut the pauses to 0.25 s before and 0.5 s after each line (Betty).</li>
+</ul>
+<p>Test 2 raised no problems, so nothing changed because of it; changing something only to show a change
+made no sense. Full notes are in <code>DESIGN.md</code>.</p>
+
+<h2><span class="n">3</span>The hardest problems</h2>
+
+<p>Two problems took most of the three days: making the Amharic narration sound natural, and making the
+pictures culturally right and consistent.</p>
+
+<div class="keep">
+<h3>A narrator that sounds like a person telling a story</h3>
+<p>The first radio cut (100 s, OmniVoice with a test sample) sounded robotic to all three testers. It took
+nine radio cuts to fix:</p>
+<ol>
+  <li>Rewrote the lines by hand; that helped the story, not the voice (v2).</li>
+  <li>Tried five other OmniVoice voices; all still sounded read from a script (EXPERIMENTS E6).</li>
+  <li>Used my own recorded voice as OmniVoice's sample: the most natural Amharic (v3), but it sounded like me.</li>
+  <li>Tried to keep my delivery with another voice, and failed. A synthetic sample gave nonsense at first,
+    because Gemini read its English instruction aloud (FAILURES F15), and later the wrong pronunciation.
+    Voice-design words still sounded like me (E7).</li>
+  <li>Decided my own voice was acceptable, with my consent; slowed it to tempo 0.9, made lines 1 and 2 longer
+    and tightened the pauses: radio cut v9, 62.7 s.</li>
+</ol>
+<p><em>Lesson:</em> OmniVoice takes the voice and the delivery from the same sample, so they can't be separated.
+In test 2 all three said the sound is much better.</p>
+</div>
+
+<h3>Pictures that look like my family's Fasika, in one room</h3>
+<p>The first keyframes were wrong in ways only someone from the family could see: the ketema drawn as a
+lawn, a Western stove, mugs, a Christmas tree, a deformed girl (FAILURES F14). Described every object in
+detail: ketema as cut grass on the floor, the jebena, rekebot, sini cups, clay brazier and incense burner.</p>
+<p>Then every shot invented a new room. Giving the model the shot 5 picture as the room fixed that (E8),
+but brought new problems with the people: an extra girl, the wrong family, my father and brother too small.
+Asking the same model to change one thing failed: it copied the picture almost exactly (E9). Gemini's image
+editing was not on the free tier (F18). What worked was repainting only marked areas with SDXL inpainting,
+while the code pastes every other pixel back unchanged (E10). Yishak's comment in test 2, that the
+characters, clothes and ketema look Ethiopian, is the evidence it worked.</p>
+
+<h2><span class="n">4</span>Suggested practices: what helped and what didn't</h2>
+
+<p>Two of the brief's practices beat my instinct: a reference sheet before the keyframes, and a JSON
+contract between the stages. Using reference images to fix pictures did not.</p>
+
+<div class="keep">
+<h3>Helped: a reference sheet before the keyframes</h3>
+<p><em>My instinct:</em> skip the reference sheet and describe the family again in each shot's prompt.
+Early on, asked whether every stage was really needed, because a separate portrait stage looked like extra
+time before the real work.</p>
+<p><em>Evidence:</em> spent nine rounds on the family's portraits before making any shot, and locked them
+(decision 31). Every keyframe is made with those portraits as reference images. The family is recognisably
+the same in shots 3 to 10, and in test 2 Yishak said the characters look Ethiopian, without being asked
+about them.</p>
+</div>
+
+<div class="keep">
+<h3>Helped: a JSON contract between the stages</h3>
+<p><em>My instinct:</em> build it like my earlier project, a browser app where each picture is fixed by hand
+in an interface. One text file holding every decision looked like extra paperwork.</p>
+<p><em>Evidence:</em> every decision lives in <code>storyboard.json</code>, checked against a schema before
+each run: a picture chosen to keep is <code>locked</code>, an edit names the picture and the areas to repaint.
+After picking the music, <code>make film</code> rebuilt the film in one command and regenerated only the
+soundtrack and the two exports. A fresh clone on a second computer rebuilt the same film entirely from the
+cache.</p>
+</div>
+
+<div class="keep">
+<h3>Didn't help: reference images as the way to fix a picture</h3>
+<p>Reference images keep things the same, which is also why they couldn't change anything. The first
+keyframes copied the character sheet's layout, with plain backgrounds and inset portraits (F12). Later,
+given the chosen picture and asked to change only my father's and brother's size, the model changed 6 to
+15% of the pixels and none of what was asked (E9). The fix was a different tool: masked repainting (E10).</p>
+</div>
+
+<h2><span class="n">5</span>Ceiling work</h2>
+
+<p>Went beyond the brief in two places: an Amharic voice comparison, and picture tools the pipeline
+didn't have.</p>
+
+<div class="keep">
+<h3>An Amharic voice comparison: hosted against open models</h3>
+<p>Tested five text-to-speech models on the same Amharic sentences, then on the film's lines:</p>
+<table>
+  <thead><tr><th style="width:26%">Model</th><th style="width:20%">Kind</th><th>Result, to a native speaker's ear</th></tr></thead>
+  <tbody>
+    <tr><td>OmniVoice Amharic</td><td>open, Kaggle GPU</td><td>Clearly the most natural; chosen for the film</td></tr>
+    <tr><td>Gemini 3.8 Flash TTS</td><td>hosted API</td><td>Good, but read an English style instruction aloud (F15)</td></tr>
+    <tr><td>MMS-TTS Amharic</td><td>open, Kaggle GPU</td><td>Fast (0.3 s a sentence), less natural</td></tr>
+    <tr><td>ElevenLabs, four models</td><td>hosted API</td><td>Returned audio, but very bad; a 200 response doesn't mean the language works (E1)</td></tr>
+    <tr><td>CosyVoice2 Amharic</td><td>open</td><td>Could not be installed (F6)</td></tr>
+  </tbody>
+</table>
+<p class="note">These are a native speaker's own judgements, not a blind test with five people.</p>
+</div>
+
+<h3>Picture tools for consistency and fixes</h3>
+<p>Added four ways to make a keyframe, each set in <code>storyboard.json</code> so anyone can repeat it:</p>
+<ul>
+  <li><strong>Room reference</strong> (<code>scene_from</code>): an earlier shot's picture is given to the
+    model as the room, so shots 6 to 10 share the room of shot 5 (E8).</li>
+  <li><strong>Masked repainting:</strong> polygons in the storyboard mark what to change; every pixel
+    outside them stays the same (E10). The same tool widens each 9:16 picture for the 16:9 film, keeping
+    the original picture unchanged in the middle.</li>
+  <li><strong>Locking</strong> (<code>locked</code>): a chosen picture is used as it is and never regenerated.</li>
+  <li><strong>Candidates:</strong> several seeds for one shot; the one picked is reused from the cache,
+    with no extra GPU time.</li>
+</ul>
+
+<h2><span class="n">6</span>What to build next</h2>
+<ol>
+  <li><strong>A reference sheet for the house.</strong> Lock the house the way the characters were locked:
+    the rooms, the furniture and the coffee things, made before any shot, so the house stays consistent in
+    every picture, including the widened 16:9 ones.</li>
+  <li><strong>A page for my family.</strong> A relative who doesn't code tells their story, checks the
+    pictures, and gets a film back. The storyboard already holds every choice, so the page only has to
+    write it.</li>
+  <li><strong>The film in another language,</strong> such as Afaan Oromo or Tigrinya, to find out where
+    each voice model fails.</li>
+  <li><strong>Picture edits that just work.</strong> Today, fixing one thing in a picture means marking an
+    area by hand with coordinates. Next: say “make my father bigger”, or draw over the picture, and have
+    the right tool do it.</li>
+</ol>
+
+</body>
+</html>
