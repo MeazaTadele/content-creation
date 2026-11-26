@@ -296,7 +296,6 @@ def run_wide(ctx: Context) -> dict:
     import shutil
     import tempfile
     from pathlib import Path
-    from PIL import Image, ImageDraw, ImageFilter
     from .. import kaggle
     from ..calls import log_job_unit
     if ctx.sb.get("wide") != "outpaint":
@@ -366,6 +365,7 @@ def run_wide(ctx: Context) -> dict:
             say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
             continue
         uname = unit.replace("/", "_")
+        from PIL import Image, ImageDraw, ImageFilter  # only needed when a picture is widened
         img = Image.open(base).convert("RGB")
         w = round(img.width * H / img.height / 2) * 2
         img = img.resize((w, H), Image.LANCZOS)

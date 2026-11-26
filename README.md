@@ -19,7 +19,7 @@ and 16:9 MP4.
 Requirements: Python 3.10+, FFmpeg on your PATH, and `make` (optional).
 
 ```bash
-pip install -e .          # or: pip install jsonschema requests python-dotenv kaggle six pytest
+pip install -e .          # or: pip install jsonschema requests python-dotenv kaggle six pillow pytest
 cp .env.example .env      # add your keys (never commit .env)
 make film                 # validate, generate only what changed, export outputs/final/film_*.mp4
 ```

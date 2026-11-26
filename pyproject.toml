@@ -8,6 +8,7 @@ dependencies = [
   "requests>=2.31",
   "python-dotenv>=1.0",
   "kaggle>=1.6",
+  "pillow>=10",
   "six",  # kaggle 2.2.5 imports six but does not depend on it (F22)
 ]
 
