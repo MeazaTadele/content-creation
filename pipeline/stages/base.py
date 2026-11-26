@@ -72,7 +72,11 @@ def execute(ctx: Context, units: list[Unit], keep_going: bool = False) -> dict:
         except Exception as e:
             tmp.unlink(missing_ok=True)
             stats["failed"] += 1
-            if not keep_going:
+            from ..calls import QuotaExhausted
+            if not keep_going or isinstance(e, QuotaExhausted):
+                if isinstance(e, QuotaExhausted):
+                    say(f"  STOPPED    {u.stage}: the provider's daily allowance is used up; finished units are kept")
+                    return stats
                 raise
             say(f"  FAILED     {u.stage}/{u.unit}: {str(e)[:160]}")
             continue
