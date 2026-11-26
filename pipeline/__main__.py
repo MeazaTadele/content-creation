@@ -1,0 +1,178 @@
+"""Command line: python -m pipeline <command>. The Makefile wraps these.
+
+  validate   check storyboard.json against the schema
+  plan       dry run: what would be generated, nothing is called
+  narration | timing | refsheet | keyframes | music   one stage
+  radio      narration + timing + the radio cut (user test 1)
+  film       every stage in order, then both exports
+  smoke      one call per provider, logged to runs.jsonl
+"""
+from __future__ import annotations
+
+import argparse
+import shutil
+import sys
+
+from . import config, contract
+from .manifest import Manifest
+from .stages import assemble, keyframes, music, narration, refsheet, shots, timing
+from .stages.base import Context, say
+
+
+_TMP_DIRS = []
+
+
+def _ctx(dry: bool = False) -> Context:
+    config.load_env()
+    sb = contract.load()
+    ctx = Context(sb=sb, manifest=Manifest(), dry_run=dry)
+    _TMP_DIRS.append(ctx.tmp_dir)
+    return ctx
+
+
+def _report(name: str, s: dict) -> None:
+    say(f"{name}: {s['generated']} generated, {s['cached']} cached" + (f", {s['failed']} failed" if s["failed"] else ""))
+
+
+def cmd_validate(_):
+    sb = contract.load()
+    say(f"storyboard.json is valid: {len(sb['shots'])} shots, voice '{sb['voice']['use']}'"
+        + (" (placeholder text)" if sb.get("placeholder") else ""))
+
+
+def cmd_narration(_):
+    ctx = _ctx()
+    say("narration")
+    _report("narration", narration.run(ctx))
+
+
+def cmd_timing(_):
+    timing.run(_ctx())
+
+
+def cmd_refsheet(_):
+    ctx = _ctx()
+    say("reference sheet")
+    _report("refsheet", refsheet.run(ctx))
+
+
+def cmd_wide(_):
+    ctx = _ctx()
+    say("16:9 keyframes (the 9:16 pictures widened)")
+    _report("wide keyframes", keyframes.run_wide(ctx))
+
+
+def cmd_keyframes(args):
+    ctx = _ctx()
+    say("keyframes")
+    seeds = [int(x) for x in args.seeds.split(",")] if getattr(args, "seeds", None) else None
+    _report("keyframes", keyframes.run(ctx, getattr(args, "ratio", None), getattr(args, "shot", None), seeds))
+
+
+def cmd_shots(_):
+    ctx = _ctx()
+    say("video clips")
+    _report("shots", shots.run(ctx))
+
+
+def cmd_music(_):
+    ctx = _ctx()
+    tl = ctx.manifest.data["measured"].get("timeline") or timing.compute(ctx)
+    say("music")
+    _report("music", music.run(ctx, tl))
+
+
+def cmd_radio(_):
+    ctx = _ctx()
+    say("narration (chosen voice)")
+    _report("narration", narration.run(ctx, [ctx.sb["voice"]["use"]]))
+    tl = timing.run(ctx)
+    say("placeholder music")
+    _ensure_placeholder_music(ctx, tl)
+    say("radio cut")
+    _report("radio cut", assemble.run_radio(ctx, tl))
+
+
+def _ensure_placeholder_music(ctx, tl):
+    sb = {**ctx.sb, "providers": {**ctx.sb["providers"], "music": "placeholder"},
+          "music": {**ctx.sb["music"], "candidates": 1}}
+    sub = Context(sb=sb, manifest=ctx.manifest, tmp_dir=ctx.tmp_dir)
+    _report("music", music.run(sub, tl))
+
+
+def cmd_film(_):
+    ctx = _ctx()
+    say("1/7 narration")
+    # the film needs only the chosen voice; `make narration` still runs the whole comparison
+    _report("narration", narration.run(ctx, [ctx.sb["voice"]["use"]]))
+    say("2/7 timing")
+    tl = timing.run(ctx)
+    say("3/7 reference sheet")
+    _report("refsheet", refsheet.run(ctx))
+    say("4/7 keyframes")
+    # the 16:9 film shows the 9:16 picture over a blurred copy (decision 6), so only 9:16 is needed
+    _report("keyframes", keyframes.run(ctx, ["9x16"]))
+    if ctx.sb.get("wide") == "outpaint":
+        say("4b/7 16:9 keyframes (the 9:16 pictures widened)")
+        _report("wide keyframes", keyframes.run_wide(ctx))
+    say("5/7 video clips")
+    _report("shots", shots.run(ctx))
+    say("6/7 music")
+    _report("music", music.run(ctx, tl))
+    say("7/7 assembly")
+    _report("assembly", assemble.run_film(ctx, tl))
+
+
+def cmd_plan(_):
+    ctx = _ctx(dry=True)
+    say("plan (nothing is generated or called)")
+    for name, fn in (("narration", lambda: narration.run(ctx, [ctx.sb["voice"]["use"]])), ("refsheet", lambda: refsheet.run(ctx)),
+                     ("keyframes", lambda: keyframes.run(ctx, ["9x16"]))):
+        say(name)
+        _report(name, fn())
+    try:
+        tl = timing.compute(ctx)
+    except timing.TimingError as e:
+        say(f"music and assembly: after narration ({e})")
+        return
+    say("video clips")
+    _report("shots", shots.run(ctx))
+    say("music")
+    _report("music", music.run(ctx, tl))
+    say("assembly: reruns only the parts whose inputs changed")
+
+
+def cmd_smoke(_):
+    from . import smoke
+    config.load_env()
+    smoke.run()
+
+
+def main(argv=None):
+    p = argparse.ArgumentParser(prog="pipeline", description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = p.add_subparsers(dest="cmd", required=True)
+    for name in ("validate", "plan", "narration", "timing", "refsheet", "keyframes", "wide", "shots", "music", "radio", "film",
+                 "smoke"):
+        sp = sub.add_parser(name)
+        if name == "keyframes":
+            sp.add_argument("--ratio", action="append", choices=["9x16", "16x9"],
+                            help="make only this aspect ratio (repeatable); default both")
+            sp.add_argument("--shot", action="append", help="only this shot (repeatable)")
+            sp.add_argument("--seeds", help="with --shot: try these seeds as candidates, e.g. 1007,2107,3207,4307")
+    args = p.parse_args(argv)
+    if not shutil.which("ffmpeg"):
+        say("ffmpeg is not installed or not on PATH; see README.md")
+        return 2
+    try:
+        globals()[f"cmd_{args.cmd}"](args)
+    except contract.ContractError as e:
+        say(str(e))
+        return 1
+    finally:
+        for d in _TMP_DIRS:
+            shutil.rmtree(d, ignore_errors=True)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
