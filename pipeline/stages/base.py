@@ -91,7 +91,9 @@ def execute(ctx: Context, units: list[Unit], keep_going: bool = False) -> dict:
 
 def check_stage_version(manifest: Manifest, stage: str, version: int, module_file: str) -> None:
     """Decision 23: warn when a stage's code changed but its STAGE_VERSION did not."""
-    sha = file_sha256(Path(module_file))
+    # line endings normalised: a Windows checkout (CRLF) is the same code, not a change (F22)
+    import hashlib
+    sha = hashlib.sha256(Path(module_file).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
     prev = manifest.data["stage_sources"].get(stage)
     if prev and prev["version"] == version and prev["sha"] != sha:
         say(f"  WARNING: {stage} code changed since the last run but STAGE_VERSION is still {version}. "
