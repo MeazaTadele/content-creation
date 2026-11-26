@@ -6,7 +6,11 @@ code pipeline from one file, `storyboard.json`: Amharic narration, English subti
 and video clips, an original score ducked under the voice, and an AI end card, exported as 9:16
 and 16:9 MP4.
 
-- **The film:** `outputs/final/film_9x16.mp4` (main) and `outputs/final/film_16x9.mp4`
+- **The film:** [9:16 (main)](https://drive.google.com/file/d/1twXHqIaS-cN-A5olPJ7U1uYYv16567BI/view?usp=sharing)
+  and [16:9](https://drive.google.com/file/d/1uJQOa8DJli_I0rhymMmdJ6eRopjfRdmN/view?usp=sharing) (Google Drive);
+  in the repository: `outputs/final/locked/easter_morning_9x16_final.mp4` and `…_16x9_final.mp4`
+- **The public post:** [YouTube Shorts](https://youtube.com/shorts/CB9pj5Bhc80), with YouTube's AI
+  label ("altered or synthetic content") switched on
 - **What it's for and who it's for:** `DESIGN.md` (audience, intent, both user tests)
 - **How it works:** `ARCHITECTURE.md`
 
