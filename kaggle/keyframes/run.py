@@ -1,7 +1,7 @@
 """Kaggle script: FLUX.2 klein 4B keyframes for every unit in job.json (decision 32).
 
 Used when Cloudflare's daily allowance is exhausted. Same open model as on Cloudflare (Apache 2.0).
-Units are split across the two T4 GPUs; each image and its result file are written as soon as it
+Runs on one T4 (two workers ran out of RAM, F16); each image and its result file are written as soon as it
 is done, so a job that stops early keeps every finished image.
 """
 import glob
@@ -71,7 +71,9 @@ def main():
     job = json.load(open(os.path.join(inputs_dir(), "job.json")))
     ids = [u["unit"] for u in job["units"]]
     import torch
-    n = max(1, torch.cuda.device_count())
+    # One worker: two model copies parked in RAM by CPU offload ran the machine out of memory and the
+    # first worker died silently (FAILURES.md F16). One GPU is fast enough (~30 s per image).
+    n = 1
     groups = [ids[i::n] for i in range(n)]
     procs = [subprocess.Popen([sys.executable, __file__, "--worker", str(i), ",".join(g)]) for i, g in enumerate(groups) if g]
     for p in procs:

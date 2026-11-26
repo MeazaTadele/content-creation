@@ -733,14 +733,14 @@
       "ratio": "9x16"
     },
     "keyframes/s01/16x9": {
-      "fingerprint": "c6489ada0e5fb719e664e533646b658b63516979e2820116b443fd64f4addf13",
-      "output": "outputs/keyframes/s01/16x9__c6489ada.png",
+      "fingerprint": "2576bcd20a42955e80fcf9cb06f1ff3c133c884a9812f37b420e7352df6c8608",
+      "output": "outputs/keyframes/s01/16x9__2576bcd2.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 5.19,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s01",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 40.2
     },
     "keyframes/s02/9x16": {
       "fingerprint": "3bea9225dcca4a10ed4fb2f5a9ddb8c5088d2af9340659c1479cfa5ac29ae00d",
@@ -753,14 +753,14 @@
       "ratio": "9x16"
     },
     "keyframes/s02/16x9": {
-      "fingerprint": "7a186d9fcf2284b6a8abd139a248de556720a85c741a51e68a7c4c01b5b68892",
-      "output": "outputs/keyframes/s02/16x9__7a186d9f.png",
+      "fingerprint": "317fc0caad54cbf9dd599c4775234db480fc3bb3c7024ef5a39c036684664d36",
+      "output": "outputs/keyframes/s02/16x9__317fc0ca.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 10.32,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s02",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 27.3
     },
     "keyframes/s03/9x16": {
       "fingerprint": "46e132182f3e8a681fd4695167a7ed88a786b20c6626137420a7ccefe290650c",
@@ -773,14 +773,14 @@
       "ratio": "9x16"
     },
     "keyframes/s03/16x9": {
-      "fingerprint": "fc14d7ccbe34ee724fd5a7421f33a8731d5fa7b3ee510dcdb7ae848772d41849",
-      "output": "outputs/keyframes/s03/16x9__fc14d7cc.png",
+      "fingerprint": "4a631db159264f10ea73642af7aeddcdb3fe4f5ec5bfa4312964bf148b1efa74",
+      "output": "outputs/keyframes/s03/16x9__4a631db1.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 7.53,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s03",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 46.7
     },
     "keyframes/s04/9x16": {
       "fingerprint": "5d0f14a78f2ed9a0f228950beb7495605fd70a56ceeba08290791f2680f59144",
@@ -793,14 +793,14 @@
       "ratio": "9x16"
     },
     "keyframes/s04/16x9": {
-      "fingerprint": "95460e80920852bb0b93069ad5bbac2654a670a88102cf327efbad92052c961d",
-      "output": "outputs/keyframes/s04/16x9__95460e80.png",
+      "fingerprint": "170089de748fa317aaa4d81a2600a063c98db88648ec7029abfb428e3f2caf1d",
+      "output": "outputs/keyframes/s04/16x9__170089de.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 8.39,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s04",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 35.3
     },
     "keyframes/s05/9x16": {
       "fingerprint": "7ce5c8bb8d5a4d27376e558c06fae528050e96ab01e0a1883640b68ce6ebdcdc",
@@ -813,14 +813,14 @@
       "ratio": "9x16"
     },
     "keyframes/s05/16x9": {
-      "fingerprint": "c4fd300e8c82711243026498ad8a8211897190cc8f2170a5ec3fae14015a69a9",
-      "output": "outputs/keyframes/s05/16x9__c4fd300e.png",
+      "fingerprint": "3207d537a3d30d4a791889526422683ead5d8dd6c642fa6a7186bd35a149cdf4",
+      "output": "outputs/keyframes/s05/16x9__3207d537.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 8.58,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s05",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 35.4
     },
     "keyframes/s06/9x16": {
       "fingerprint": "03d88219999ed7294251c397973ecd4bbee74cf5d81dbbb88cb52e4124b8b71a",
@@ -833,14 +833,14 @@
       "ratio": "9x16"
     },
     "keyframes/s06/16x9": {
-      "fingerprint": "6066e01e40ee4e2b76996b311277ae5bc502262f0e272b3503e7e8d1dfe12e48",
-      "output": "outputs/keyframes/s06/16x9__6066e01e.png",
+      "fingerprint": "b838cafd50b6aa9de7d0f6f5d0c2aebbf20d71b75ddd86a382febd02a5182224",
+      "output": "outputs/keyframes/s06/16x9__b838cafd.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 18.57,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s06",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 26.1
     },
     "keyframes/s07/9x16": {
       "fingerprint": "b1a0aae408a7502cc9573e7bb97bf6943c36c6d2de3d908cc70dfb06d038dfb1",
@@ -853,14 +853,14 @@
       "ratio": "9x16"
     },
     "keyframes/s07/16x9": {
-      "fingerprint": "2ab771a22214b4c722b3d8ff0a41aac8c7c7ac1f5811c0e531101d1b8ca537ed",
-      "output": "outputs/keyframes/s07/16x9__2ab771a2.png",
+      "fingerprint": "9a4e95c5524f658aefa29c399b4bcde436999a4b2bbfb5d89f2ee505e15679ba",
+      "output": "outputs/keyframes/s07/16x9__9a4e95c5.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 11.74,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 25.5
     },
     "keyframes/s08/9x16": {
       "fingerprint": "6329cdda800e7bf24e31d51e9d1f640d0fdda555915b6ab91a737fda83abac7b",
@@ -873,14 +873,14 @@
       "ratio": "9x16"
     },
     "keyframes/s08/16x9": {
-      "fingerprint": "abe2b7d87646606aaf67de3ccb70bc339739531a3dfd02a3de397734157d0e80",
-      "output": "outputs/keyframes/s08/16x9__abe2b7d8.png",
+      "fingerprint": "3fe879199604677029275b179feae2c87a8fd803865a38981507a3ec11dc64ce",
+      "output": "outputs/keyframes/s08/16x9__3fe87919.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 5.74,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s08",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 33.8
     },
     "keyframes/s09/9x16": {
       "fingerprint": "163824d7beaaea529fbd03fb314299d09c884291beb2fd6ab7af8c5fab81bc2f",
@@ -893,14 +893,14 @@
       "ratio": "9x16"
     },
     "keyframes/s09/16x9": {
-      "fingerprint": "997f8f9ae02d5d4e2f76cfbe8c17a8a390806ad8ed7b2d5d41fd28c8debc3f5e",
-      "output": "outputs/keyframes/s09/16x9__997f8f9a.png",
+      "fingerprint": "49641ed7bf5015005eb9f632f03ca8629b52c6b903f389b6e7ca17967dc63f12",
+      "output": "outputs/keyframes/s09/16x9__49641ed7.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 12.29,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s09",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 24.3
     },
     "keyframes/s10/9x16": {
       "fingerprint": "4d72f4d475d934080e09e01cb8134e579673de2fcb9bfe8a5422f0c3d18dea23",
@@ -913,14 +913,14 @@
       "ratio": "9x16"
     },
     "keyframes/s10/16x9": {
-      "fingerprint": "efadb2aa3183036e75a7d30c4a19295255119a2777d93990ec98365a33aef4a0",
-      "output": "outputs/keyframes/s10/16x9__efadb2aa.png",
+      "fingerprint": "c41ede6a6eb4200aecba3e0327a56917d154ff51b6d7d8059e04c04e65adeb58",
+      "output": "outputs/keyframes/s10/16x9__c41ede6a.png",
       "status": "generated",
-      "provider": "cloudflare-flux",
-      "model": "@cf/black-forest-labs/flux-2-klein-4b",
-      "seconds": 17.38,
+      "provider": "kaggle-flux",
+      "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s10",
-      "ratio": "16x9"
+      "ratio": "16x9",
+      "seconds": 24.7
     }
   },
   "stage_versions": {},

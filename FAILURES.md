@@ -3,6 +3,21 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F16. Half the Kaggle keyframes came back missing: one GPU worker died without an error (Thu 26 Nov)
+
+- **What broke:** the first FLUX.2 klein job on Kaggle (decision 32) returned all ten 16:9 images and
+  none of the ten 9:16 ones. The job split the units across the two T4s, alternating, so worker 0 got
+  every 9:16 unit. Its log shows the model loaded after 136 s and then nothing: no traceback, no
+  result files.
+- **Why (most likely):** each worker parks a full model copy in normal memory (RAM) between steps
+  (model CPU offload). Two copies of the 4B model plus its text encoder were more than the machine's
+  RAM, and the system killed one process. A process killed that way leaves no Python error.
+- **Fix:** the keyframe job now runs one worker on one GPU (about 30 s per image, so 10 images take
+  about 5 minutes). Caching meant the rerun only made the 10 missing images; the 10 finished ones
+  were not regenerated.
+- **Lesson:** a batch job must report units that produced no result file as failures, which the
+  pipeline did ("failed on Kaggle: no result"), so nothing silently went missing from the film.
+
 ## F15. Gemini read the English style instruction aloud, and the narration turned to nonsense (Wed 25 Nov)
 
 - **What broke:** radio cut v4 was not understandable Amharic. Two linked causes:
