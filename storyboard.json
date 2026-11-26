@@ -247,7 +247,9 @@
           "father",
           "brother"
         ],
-        "scene_from": "s05",
+        "locked": {
+          "9x16": "references/keyframes/s07_9x16_v4.png"
+        },
         "seed": 1007
       },
       "motion": {
@@ -265,13 +267,214 @@
         "en": "I looked at them, and I was so happy."
       },
       "image": {
-        "prompt": "Change only these things: remove the girl sitting on the seats next to the father, so only the father and the brother sit there; the girl standing in the doorway wears her pyjamas, the olive-green t-shirt and loose olive-green trousers from the second reference image, not a dress; make the father and the brother full adult size, as big as the mother. Everything else stays exactly as it is",
-        "characters": [
-          "girl"
-        ],
+        "prompt": "Repaint two areas of the chosen picture: remove the girl sitting next to the father, and put the standing girl in her pyjamas",
+        "characters": [],
+        "provider": "kaggle-inpaint",
         "edit_from": {
           "9x16": "references/keyframes/s08_9x16_v4.png"
         },
+        "inpaint": [
+          {
+            "area": [
+              [
+                403,
+                540
+              ],
+              [
+                428,
+                528
+              ],
+              [
+                458,
+                530
+              ],
+              [
+                478,
+                548
+              ],
+              [
+                482,
+                600
+              ],
+              [
+                480,
+                650
+              ],
+              [
+                470,
+                680
+              ],
+              [
+                463,
+                700
+              ],
+              [
+                462,
+                760
+              ],
+              [
+                466,
+                800
+              ],
+              [
+                462,
+                842
+              ],
+              [
+                405,
+                842
+              ],
+              [
+                402,
+                745
+              ],
+              [
+                445,
+                745
+              ],
+              [
+                448,
+                676
+              ],
+              [
+                384,
+                676
+              ],
+              [
+                383,
+                610
+              ],
+              [
+                392,
+                600
+              ],
+              [
+                400,
+                570
+              ]
+            ],
+            "prompt": "an empty cream cushioned seat against a plain light painted wall, soft warm morning light, warm soft painted illustration, visible brush texture",
+            "negative": "person, girl, woman, face, people, child, text"
+          },
+          {
+            "area": [
+              [
+                100,
+                522
+              ],
+              [
+                70,
+                545
+              ],
+              [
+                64,
+                600
+              ],
+              [
+                66,
+                700
+              ],
+              [
+                70,
+                760
+              ],
+              [
+                76,
+                850
+              ],
+              [
+                80,
+                950
+              ],
+              [
+                82,
+                1110
+              ],
+              [
+                100,
+                1140
+              ],
+              [
+                100,
+                1192
+              ],
+              [
+                215,
+                1192
+              ],
+              [
+                245,
+                1140
+              ],
+              [
+                248,
+                1000
+              ],
+              [
+                245,
+                890
+              ],
+              [
+                270,
+                885
+              ],
+              [
+                302,
+                880
+              ],
+              [
+                300,
+                858
+              ],
+              [
+                262,
+                842
+              ],
+              [
+                236,
+                750
+              ],
+              [
+                200,
+                615
+              ],
+              [
+                200,
+                545
+              ],
+              [
+                185,
+                525
+              ],
+              [
+                150,
+                520
+              ]
+            ],
+            "keep": [
+              [
+                [
+                  105,
+                  520
+                ],
+                [
+                  142,
+                  520
+                ],
+                [
+                  142,
+                  632
+                ],
+                [
+                  105,
+                  632
+                ]
+              ]
+            ],
+            "prompt": "back view of a twelve-year-old girl wearing pyjamas: a plain olive-green short-sleeved cotton t-shirt and loose olive-green cotton trousers down to her ankles, her arms at her sides, standing barefoot, warm soft painted illustration, visible brush texture",
+            "negative": "dress, robe, white clothes, pattern, embroidery, skirt, text"
+          }
+        ],
         "seed": 1008
       },
       "motion": {

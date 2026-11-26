@@ -116,7 +116,7 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None, shots: list[str] |
     sb = ctx.sb
     todo, files = [], {}
     for shot in sb["shots"]:
-        if (shots and shot["id"] not in shots) or shot["image"].get("provider") == "gemini-image":
+        if (shots and shot["id"] not in shots) or shot["image"].get("provider") in ("gemini-image", "kaggle-inpaint"):
             continue
         char_refs = [p for c in shot["image"].get("characters", []) if (p := refsheet.chosen(ctx, c)) is not None]
         prompt = full_prompt(sb, shot)
@@ -202,6 +202,85 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None, shots: list[str] |
     return stats
 
 
+INPAINT_MODEL = "diffusers/stable-diffusion-xl-1.0-inpainting-0.1"
+
+
+def _mask_png(step: dict, size: tuple[int, int], dst) -> None:
+    from PIL import Image, ImageDraw
+    m = Image.new("L", size, 0)
+    d = ImageDraw.Draw(m)
+    d.polygon([tuple(p) for p in step["area"]], fill=255)
+    for k in step.get("keep", []):
+        d.polygon([tuple(p) for p in k], fill=0)
+    m.save(dst)
+
+
+def run_inpaint(ctx: Context, ratios: list[str] | None, shots: list[str] | None, try_seeds: list[int] | None) -> dict:
+    """Decision 37: repaint only marked areas of a chosen keyframe (SDXL inpainting on Kaggle)."""
+    import shutil
+    import tempfile
+    from pathlib import Path
+    from .. import kaggle
+    from ..calls import log_job_unit
+    todo, files = [], {}
+    tmpd = Path(tempfile.mkdtemp(prefix="masks-"))
+    for shot in ctx.sb["shots"]:
+        im = shot["image"]
+        if im.get("provider") != "kaggle-inpaint" or (shots and shot["id"] not in shots):
+            continue
+        for ratio, base in (im.get("edit_from") or {}).items():
+            if ratios and ratio not in ratios:
+                continue
+            base_p = ROOT / base
+            trying = bool(try_seeds and shot["id"] in (shots or []))
+            for seed in (try_seeds if trying else [im["seed"]]):
+                fp = fingerprint(STAGE, STAGE_VERSION, {"inpaint": im["inpaint"], "base": base_p, "seed": seed,
+                                                         "provider": "kaggle-inpaint", "model": INPAINT_MODEL})
+                unit = f"{shot['id']}/{ratio}" + (f"/try{seed}" if trying else "")
+                if ctx.manifest.is_fresh(STAGE, unit, fp):
+                    say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
+                    continue
+                uname = unit.replace("/", "_")
+                steps = []
+                for k, st in enumerate(im["inpaint"]):
+                    mp = tmpd / f"{uname}_mask{k}.png"
+                    _mask_png(st, SIZES[ratio], mp)
+                    files[mp.name] = mp
+                    steps.append({"mask": mp.name, "prompt": st["prompt"], "negative": st.get("negative", "")})
+                files[base_p.name] = base_p
+                todo.append({"unit": uname, "key": unit, "fingerprint": fp, "base": base_p.name, "steps": steps,
+                             "seed": seed, "shot": shot["id"], "ratio": ratio})
+    if not todo:
+        return {"generated": 0, "cached": 0, "failed": 0}
+    if ctx.dry_run:
+        for t in todo:
+            say(f"  would run  {STAGE}/{t['key']}  (repaint {len(t['steps'])} areas on Kaggle)")
+        return {"generated": len(todo), "cached": 0, "failed": 0}
+    job_id, res = kaggle.run_job("inpaint", [{k: v for k, v in t.items() if k not in ("key", "shot", "ratio")} for t in todo],
+                                 files, timeout=2 * 3600, gpu=True)
+    stats = {"generated": 0, "cached": 0, "failed": 0}
+    for t in todo:
+        r = kaggle.read_result(res, t["unit"])
+        dst = out_path(STAGE, t["key"], t["fingerprint"], "png")
+        ok = bool(r and r.get("status") == "ok" and (res / r["output"]).exists())
+        if ok:
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(res / r["output"], dst)
+            ctx.manifest.put(STAGE, t["key"], {"fingerprint": t["fingerprint"], "output": rel(dst), "status": "generated",
+                                               "provider": "kaggle-inpaint", "model": INPAINT_MODEL, "shot": t["shot"],
+                                               "ratio": t["ratio"], "seconds": r.get("seconds")})
+            stats["generated"] += 1
+        else:
+            stats["failed"] += 1
+            say(f"  {STAGE}/{t['key']}: failed on Kaggle: {(r or {}).get('error', 'no result')[:150]}")
+        log_job_unit(stage=STAGE, unit=t["key"], provider="kaggle-inpaint", model=INPAINT_MODEL,
+                     params={"areas": len(t["steps"]), "steps": 30}, seed=t["seed"],
+                     status=(r or {}).get("status", "missing"), latency_ms=int(((r or {}).get("seconds") or 0) * 1000),
+                     gpu_seconds=(r or {}).get("gpu_seconds") or 0, fingerprint=t["fingerprint"],
+                     output=rel(dst) if ok else None, job_id=job_id, error=(r or {}).get("error"))
+    return stats
+
+
 def run_gemini_edits(ctx: Context, ratios: list[str] | None, shots: list[str] | None) -> dict:
     """Decision 36: shots with image.provider "gemini-image" are edits of a chosen keyframe, made by Gemini."""
     import shutil
@@ -257,8 +336,9 @@ def run(ctx: Context, ratios: list[str] | None = None, shots: list[str] | None =
         try_seeds: list[int] | None = None) -> dict:
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
     g = run_gemini_edits(ctx, ratios, shots)
+    i = run_inpaint(ctx, ratios, shots, try_seeds)
     if ctx.sb["providers"]["keyframes"] == "kaggle-flux":
         k = run_kaggle(ctx, ratios, shots, try_seeds)
-        return {key: g[key] + k[key] for key in k}
+        return {key: g[key] + i[key] + k[key] for key in k}
     # one image blocked by the provider's safety filter must not stop the other shots (FAILURES.md F10)
     return execute(ctx, units(ctx), keep_going=True)

@@ -359,8 +359,23 @@
                   "$ref": "#/$defs/id"
                 }
               },
+              "inpaint": {
+                "type": "array",
+                "description": "with provider kaggle-inpaint: areas to repaint, in order; everything else stays as it is",
+                "items": {
+                  "type": "object",
+                  "required": ["area", "prompt"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "area": {"type": "array", "minItems": 3, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}},
+                    "keep": {"type": "array", "items": {"type": "array", "minItems": 3, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number"}}}},
+                    "prompt": {"type": "string", "minLength": 1},
+                    "negative": {"type": "string"}
+                  }
+                }
+              },
               "provider": {
-                "enum": ["gemini-image"],
+                "enum": ["gemini-image", "kaggle-inpaint"],
                 "description": "per-shot override: gemini-image edits edit_from with Gemini (decision 36)"
               },
               "edit_from": {
