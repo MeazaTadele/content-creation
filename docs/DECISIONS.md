@@ -11,6 +11,8 @@ at the bottom of each section.
 |---|---|---|---|---|
 | 1 | Story, audience, language | a person's moment, a ritual, a saying, a place, a journey, an object | The Fasika morning my mother was home; audience Betty, Yishak and my brother Henok; Amharic narration | Tue 24 Nov |
 | 19 | Intent | joy; gratitude; bittersweet; recognition of one's own family | Feel happy, understand that being there matters as much as providing, and think about their own families' holidays (see DESIGN.md) | Wed 25 Nov |
+| 32 | Where keyframes are made after Cloudflare's daily allowance stayed exhausted | wait for Cloudflare (likely about 21:00, close to the deadline); the same FLUX.2 klein 4B model on Kaggle's GPU | Kaggle's GPU, one batch job (Thu 26 Nov, 06:40 EAT) | Thu 26 Nov |
+| 33 | Final narration | radio cuts v1-v9 | Radio cut v9: OmniVoice following my own voice sample (v3's takes), tempo 0.9, my longer lines 1-2, pauses 0.25 s / 0.5 s, 62.7 s. Locked | Thu 26 Nov |
 | 31 | Final character references | nine rounds of candidates (reference sheet stage), edits toward the chosen outfits and Ethiopian features | Girl 3 (round 4); mother 1, father 1, brother 0 (round 7: the family outfits, before the last face edit, which I liked less). Locked in `references/*_final.png` | Wed 25 Nov |
 | 2 | Visual style | painted/illustrated; photorealistic; soft animated | Painted/illustrated, warm and soft like a memory (suggested by the agent, adopted) | Wed 25 Nov |
 | 8 | Music structure | one track; two cues; a looping bed | Two cues: a quiet "before" and a warm "Easter morning", crossfaded at the turn (suggested, adopted) | Wed 25 Nov |

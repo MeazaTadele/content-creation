@@ -105,7 +105,7 @@
   },
   "providers": {
     "script": "gemini",
-    "keyframes": "cloudflare-flux",
+    "keyframes": "kaggle-flux",
     "shots": "kaggle-wan22",
     "music": "kaggle-acestep",
     "asr": []

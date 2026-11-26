@@ -274,6 +274,7 @@
           "type": "string",
           "enum": [
             "cloudflare-flux",
+            "kaggle-flux",
             "placeholder"
           ]
         },
