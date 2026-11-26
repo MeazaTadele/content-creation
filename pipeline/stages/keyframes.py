@@ -305,6 +305,35 @@ def run_wide(ctx: Context) -> dict:
     todo, files = [], {}
     tmpd = Path(tempfile.mkdtemp(prefix="wide-"))
     for shot in ctx.sb["shots"]:
+        fix = shot["image"].get("wide_fix")
+        if fix:  # decision 46: repaint marked areas of a chosen widened picture, following a person's reference
+            fbase = ROOT / fix["base"]
+            for seed in fix.get("try_seeds") or [fix.get("seed", shot["image"]["seed"])]:
+                steps, refs = [], []
+                for k, st in enumerate(fix["inpaint"]):
+                    rp = refsheet.chosen(ctx, st["ref"]) if st.get("ref") else None
+                    refs.append(rp)
+                    steps.append({"prompt": st["prompt"], "negative": st.get("negative", ""), "area": st["area"],
+                                  **({"ref": rp.name, "ref_scale": st.get("ref_scale", 0.6)} if rp else {})})
+                fp = fingerprint(STAGE, STAGE_VERSION, {"wide_fix_base": fbase, "steps": steps, "refs": [r for r in refs if r],
+                                                         "seed": seed, "provider": "kaggle-inpaint", "model": INPAINT_MODEL})
+                unit = f"{shot['id']}/16x9" + (f"/try{seed}" if fix.get("try_seeds") else "")
+                if ctx.manifest.is_fresh(STAGE, unit, fp):
+                    say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
+                    continue
+                uname = unit.replace("/", "_")
+                files[fbase.name] = fbase
+                job_steps = []
+                for k, st in enumerate(steps):
+                    mp = tmpd / f"{uname}_fix{k}.png"
+                    _mask_png({"area": st["area"]}, WIDE_SIZE, mp)
+                    files[mp.name] = mp
+                    if refs[k]:
+                        files[refs[k].name] = refs[k]
+                    job_steps.append({kk: vv for kk, vv in st.items() if kk != "area"} | {"mask": mp.name})
+                todo.append({"unit": uname, "key": unit, "fingerprint": fp, "base": fbase.name, "seed": seed,
+                             "steps": job_steps, "shot": shot["id"]})
+            continue
         base = path(ctx, shot["id"], "9x16")
         if base is None:
             continue

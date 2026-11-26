@@ -31,6 +31,12 @@ def main():
     t0 = time.time()
     pipe = AutoPipelineForInpainting.from_pretrained(MODEL_ID, torch_dtype=torch.float16, variant="fp16").to("cuda")
     print(f"{type(pipe).__name__} loaded in {time.time() - t0:.0f} s", flush=True)
+    uses_ref = any(st.get("ref") for u in job["units"] for st in u["steps"])
+    if uses_ref:  # decision 46: IP-Adapter lets the repaint follow a person's reference image
+        pipe.load_ip_adapter("h94/IP-Adapter", subfolder="sdxl_models",
+                             weight_name="ip-adapter-plus_sdxl_vit-h.safetensors",
+                             image_encoder_folder="models/image_encoder")
+        print("IP-Adapter loaded", flush=True)
     for u in job["units"]:
         res = {"unit": u["unit"], "fingerprint": u["fingerprint"], "model": MODEL_ID}
         t1 = time.time()
@@ -40,9 +46,14 @@ def main():
             for k, step in enumerate(u["steps"]):
                 mask = Image.open(os.path.join(inp, step["mask"])).convert("L").resize((w, h))
                 g = torch.Generator(device="cuda").manual_seed(u["seed"] + k)
+                extra = {}
+                if uses_ref:
+                    ref = step.get("ref")
+                    pipe.set_ip_adapter_scale(step.get("ref_scale", 0.6) if ref else 0.0)
+                    extra["ip_adapter_image"] = Image.open(os.path.join(inp, ref)).convert("RGB") if ref else img
                 out = pipe(prompt=step["prompt"], negative_prompt=step.get("negative", ""), image=img, mask_image=mask,
                            height=h, width=w, strength=0.99, guidance_scale=7.0, num_inference_steps=30,
-                           generator=g).images[0].resize((w, h))
+                           generator=g, **extra).images[0].resize((w, h))
                 soft = mask.filter(ImageFilter.GaussianBlur(3))
                 img = Image.composite(out, img, soft)  # only the masked area changes
             name = f"{u['unit']}.png"

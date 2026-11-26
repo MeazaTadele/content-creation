@@ -451,6 +451,66 @@
               "wide_prompt": {
                 "type": "string",
                 "description": "extra words for the sides painted when the 9:16 picture is widened to 16:9 (decision 45)"
+              },
+              "wide_fix": {
+                "type": "object",
+                "description": "repaint marked areas of a chosen widened 16:9 picture, optionally following a character's reference (decision 46)",
+                "required": [
+                  "base",
+                  "inpaint"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "base": {
+                    "type": "string"
+                  },
+                  "seed": {
+                    "type": "integer"
+                  },
+                  "try_seeds": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "inpaint": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "area",
+                        "prompt"
+                      ],
+                      "additionalProperties": false,
+                      "properties": {
+                        "area": {
+                          "type": "array",
+                          "minItems": 3,
+                          "items": {
+                            "type": "array",
+                            "minItems": 2,
+                            "maxItems": 2,
+                            "items": {
+                              "type": "number"
+                            }
+                          }
+                        },
+                        "prompt": {
+                          "type": "string"
+                        },
+                        "negative": {
+                          "type": "string"
+                        },
+                        "ref": {
+                          "type": "string"
+                        },
+                        "ref_scale": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
               }
             }
           },

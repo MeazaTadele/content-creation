@@ -227,7 +227,61 @@
         "characters": [],
         "scene_from": "s05",
         "seed": 1006,
-        "wide_prompt": "on the right the mother stands at the edge of the picture, an Ethiopian woman with black hair in a low bun, wearing a long white cotton dress with a narrow green and gold woven tibeb border at the cuffs and hem, the same dress as her sleeve"
+        "wide_prompt": "on the right the mother stands at the edge of the picture, an Ethiopian woman with black hair in a low bun, wearing a long white cotton dress with a narrow green and gold woven tibeb border at the cuffs and hem, the same dress as her sleeve",
+        "wide_fix": {
+          "base": "references/keyframes/s06_16x9_wide_v2.png",
+          "try_seeds": [
+            1606,
+            2606,
+            3606
+          ],
+          "inpaint": [
+            {
+              "area": [
+                [
+                  893,
+                  66
+                ],
+                [
+                  1004,
+                  66
+                ],
+                [
+                  1014,
+                  160
+                ],
+                [
+                  1072,
+                  198
+                ],
+                [
+                  1078,
+                  330
+                ],
+                [
+                  1068,
+                  600
+                ],
+                [
+                  1074,
+                  645
+                ],
+                [
+                  1000,
+                  672
+                ],
+                [
+                  893,
+                  672
+                ]
+              ],
+              "prompt": "the mother from the reference image standing, the same face, the same black hair in a low bun, an Ethiopian woman, wearing a long white cotton dress with a narrow green and gold woven tibeb border at the cuffs and hem, warm soft painted illustration, gentle morning light, visible brush texture",
+              "negative": "different face, green dress, blonde hair, extra person, text, blurry, deformed hands",
+              "ref": "mother",
+              "ref_scale": 0.65
+            }
+          ]
+        }
       },
       "motion": {
         "prompt": "the camera is completely still; only thin white smoke rises slowly and gently from the incense burner and the roasting beans and drifts through the sunlight; nothing else moves, nothing new appears, everything in the picture stays exactly as it is",
