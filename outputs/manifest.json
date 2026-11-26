@@ -733,14 +733,15 @@
       "seconds": 38.8
     },
     "keyframes/s01/16x9": {
-      "fingerprint": "2576bcd20a42955e80fcf9cb06f1ff3c133c884a9812f37b420e7352df6c8608",
-      "output": "outputs/keyframes/s01/16x9__2576bcd2.png",
+      "fingerprint": "8536e77c1753a5323482467369aca7737430a3c5d2479a959ab085b1cdac77a8",
+      "output": "outputs/keyframes/s01/16x9__8536e77c.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s01",
       "ratio": "16x9",
-      "seconds": 40.2
+      "wide_from": "9x16",
+      "seconds": 30.8
     },
     "keyframes/s02/9x16": {
       "fingerprint": "ef6e360031f400536b6f8c477366bbb35e1478bc71813b189142c98e9b060c94",
@@ -753,14 +754,15 @@
       "seconds": 27.5
     },
     "keyframes/s02/16x9": {
-      "fingerprint": "317fc0caad54cbf9dd599c4775234db480fc3bb3c7024ef5a39c036684664d36",
-      "output": "outputs/keyframes/s02/16x9__317fc0ca.png",
+      "fingerprint": "2b353b597bf44ae1a027d5ffdffb60e78a1309d302d1af7757ba0ff867146606",
+      "output": "outputs/keyframes/s02/16x9__2b353b59.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s02",
       "ratio": "16x9",
-      "seconds": 27.3
+      "wide_from": "9x16",
+      "seconds": 27.6
     },
     "keyframes/s03/9x16": {
       "fingerprint": "8f008b84ec86a49504b1db87434e2851461ab551d8023d7c2af2bf3cc34b5722",
@@ -773,14 +775,15 @@
       "seconds": 48.3
     },
     "keyframes/s03/16x9": {
-      "fingerprint": "4a631db159264f10ea73642af7aeddcdb3fe4f5ec5bfa4312964bf148b1efa74",
-      "output": "outputs/keyframes/s03/16x9__4a631db1.png",
+      "fingerprint": "1199fd7e443bee49781baa37ed7b2f6a7915df8e12b25467f8c8dee7589344c1",
+      "output": "outputs/keyframes/s03/16x9__1199fd7e.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s03",
       "ratio": "16x9",
-      "seconds": 46.7
+      "wide_from": "9x16",
+      "seconds": 29.6
     },
     "keyframes/s04/9x16": {
       "fingerprint": "af54a62cbfc34cfea91b632d651d4266519244662a4874469d310c89d7d518f5",
@@ -793,14 +796,15 @@
       "seconds": 33.4
     },
     "keyframes/s04/16x9": {
-      "fingerprint": "170089de748fa317aaa4d81a2600a063c98db88648ec7029abfb428e3f2caf1d",
-      "output": "outputs/keyframes/s04/16x9__170089de.png",
+      "fingerprint": "d4554d202caec7e3fb43cd4c2a4297cab2f95b408075344013bd7eada7f096d7",
+      "output": "outputs/keyframes/s04/16x9__d4554d20.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s04",
       "ratio": "16x9",
-      "seconds": 35.3
+      "wide_from": "9x16",
+      "seconds": 30.2
     },
     "keyframes/s05/9x16": {
       "fingerprint": "710ee15fd72108c4509ecbb2f5e6780c0e1bcca7fa3e53867702f2619eeb45d3",
@@ -813,14 +817,15 @@
       "seconds": 37.8
     },
     "keyframes/s05/16x9": {
-      "fingerprint": "3207d537a3d30d4a791889526422683ead5d8dd6c642fa6a7186bd35a149cdf4",
-      "output": "outputs/keyframes/s05/16x9__3207d537.png",
+      "fingerprint": "7585dca5fb517f8bf117ba1d2dea7cdbdd8fa68791d2165865ac5f4f995bbe47",
+      "output": "outputs/keyframes/s05/16x9__7585dca5.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s05",
       "ratio": "16x9",
-      "seconds": 35.4
+      "wide_from": "9x16",
+      "seconds": 29.2
     },
     "keyframes/s06/9x16": {
       "fingerprint": "567a913a886a7cb2068e8537d55fc0dc3b4ec1b10ac11d3ded8fe0cc44916eb6",
@@ -833,14 +838,15 @@
       "seconds": 32.9
     },
     "keyframes/s06/16x9": {
-      "fingerprint": "b838cafd50b6aa9de7d0f6f5d0c2aebbf20d71b75ddd86a382febd02a5182224",
-      "output": "outputs/keyframes/s06/16x9__b838cafd.png",
+      "fingerprint": "433bc454268d4c206d09e574f1122d1e7512bad6991bbebef8a00ee51e3cb704",
+      "output": "outputs/keyframes/s06/16x9__433bc454.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s06",
       "ratio": "16x9",
-      "seconds": 26.1
+      "wide_from": "9x16",
+      "seconds": 29.2
     },
     "keyframes/s07/9x16": {
       "fingerprint": "e950b36e60b4c1d379a793a99f6033dd5728920429f18f9468debb1cd76fb572",
@@ -851,14 +857,15 @@
       "ratio": "9x16"
     },
     "keyframes/s07/16x9": {
-      "fingerprint": "9a4e95c5524f658aefa29c399b4bcde436999a4b2bbfb5d89f2ee505e15679ba",
-      "output": "outputs/keyframes/s07/16x9__9a4e95c5.png",
+      "fingerprint": "746d59c6a6fcdde3ed27fa21cd46981b001c1fa2323c2093503be5dc92f284c9",
+      "output": "outputs/keyframes/s07/16x9__746d59c6.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s07",
       "ratio": "16x9",
-      "seconds": 25.5
+      "wide_from": "9x16",
+      "seconds": 29.6
     },
     "keyframes/s08/9x16": {
       "fingerprint": "5834432f3db9038bf03c5d20c19e2e9b57057080b8d0a90dd7fb22ec253d73ea",
@@ -872,14 +879,15 @@
       "chosen_from": "s08/9x16/try3208"
     },
     "keyframes/s08/16x9": {
-      "fingerprint": "3fe879199604677029275b179feae2c87a8fd803865a38981507a3ec11dc64ce",
-      "output": "outputs/keyframes/s08/16x9__3fe87919.png",
+      "fingerprint": "ac10c9a6f80a88979790ed20d6f0961606b68b13f308dc86cc4f1b3975230fdf",
+      "output": "outputs/keyframes/s08/16x9__ac10c9a6.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s08",
       "ratio": "16x9",
-      "seconds": 33.8
+      "wide_from": "9x16",
+      "seconds": 29.5
     },
     "keyframes/s09/9x16": {
       "fingerprint": "7a96126d6dbdda12a343828a4c8b381c02b1a51729e10bb080a474066c11ebbe",
@@ -890,14 +898,15 @@
       "ratio": "9x16"
     },
     "keyframes/s09/16x9": {
-      "fingerprint": "49641ed7bf5015005eb9f632f03ca8629b52c6b903f389b6e7ca17967dc63f12",
-      "output": "outputs/keyframes/s09/16x9__49641ed7.png",
+      "fingerprint": "874989a4efd410ed52b86c7c27c802aa8f06cab550182183842b83cc4fb7357c",
+      "output": "outputs/keyframes/s09/16x9__874989a4.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s09",
       "ratio": "16x9",
-      "seconds": 24.3
+      "wide_from": "9x16",
+      "seconds": 29.5
     },
     "keyframes/s10/9x16": {
       "fingerprint": "7a96126d6dbdda12a343828a4c8b381c02b1a51729e10bb080a474066c11ebbe",
@@ -908,14 +917,15 @@
       "ratio": "9x16"
     },
     "keyframes/s10/16x9": {
-      "fingerprint": "c41ede6a6eb4200aecba3e0327a56917d154ff51b6d7d8059e04c04e65adeb58",
-      "output": "outputs/keyframes/s10/16x9__c41ede6a.png",
+      "fingerprint": "26c47366c872e7e573096b6201d7dc64efb1541ed5690bd0fce150f79d4ff1cf",
+      "output": "outputs/keyframes/s10/16x9__26c47366.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s10",
       "ratio": "16x9",
-      "seconds": 24.7
+      "wide_from": "9x16",
+      "seconds": 29.6
     },
     "keyframes/s07/9x16/try1007": {
       "fingerprint": "0f3e5b80c9e9df70e6a575985656ad8c923e0db7278f942d11d06121cf8a3f11",
