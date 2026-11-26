@@ -723,14 +723,14 @@
       "bytes": 1855997
     },
     "keyframes/s01/9x16": {
-      "fingerprint": "666efb51cba6a8652b5aa5c7477b73f47cf005e0bf697b5ccc9ac4063e163fa8",
-      "output": "outputs/keyframes/s01/9x16__666efb51.png",
+      "fingerprint": "b2f8a2777c18001dabd3fbe84c745b492e91d6d0b6e12cdb2212b529ff66891e",
+      "output": "outputs/keyframes/s01/9x16__b2f8a277.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s01",
       "ratio": "9x16",
-      "seconds": 40.6
+      "seconds": 38.8
     },
     "keyframes/s01/16x9": {
       "fingerprint": "2576bcd20a42955e80fcf9cb06f1ff3c133c884a9812f37b420e7352df6c8608",
@@ -783,14 +783,14 @@
       "seconds": 46.7
     },
     "keyframes/s04/9x16": {
-      "fingerprint": "681f937d96a188713e0dcea91e64888ae653c1425bf149a29d149705b4d720d8",
-      "output": "outputs/keyframes/s04/9x16__681f937d.png",
+      "fingerprint": "af54a62cbfc34cfea91b632d651d4266519244662a4874469d310c89d7d518f5",
+      "output": "outputs/keyframes/s04/9x16__af54a62c.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s04",
       "ratio": "9x16",
-      "seconds": 37.6
+      "seconds": 33.4
     },
     "keyframes/s04/16x9": {
       "fingerprint": "170089de748fa317aaa4d81a2600a063c98db88648ec7029abfb428e3f2caf1d",
@@ -823,14 +823,14 @@
       "seconds": 35.4
     },
     "keyframes/s06/9x16": {
-      "fingerprint": "f9773eae694f2ae09a72d9b3d82793f1939b7f364fcb1ec0b790503b9f3fd456",
-      "output": "outputs/keyframes/s06/9x16__f9773eae.png",
+      "fingerprint": "567a913a886a7cb2068e8537d55fc0dc3b4ec1b10ac11d3ded8fe0cc44916eb6",
+      "output": "outputs/keyframes/s06/9x16__567a913a.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s06",
       "ratio": "9x16",
-      "seconds": 27.8
+      "seconds": 32.9
     },
     "keyframes/s06/16x9": {
       "fingerprint": "b838cafd50b6aa9de7d0f6f5d0c2aebbf20d71b75ddd86a382febd02a5182224",
@@ -843,14 +843,14 @@
       "seconds": 26.1
     },
     "keyframes/s07/9x16": {
-      "fingerprint": "fcbcede76cee5da2c540d1adc663ce2042a49caf09c4853831d1034a05e466ca",
-      "output": "outputs/keyframes/s07/9x16__fcbcede7.png",
+      "fingerprint": "cf8ef39d94251b914e034b7adb30e371b80b59905032de12b3630d2cda763bd4",
+      "output": "outputs/keyframes/s07/9x16__cf8ef39d.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s07",
       "ratio": "9x16",
-      "seconds": 27.9
+      "seconds": 56.6
     },
     "keyframes/s07/16x9": {
       "fingerprint": "9a4e95c5524f658aefa29c399b4bcde436999a4b2bbfb5d89f2ee505e15679ba",
@@ -863,14 +863,14 @@
       "seconds": 25.5
     },
     "keyframes/s08/9x16": {
-      "fingerprint": "2243012fec65c6148b5293e653c372a14516f71ff24c63f68f97b2d6c8697115",
-      "output": "outputs/keyframes/s08/9x16__2243012f.png",
+      "fingerprint": "ccc143b4deace3321e82dfb48830ddd55f6e7fefe940fd21734cfa0f6ed4b345",
+      "output": "outputs/keyframes/s08/9x16__ccc143b4.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s08",
       "ratio": "9x16",
-      "seconds": 37.7
+      "seconds": 68.1
     },
     "keyframes/s08/16x9": {
       "fingerprint": "3fe879199604677029275b179feae2c87a8fd803865a38981507a3ec11dc64ce",
@@ -883,14 +883,14 @@
       "seconds": 33.8
     },
     "keyframes/s09/9x16": {
-      "fingerprint": "2a0cbdb941dbd8b3ce4bcd345de5bfa7090c53e7f30c0f3b1855378af0e0c331",
-      "output": "outputs/keyframes/s09/9x16__2a0cbdb9.png",
+      "fingerprint": "89e8e14f2764010a0640ca34ad34c8a59cb529c34c52fca32d18267b1e9f7313",
+      "output": "outputs/keyframes/s09/9x16__89e8e14f.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s09",
       "ratio": "9x16",
-      "seconds": 27.9
+      "seconds": 67.5
     },
     "keyframes/s09/16x9": {
       "fingerprint": "49641ed7bf5015005eb9f632f03ca8629b52c6b903f389b6e7ca17967dc63f12",
@@ -903,14 +903,14 @@
       "seconds": 24.3
     },
     "keyframes/s10/9x16": {
-      "fingerprint": "5e7287dce6677907c86887a6ae4f2e8604fbccb16dc35b8d972228e70f9608f8",
-      "output": "outputs/keyframes/s10/9x16__5e7287dc.png",
+      "fingerprint": "8cada6977e75ffd5ee95058b8c1ddf9b1d27b92b586a089a3ab066096228f191",
+      "output": "outputs/keyframes/s10/9x16__8cada697.png",
       "status": "generated",
       "provider": "kaggle-flux",
       "model": "black-forest-labs/FLUX.2-klein-4B",
       "shot": "s10",
       "ratio": "9x16",
-      "seconds": 28.2
+      "seconds": 67.2
     },
     "keyframes/s10/16x9": {
       "fingerprint": "c41ede6a6eb4200aecba3e0327a56917d154ff51b6d7d8059e04c04e65adeb58",
