@@ -11,6 +11,7 @@ and 16:9 MP4.
   in the repository: `outputs/final/locked/easter_morning_9x16_final.mp4` and `…_16x9_final.mp4`
 - **The public post:** [YouTube Shorts](https://youtube.com/shorts/CB9pj5Bhc80), with YouTube's AI
   label ("altered or synthetic content") switched on
+- **The walkthrough:** [video, under 5 minutes](https://drive.google.com/file/d/1TBIC3smzMTGXT1ngH1q7xEvoxv9Yl6id/view?usp=sharing), with one shot regenerated live
 - **What it's for and who it's for:** `DESIGN.md` (audience, intent, both user tests)
 - **How it works:** `ARCHITECTURE.md`
 
