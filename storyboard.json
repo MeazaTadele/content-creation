@@ -241,14 +241,13 @@
         "en": "My brother and my dad sit holding their coffee. You can tell they're as happy as I am."
       },
       "image": {
-        "prompt": "The same scene as the first reference image: the same room, the same mother on her low stool holding the pan of coffee beans, the same carved table with the cups, the same black jebena, brazier and cut grass, the same light and painting style. The difference: the father and the brother, sitting on the seats beside her, are now drawn much bigger, at the same scale as the mother: grown men, their heads at the same height as her head, their shoulders as broad as hers or broader, filling the right half of the picture. They keep their faces, clothes and relaxed poses",
+        "prompt": "A wider view of the room of the first reference image, the camera pulled back so the whole family fits in the frame. The mother sits on her low wooden stool by the brazier, holding the pan of coffee beans, as in the reference. The father and the brother sit right beside her, on two low wooden stools next to hers, all three in one row side by side, at the same distance from the camera, so all three are the same size: grown men as big as the mother, their heads level with hers. They are relaxed and talking with her. In front of them: the same carved table with the cups, the black jebena on its straw ring, the clay brazier and the cut grass on the floor. Warm golden morning light. Not in the picture: no lawn, no Christmas tree, no Western decorations",
         "characters": [
+          "mother",
           "father",
           "brother"
         ],
-        "edit_from": {
-          "9x16": "references/keyframes/s07_9x16_v4.png"
-        },
+        "scene_from": "s05",
         "seed": 1007
       },
       "motion": {
