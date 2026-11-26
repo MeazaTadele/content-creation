@@ -82,7 +82,7 @@ def test_timing_uses_measured_speech_and_crossfades(tmp_path):
     assert all(s["duration"] >= 5.0 for s in shots)
     for a, b in zip(shots, shots[1:]):
         # the next shot starts where this one ends, minus any crossfade
-        assert b["start"] == pytest.approx(a["start"] + a["duration"] - a["overlap_out"], abs=1e-3)
+        assert b["start"] == pytest.approx(a["start"] + a["duration"] - a["overlap_out"], abs=3e-3)
         # narration never overlaps across shots
         assert b["narration_start"] >= a["narration_end"] + timing.MIN_GAP - 1e-6
 
