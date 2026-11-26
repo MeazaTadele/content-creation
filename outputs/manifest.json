@@ -986,6 +986,34 @@
       "shot": "s08",
       "ratio": "9x16",
       "seconds": 59.1
+    },
+    "shots/s05": {
+      "fingerprint": "73194f9a25f803159b0b67e8a9db5def4b2d329b29d5462d9f5d323ed80cfdad",
+      "output": "outputs/shots/s05__73194f9a.mp4",
+      "status": "generated",
+      "provider": "kaggle-wan22",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "attempts": 1,
+      "seconds": 781.5,
+      "gpu_seconds": 781.5
+    },
+    "shots/s06": {
+      "fingerprint": "2d08c6ee8da5ee80b0183fb70475b1a34a57a2c10ab18764f736f430ff65434c",
+      "output": null,
+      "status": "fallback",
+      "reason": "no result returned (job failed or timed out)",
+      "attempts": 1,
+      "provider": "kaggle-wan22"
+    },
+    "shots/s09": {
+      "fingerprint": "28204f001e29a5ea936a332f62578e82c0ef48c9fc1b0f9befda50f7be2ff6fd",
+      "output": "outputs/shots/s09__28204f00.mp4",
+      "status": "generated",
+      "provider": "kaggle-wan22",
+      "model": "Wan-AI/Wan2.2-TI2V-5B-Diffusers",
+      "attempts": 1,
+      "seconds": 765.6,
+      "gpu_seconds": 765.6
     }
   },
   "stage_versions": {},

@@ -80,7 +80,9 @@ def main():
     job = json.load(open(os.path.join(inp, "job.json")))
     ids = [u["unit"] for u in job["units"]]
     import torch
-    n_gpu = max(1, torch.cuda.device_count())
+    # one worker: two model copies offloaded to RAM ran the machine out of memory and one worker died
+    # silently (FAILURES.md F16, F19)
+    n_gpu = 1
     print(f"{len(ids)} units on {n_gpu} GPU(s)", flush=True)
     groups = [ids[i::n_gpu] for i in range(n_gpu)]
     procs = [subprocess.Popen([sys.executable, __file__, "--worker", str(i), ",".join(g)])

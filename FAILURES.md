@@ -3,6 +3,17 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F19. The same memory problem in the video job (Thu 26 Nov)
+
+- **What broke:** the Wan 2.2 job split three clips across the two T4s. GPU 0 made s05 and s09
+  (781 s and 766 s each, after 390 s loading the model); GPU 1, holding s06, left no result and no
+  error, the same silent stop as F16.
+- **Why:** each worker parks its own copy of the model in RAM (sequential CPU offload, F5); two
+  copies are more than the machine's RAM.
+- **Fix:** the video job also runs one worker. Only s06 was sent again; s05 and s09 stayed cached.
+- **Lesson:** F16 should have been fixed in every Kaggle job at once, not only in the one where it
+  showed up. Two GPUs only help when each model fits in RAM twice.
+
 ## F18. Gemini's image models are not on the free tier (Thu 26 Nov)
 
 - **What broke:** after F17, Meaza chose to try Gemini image editing for s07. Both image models the
