@@ -416,6 +416,10 @@
                 "type": "integer",
                 "minimum": 0
               },
+              "negative": {
+                "type": "string",
+                "description": "extra things the video must not show, for this shot only"
+              },
               "kenburns": {
                 "type": "boolean",
                 "description": "Force the Ken Burns fallback for this shot."

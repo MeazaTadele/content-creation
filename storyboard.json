@@ -228,8 +228,9 @@
         "seed": 1006
       },
       "motion": {
-        "prompt": "incense smoke drifting through the sunbeam",
-        "seed": 2006
+        "prompt": "the camera is completely still; only thin white smoke rises slowly and gently from the incense burner and the roasting beans and drifts through the sunlight; nothing else moves, nothing new appears, everything in the picture stays exactly as it is",
+        "negative": "sword, rod, stick, wand, glowing light, light beam, laser, new objects, new people, moving hands, moving people, camera movement, zoom",
+        "seed": 3006
       },
       "transition": "cut"
     },

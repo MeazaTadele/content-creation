@@ -54,7 +54,7 @@ def worker(gpu: int, unit_ids: list):
         try:
             img = load_image(os.path.join(inp, u["keyframe"])).resize((s["width"], s["height"]))
             g = torch.Generator(device="cpu").manual_seed(u["seed"])
-            frames = pipe(image=img, prompt=u["prompt"], negative_prompt=s.get("negative", ""),
+            frames = pipe(image=img, prompt=u["prompt"], negative_prompt=u.get("negative") or s.get("negative", ""),
                           height=s["height"], width=s["width"], num_frames=s["frames"],
                           num_inference_steps=s["steps"], guidance_scale=s["guidance"], generator=g).frames[0]
             export_to_video(frames, out_mp4, fps=s["fps"])

@@ -34,9 +34,11 @@ def plan(ctx: Context) -> list[dict]:
         kf = keyframes.path(ctx, shot["id"], "9x16")
         if kf is None:
             continue
-        fp = fingerprint(STAGE, STAGE_VERSION, {"keyframe": kf, "prompt": shot["motion"]["prompt"],
-                                                 "seed": shot["motion"]["seed"], "model": MODEL,
-                                                 "settings": SETTINGS})
+        inputs = {"keyframe": kf, "prompt": shot["motion"]["prompt"], "seed": shot["motion"]["seed"],
+                  "model": MODEL, "settings": SETTINGS}
+        if shot["motion"].get("negative"):  # only shots that set it get a different fingerprint
+            inputs["negative"] = shot["motion"]["negative"]
+        fp = fingerprint(STAGE, STAGE_VERSION, inputs)
         e = ctx.manifest.get(STAGE, shot["id"])
         if e and e.get("fingerprint") == fp:
             if e.get("status") == "generated" and (ROOT / e["output"]).exists():
@@ -66,7 +68,9 @@ def run(ctx: Context) -> dict:
         name = f"{t['shot']['id']}_keyframe.png"
         files[name] = t["keyframe"]
         units.append({"unit": t["shot"]["id"], "fingerprint": t["fingerprint"], "keyframe": name,
-                      "prompt": t["shot"]["motion"]["prompt"], "seed": t["shot"]["motion"]["seed"]})
+                      "prompt": t["shot"]["motion"]["prompt"], "seed": t["shot"]["motion"]["seed"],
+                      **({"negative": SETTINGS["negative"] + ", " + t["shot"]["motion"]["negative"]}
+                         if t["shot"]["motion"].get("negative") else {})})
     job_id, results = kaggle.run_job(STAGE, units, files, settings=SETTINGS)
     stats = {"generated": 0, "cached": 0, "failed": 0}
     for t in todo:
