@@ -96,6 +96,8 @@ def segment_units(ctx: Context, timeline: dict, ratio: str) -> list[Unit]:
         dur = t["duration"]
         frames = round(dur * FPS)
         clip = None if shot["motion"].get("kenburns") else shots.clip_path(ctx, shot["id"])
+        if ratio == "16x9" and ctx.sb.get("wide") == "outpaint":
+            clip = None  # decision 44: the 16:9 film uses the widened stills, with a slow move, for every shot
         if clip is not None:
             source, kind, move = clip, "clip", None
         else:
