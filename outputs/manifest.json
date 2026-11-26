@@ -861,14 +861,15 @@
       "seconds": 25.5
     },
     "keyframes/s08/9x16": {
-      "fingerprint": "d4a3123f084478773ff67123e88142fc5c0c237259dace77240e33628400b23e",
-      "output": "outputs/keyframes/s08/9x16__d4a3123f.png",
+      "fingerprint": "5834432f3db9038bf03c5d20c19e2e9b57057080b8d0a90dd7fb22ec253d73ea",
+      "output": "outputs/keyframes/s08/9x16/try3208__5834432f.png",
       "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "provider": "kaggle-inpaint",
+      "model": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
       "shot": "s08",
       "ratio": "9x16",
-      "seconds": 36.9
+      "seconds": 59.1,
+      "chosen_from": "s08/9x16/try3208"
     },
     "keyframes/s08/16x9": {
       "fingerprint": "3fe879199604677029275b179feae2c87a8fd803865a38981507a3ec11dc64ce",
