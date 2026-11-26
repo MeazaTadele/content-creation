@@ -61,7 +61,8 @@ class QuotaExhausted(FatalError):
 def classify_http(status: int, body: str, retry_after: str | None = None) -> Exception:
     msg = f"HTTP {status}: {redact(body[:300])}"
     low = body.lower()
-    if status == 429 and any(k in low for k in ("daily free allocation", "per day", "perday", "daily limit")):
+    if status == 429 and any(k in low for k in ("daily free allocation", "per day", "perday", "daily limit", "limit: 0")):
+        # "limit: 0" = the free tier has no allowance at all for this model: retrying cannot help
         return QuotaExhausted(msg)
     if status == 429 or status >= 500 or status == 408:
         ra = None

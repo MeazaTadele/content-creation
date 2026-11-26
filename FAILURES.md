@@ -3,6 +3,32 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F18. Gemini's image models are not on the free tier (Thu 26 Nov)
+
+- **What broke:** after F17, Meaza chose to try Gemini image editing for s07. Both image models the
+  key can see, gemini-2.5-flash-image and gemini-3.1-flash-image, answered HTTP 429 at once. The
+  quota names in the error were the free-tier ones (requests per day, requests per minute, input
+  tokens per minute), with no allowance left to use: the free tier gives these models nothing. This
+  matches the brief: the frontier image models "moved behind paid billing".
+- **What it cost:** nothing. The key has no billing, so the refused calls cannot be charged. One
+  pipeline call is in runs.jsonl as QuotaExhausted, with no retries: a 429 that says "limit: 0" or
+  a daily quota now stops at once instead of waiting 65 s four times.
+- **What stays:** the provider (image.provider "gemini-image", pipeline/providers/gemini_image.py)
+  stays in the code as an option for a key with billing. s07 went back to the open-model version.
+
+## F17. The open image model would not make a targeted edit (Thu 26 Nov)
+
+- **What broke:** Meaza wanted only the sizes of the father and brother changed in s07 (and two small
+  changes each in s08 and s09). FLUX.2 klein, given the chosen picture as the first reference and
+  told to keep everything else, returned nearly the same picture: 6-15% of pixels changed, and none
+  of the requested changes. Four more seeds with a "describe the result" prompt made the men only a
+  little bigger. Rebuilding s07 as a wider shot from the s05 room made them bigger, but 3 of 4
+  candidates had the wrong people (two fathers, an extra man, a bald brother).
+- **Why:** the fast distilled model (4 steps) follows its reference image very closely: good for
+  keeping a room the same (decision 34), poor for changing one thing inside a picture.
+- **Lesson:** use reference images for consistency, not for edits; an edit needs a model built for
+  editing, or repainting only a masked area.
+
 ## F16. Half the Kaggle keyframes came back missing: one GPU worker died without an error (Thu 26 Nov)
 
 - **What broke:** the first FLUX.2 klein job on Kaggle (decision 32) returned all ten 16:9 images and

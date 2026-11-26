@@ -359,6 +359,10 @@
                   "$ref": "#/$defs/id"
                 }
               },
+              "provider": {
+                "enum": ["gemini-image"],
+                "description": "per-shot override: gemini-image edits edit_from with Gemini (decision 36)"
+              },
               "edit_from": {
                 "type": "object",
                 "description": "per aspect ratio: an image to edit (given first to the model); the prompt describes only the changes",

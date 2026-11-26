@@ -116,7 +116,7 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None, shots: list[str] |
     sb = ctx.sb
     todo, files = [], {}
     for shot in sb["shots"]:
-        if shots and shot["id"] not in shots:
+        if (shots and shot["id"] not in shots) or shot["image"].get("provider") == "gemini-image":
             continue
         char_refs = [p for c in shot["image"].get("characters", []) if (p := refsheet.chosen(ctx, c)) is not None]
         prompt = full_prompt(sb, shot)
@@ -202,10 +202,63 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None, shots: list[str] |
     return stats
 
 
+def run_gemini_edits(ctx: Context, ratios: list[str] | None, shots: list[str] | None) -> dict:
+    """Decision 36: shots with image.provider "gemini-image" are edits of a chosen keyframe, made by Gemini."""
+    import shutil
+    from ..providers.gemini_image import GeminiImageEdit
+    prov = GeminiImageEdit()
+    stats = {"generated": 0, "cached": 0, "failed": 0}
+    for shot in ctx.sb["shots"]:
+        im = shot["image"]
+        if im.get("provider") != "gemini-image" or (shots and shot["id"] not in shots):
+            continue
+        refs = [p for c in im.get("characters", []) if (p := refsheet.chosen(ctx, c)) is not None]
+        for ratio, base in (im.get("edit_from") or {}).items():
+            if ratios and ratio not in ratios:
+                continue
+            base_p = ROOT / base
+            fp = fingerprint(STAGE, STAGE_VERSION, {"edit": im["prompt"], "base": base_p, "refs": refs,
+                                                     "provider": prov.name, "model": prov.model})
+            unit = f"{shot['id']}/{ratio}"
+            if ctx.manifest.is_fresh(STAGE, unit, fp):
+                say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
+                stats["cached"] += 1
+                continue
+            if ctx.dry_run:
+                say(f"  would run  {STAGE}/{unit}  (edit with {prov.model})")
+                stats["generated"] += 1
+                continue
+            dst = out_path(STAGE, unit, fp, "png")
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            tmp = dst.with_suffix(".tmp.png")
+            try:
+                calls.call_model(stage=STAGE, unit=unit, provider=prov.name, model=prov.model,
+                                 params={"edit_from": base, "refs": len(refs), "ratio": ratio}, seed=None,
+                                 fn=lambda: prov.edit(base_p, im["prompt"], refs, ratio, tmp), fingerprint=fp,
+                                 output=rel(dst))
+            except Exception as e:  # noqa: BLE001 - logged in runs.jsonl; the other shots go on
+                say(f"  {STAGE}/{unit}: Gemini edit failed: {str(e)[:200]}")
+                stats["failed"] += 1
+                continue
+            w, h = SIZES[ratio]
+            from .. import media
+            media.run(["-i", str(tmp), "-vf", f"scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h}",
+                       "-frames:v", "1", str(dst)])
+            tmp.unlink(missing_ok=True)
+            ctx.manifest.put(STAGE, unit, {"fingerprint": fp, "output": rel(dst), "status": "generated",
+                                           "provider": prov.name, "model": prov.model, "shot": shot["id"],
+                                           "ratio": ratio, "edit_from": base})
+            say(f"  edited     {STAGE}/{unit}  ({prov.model})")
+            stats["generated"] += 1
+    return stats
+
+
 def run(ctx: Context, ratios: list[str] | None = None, shots: list[str] | None = None,
         try_seeds: list[int] | None = None) -> dict:
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
+    g = run_gemini_edits(ctx, ratios, shots)
     if ctx.sb["providers"]["keyframes"] == "kaggle-flux":
-        return run_kaggle(ctx, ratios, shots, try_seeds)
+        k = run_kaggle(ctx, ratios, shots, try_seeds)
+        return {key: g[key] + k[key] for key in k}
     # one image blocked by the provider's safety filter must not stop the other shots (FAILURES.md F10)
     return execute(ctx, units(ctx), keep_going=True)
