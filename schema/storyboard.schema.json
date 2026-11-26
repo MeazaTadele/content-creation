@@ -447,6 +447,10 @@
               "seed": {
                 "type": "integer",
                 "minimum": 0
+              },
+              "wide_prompt": {
+                "type": "string",
+                "description": "extra words for the sides painted when the 9:16 picture is widened to 16:9 (decision 45)"
               }
             }
           },

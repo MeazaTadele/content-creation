@@ -282,9 +282,12 @@ def run_inpaint(ctx: Context, ratios: list[str] | None, shots: list[str] | None,
 
 
 WIDE_SIZE = (1344, 768)  # SDXL works in multiples of 8; assembly scales it to 1920x1080
-WIDE_PROMPT = ("the same room continues to the left and to the right: the same walls, floor, light and colours, "
-               "warm soft painted illustration, gentle morning light, visible brush texture")
-WIDE_NEGATIVE = "people, person, face, child, text, letters, frame, border, split screen, panel, blurry"
+WIDE_PROMPT = ("the same simple Ethiopian home continues to the left and to the right: the same plain painted walls in "
+               "the same colour, the same floor, the same low cushioned seats along the walls, bare walls, an uncluttered "
+               "room, the same light and colours, warm soft painted illustration, gentle morning light, visible brush texture")
+WIDE_NEGATIVE = ("people, person, face, child, text, letters, picture frame, painting on the wall, poster, lamp, dresser, "
+                 "cabinet, chest of drawers, armchair, bookshelf, shelf, pillar, column, door frame, wardrobe, plant, "
+                 "split screen, panel, border, blurry")
 
 
 def run_wide(ctx: Context) -> dict:
@@ -305,7 +308,11 @@ def run_wide(ctx: Context) -> dict:
         base = path(ctx, shot["id"], "9x16")
         if base is None:
             continue
-        fp = fingerprint(STAGE, STAGE_VERSION, {"wide_from": base, "prompt": WIDE_PROMPT, "negative": WIDE_NEGATIVE,
+        prompt = WIDE_PROMPT + (", " + shot["image"]["wide_prompt"] if shot["image"].get("wide_prompt") else "")
+        negative = WIDE_NEGATIVE
+        if shot["image"].get("wide_prompt"):  # a shot that asks for a person on the sides allows one
+            negative = negative.replace("people, person, face, ", "")
+        fp = fingerprint(STAGE, STAGE_VERSION, {"wide_from": base, "prompt": prompt, "negative": negative,
                                                  "size": WIDE_SIZE, "seed": shot["image"]["seed"],
                                                  "provider": "kaggle-inpaint", "model": INPAINT_MODEL})
         unit = f"{shot['id']}/16x9"
@@ -326,7 +333,7 @@ def run_wide(ctx: Context) -> dict:
         m.save(mp)
         files[cp.name], files[mp.name] = cp, mp
         todo.append({"unit": uname, "key": unit, "fingerprint": fp, "base": cp.name, "seed": shot["image"]["seed"],
-                     "steps": [{"mask": mp.name, "prompt": WIDE_PROMPT, "negative": WIDE_NEGATIVE}], "shot": shot["id"]})
+                     "steps": [{"mask": mp.name, "prompt": prompt, "negative": negative}], "shot": shot["id"]})
     if not todo:
         return {"generated": 0, "cached": len(ctx.sb["shots"]), "failed": 0}
     if ctx.dry_run:

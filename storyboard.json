@@ -226,7 +226,8 @@
         "prompt": "Close-up of the coffee being made in the room of the first reference image, the camera moved in low and close: the black clay jebena on its straw ring, the small round white handleless cups shaped like tiny bowls on the carved rekebot, and coffee beans roasting in the flat metal pan over the glowing charcoal of the clay brazier, the mother's hands at the edge of the frame stirring the beans with a thin wooden stick, the cream sleeve of her dress with its woven border showing. Cut grass on the floor, incense smoke curling through warm golden light. Only her hands and sleeves show, no faces. Not in the picture: no lawn, no Christmas tree, no Western decorations",
         "characters": [],
         "scene_from": "s05",
-        "seed": 1006
+        "seed": 1006,
+        "wide_prompt": "on the right the mother stands at the edge of the picture, an Ethiopian woman with black hair in a low bun, wearing a long white cotton dress with a narrow green and gold woven tibeb border at the cuffs and hem, the same dress as her sleeve"
       },
       "motion": {
         "prompt": "the camera is completely still; only thin white smoke rises slowly and gently from the incense burner and the roasting beans and drifts through the sunlight; nothing else moves, nothing new appears, everything in the picture stays exactly as it is",
