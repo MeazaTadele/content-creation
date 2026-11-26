@@ -3,6 +3,18 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F20. A listening copy overwrote two music candidates (Thu 26 Nov)
+
+- **What broke:** right after the ACE-Step job, I (the agent) converted the six candidates to MP3
+  for Meaza to listen to. The file pattern for candidate A matched several files, and FFmpeg took the
+  extra names as outputs, so it wrote the placeholder music over the real candidate A of both cues
+  (and over four placeholder files). Caught by measuring them before sending: A was 75 s and 30 s
+  long at -31 LUFS, like the placeholders, instead of 45 s like B and C.
+- **Fix:** the real candidates were still in the Kaggle download folder and the placeholders were in
+  git, so everything was restored; the MP3s are now made from the exact paths in the manifest.
+- **Lesson:** never pass a glob to FFmpeg as an input; check the output (length, loudness) before
+  handing anything over.
+
 ## F19. The same memory problem in the video job (Thu 26 Nov)
 
 - **What broke:** the Wan 2.2 job split three clips across the two T4s. GPU 0 made s05 and s09

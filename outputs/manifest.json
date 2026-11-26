@@ -681,24 +681,24 @@
       "shot": "s10"
     },
     "music/before/0": {
-      "fingerprint": "b16746dfc26d665f21ee5094de7508defdfd701c21abc3680900c5d5f7e8b20a",
-      "output": "outputs/music/before/0__b16746df.wav",
+      "fingerprint": "838d5f499591d63d633d8f1f35236c8c5df42d0a6046ccf49bba4356c32d31ea",
+      "output": "outputs/music/before/0__838d5f49.wav",
       "status": "generated",
-      "provider": "placeholder",
-      "model": "pad",
-      "seconds": 45.0,
+      "provider": "kaggle-acestep",
+      "model": "ACE-Step/acestep-v15-turbo",
       "cue": "before",
-      "candidate": 0
+      "candidate": 0,
+      "seconds": 45.0
     },
     "music/morning/0": {
-      "fingerprint": "3afc4952987c4fcc7df7c7ef653b38169dbcabecd929b59c75d1f6a38fa1495b",
-      "output": "outputs/music/morning/0__3afc4952.wav",
+      "fingerprint": "ab0761cb7964250981d61e82f902839daa893eb18bd71583b8999e4b12975dbd",
+      "output": "outputs/music/morning/0__ab0761cb.wav",
       "status": "generated",
-      "provider": "placeholder",
-      "model": "pad",
-      "seconds": 45.0,
+      "provider": "kaggle-acestep",
+      "model": "ACE-Step/acestep-v15-turbo",
       "cue": "morning",
-      "candidate": 0
+      "candidate": 0,
+      "seconds": 45.0
     },
     "assemble/sound/radio": {
       "fingerprint": "f5c9f7873edd7295531e9573b5d0387aa929673a2dd53ce3df8313c5726bde8d",
@@ -1316,6 +1316,46 @@
       "lufs": -13.99,
       "true_peak_db": -1.47,
       "bytes": 20304802
+    },
+    "music/before/1": {
+      "fingerprint": "b4ab1bdeca5e88e7b546b26e255c504f93004f29453a6bfd2323ec8da70b9fe2",
+      "output": "outputs/music/before/1__b4ab1bde.wav",
+      "status": "generated",
+      "provider": "kaggle-acestep",
+      "model": "ACE-Step/acestep-v15-turbo",
+      "cue": "before",
+      "candidate": 1,
+      "seconds": 45.0
+    },
+    "music/before/2": {
+      "fingerprint": "a08a365ae633e894fc7c9268c207d48a1a52bd56d000c762100f28e12dfad3cc",
+      "output": "outputs/music/before/2__a08a365a.wav",
+      "status": "generated",
+      "provider": "kaggle-acestep",
+      "model": "ACE-Step/acestep-v15-turbo",
+      "cue": "before",
+      "candidate": 2,
+      "seconds": 45.0
+    },
+    "music/morning/1": {
+      "fingerprint": "cc100f0cbcfe7ba6254aa34ef207496acbd780f997b82abb7c8ede227ec0d2e0",
+      "output": "outputs/music/morning/1__cc100f0c.wav",
+      "status": "generated",
+      "provider": "kaggle-acestep",
+      "model": "ACE-Step/acestep-v15-turbo",
+      "cue": "morning",
+      "candidate": 1,
+      "seconds": 45.0
+    },
+    "music/morning/2": {
+      "fingerprint": "e09c6ee947a9b7792b3d08dc0c7bd0eb9e2afa4fb82173dfa028f5898eb76389",
+      "output": "outputs/music/morning/2__e09c6ee9.wav",
+      "status": "generated",
+      "provider": "kaggle-acestep",
+      "model": "ACE-Step/acestep-v15-turbo",
+      "cue": "morning",
+      "candidate": 2,
+      "seconds": 45.0
     }
   },
   "stage_versions": {},
