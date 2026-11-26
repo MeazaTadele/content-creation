@@ -41,6 +41,8 @@ def worker(gpu, unit_ids):
             kw = dict(prompt=u["prompt"], height=u["height"], width=u["width"], generator=g,
                       num_inference_steps=u.get("steps", 4))
             refs = [Image.open(os.path.join(inp, r)).convert("RGB") for r in u.get("refs", [])]
+            for im in refs:  # up to 5 references on a 16 GB T4: keep each one small
+                im.thumbnail((768, 768))
             if refs:
                 kw["image"] = refs if len(refs) > 1 else refs[0]
             try:

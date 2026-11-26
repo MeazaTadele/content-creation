@@ -359,6 +359,10 @@
                   "$ref": "#/$defs/id"
                 }
               },
+              "scene_from": {
+                "$ref": "#/$defs/id",
+                "description": "an earlier shot whose keyframe (same aspect ratio) is given to the image model as the room to keep"
+              },
               "seed": {
                 "type": "integer",
                 "minimum": 0

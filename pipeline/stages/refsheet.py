@@ -25,6 +25,8 @@ def prompt_for(sb: dict, ch: dict) -> str:
 
 def units(ctx: Context) -> list[Unit]:
     sb = ctx.sb
+    if all(ch.get("reference_image") for ch in sb["characters"]):
+        return []  # every character is locked: nothing to generate, and no image provider needed
     prov = providers.image(sb["providers"]["keyframes"])
     out = []
     for ch in sb["characters"]:

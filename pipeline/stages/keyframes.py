@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 from .. import calls, providers
+from ..config import ROOT
 from ..fingerprint import fingerprint
 from . import refsheet
 from .base import Context, Unit, check_stage_version, execute, out_path, rel, say
@@ -17,6 +18,22 @@ SIZES = {"9x16": (768, 1344), "16x9": (1344, 768)}
 
 SCENE = ("One single full-frame illustrated scene from a film, with a real setting filling the whole frame. "
          "Not a character sheet: no plain background, no inset portraits, no multiple views of the same person")
+
+
+SAME_ROOM = ("The first reference image is the room for this shot: the same living room, the same walls, window, "
+             "curtains and seats, the same carved coffee table with the same small cups, the same black clay coffee pot "
+             "on its straw ring, the same clay charcoal brazier and incense burner, the same cut grass on the floor, the "
+             "same light and painting style. Keep all of it the same; only the camera framing and the people change, "
+             "as described below")
+
+
+def scene_ref(ctx: Context, shot: dict, ratio: str):
+    """The keyframe of the shot named in image.scene_from, in the same ratio (None if it isn't made yet)."""
+    src = shot["image"].get("scene_from")
+    if not src:
+        return None
+    e = ctx.manifest.get(STAGE, f"{src}/{ratio}")
+    return (ROOT / e["output"]) if e else None
 
 
 def full_prompt(sb: dict, shot: dict) -> str:
@@ -34,7 +51,8 @@ def full_prompt(sb: dict, shot: dict) -> str:
         avoid = "Not in the picture:" + avoid
     # style and exclusions first, details after: if the text encoder truncates a long prompt, it loses
     # detail, not the look of the film
-    parts = [SCENE, sb["style"]["block"], avoid, scene, who]
+    same_room = SAME_ROOM if shot["image"].get("scene_from") else ""
+    parts = [SCENE, sb["style"]["block"], same_room, avoid, scene, who]
     return ". ".join(p.strip().rstrip(".") for p in parts if p and p.strip())
 
 
@@ -84,7 +102,7 @@ def path(ctx: Context, shot_id: str, ratio: str):
 KAGGLE_MODEL = "black-forest-labs/FLUX.2-klein-4B"
 
 
-def run_kaggle(ctx: Context) -> dict:
+def run_kaggle(ctx: Context, ratios: list[str] | None = None) -> dict:
     """Decision 32: the same FLUX.2 klein model on Kaggle's GPU, as one batch job."""
     import shutil
     from .. import kaggle, media
@@ -92,9 +110,18 @@ def run_kaggle(ctx: Context) -> dict:
     sb = ctx.sb
     todo, files = [], {}
     for shot in sb["shots"]:
-        refs = [p for c in shot["image"].get("characters", []) if (p := refsheet.chosen(ctx, c)) is not None]
+        char_refs = [p for c in shot["image"].get("characters", []) if (p := refsheet.chosen(ctx, c)) is not None]
         prompt = full_prompt(sb, shot)
         for ratio, size in SIZES.items():
+            if ratios and ratio not in ratios:
+                continue
+            refs = char_refs
+            if shot["image"].get("scene_from"):
+                room = scene_ref(ctx, shot, ratio)
+                if room is None:
+                    say(f"  skipped    {STAGE}/{shot['id']}/{ratio}: its room ({shot['image']['scene_from']}) has no keyframe yet")
+                    continue
+                refs = [room] + char_refs  # the room first: the prompt calls it "the first reference image"
             fp = fingerprint(STAGE, STAGE_VERSION, {"prompt": prompt, "seed": shot["image"]["seed"], "size": size,
                                                      "refs": refs, "provider": "kaggle-flux", "model": KAGGLE_MODEL})
             unit = f"{shot['id']}/{ratio}"
@@ -142,9 +169,9 @@ def run_kaggle(ctx: Context) -> dict:
     return stats
 
 
-def run(ctx: Context) -> dict:
+def run(ctx: Context, ratios: list[str] | None = None) -> dict:
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
     if ctx.sb["providers"]["keyframes"] == "kaggle-flux":
-        return run_kaggle(ctx)
+        return run_kaggle(ctx, ratios)
     # one image blocked by the provider's safety filter must not stop the other shots (FAILURES.md F10)
     return execute(ctx, units(ctx), keep_going=True)

@@ -181,8 +181,10 @@
         "en": "Still in bed, I thought I heard my mother's voice. So I ran out to see."
       },
       "image": {
-        "prompt": "Close-up at floor level: only a girl's two bare feet and ankles, with the hems of loose olive-green trousers, hurrying across a plain tiled floor, cropped at the shins; nothing else of her is in the frame. Ahead, out of focus, a half-open door with warm light and a thin haze beyond it",
-        "characters": [],
+        "prompt": "A single girl of about twelve walks barefoot through a half-open door, her whole body in the frame from head to feet, her two bare feet on the floor beneath her; warm light and a thin haze beyond the door. She is the only person in the picture",
+        "characters": [
+          "girl"
+        ],
         "seed": 1004
       },
       "motion": {
@@ -200,7 +202,7 @@
         "en": "Mom is in the living room, making coffee."
       },
       "image": {
-        "prompt": "Inside a modest Ethiopian living room with plain painted walls, a window with thin curtains, and simple cushioned seats along the walls, on Fasika morning. The mother sits on a low wooden stool, knees together, leaning slightly forward. On the floor at her side: a small round terracotta charcoal brazier about knee high, open at the top and full of glowing orange charcoal, standing on a round metal tray on the floor. She holds a flat round shallow metal roasting pan with a long straight metal handle, held just above the coals, full of coffee beans turning from light brown to dark brown, stirred with a thin wooden stick. In front of her: a rekebot: a small low wooden coffee table about knee height, shaped like an open box, dark brown wood with simple carved geometric patterns on its sides, its flat top holding two or three neat rows of sini: very small round white porcelain coffee cups with no handle at all, shaped like tiny bowls, each about the size of an egg, standing directly on the wood; next to it, a jebena: a traditional hand-made black clay coffee pot shaped like a round gourd with a tall narrow bottle neck: a round belly about the size of a small melon, a long thin neck rising straight up from the top like the neck of a bottle, a short spout coming out of the side near the bottom of the neck, and a curved handle joining the neck to the belly; it stands upright on a small round woven straw ring. Nearby, a small terracotta incense burner shaped like a tiny goblet on a short stem, glowing charcoal and frankincense inside, giving off a thin curl of white smoke. The floor around the coffee area is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. Warm golden morning light from the window, smoke rising softly. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "prompt": "Inside a modest Ethiopian living room with plain painted walls, a window with thin curtains, and simple cushioned seats along the walls, on Fasika morning. The mother sits on a low wooden stool, knees together, leaning slightly forward. On the floor at her side: a small round terracotta charcoal brazier about knee high, open at the top and full of glowing orange charcoal, standing on a round metal tray on the floor. She holds a flat round shallow metal roasting pan with a long straight metal handle, held just above the coals, full of coffee beans turning from light brown to dark brown, stirred with a thin wooden stick. In front of her: a rekebot: a small low wooden coffee table about knee height, shaped like an open box, dark brown wood with simple carved geometric patterns on its sides, its flat top holding two or three neat rows of sini cups; next to it, a jebena: a traditional hand-made black clay coffee pot with a round belly about the size of a small melon, a long thin neck rising straight up from the top, a short spout coming out of the side near the bottom of the neck, and a curved handle joining the neck to the belly; it stands upright on a small round woven straw ring. Nearby, a small terracotta incense burner shaped like a tiny goblet on a short stem, glowing charcoal and frankincense inside, giving off a thin curl of white smoke. The floor around the coffee area is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. Warm golden morning light from the window, smoke rising softly. Not in the picture: no mugs, no cups with handles, no saucers, no metal kettle, no teapot, no iron or wood-burning stove, no lawn, no Christmas tree, no Western decorations",
         "characters": [
           "mother"
         ],
@@ -220,8 +222,9 @@
         "en": "Fresh grass covers the floor, and incense is burning."
       },
       "image": {
-        "prompt": "Low camera angle, close to the floor of a modest Ethiopian living room with plain painted walls, a window with thin curtains, and simple cushioned seats along the walls: the floor is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. In the foreground: a small terracotta incense burner shaped like a tiny goblet on a short stem, glowing charcoal and frankincense inside, giving off a thin curl of white smoke, its smoke drifting up through a beam of sunlight. Behind it, slightly out of focus: the corner of a rekebot: a small low wooden coffee table about knee height, shaped like an open box, dark brown wood with simple carved geometric patterns on its sides, its flat top holding two or three neat rows of sini: very small round white porcelain coffee cups with no handle at all, shaped like tiny bowls, each about the size of an egg, standing directly on the wood, and a jebena: a traditional hand-made black clay coffee pot shaped like a round gourd with a tall narrow bottle neck: a round belly about the size of a small melon, a long thin neck rising straight up from the top like the neck of a bottle, a short spout coming out of the side near the bottom of the neck, and a curved handle joining the neck to the belly; it stands upright on a small round woven straw ring. No people. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "prompt": "Close-up of the coffee being made in the room of the first reference image, the camera moved in low and close: the black clay jebena on its straw ring, the small round white handleless cups shaped like tiny bowls on the carved rekebot, and coffee beans roasting in the flat metal pan over the glowing charcoal of the clay brazier, the mother's hands at the edge of the frame stirring the beans with a thin wooden stick, the cream sleeve of her dress with its woven border showing. Cut grass on the floor, incense smoke curling through warm golden light. Only her hands and sleeves show, no faces. Not in the picture: no lawn, no Christmas tree, no Western decorations",
         "characters": [],
+        "scene_from": "s05",
         "seed": 1006
       },
       "motion": {
@@ -238,8 +241,13 @@
         "en": "My brother and my dad sit holding their coffee. You can tell they're as happy as I am."
       },
       "image": {
-        "prompt": "Inside a modest Ethiopian living room with plain painted walls, a window with thin curtains, and simple cushioned seats along the walls, on Fasika morning. Two men sit side by side on low wooden stools, seen from behind and slightly to the side so their faces are not visible: an older bald man with short grey hair at the sides, and a young man with a short black fade, both in white traditional tunics with red embroidered borders and striped gabi shawls over one shoulder. Each holds one sini cup in his hand (sini cups: tiny white porcelain coffee cups with no handles, each about the size of an egg cup, some with thin blue patterns, no saucers). The floor is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. Warm golden light. Not in the picture: no mugs, no cups with handles, no saucers, no metal kettle, no teapot, no iron or wood-burning stove, no lawn, no Christmas tree, no Western decorations",
-        "characters": [],
+        "prompt": "Wider view of the room of the first reference image, the camera pulled back so more of the room shows. The mother sits on her low stool by the brazier making coffee, exactly as in the reference. The father and the brother sit with her on the cushioned seats along the wall, close to her, relaxed, talking with her. The rekebot, jebena, cups, brazier and cut grass stay as in the reference. Warm golden morning light. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "characters": [
+          "mother",
+          "father",
+          "brother"
+        ],
+        "scene_from": "s05",
         "seed": 1007
       },
       "motion": {
@@ -257,11 +265,14 @@
         "en": "I looked at them, and I was so happy."
       },
       "image": {
-        "prompt": "From behind: the girl stands in the centre of a doorway, looking into the living room. Beyond her is a modest Ethiopian living room with plain painted walls, a window with thin curtains, and simple cushioned seats along the walls, warm and softly hazy with roasting-coffee and incense smoke in golden light. In the distance the mother, a woman in her late forties, sits on a low stool beside a small round terracotta charcoal brazier about knee high, open at the top and full of glowing orange charcoal, standing on a round metal tray on the floor, with a rekebot: a small low wooden coffee table about knee height, shaped like an open box, dark brown wood with simple carved geometric patterns on its sides, its flat top holding two or three neat rows of sini: very small round white porcelain coffee cups with no handle at all, shaped like tiny bowls, each about the size of an egg, standing directly on the wood in front of her. The floor is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. No fire or flames other than the glow of the charcoal. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "prompt": "The room of the first reference image, seen from behind the girl: she stands in a doorway in the foreground, her back to the camera, looking in at her family. Inside, as in the reference, the mother sits on her low stool making coffee by the brazier, the father and the brother sitting with her on the cushioned seats. The mother has the same face, hair and cream dress with the woven tibeb border as in the reference images. Warm, softly hazy with coffee and incense smoke in golden light. Not in the picture: no lawn, no Christmas tree, no Western decorations",
         "characters": [
           "girl",
-          "mother"
+          "mother",
+          "father",
+          "brother"
         ],
+        "scene_from": "s05",
         "seed": 1008
       },
       "motion": {
@@ -279,8 +290,14 @@
         "en": "This is my first holiday memory with my mother. To this day, it's the best day of my life."
       },
       "image": {
-        "prompt": "Close-up at the height of a low table. A woman's hand, with the cream sleeve and woven tibeb cuff of a traditional dress, holds a jebena by its curved handle, a traditional hand-made black clay coffee pot shaped like a round gourd with a tall narrow bottle neck: a round belly about the size of a small melon, a long thin neck rising straight up from the top like the neck of a bottle, a short spout coming out of the side near the bottom of the neck, and a curved handle joining the neck to the belly and lifts it high, about a forearm's length above the cups, pouring a thin steady stream of dark coffee into one cup. Below: a rekebot: a small low wooden coffee table about knee height, shaped like an open box, dark brown wood with simple carved geometric patterns on its sides, its flat top holding two or three neat rows of sini: very small round white porcelain coffee cups with no handle at all, shaped like tiny bowls, each about the size of an egg, standing directly on the wood. Only the hand and arm are visible, no faces, no other people. The floor below is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. Incense smoke and warm light. Not in the picture: no lawn, no Christmas tree, no Western decorations",
-        "characters": [],
+        "prompt": "A closer view in the room of the first reference image: the family sits together around the rekebot, laughing and having fun, the mother, the father, the brother and the girl each holding one of the small round white handleless cups shaped like tiny bowls, sipping coffee; warm, happy faces, incense smoke in the golden light, cut grass on the floor. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "characters": [
+          "mother",
+          "father",
+          "brother",
+          "girl"
+        ],
+        "scene_from": "s05",
         "seed": 1009
       },
       "motion": {
@@ -297,8 +314,14 @@
         "en": "More than anything, showing up matters."
       },
       "image": {
-        "prompt": "Wide shot of a modest Ethiopian living room with plain painted walls, a window with thin curtains, and simple cushioned seats along the walls on Fasika morning, nobody in the room. The floor is covered with ketema: freshly cut grass, long thin bright-green blades like chives, each about an arm's length, scattered loosely and lying flat on the indoor floor, crossing each other in a light layer, the floor visible between the blades; it is cut grass spread on a floor, not a lawn, no soil, nothing growing. In the middle: a rekebot: a small low wooden coffee table about knee height, shaped like an open box, dark brown wood with simple carved geometric patterns on its sides, its flat top holding two or three neat rows of sini: very small round white porcelain coffee cups with no handle at all, shaped like tiny bowls, each about the size of an egg, standing directly on the wood; beside it a jebena: a traditional hand-made black clay coffee pot shaped like a round gourd with a tall narrow bottle neck: a round belly about the size of a small melon, a long thin neck rising straight up from the top like the neck of a bottle, a short spout coming out of the side near the bottom of the neck, and a curved handle joining the neck to the belly; it stands upright on a small round woven straw ring; a small round terracotta charcoal brazier about knee high, open at the top and full of glowing orange charcoal, standing on a round metal tray on the floor; a small terracotta incense burner shaped like a tiny goblet on a short stem, glowing charcoal and frankincense inside, giving off a thin curl of white smoke; low round woven straw baskets with red and green patterns, holding white popcorn and round pieces of bread. Warm golden light through the window. The room feels full and warm, as if the family has just stepped away. Not in the picture: no lawn, no Christmas tree, no Western decorations",
-        "characters": [],
+        "prompt": "Wide view of the whole room of the first reference image: the whole family together around the rekebot, the mother on her low stool by the brazier, the father, the brother and the girl on the seats close to her, all laughing, having fun and sipping coffee from the small round white handleless cups shaped like tiny bowls; cut grass on the floor, the brazier glowing, incense smoke, warm golden light through the window; low round woven baskets with popcorn and bread nearby. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "characters": [
+          "mother",
+          "father",
+          "brother",
+          "girl"
+        ],
+        "scene_from": "s05",
         "seed": 1010
       },
       "motion": {
