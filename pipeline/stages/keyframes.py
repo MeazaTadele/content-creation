@@ -305,6 +305,19 @@ def run_wide(ctx: Context) -> dict:
     todo, files = [], {}
     tmpd = Path(tempfile.mkdtemp(prefix="wide-"))
     for shot in ctx.sb["shots"]:
+        locked = (shot["image"].get("locked") or {}).get("16x9")
+        if locked:  # decision 48: the chosen widened picture is used as it is
+            srcp = ROOT / locked
+            fp = fingerprint(STAGE, STAGE_VERSION, {"locked": srcp})
+            unit = f"{shot['id']}/16x9"
+            if not ctx.manifest.is_fresh(STAGE, unit, fp) and not ctx.dry_run:
+                dst = out_path(STAGE, unit, fp, "png")
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(srcp, dst)
+                ctx.manifest.put(STAGE, unit, {"fingerprint": fp, "output": rel(dst), "status": "locked",
+                                               "source": locked, "shot": shot["id"], "ratio": "16x9"})
+                say(f"  locked     {STAGE}/{unit}  <- {locked}")
+            continue
         fix = shot["image"].get("wide_fix")
         if fix:  # decision 46: repaint marked areas of a chosen widened picture, following a person's reference
             fbase = ROOT / fix["base"]

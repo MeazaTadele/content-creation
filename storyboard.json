@@ -124,7 +124,10 @@
         "characters": [
           "girl"
         ],
-        "seed": 1101
+        "seed": 1101,
+        "locked": {
+          "16x9": "references/keyframes/s01_16x9_final.png"
+        }
       },
       "motion": {
         "prompt": "the curtain moves slightly, the camera stays still",
@@ -143,7 +146,10 @@
       "image": {
         "prompt": "Blue light before dawn. A covered pot sits on the table in the foreground, with the front door behind it.",
         "characters": [],
-        "seed": 1002
+        "seed": 1002,
+        "locked": {
+          "16x9": "references/keyframes/s02_16x9_final.png"
+        }
       },
       "motion": {
         "prompt": "the door slowly closes",
@@ -165,7 +171,10 @@
           "father",
           "brother"
         ],
-        "seed": 1003
+        "seed": 1003,
+        "locked": {
+          "16x9": "references/keyframes/s03_16x9_final.png"
+        }
       },
       "motion": {
         "prompt": "slow push-in on the dishes",
@@ -186,7 +195,10 @@
         "characters": [
           "girl"
         ],
-        "seed": 1004
+        "seed": 1004,
+        "locked": {
+          "16x9": "references/keyframes/s04_16x9_final.png"
+        }
       },
       "motion": {
         "prompt": "the feet run toward the warm doorway",
@@ -207,7 +219,10 @@
         "characters": [
           "mother"
         ],
-        "seed": 1005
+        "seed": 1005,
+        "locked": {
+          "16x9": "references/keyframes/s05_16x9_final.png"
+        }
       },
       "motion": {
         "prompt": "slow push-in, smoke rising from the roasting beans",
@@ -230,12 +245,6 @@
         "wide_prompt": "on the right the mother stands at the edge of the picture, an Ethiopian woman with black hair in a low bun, wearing a long white cotton dress with a narrow green and gold woven tibeb border at the cuffs and hem, the same dress as her sleeve",
         "wide_fix": {
           "base": "references/keyframes/s06_16x9_wide_v2.png",
-          "try_seeds": [
-            4606,
-            5606,
-            6606,
-            7606
-          ],
           "inpaint": [
             {
               "area": [
@@ -283,7 +292,11 @@
               "face_ref": "references/mother_face.png",
               "face_scale": 0.8
             }
-          ]
+          ],
+          "seed": 4606
+        },
+        "locked": {
+          "16x9": "references/keyframes/s06_16x9_final.png"
         }
       },
       "motion": {
@@ -308,7 +321,8 @@
           "brother"
         ],
         "locked": {
-          "9x16": "references/keyframes/s07_9x16_v4.png"
+          "9x16": "references/keyframes/s07_9x16_v4.png",
+          "16x9": "references/keyframes/s07_16x9_final.png"
         },
         "seed": 1007
       },
@@ -535,7 +549,10 @@
             "negative": "dress, robe, white clothes, pattern, embroidery, skirt, text"
           }
         ],
-        "seed": 3208
+        "seed": 3208,
+        "locked": {
+          "16x9": "references/keyframes/s08_16x9_final.png"
+        }
       },
       "motion": {
         "prompt": "smoke drifts slowly across the doorway",
@@ -560,7 +577,8 @@
           "girl"
         ],
         "locked": {
-          "9x16": "references/keyframes/s09_9x16_v4.png"
+          "9x16": "references/keyframes/s09_9x16_v4.png",
+          "16x9": "references/keyframes/s09_16x9_final.png"
         },
         "seed": 1009
       },
@@ -586,7 +604,8 @@
           "girl"
         ],
         "locked": {
-          "9x16": "references/keyframes/s09_9x16_v4.png"
+          "9x16": "references/keyframes/s09_9x16_v4.png",
+          "16x9": "references/keyframes/s10_16x9_final.png"
         },
         "seed": 1010
       },
