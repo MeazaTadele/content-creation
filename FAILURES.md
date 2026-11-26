@@ -3,6 +3,17 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F22. `pip install -e .` failed on a fresh Windows machine (Thu 26 Nov)
+
+- **What broke:** setting up the repository on Meaza's own computer for the walkthrough, the install
+  stopped with "Multiple top-level packages discovered in a flat-layout: kaggle, schema, outputs,
+  pipeline, references". `pyproject.toml` never said which folder is the package, and the cloud
+  container had never run the install from a clean clone.
+- **Fix:** `pyproject.toml` now names the build backend and includes only `pipeline*`; tested with
+  a clean virtual environment. The four dependencies can also be installed directly, as the README says.
+- **Lesson:** "one command from a fresh clone" has to be tested on a fresh machine, not only where the
+  code was written.
+
 ## F21. The 16:9 film showed old pictures (Thu 26 Nov)
 
 - **What broke:** Meaza noticed the 16:9 film's pictures were completely different from the 9:16
