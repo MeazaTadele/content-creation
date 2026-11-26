@@ -1016,6 +1016,306 @@
       "attempts": 1,
       "seconds": 765.6,
       "gpu_seconds": 765.6
+    },
+    "assemble/sound/film": {
+      "fingerprint": "f5c9f7873edd7295531e9573b5d0387aa929673a2dd53ce3df8313c5726bde8d",
+      "output": "outputs/assemble/sound/film__f5c9f787.wav",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 11.78,
+      "lufs": -13.98,
+      "true_peak_db": -1.43
+    },
+    "assemble/segments/9x16/s01": {
+      "fingerprint": "2ef2cdb410ebaed8d79d017d1d5d1ab16725b9511190f5c38e56fa475305b3c0",
+      "output": "outputs/assemble/segments/9x16/s01__2ef2cdb4.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 4.21,
+      "kind": "kenburns",
+      "move": "in",
+      "frames": 299
+    },
+    "assemble/segments/9x16/s02": {
+      "fingerprint": "2a57b7e871bc2a6c9027ee3f7a00e5331b9d871797dd17bad43035239a4e86f5",
+      "output": "outputs/assemble/segments/9x16/s02__2a57b7e8.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.44,
+      "kind": "kenburns",
+      "move": "right",
+      "frames": 190
+    },
+    "assemble/segments/9x16/s03": {
+      "fingerprint": "e06e6f62ed54290cba4ddc95613e246ca11fd5c949a96e856c516ff0170e56af",
+      "output": "outputs/assemble/segments/9x16/s03__e06e6f62.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.14,
+      "kind": "kenburns",
+      "move": "out",
+      "frames": 151
+    },
+    "assemble/segments/9x16/s04": {
+      "fingerprint": "aecb4fae5f6ad644aac8db1f838be09175fda3c395e8a4da92a6be1a9e52e533",
+      "output": "outputs/assemble/segments/9x16/s04__aecb4fae.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.47,
+      "kind": "kenburns",
+      "move": "left",
+      "frames": 164
+    },
+    "assemble/segments/9x16/s05": {
+      "fingerprint": "3751ed7e27093b688544671a0f28fa0e6ad868f380c01f3cbd6785c71e490312",
+      "output": "outputs/assemble/segments/9x16/s05__3751ed7e.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 4.2,
+      "kind": "clip",
+      "move": "clip+drift",
+      "frames": 84,
+      "clip_seconds": 1.842,
+      "drift_seconds": 1.658
+    },
+    "assemble/segments/9x16/s06": {
+      "fingerprint": "954d006427d37adf0b0d83bffde45c5b2f029a507914873a570eabeca6d358e1",
+      "output": "outputs/assemble/segments/9x16/s06__954d0064.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 3.46,
+      "kind": "clip",
+      "move": "clip+drift",
+      "frames": 84,
+      "clip_seconds": 1.842,
+      "drift_seconds": 1.658
+    },
+    "assemble/segments/9x16/s07": {
+      "fingerprint": "4f91a526f668cb885757735afeb39282b84a9e110a97b6ed8c9b4b983e509ed3",
+      "output": "outputs/assemble/segments/9x16/s07__4f91a526.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.54,
+      "kind": "kenburns",
+      "move": "out",
+      "frames": 168
+    },
+    "assemble/segments/9x16/s08": {
+      "fingerprint": "acf6898c88a361bbca0e36c13e6f4029ce85d26621931dbba181f26cd5c742b4",
+      "output": "outputs/assemble/segments/9x16/s08__acf6898c.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 1.31,
+      "kind": "kenburns",
+      "move": "left",
+      "frames": 84
+    },
+    "assemble/segments/9x16/s09": {
+      "fingerprint": "b66e305ea49357fdc7c7773205b4e46a8dd5e7f689949adc067613f8141419d4",
+      "output": "outputs/assemble/segments/9x16/s09__b66e305e.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 6.23,
+      "kind": "clip",
+      "move": "clip+drift",
+      "frames": 174,
+      "clip_seconds": 1.842,
+      "drift_seconds": 5.425
+    },
+    "assemble/segments/9x16/s10": {
+      "fingerprint": "0e1d44b630d6e6e760013ef344fdafb694e41a2ef5218a49575c16564cf22a8d",
+      "output": "outputs/assemble/segments/9x16/s10__0e1d44b6.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 1.21,
+      "kind": "kenburns",
+      "move": "right",
+      "frames": 84
+    },
+    "assemble/segments/9x16/end-card": {
+      "fingerprint": "aefb0d352349b2aa3b0b2e4db1613a99b67b01bfba3d1d7d99b8ff0f40c1e368",
+      "output": "outputs/assemble/segments/9x16/end-card__aefb0d35.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 0.39,
+      "kind": "end-card"
+    },
+    "assemble/picture/9x16": {
+      "fingerprint": "36c86a59fa57d1f32f1fcbd72ae082dafcab91bcc2739d1eeccd5641f5270516",
+      "output": "outputs/assemble/picture/9x16__36c86a59.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 63.25
+    },
+    "assemble/final/film_9x16": {
+      "fingerprint": "e2d752bc9fbdd8ba61181c7df99ce54331a12183b14b52bcb8be97a54e3b2776",
+      "output": "outputs/final/film_9x16.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 62.75,
+      "ratio": "9x16",
+      "lufs": -13.99,
+      "true_peak_db": -1.47,
+      "bytes": 22942901
+    },
+    "assemble/segments/16x9/s01": {
+      "fingerprint": "bc9e5a3fd5d3a5c0c91503e4d8e335e2042a5b791c088617d59ee5af24ba1ecb",
+      "output": "outputs/assemble/segments/16x9/s01__bc9e5a3f.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 4.4,
+      "kind": "kenburns",
+      "move": "in",
+      "frames": 299
+    },
+    "assemble/segments/16x9/s02": {
+      "fingerprint": "c7e3e9949613ac7d50ca6b7dee52094aed8f3c196954e339d01641555aa6a637",
+      "output": "outputs/assemble/segments/16x9/s02__c7e3e994.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.74,
+      "kind": "kenburns",
+      "move": "right",
+      "frames": 190
+    },
+    "assemble/segments/16x9/s03": {
+      "fingerprint": "fb39ec133133a550dfc4d21cc0460ed8faf573a8bc16145cc50068fb307a26cf",
+      "output": "outputs/assemble/segments/16x9/s03__fb39ec13.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.53,
+      "kind": "kenburns",
+      "move": "out",
+      "frames": 151
+    },
+    "assemble/segments/16x9/s04": {
+      "fingerprint": "9b65c547fc9db4f0624bf2e79237147c97b203c1ae155697b66da89cc054882f",
+      "output": "outputs/assemble/segments/16x9/s04__9b65c547.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.4,
+      "kind": "kenburns",
+      "move": "left",
+      "frames": 164
+    },
+    "assemble/segments/16x9/s05": {
+      "fingerprint": "1de4a2d6c4f8a74bdc5c6c49db1561f9a6a9f5c6e1e180ca77326275f42b0d16",
+      "output": "outputs/assemble/segments/16x9/s05__1de4a2d6.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 7.14,
+      "kind": "clip",
+      "move": "clip+drift",
+      "frames": 84,
+      "clip_seconds": 1.842,
+      "drift_seconds": 1.658
+    },
+    "assemble/segments/16x9/s06": {
+      "fingerprint": "9bf4782a17da53e75e95e84d86bfa96cfdd9c2be6fd975b4dcc00d0fc108ffdc",
+      "output": "outputs/assemble/segments/16x9/s06__9bf4782a.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 6.31,
+      "kind": "clip",
+      "move": "clip+drift",
+      "frames": 84,
+      "clip_seconds": 1.842,
+      "drift_seconds": 1.658
+    },
+    "assemble/segments/16x9/s07": {
+      "fingerprint": "e97a87dc2cd25267edc2096931f94268b4102ce874fd573e3fd3ee7a295283ef",
+      "output": "outputs/assemble/segments/16x9/s07__e97a87dc.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 2.64,
+      "kind": "kenburns",
+      "move": "out",
+      "frames": 168
+    },
+    "assemble/segments/16x9/s08": {
+      "fingerprint": "67af4b073a84c90ee2cd93e2fbd00fba228e0ba9c71c453b9cc624aa3b81a402",
+      "output": "outputs/assemble/segments/16x9/s08__67af4b07.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 1.39,
+      "kind": "kenburns",
+      "move": "left",
+      "frames": 84
+    },
+    "assemble/segments/16x9/s09": {
+      "fingerprint": "ee4b532b1eeaf24e5e3f1aa48a33e554671d32eb401ec1e7399b18750c3cf225",
+      "output": "outputs/assemble/segments/16x9/s09__ee4b532b.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 11.49,
+      "kind": "clip",
+      "move": "clip+drift",
+      "frames": 174,
+      "clip_seconds": 1.842,
+      "drift_seconds": 5.425
+    },
+    "assemble/segments/16x9/s10": {
+      "fingerprint": "4a6762ab6c7a6dab19145df8a8769ac5ff65630287f18892f2151055e06d118e",
+      "output": "outputs/assemble/segments/16x9/s10__4a6762ab.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 1.37,
+      "kind": "kenburns",
+      "move": "right",
+      "frames": 84
+    },
+    "assemble/segments/16x9/end-card": {
+      "fingerprint": "33cdba27c032fe24f02a1066b6e36a7cf088444aa7c9a34eb3e6d7fa3a9b6a41",
+      "output": "outputs/assemble/segments/16x9/end-card__33cdba27.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 0.42,
+      "kind": "end-card"
+    },
+    "assemble/picture/16x9": {
+      "fingerprint": "a6a22cb54f767899cebc1ba1a02d8655588a376efa041e2b9f4732250512bd79",
+      "output": "outputs/assemble/picture/16x9__a6a22cb5.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 63.25
+    },
+    "assemble/final/film_16x9": {
+      "fingerprint": "8fb5b4b53a420f36f8ac7a44e0f1f8afee2263a058126b4eb33f03a4165fb4ce",
+      "output": "outputs/final/film_16x9.mp4",
+      "status": "generated",
+      "provider": "",
+      "model": "",
+      "seconds": 62.75,
+      "ratio": "16x9",
+      "lufs": -13.99,
+      "true_peak_db": -1.47,
+      "bytes": 20304802
     }
   },
   "stage_versions": {},
@@ -1175,6 +1475,14 @@
       "film_seconds": 60.213,
       "total_seconds": 62.713,
       "crossfade_seconds": 0.5
+    },
+    "loudness_9x16": {
+      "lufs": -13.99,
+      "true_peak_db": -1.47
+    },
+    "loudness_16x9": {
+      "lufs": -13.99,
+      "true_peak_db": -1.47
     }
   }
 }
