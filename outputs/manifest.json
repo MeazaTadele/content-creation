@@ -1173,56 +1173,56 @@
       "bytes": 22941230
     },
     "assemble/segments/16x9/s01": {
-      "fingerprint": "bc9e5a3fd5d3a5c0c91503e4d8e335e2042a5b791c088617d59ee5af24ba1ecb",
-      "output": "outputs/assemble/segments/16x9/s01__bc9e5a3f.mp4",
+      "fingerprint": "abb34ac191662b985b04270d0472ab01287043bc2dcc725b98b4464dbf5f4afc",
+      "output": "outputs/assemble/segments/16x9/s01__abb34ac1.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 4.4,
+      "seconds": 16.36,
       "kind": "kenburns",
       "move": "in",
       "frames": 299
     },
     "assemble/segments/16x9/s02": {
-      "fingerprint": "c7e3e9949613ac7d50ca6b7dee52094aed8f3c196954e339d01641555aa6a637",
-      "output": "outputs/assemble/segments/16x9/s02__c7e3e994.mp4",
+      "fingerprint": "e29ae701de642aedc852a7bbf3b8e648674c8c7e08327f3d2f438cdedde26422",
+      "output": "outputs/assemble/segments/16x9/s02__e29ae701.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 2.74,
+      "seconds": 10.96,
       "kind": "kenburns",
       "move": "right",
       "frames": 190
     },
     "assemble/segments/16x9/s03": {
-      "fingerprint": "fb39ec133133a550dfc4d21cc0460ed8faf573a8bc16145cc50068fb307a26cf",
-      "output": "outputs/assemble/segments/16x9/s03__fb39ec13.mp4",
+      "fingerprint": "e588826714ed78ecf91636fc0944f86480d8896f52c235a331b5c99478350833",
+      "output": "outputs/assemble/segments/16x9/s03__e5888267.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 2.53,
+      "seconds": 8.42,
       "kind": "kenburns",
       "move": "out",
       "frames": 151
     },
     "assemble/segments/16x9/s04": {
-      "fingerprint": "9b65c547fc9db4f0624bf2e79237147c97b203c1ae155697b66da89cc054882f",
-      "output": "outputs/assemble/segments/16x9/s04__9b65c547.mp4",
+      "fingerprint": "513b324e538240a61b64b459815b7fe8691d8c4ada5758d548e16de26c1e1a85",
+      "output": "outputs/assemble/segments/16x9/s04__513b324e.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 2.4,
+      "seconds": 9.02,
       "kind": "kenburns",
       "move": "left",
       "frames": 164
     },
     "assemble/segments/16x9/s05": {
-      "fingerprint": "1de4a2d6c4f8a74bdc5c6c49db1561f9a6a9f5c6e1e180ca77326275f42b0d16",
-      "output": "outputs/assemble/segments/16x9/s05__1de4a2d6.mp4",
+      "fingerprint": "83f7706f06cb6c0c28f37d574669a2afaad28741b3d83e59784b8efc787ba72e",
+      "output": "outputs/assemble/segments/16x9/s05__83f7706f.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 7.14,
+      "seconds": 6.21,
       "kind": "clip",
       "move": "clip+drift",
       "frames": 84,
@@ -1230,12 +1230,12 @@
       "drift_seconds": 1.658
     },
     "assemble/segments/16x9/s06": {
-      "fingerprint": "9bf4782a17da53e75e95e84d86bfa96cfdd9c2be6fd975b4dcc00d0fc108ffdc",
-      "output": "outputs/assemble/segments/16x9/s06__9bf4782a.mp4",
+      "fingerprint": "412177a37f9f609ee42ad22e0b694d379e9b308b6dd887ce728a99eed0471d5a",
+      "output": "outputs/assemble/segments/16x9/s06__412177a3.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 6.31,
+      "seconds": 6.14,
       "kind": "clip",
       "move": "clip+drift",
       "frames": 84,
@@ -1243,34 +1243,34 @@
       "drift_seconds": 1.658
     },
     "assemble/segments/16x9/s07": {
-      "fingerprint": "e97a87dc2cd25267edc2096931f94268b4102ce874fd573e3fd3ee7a295283ef",
-      "output": "outputs/assemble/segments/16x9/s07__e97a87dc.mp4",
+      "fingerprint": "d96c17cffa767c91eee81ef9d17555f0942808dfba0d207a29c6e20ee5b9f8db",
+      "output": "outputs/assemble/segments/16x9/s07__d96c17cf.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 2.64,
+      "seconds": 10.51,
       "kind": "kenburns",
       "move": "out",
       "frames": 168
     },
     "assemble/segments/16x9/s08": {
-      "fingerprint": "67af4b073a84c90ee2cd93e2fbd00fba228e0ba9c71c453b9cc624aa3b81a402",
-      "output": "outputs/assemble/segments/16x9/s08__67af4b07.mp4",
+      "fingerprint": "d30436c952c38f136e1930fb6953df258fd32bf9c33caf271201042e2d4b5e55",
+      "output": "outputs/assemble/segments/16x9/s08__d30436c9.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 1.39,
+      "seconds": 5.24,
       "kind": "kenburns",
       "move": "left",
       "frames": 84
     },
     "assemble/segments/16x9/s09": {
-      "fingerprint": "ee4b532b1eeaf24e5e3f1aa48a33e554671d32eb401ec1e7399b18750c3cf225",
-      "output": "outputs/assemble/segments/16x9/s09__ee4b532b.mp4",
+      "fingerprint": "f99915150a321444c225bb8046caac9c386b36082111de072e65f2549d5fad2c",
+      "output": "outputs/assemble/segments/16x9/s09__f9991515.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 11.49,
+      "seconds": 10.98,
       "kind": "clip",
       "move": "clip+drift",
       "frames": 174,
@@ -1278,12 +1278,12 @@
       "drift_seconds": 5.425
     },
     "assemble/segments/16x9/s10": {
-      "fingerprint": "4a6762ab6c7a6dab19145df8a8769ac5ff65630287f18892f2151055e06d118e",
-      "output": "outputs/assemble/segments/16x9/s10__4a6762ab.mp4",
+      "fingerprint": "39db5bd7c9ab83b401be2c43a7a8d20ba61812ec4af1a2bf7e47e996bc8613ab",
+      "output": "outputs/assemble/segments/16x9/s10__39db5bd7.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 1.37,
+      "seconds": 5.03,
       "kind": "kenburns",
       "move": "right",
       "frames": 84
@@ -1298,15 +1298,15 @@
       "kind": "end-card"
     },
     "assemble/picture/16x9": {
-      "fingerprint": "a6a22cb54f767899cebc1ba1a02d8655588a376efa041e2b9f4732250512bd79",
-      "output": "outputs/assemble/picture/16x9__a6a22cb5.mp4",
+      "fingerprint": "c7cd868bf26e6e3cc356b890d91860cfc2e846788cda2ec1427156caf019f048",
+      "output": "outputs/assemble/picture/16x9__c7cd868b.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
       "seconds": 63.25
     },
     "assemble/final/film_16x9": {
-      "fingerprint": "bce3de75ab6a37954360d8a635ddf78ad7abc27cfa0653f036a2111de521bdd7",
+      "fingerprint": "0ed3605ba9c9a08a605b490b2c82e7ec5c615d8f7518fa0a389e1c1f732c4fd0",
       "output": "outputs/final/film_16x9.mp4",
       "status": "generated",
       "provider": "",
@@ -1315,7 +1315,7 @@
       "ratio": "16x9",
       "lufs": -14.01,
       "true_peak_db": -1.38,
-      "bytes": 20303131
+      "bytes": 16299487
     },
     "music/before/1": {
       "fingerprint": "b4ab1bdeca5e88e7b546b26e255c504f93004f29453a6bfd2323ec8da70b9fe2",
@@ -1378,7 +1378,7 @@
     },
     "assemble": {
       "version": 2,
-      "sha": "a73d4818f43b344daaeb546c5e6c50db07aa5cb0c4323e36c39e534f60ede184"
+      "sha": "d128c9c6c03525e198ce7affef91eed1d56ccad7b72b10a843dfc05794299758"
     },
     "shots": {
       "version": 2,

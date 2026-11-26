@@ -3,6 +3,17 @@
 What broke, what was tried, and what fixed it or how it was worked around. Includes quota,
 memory, consistency and language problems, and tools that changed or disappeared. Newest first.
 
+## F21. The 16:9 film showed old pictures (Thu 26 Nov)
+
+- **What broke:** Meaza noticed the 16:9 film's pictures were completely different from the 9:16
+  film's. The seven Ken Burns shots in 16:9 used the separate 16:9 keyframes from the first Kaggle
+  image job, made before all her fixes (decisions 34-39); only the three video clips used the 9:16
+  picture over a blurred copy, as decision 6 says.
+- **Fix:** every 16:9 segment now uses the shot's 9:16 keyframe over a blurred, darkened copy of
+  itself. The 9:16 film was not touched (all its parts stayed cached); only the 16:9 was rebuilt.
+- **Lesson:** a decision has to hold on every path through the code, not only the one I tested.
+  The 16:9 keyframes are no longer used by the film.
+
 ## F20. A listening copy overwrote two music candidates (Thu 26 Nov)
 
 - **What broke:** right after the ACE-Step job, I (the agent) converted the six candidates to MP3

@@ -99,12 +99,16 @@ def segment_units(ctx: Context, timeline: dict, ratio: str) -> list[Unit]:
         if clip is not None:
             source, kind, move = clip, "clip", None
         else:
-            source = keyframes.path(ctx, shot["id"], ratio)
+            # every shot uses the 9:16 keyframe; 16:9 puts it over a blurred copy of itself (decision 6),
+            # so both films show the same pictures
+            source = keyframes.path(ctx, shot["id"], "9x16")
             if source is None:
-                raise RuntimeError(f"no keyframe for {shot['id']} ({ratio}); run the keyframes stage")
+                raise RuntimeError(f"no keyframe for {shot['id']} (9x16); run the keyframes stage")
             kind, move = "kenburns", shot["motion"].get("kenburns_move", MOVES[i % len(MOVES)])
-        fp = fingerprint(STAGE, STAGE_VERSION, {"part": "segment", "ratio": ratio, "source": source,
-                                                 "kind": kind, "move": move, "frames": frames})
+        inputs = {"part": "segment", "ratio": ratio, "source": source, "kind": kind, "move": move, "frames": frames}
+        if ratio != "9x16":
+            inputs["layout"] = "9x16 over blur"
+        fp = fingerprint(STAGE, STAGE_VERSION, inputs)
         unit = f"segments/{ratio}/{shot['id']}"
         dst = out_path(STAGE, unit, fp, "mp4")
 
@@ -112,10 +116,18 @@ def segment_units(ctx: Context, timeline: dict, ratio: str) -> list[Unit]:
             if kind == "clip":
                 extra = _render_clip_with_drift(source, ratio, w, h, dur, tmp_dir, tmp)
                 return {"kind": kind, "move": "clip+drift", "frames": frames, **extra}
-            else:
-                media.run(["-i", str(source), "-vf", _kenburns_filter(move, frames, w, h), "-frames:v",
-                           str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
-                           "-r", str(FPS), str(tmp)])
+            vw, vh = CANVAS["9x16"]
+            vertical = tmp if ratio == "9x16" else tmp_dir / f"{tmp.stem}_vertical.mp4"
+            media.run(["-i", str(source), "-vf", _kenburns_filter(move, frames, vw, vh), "-frames:v",
+                       str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
+                       "-r", str(FPS), str(vertical)])
+            if ratio != "9x16":
+                media.run(["-i", str(vertical), "-filter_complex",
+                           f"[0:v]split[a][b];[a]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},"
+                           f"boxblur=40:4,eq=brightness=-0.08[bg];[b]scale=-2:{h}[fg];[bg][fg]overlay=(W-w)/2:0,"
+                           f"fps={FPS},format=yuv420p[v]",
+                           "-map", "[v]", "-frames:v", str(frames), "-an", "-c:v", "libx264", "-preset", "veryfast",
+                           "-crf", "16", str(tmp)])
             return {"kind": kind, "move": move, "frames": frames}
 
         out.append(Unit(STAGE, unit, fp, dst, f"{kind} segment, {dur:.2f} s", run))
