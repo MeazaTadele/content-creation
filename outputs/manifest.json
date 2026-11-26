@@ -903,14 +903,12 @@
       "seconds": 24.3
     },
     "keyframes/s10/9x16": {
-      "fingerprint": "8cada6977e75ffd5ee95058b8c1ddf9b1d27b92b586a089a3ab066096228f191",
-      "output": "outputs/keyframes/s10/9x16__8cada697.png",
-      "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "fingerprint": "7a96126d6dbdda12a343828a4c8b381c02b1a51729e10bb080a474066c11ebbe",
+      "output": "outputs/keyframes/s10/9x16__7a96126d.png",
+      "status": "locked",
+      "source": "references/keyframes/s09_9x16_v4.png",
       "shot": "s10",
-      "ratio": "9x16",
-      "seconds": 67.2
+      "ratio": "9x16"
     },
     "keyframes/s10/16x9": {
       "fingerprint": "c41ede6a6eb4200aecba3e0327a56917d154ff51b6d7d8059e04c04e65adeb58",
@@ -935,7 +933,7 @@
     },
     "keyframes": {
       "version": 3,
-      "sha": "99fba54ef97459bb3800d82c762e77ff332001fbd2fa272105584974ba4173f4"
+      "sha": "cff359fcde841ad9b307f2c9f93ead7677bf4dfbfef6e1f43cf7d6e0cbaf54ad"
     },
     "music": {
       "version": 1,

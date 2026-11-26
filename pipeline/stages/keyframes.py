@@ -27,6 +27,10 @@ SAME_ROOM = ("The first reference image is the room for this shot: the same livi
              "as described below")
 
 
+EDIT = ("Edit the first reference image. Keep the picture exactly the same: the same people, faces, clothes, poses, "
+        "room, objects, colours, light, framing and painting style, except for the changes described below")
+
+
 def scene_ref(ctx: Context, shot: dict, ratio: str):
     """The keyframe of the shot named in image.scene_from, in the same ratio (None if it isn't made yet)."""
     src = shot["image"].get("scene_from")
@@ -51,7 +55,8 @@ def full_prompt(sb: dict, shot: dict) -> str:
         avoid = "Not in the picture:" + avoid
     # style and exclusions first, details after: if the text encoder truncates a long prompt, it loses
     # detail, not the look of the film
-    same_room = SAME_ROOM if shot["image"].get("scene_from") else ""
+    same_room = (EDIT if shot["image"].get("edit_from")
+                 else SAME_ROOM if shot["image"].get("scene_from") else "")
     parts = [SCENE, sb["style"]["block"], same_room, avoid, scene, who]
     return ". ".join(p.strip().rstrip(".") for p in parts if p and p.strip())
 
@@ -116,7 +121,28 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None) -> dict:
             if ratios and ratio not in ratios:
                 continue
             refs = char_refs
-            if shot["image"].get("scene_from"):
+            locked = (shot["image"].get("locked") or {}).get(ratio)
+            if locked:  # a keyframe Meaza chose to keep as it is (decision 35): copy, never regenerate
+                src = ROOT / locked
+                fp = fingerprint(STAGE, STAGE_VERSION, {"locked": src})
+                unit = f"{shot['id']}/{ratio}"
+                if ctx.dry_run and not ctx.manifest.is_fresh(STAGE, unit, fp):
+                    say(f"  would lock {STAGE}/{unit}  <- {locked}")
+                elif not ctx.manifest.is_fresh(STAGE, unit, fp):
+                    dst = out_path(STAGE, unit, fp, "png")
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(src, dst)
+                    ctx.manifest.put(STAGE, unit, {"fingerprint": fp, "output": rel(dst), "status": "locked",
+                                                   "source": locked, "shot": shot["id"], "ratio": ratio})
+                    say(f"  locked     {STAGE}/{unit}  <- {locked}")
+                continue
+            if shot["image"].get("edit_from"):
+                base = (shot["image"]["edit_from"] or {}).get(ratio)
+                if not base:
+                    say(f"  skipped    {STAGE}/{shot['id']}/{ratio}: no image to edit for this ratio yet")
+                    continue
+                refs = [ROOT / base] + char_refs  # the image being edited first
+            elif shot["image"].get("scene_from"):
                 room = scene_ref(ctx, shot, ratio)
                 if room is None:
                     say(f"  skipped    {STAGE}/{shot['id']}/{ratio}: its room ({shot['image']['scene_from']}) has no keyframe yet")

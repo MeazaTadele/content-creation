@@ -241,13 +241,11 @@
         "en": "My brother and my dad sit holding their coffee. You can tell they're as happy as I am."
       },
       "image": {
-        "prompt": "Wider view of the room of the first reference image, the camera pulled back so more of the room shows. The mother sits on her low stool by the brazier making coffee, exactly as in the reference. The father and the brother sit with her on the cushioned seats along the wall, close to her, relaxed, talking with her. The rekebot, jebena, cups, brazier and cut grass stay as in the reference. Warm golden morning light. Not in the picture: no lawn, no Christmas tree, no Western decorations",
-        "characters": [
-          "mother",
-          "father",
-          "brother"
-        ],
-        "scene_from": "s05",
+        "prompt": "Change only the size of the father and the brother: make them full adult size, as big as the mother, sitting close to her on the seats, their heads at about the same height as hers; keep their faces, clothes and poses. Everything else stays exactly as it is: the mother, the room, the furniture, the coffee things, the light and the framing",
+        "characters": [],
+        "edit_from": {
+          "9x16": "references/keyframes/s07_9x16_v4.png"
+        },
         "seed": 1007
       },
       "motion": {
@@ -265,14 +263,13 @@
         "en": "I looked at them, and I was so happy."
       },
       "image": {
-        "prompt": "The room of the first reference image, seen from behind the girl: she stands in a doorway in the foreground, her back to the camera, looking in at her family. Inside, as in the reference, the mother sits on her low stool making coffee by the brazier, the father and the brother sitting with her on the cushioned seats. The mother has the same face, hair and cream dress with the woven tibeb border as in the reference images. Warm, softly hazy with coffee and incense smoke in golden light. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "prompt": "Change only these things: remove the girl sitting on the seats next to the father, so only the father and the brother sit there; the girl standing in the doorway wears her pyjamas, the olive-green t-shirt and loose olive-green trousers from the second reference image, not a dress; make the father and the brother full adult size, as big as the mother. Everything else stays exactly as it is",
         "characters": [
-          "girl",
-          "mother",
-          "father",
-          "brother"
+          "girl"
         ],
-        "scene_from": "s05",
+        "edit_from": {
+          "9x16": "references/keyframes/s08_9x16_v4.png"
+        },
         "seed": 1008
       },
       "motion": {
@@ -290,18 +287,15 @@
         "en": "This is my first holiday memory with my mother. To this day, it's the best day of my life."
       },
       "image": {
-        "prompt": "A closer view in the room of the first reference image: the family sits together around the rekebot, laughing and having fun, the mother, the father, the brother and the girl each holding one of the small round white handleless cups shaped like tiny bowls, sipping coffee; warm, happy faces, incense smoke in the golden light, cut grass on the floor. Not in the picture: no lawn, no Christmas tree, no Western decorations",
-        "characters": [
-          "mother",
-          "father",
-          "brother",
-          "girl"
-        ],
-        "scene_from": "s05",
+        "prompt": "Change only one thing: the mother, sitting in the same place, now pours coffee: she lifts the black clay jebena and pours a thin stream of coffee into one of the small cups on the carved table, smiling. Everything else stays exactly as it is: the father, the brother and the girl laughing and holding their cups, the room, the furniture, the light and the framing",
+        "characters": [],
+        "edit_from": {
+          "9x16": "references/keyframes/s09_9x16_v4.png"
+        },
         "seed": 1009
       },
       "motion": {
-        "prompt": "the family laughs together and sips coffee from small cups, gentle natural movement, steam and incense smoke rising, the camera nearly still",
+        "prompt": "the mother pours a thin stream of coffee from the jebena into a small cup, the family laughing around her, steam rising, the camera nearly still",
         "seed": 2009
       },
       "transition": "crossfade"
@@ -314,14 +308,16 @@
         "en": "More than anything, showing up matters."
       },
       "image": {
-        "prompt": "Wide view of the whole room of the first reference image: the whole family together around the rekebot, the mother on her low stool by the brazier, the father, the brother and the girl on the seats close to her, all laughing, having fun and sipping coffee from the small round white handleless cups shaped like tiny bowls; cut grass on the floor, the brazier glowing, incense smoke, warm golden light through the window; low round woven baskets with popcorn and bread nearby. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "prompt": "A closer view in the room of the first reference image: the family sits together around the rekebot, laughing and having fun, the mother, the father, the brother and the girl each holding one of the small round white handleless cups shaped like tiny bowls, sipping coffee; warm, happy faces, incense smoke in the golden light, cut grass on the floor. Not in the picture: no lawn, no Christmas tree, no Western decorations",
         "characters": [
           "mother",
           "father",
           "brother",
           "girl"
         ],
-        "scene_from": "s05",
+        "locked": {
+          "9x16": "references/keyframes/s09_9x16_v4.png"
+        },
         "seed": 1010
       },
       "motion": {

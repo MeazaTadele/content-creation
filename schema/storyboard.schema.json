@@ -359,6 +359,18 @@
                   "$ref": "#/$defs/id"
                 }
               },
+              "edit_from": {
+                "type": "object",
+                "description": "per aspect ratio: an image to edit (given first to the model); the prompt describes only the changes",
+                "propertyNames": {"enum": ["9x16", "16x9"]},
+                "additionalProperties": {"type": "string"}
+              },
+              "locked": {
+                "type": "object",
+                "description": "per aspect ratio: a chosen image used as it is, never regenerated",
+                "propertyNames": {"enum": ["9x16", "16x9"]},
+                "additionalProperties": {"type": "string"}
+              },
               "scene_from": {
                 "$ref": "#/$defs/id",
                 "description": "an earlier shot whose keyframe (same aspect ratio) is given to the image model as the room to keep"
