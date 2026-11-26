@@ -125,7 +125,7 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None, shots: list[str] |
                 continue
             refs = char_refs
             locked = (shot["image"].get("locked") or {}).get(ratio)
-            if locked:  # a keyframe Meaza chose to keep as it is (decision 35): copy, never regenerate
+            if locked:  # a keyframe chosen to keep as it is (decision 35): copy, never regenerate
                 src = ROOT / locked
                 fp = fingerprint(STAGE, STAGE_VERSION, {"locked": src})
                 unit = f"{shot['id']}/{ratio}"

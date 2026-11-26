@@ -6,19 +6,19 @@ comparing prompts.
 
 ## E11. Does telling the video model what must not appear remove an artefact? (Thu 26 Nov)
 
-- **Hypothesis:** the first good s06 clip (Wan 2.2) grew a glowing pink rod halfway through. Meaza
-  wanted nothing added, only smoke moving. A motion prompt that says the camera is still and only
+- **Hypothesis:** the first good s06 clip (Wan 2.2) grew a glowing pink rod halfway through. The goal:
+  nothing added, only smoke moving. A motion prompt that says the camera is still and only
   the smoke moves, plus a "must not show" list for this shot (sword, rod, wand, glowing light, new
   objects, moving people, camera movement), should give a clip with nothing new in it.
 - **Change:** `motion.prompt` rewritten, `motion.negative` added (a per-shot field, so s05 and s09
   kept their fingerprints and were not regenerated), and a new seed (3006).
 - **Result:** the new clip has no rod and no added objects; only the smoke moves, the camera almost
   still (`outputs/shots/s06_frames_check.jpg`). Cost: one more Wan run, 21 min of GPU session.
-- **Caveat:** the seed changed too, so I can't say how much of the fix is the wording and how much is
+- **Caveat:** the seed changed too, so it is not possible to say how much of the fix is the wording and how much is
   the new seed. One run each is not enough to separate them.
 - **Decision:** keep the new clip (decision 39). The per-shot "must not show" list stays as an option.
 
-## E10. Does masked repainting change only what I ask? (Thu 26 Nov)
+## E10. Does masked repainting change only what is asked? (Thu 26 Nov)
 
 - **Hypothesis:** after E9, an inpainting model given a mask should change only the masked areas.
   For s08: remove the girl sitting with my father and brother, and put me (at the door) in my olive
@@ -31,7 +31,7 @@ comparing prompts.
   Everything outside the masks is identical to v4 by construction. 5 min of GPU session for all three.
 - **What it taught me:** removing something is easy for inpainting; matching a specific outfit from
   words alone is harder, because SDXL inpainting can't take the character reference image.
-- **Decision:** Meaza chose candidate C (seed 3208, decision 38).
+- **Decision:** chose candidate C (seed 3208, decision 38).
 
 ## E9. Can the open image model change one thing in a picture? (Thu 26 Nov)
 

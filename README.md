@@ -1,7 +1,7 @@
 # Easter Morning (Heritage Short)
 
 A 63-second Amharic short film about the Fasika (Ethiopian Easter) morning my mother was home: the
-first holiday I remember with her, because she usually worked on holidays. The film is made by a
+first holiday remembered with her, because she usually worked on holidays. The film is made by a
 code pipeline from one file, `storyboard.json`: Amharic narration, English subtitles, AI keyframes
 and video clips, an original score ducked under the voice, and an AI end card, exported as 9:16
 and 16:9 MP4.

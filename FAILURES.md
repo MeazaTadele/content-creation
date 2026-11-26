@@ -5,7 +5,7 @@ memory, consistency and language problems, and tools that changed or disappeared
 
 ## F22. `pip install -e .` failed on a fresh Windows machine (Thu 26 Nov)
 
-- **What broke:** setting up the repository on Meaza's own computer for the walkthrough, the install
+- **What broke:** setting up the repository on a personal Windows computer for the walkthrough, the install
   stopped with "Multiple top-level packages discovered in a flat-layout: kaggle, schema, outputs,
   pipeline, references". `pyproject.toml` never said which folder is the package, and the cloud
   container had never run the install from a clean clone.
@@ -20,19 +20,19 @@ memory, consistency and language problems, and tools that changed or disappeared
 
 ## F21. The 16:9 film showed old pictures (Thu 26 Nov)
 
-- **What broke:** Meaza noticed the 16:9 film's pictures were completely different from the 9:16
+- **What broke:** noticed while reviewing: the 16:9 film's pictures were completely different from the 9:16
   film's. The seven Ken Burns shots in 16:9 used the separate 16:9 keyframes from the first Kaggle
   image job, made before all her fixes (decisions 34-39); only the three video clips used the 9:16
   picture over a blurred copy, as decision 6 says.
 - **Fix:** every 16:9 segment now uses the shot's 9:16 keyframe over a blurred, darkened copy of
   itself. The 9:16 film was not touched (all its parts stayed cached); only the 16:9 was rebuilt.
-- **Lesson:** a decision has to hold on every path through the code, not only the one I tested.
+- **Lesson:** a decision has to hold on every path through the code, not only the one that was tested.
   The 16:9 keyframes are no longer used by the film.
 
 ## F20. A listening copy overwrote two music candidates (Thu 26 Nov)
 
-- **What broke:** right after the ACE-Step job, I (the agent) converted the six candidates to MP3
-  for Meaza to listen to. The file pattern for candidate A matched several files, and FFmpeg took the
+- **What broke:** right after the ACE-Step job, the agent (Claude Code) converted the six candidates to MP3
+  for listening. The file pattern for candidate A matched several files, and FFmpeg took the
   extra names as outputs, so it wrote the placeholder music over the real candidate A of both cues
   (and over four placeholder files). Caught by measuring them before sending: A was 75 s and 30 s
   long at -31 LUFS, like the placeholders, instead of 45 s like B and C.
@@ -54,7 +54,7 @@ memory, consistency and language problems, and tools that changed or disappeared
 
 ## F18. Gemini's image models are not on the free tier (Thu 26 Nov)
 
-- **What broke:** after F17, Meaza chose to try Gemini image editing for s07. Both image models the
+- **What broke:** after F17, tried Gemini image editing for s07. Both image models the
   key can see, gemini-2.5-flash-image and gemini-3.1-flash-image, answered HTTP 429 at once. The
   quota names in the error were the free-tier ones (requests per day, requests per minute, input
   tokens per minute), with no allowance left to use: the free tier gives these models nothing. This
@@ -67,7 +67,7 @@ memory, consistency and language problems, and tools that changed or disappeared
 
 ## F17. The open image model would not make a targeted edit (Thu 26 Nov)
 
-- **What broke:** Meaza wanted only the sizes of the father and brother changed in s07 (and two small
+- **What broke:** the goal was to change only the sizes of the father and brother changed in s07 (and two small
   changes each in s08 and s09). FLUX.2 klein, given the chosen picture as the first reference and
   told to keep everything else, returned nearly the same picture: 6-15% of pixels changed, and none
   of the requested changes. Four more seeds with a "describe the result" prompt made the men only a
@@ -113,13 +113,13 @@ memory, consistency and language problems, and tools that changed or disappeared
 
 ## F14. The keyframes got Ethiopian culture wrong (Wed 25 Nov, caught by me)
 
-- **What broke:** looking at the keyframes, I found: "fresh grass" on the floor came out as a
+- **What broke:** looking at the keyframes, found: "fresh grass" on the floor came out as a
   growing lawn, but ketema is freshly cut long grass scattered on an indoor floor; the coffee
   ceremony showed a Western iron stove, a copper kettle and mugs with handles, instead of a clay
   charcoal brazier, a flat roasting pan, a black clay jebena on a straw ring, a carved rekebot
   tray-table and small handleless cups; one shot had a Christmas tree; and the girl in shot 1 was
   deformed.
-- **What was tried:** I gave Claude photos of real coffee ceremonies. They were used only to write
+- **What was tried:** gave Claude photos of real coffee ceremonies. They were used only to write
   exact word descriptions of the objects (the people in them were not described or used, and the
   photos were not given to the image model or committed). One shared description for each object
   is now used in every shot where it appears, so the ceremony looks the same throughout.
@@ -169,7 +169,7 @@ memory, consistency and language problems, and tools that changed or disappeared
 
 - **What broke:** adding image editing to the reference stage added a new field to every
   character's fingerprint, so the next run regenerated all twelve reference images, including the
-  three Meaza had just picked, which came back different.
+  three just picked, which came back different.
 - **Fix:** the picked images were still on disk and were restored in the manifest; the fingerprint
   now includes the input image only for edited candidates, so other fingerprints stay unchanged.
 - **Lesson:** this is the known weak point of fingerprint option (b): any change to what goes into

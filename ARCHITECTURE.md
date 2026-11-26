@@ -7,7 +7,7 @@ shot in the storyboard, run `make film` again, and only the parts that depend on
 made again.
 
 ```
-              Meaza writes the story, the narration and the shots (no AI script stage)
+        Story, narration and shots written by hand (no AI script stage)
                                 │
                                 ▼
                          storyboard.json  (the contract, checked by schema/storyboard.schema.json)
@@ -37,7 +37,7 @@ made again.
   in order, a shot can only borrow the room of an earlier shot, and every locked or edited picture
   file exists). An invalid storyboard
   stops the run before anything is called.
-- **Decisions live in it, not in code.** A picture Meaza chose to keep is `image.locked`; an edit
+- **Decisions live in it, not in code.** A picture chosen to keep is `image.locked`; an edit
   is `image.edit_from` plus a description or repaint areas. Anyone who clones the repository and
   runs `make film` gets the same film.
 

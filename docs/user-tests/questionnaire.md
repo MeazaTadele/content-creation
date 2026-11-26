@@ -1,7 +1,7 @@
 # User test questionnaire
 
 Three questions, used in both user tests (the radio cut, then the near-final cut), so the answers
-can be compared. Asked after one play-through, before I say what I intended. Answers are written
+can be compared. Asked after one play-through, before the intent is explained. Answers are written
 down in the tester's own words. Shortened from ten questions to three (Wed 25 Nov) so the testers
 have time to answer.
 

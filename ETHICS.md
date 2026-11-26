@@ -5,10 +5,10 @@
 Consent is recorded here **before** anything depicting or voicing a real person is generated.
 Since Wed 25 Nov 2026, 21:03 EAT, the AI narration voice (OmniVoice) copies **my own voice** from an 11-second sample of me telling lines 1–2 of the story, with my written consent above. This was a change made after user test 1, where all three testers found the narration script-like. My recording and the sample are kept private (`private/`, ignored by git) and are not in this repository; only the AI-generated narration is. Nobody else's voice is cloned.
 
-**Changes (Wed 25 Nov, evening):** after radio cut v3 I first tried to keep its warm delivery without
+**Changes (Wed 25 Nov, evening):** after radio cut v3, first tried to keep its warm delivery without
 my own voice: OmniVoice copying a synthetic female voice (Gemini "Kore"), and OmniVoice's
 voice-design words added to my sample. The synthetic sample lost the natural Amharic delivery, and
-the voice-design words still sounded like me (EXPERIMENTS.md E7). I decided to keep radio cut v3: the
+the voice-design words still sounded like me (EXPERIMENTS.md E7). Decided to keep radio cut v3: the
 AI narrator copies my own voice from my private sample, under the consent above, slowed slightly
 (tempo 0.9). The narrator therefore sounds like me; my recording itself stays private. The first generation of any
 kind in this project was on Wed 25 Nov (see `runs.jsonl`); all consent below was given earlier.
@@ -17,7 +17,7 @@ kind in this project was on Wed 25 Nov (see `runs.jsonl`); all consent below was
 
 | Person | Role in the film | Asked | Replied | Status |
 |---|---|---|---|---|
-| Meaza (me) | narrator; shown as a girl of about twelve (shots 1, 4 and 8); my recorded voice is the sample the AI narrator copies | Wed 25 Nov 2026, 21:03 EAT, in writing | Wed 25 Nov 2026, 21:03 EAT | "I agree that my recorded voice is used as a sample for the AI narration voice of my film, which will be posted publicly with an AI label. The recording itself stays private." |
+| The author | narrator; shown as a girl of about twelve (shots 1, 4 and 8); my recorded voice is the sample the AI narrator copies | Wed 25 Nov 2026, 21:03 EAT, in writing | Wed 25 Nov 2026, 21:03 EAT | "I agree that my recorded voice is used as a sample for the AI narration voice of my film, which will be posted publicly with an AI label. The recording itself stays private." |
 | My father | appears seen from behind or as hands only (shots 3 and 7); replied for both parents | Tue 24 Nov 2026, 20:02 EAT, Telegram | Tue 24 Nov 2026, 21:11 EAT | agreed, for himself and for my mother |
 | My mother | shown as a drawn character based on her (shots 5 and 9); the story is about her | same message, sent to both parents | through my father's reply | agreed (relayed by my father) |
 | Henok, my brother | appears seen from behind or as hands only (shots 3 and 7) | Tue 24 Nov 2026, 20:02 EAT, Telegram | Tue 24 Nov 2026, evening | agreed |
@@ -51,14 +51,14 @@ English: "Good. Both your mother and I agree. Good luck, Emeye."
 
 - **Why my mother's consent came through my father:** my mother does not text, and my parents live
   in a different city from me, so she could not reply in writing herself. The message was addressed
-  to both of my parents, and my father replied for both of them. I decided to keep the record as it
+  to both of my parents, and my father replied for both of them. Kept the record as it
   is rather than send a further follow-up.
 - **What the messages said and didn't say:** my parents' message explained that the film is for my
   course, is about a Fasika holiday at home, and talks about them. It did not say that the pictures
   and voice are made by AI or that the film will be posted publicly. Henok's message said it is an
-  AI film, but not that it will be public. I am recording this openly rather than leaving it out.
+  AI film, but not that it will be public. Recorded here openly rather than left out.
 - **Photos were used only to write descriptions (Wed 25 Nov):** to make the characters look more
-  like my family, I showed Claude Code photos of my mother, father and brother, plus a photo of a
+  like my family, showed Claude Code photos of my mother, father and brother, plus a photo of a
   traditional dress. Claude turned them into word descriptions (skin tone, face shape, hair,
   clothing) in `storyboard.json`. The photos were not given to any image model, not uploaded to
   any service by the pipeline, and are not in this repository. The drawn characters are therefore
