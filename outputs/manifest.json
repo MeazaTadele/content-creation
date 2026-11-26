@@ -883,14 +883,12 @@
       "seconds": 33.8
     },
     "keyframes/s09/9x16": {
-      "fingerprint": "cb6541933232d135d594ad6c19fea46573037b6fb96f33ef87a2753223167472",
-      "output": "outputs/keyframes/s09/9x16__cb654193.png",
-      "status": "generated",
-      "provider": "kaggle-flux",
-      "model": "black-forest-labs/FLUX.2-klein-4B",
+      "fingerprint": "7a96126d6dbdda12a343828a4c8b381c02b1a51729e10bb080a474066c11ebbe",
+      "output": "outputs/keyframes/s09/9x16__7a96126d.png",
+      "status": "locked",
+      "source": "references/keyframes/s09_9x16_v4.png",
       "shot": "s09",
-      "ratio": "9x16",
-      "seconds": 31.5
+      "ratio": "9x16"
     },
     "keyframes/s09/16x9": {
       "fingerprint": "49641ed7bf5015005eb9f632f03ca8629b52c6b903f389b6e7ca17967dc63f12",

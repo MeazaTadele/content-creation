@@ -492,15 +492,20 @@
         "en": "This is my first holiday memory with my mother. To this day, it's the best day of my life."
       },
       "image": {
-        "prompt": "Change only one thing: the mother, sitting in the same place, now pours coffee: she lifts the black clay jebena and pours a thin stream of coffee into one of the small cups on the carved table, smiling. Everything else stays exactly as it is: the father, the brother and the girl laughing and holding their cups, the room, the furniture, the light and the framing",
-        "characters": [],
-        "edit_from": {
+        "prompt": "A closer view in the room of the first reference image: the family sits together around the rekebot, laughing and having fun, the mother, the father, the brother and the girl each holding one of the small round white handleless cups shaped like tiny bowls, sipping coffee; warm, happy faces, incense smoke in the golden light, cut grass on the floor. Not in the picture: no lawn, no Christmas tree, no Western decorations",
+        "characters": [
+          "mother",
+          "father",
+          "brother",
+          "girl"
+        ],
+        "locked": {
           "9x16": "references/keyframes/s09_9x16_v4.png"
         },
         "seed": 1009
       },
       "motion": {
-        "prompt": "the mother pours a thin stream of coffee from the jebena into a small cup, the family laughing around her, steam rising, the camera nearly still",
+        "prompt": "the family laughs together and sips coffee from small cups, gentle natural movement, steam and incense smoke rising, the camera nearly still",
         "seed": 2009
       },
       "transition": "crossfade"
