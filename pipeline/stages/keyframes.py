@@ -27,8 +27,8 @@ SAME_ROOM = ("The first reference image is the room for this shot: the same livi
              "as described below")
 
 
-EDIT = ("Edit the first reference image. Keep the picture exactly the same: the same people, faces, clothes, poses, "
-        "room, objects, colours, light, framing and painting style, except for the changes described below")
+EDIT = ("The first reference image is the picture to change: keep its room, objects, colours, light, camera position and "
+        "painting style, and change it as described below")
 
 
 def scene_ref(ctx: Context, shot: dict, ratio: str):
@@ -107,7 +107,8 @@ def path(ctx: Context, shot_id: str, ratio: str):
 KAGGLE_MODEL = "black-forest-labs/FLUX.2-klein-4B"
 
 
-def run_kaggle(ctx: Context, ratios: list[str] | None = None) -> dict:
+def run_kaggle(ctx: Context, ratios: list[str] | None = None, shots: list[str] | None = None,
+               try_seeds: list[int] | None = None) -> dict:
     """Decision 32: the same FLUX.2 klein model on Kaggle's GPU, as one batch job."""
     import shutil
     from .. import kaggle, media
@@ -115,6 +116,8 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None) -> dict:
     sb = ctx.sb
     todo, files = [], {}
     for shot in sb["shots"]:
+        if shots and shot["id"] not in shots:
+            continue
         char_refs = [p for c in shot["image"].get("characters", []) if (p := refsheet.chosen(ctx, c)) is not None]
         prompt = full_prompt(sb, shot)
         for ratio, size in SIZES.items():
@@ -148,19 +151,23 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None) -> dict:
                     say(f"  skipped    {STAGE}/{shot['id']}/{ratio}: its room ({shot['image']['scene_from']}) has no keyframe yet")
                     continue
                 refs = [room] + char_refs  # the room first: the prompt calls it "the first reference image"
-            fp = fingerprint(STAGE, STAGE_VERSION, {"prompt": prompt, "seed": shot["image"]["seed"], "size": size,
-                                                     "refs": refs, "provider": "kaggle-flux", "model": KAGGLE_MODEL})
-            unit = f"{shot['id']}/{ratio}"
-            if ctx.manifest.is_fresh(STAGE, unit, fp):
-                say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
-                continue
-            names = []
-            for r in refs:
-                names.append(r.name)
-                files[r.name] = r
-            todo.append({"unit": unit.replace("/", "_"), "key": unit, "fingerprint": fp, "prompt": prompt,
-                         "width": size[0], "height": size[1], "seed": shot["image"]["seed"], "refs": names,
-                         "shot": shot["id"], "ratio": ratio})
+            # candidate mode (--shot X --seeds a,b,c): try several seeds for one shot; each candidate keeps the
+            # fingerprint it would have as the main keyframe, so the chosen seed is reused, not regenerated
+            trying = bool(try_seeds and shot["id"] in (shots or []))
+            for seed in (try_seeds if trying else [shot["image"]["seed"]]):
+                fp = fingerprint(STAGE, STAGE_VERSION, {"prompt": prompt, "seed": seed, "size": size,
+                                                         "refs": refs, "provider": "kaggle-flux", "model": KAGGLE_MODEL})
+                unit = f"{shot['id']}/{ratio}" + (f"/try{seed}" if trying else "")
+                if ctx.manifest.is_fresh(STAGE, unit, fp):
+                    say(f"  cached     {STAGE}/{unit}  ({fp[:8]})")
+                    continue
+                names = []
+                for r in refs:
+                    names.append(r.name)
+                    files[r.name] = r
+                todo.append({"unit": unit.replace("/", "_"), "key": unit, "fingerprint": fp, "prompt": prompt,
+                             "width": size[0], "height": size[1], "seed": seed, "refs": names,
+                             "shot": shot["id"], "ratio": ratio})
     if not todo:
         return {"generated": 0, "cached": len(sb["shots"]) * 2, "failed": 0}
     if ctx.dry_run:
@@ -195,9 +202,10 @@ def run_kaggle(ctx: Context, ratios: list[str] | None = None) -> dict:
     return stats
 
 
-def run(ctx: Context, ratios: list[str] | None = None) -> dict:
+def run(ctx: Context, ratios: list[str] | None = None, shots: list[str] | None = None,
+        try_seeds: list[int] | None = None) -> dict:
     check_stage_version(ctx.manifest, STAGE, STAGE_VERSION, __file__)
     if ctx.sb["providers"]["keyframes"] == "kaggle-flux":
-        return run_kaggle(ctx, ratios)
+        return run_kaggle(ctx, ratios, shots, try_seeds)
     # one image blocked by the provider's safety filter must not stop the other shots (FAILURES.md F10)
     return execute(ctx, units(ctx), keep_going=True)

@@ -241,8 +241,11 @@
         "en": "My brother and my dad sit holding their coffee. You can tell they're as happy as I am."
       },
       "image": {
-        "prompt": "Change only the size of the father and the brother: make them full adult size, as big as the mother, sitting close to her on the seats, their heads at about the same height as hers; keep their faces, clothes and poses. Everything else stays exactly as it is: the mother, the room, the furniture, the coffee things, the light and the framing",
-        "characters": [],
+        "prompt": "The same scene as the first reference image: the same room, the same mother on her low stool holding the pan of coffee beans, the same carved table with the cups, the same black jebena, brazier and cut grass, the same light and painting style. The difference: the father and the brother, sitting on the seats beside her, are now drawn much bigger, at the same scale as the mother: grown men, their heads at the same height as her head, their shoulders as broad as hers or broader, filling the right half of the picture. They keep their faces, clothes and relaxed poses",
+        "characters": [
+          "father",
+          "brother"
+        ],
         "edit_from": {
           "9x16": "references/keyframes/s07_9x16_v4.png"
         },

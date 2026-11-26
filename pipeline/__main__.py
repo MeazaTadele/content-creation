@@ -59,7 +59,8 @@ def cmd_refsheet(_):
 def cmd_keyframes(args):
     ctx = _ctx()
     say("keyframes")
-    _report("keyframes", keyframes.run(ctx, getattr(args, "ratio", None)))
+    seeds = [int(x) for x in args.seeds.split(",")] if getattr(args, "seeds", None) else None
+    _report("keyframes", keyframes.run(ctx, getattr(args, "ratio", None), getattr(args, "shot", None), seeds))
 
 
 def cmd_shots(_):
@@ -145,6 +146,8 @@ def main(argv=None):
         if name == "keyframes":
             sp.add_argument("--ratio", action="append", choices=["9x16", "16x9"],
                             help="make only this aspect ratio (repeatable); default both")
+            sp.add_argument("--shot", action="append", help="only this shot (repeatable)")
+            sp.add_argument("--seeds", help="with --shot: try these seeds as candidates, e.g. 1007,2107,3207,4307")
     args = p.parse_args(argv)
     if not shutil.which("ffmpeg"):
         say("ffmpeg is not installed or not on PATH; see README.md")
