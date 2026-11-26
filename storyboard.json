@@ -81,7 +81,7 @@
         "key": "A minor",
         "instrumental": true,
         "seed": 11,
-        "use": null
+        "use": 2
       },
       {
         "id": "morning",
@@ -91,7 +91,7 @@
         "key": "C major",
         "instrumental": true,
         "seed": 21,
-        "use": null
+        "use": 2
       }
     ]
   },

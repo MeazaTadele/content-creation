@@ -1018,14 +1018,14 @@
       "gpu_seconds": 765.6
     },
     "assemble/sound/film": {
-      "fingerprint": "f5c9f7873edd7295531e9573b5d0387aa929673a2dd53ce3df8313c5726bde8d",
-      "output": "outputs/assemble/sound/film__f5c9f787.wav",
+      "fingerprint": "5ae4048d7510a7e9b296cdade99e511ebb6683f65e51f45efe3d0ea4d7aada2d",
+      "output": "outputs/assemble/sound/film__5ae4048d.wav",
       "status": "generated",
       "provider": "",
       "model": "",
-      "seconds": 11.78,
-      "lufs": -13.98,
-      "true_peak_db": -1.43
+      "seconds": 12.62,
+      "lufs": -14.0,
+      "true_peak_db": -1.37
     },
     "assemble/segments/9x16/s01": {
       "fingerprint": "2ef2cdb410ebaed8d79d017d1d5d1ab16725b9511190f5c38e56fa475305b3c0",
@@ -1161,16 +1161,16 @@
       "seconds": 63.25
     },
     "assemble/final/film_9x16": {
-      "fingerprint": "e2d752bc9fbdd8ba61181c7df99ce54331a12183b14b52bcb8be97a54e3b2776",
+      "fingerprint": "1746c6510f447e4a16545a2473155f4b51f1a84db88cf5b4cab7d08f40bb01d2",
       "output": "outputs/final/film_9x16.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
       "seconds": 62.75,
       "ratio": "9x16",
-      "lufs": -13.99,
-      "true_peak_db": -1.47,
-      "bytes": 22942901
+      "lufs": -14.01,
+      "true_peak_db": -1.38,
+      "bytes": 22941230
     },
     "assemble/segments/16x9/s01": {
       "fingerprint": "bc9e5a3fd5d3a5c0c91503e4d8e335e2042a5b791c088617d59ee5af24ba1ecb",
@@ -1306,16 +1306,16 @@
       "seconds": 63.25
     },
     "assemble/final/film_16x9": {
-      "fingerprint": "8fb5b4b53a420f36f8ac7a44e0f1f8afee2263a058126b4eb33f03a4165fb4ce",
+      "fingerprint": "bce3de75ab6a37954360d8a635ddf78ad7abc27cfa0653f036a2111de521bdd7",
       "output": "outputs/final/film_16x9.mp4",
       "status": "generated",
       "provider": "",
       "model": "",
       "seconds": 62.75,
       "ratio": "16x9",
-      "lufs": -13.99,
-      "true_peak_db": -1.47,
-      "bytes": 20304802
+      "lufs": -14.01,
+      "true_peak_db": -1.38,
+      "bytes": 20303131
     },
     "music/before/1": {
       "fingerprint": "b4ab1bdeca5e88e7b546b26e255c504f93004f29453a6bfd2323ec8da70b9fe2",
@@ -1517,12 +1517,12 @@
       "crossfade_seconds": 0.5
     },
     "loudness_9x16": {
-      "lufs": -13.99,
-      "true_peak_db": -1.47
+      "lufs": -14.01,
+      "true_peak_db": -1.38
     },
     "loudness_16x9": {
-      "lufs": -13.99,
-      "true_peak_db": -1.47
+      "lufs": -14.01,
+      "true_peak_db": -1.38
     }
   }
 }
