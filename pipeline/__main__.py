@@ -97,7 +97,8 @@ def _ensure_placeholder_music(ctx, tl):
 def cmd_film(_):
     ctx = _ctx()
     say("1/7 narration")
-    _report("narration", narration.run(ctx))
+    # the film needs only the chosen voice; `make narration` still runs the whole comparison
+    _report("narration", narration.run(ctx, [ctx.sb["voice"]["use"]]))
     say("2/7 timing")
     tl = timing.run(ctx)
     say("3/7 reference sheet")
@@ -116,7 +117,7 @@ def cmd_film(_):
 def cmd_plan(_):
     ctx = _ctx(dry=True)
     say("plan (nothing is generated or called)")
-    for name, fn in (("narration", lambda: narration.run(ctx)), ("refsheet", lambda: refsheet.run(ctx)),
+    for name, fn in (("narration", lambda: narration.run(ctx, [ctx.sb["voice"]["use"]])), ("refsheet", lambda: refsheet.run(ctx)),
                      ("keyframes", lambda: keyframes.run(ctx, ["9x16"]))):
         say(name)
         _report(name, fn())

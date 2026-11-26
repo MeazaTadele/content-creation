@@ -4,6 +4,65 @@ Each entry: **hypothesis → change → result**, with the evidence (log lines, 
 the reason for the choice that followed. One thing is changed at a time; seeds are fixed when
 comparing prompts.
 
+## E11. Does telling the video model what must not appear remove an artefact? (Thu 26 Nov)
+
+- **Hypothesis:** the first good s06 clip (Wan 2.2) grew a glowing pink rod halfway through. Meaza
+  wanted nothing added, only smoke moving. A motion prompt that says the camera is still and only
+  the smoke moves, plus a "must not show" list for this shot (sword, rod, wand, glowing light, new
+  objects, moving people, camera movement), should give a clip with nothing new in it.
+- **Change:** `motion.prompt` rewritten, `motion.negative` added (a per-shot field, so s05 and s09
+  kept their fingerprints and were not regenerated), and a new seed (3006).
+- **Result:** the new clip has no rod and no added objects; only the smoke moves, the camera almost
+  still (`outputs/shots/s06_frames_check.jpg`). Cost: one more Wan run, 21 min of GPU session.
+- **Caveat:** the seed changed too, so I can't say how much of the fix is the wording and how much is
+  the new seed. One run each is not enough to separate them.
+- **Decision:** keep the new clip (decision 39). The per-shot "must not show" list stays as an option.
+
+## E10. Does masked repainting change only what I ask? (Thu 26 Nov)
+
+- **Hypothesis:** after E9, an inpainting model given a mask should change only the masked areas.
+  For s08: remove the girl sitting with my father and brother, and put me (at the door) in my olive
+  pyjamas.
+- **Change:** two polygons in `storyboard.json` (`image.inpaint`), SDXL inpainting on Kaggle, three
+  seeds. After each step the code pastes back every pixel outside the mask, so the rest of the
+  picture cannot change.
+- **Result:** the girl was removed in 3 of 3 candidates (an empty seat in her place). The pyjamas:
+  olive trousers in 2 of 3, but the top came out cream or white in all three, not the olive t-shirt.
+  Everything outside the masks is identical to v4 by construction. 5 min of GPU session for all three.
+- **What it taught me:** removing something is easy for inpainting; matching a specific outfit from
+  words alone is harder, because SDXL inpainting can't take the character reference image.
+- **Decision:** Meaza chose candidate C (seed 3208, decision 38).
+
+## E9. Can the open image model change one thing in a picture? (Thu 26 Nov)
+
+- **Hypothesis:** FLUX.2 klein takes reference images, so giving it the chosen picture first, with
+  "keep everything, change only X", should make a targeted edit (s07: make my father and brother as
+  big as my mother; s08 and s09: two small changes each).
+- **Changes and results:**
+  1. "Keep the picture exactly the same, except…": 6-15% of pixels changed in each picture and none
+     of the requested changes happened (measured against v4).
+  2. Describing the wanted result instead, with the father and brother references, four seeds: the
+     men a little bigger, still smaller than my mother.
+  3. Rebuilding s07 as a wider shot from the s05 room, the men beside her: bigger, but 3 of 4
+     candidates had the wrong people (two fathers, an extra man, a bald brother).
+  4. Gemini's image editing instead: refused, not on the free tier (F18).
+- **What it taught me:** the fast 4-step model follows its reference picture very closely. That is
+  what made E8 work, and also why it can't edit: it copies.
+- **Decision:** s07 stays as v4 (decision 36); s08 moves to masked repainting (E10).
+
+## E8. Does giving the model one shot's picture keep the room the same? (Thu 26 Nov)
+
+- **Hypothesis:** in the first full keyframe set, every shot invented a new room, with a new coffee
+  table, jebena and brazier, though the story happens in one room. Giving the image model the s05
+  picture as the first reference image should keep the room the same in s06-s10.
+- **Change:** `image.scene_from: "s05"` on s06-s10, and a fixed sentence in the prompt saying the
+  first reference image is the room to keep (decision 34).
+- **Result:** in the v4 sheet, s06-s10 show the same walls, window, seats, carved table, jebena on
+  its straw ring, brazier and ketema as s05 (`outputs/keyframes/contact_sheet_9x16_v4.jpg`, compared
+  with `contact_sheet_9x16_v3.jpg`). New problems appeared with the people: an extra girl on the seat
+  in s08, a wrong family in s10, and the father and brother small next to the mother in s07.
+- **Decision:** keep `scene_from`; fix the people shot by shot (E9, E10).
+
 ## E7. Can the narrator keep my delivery without my voice? (Wed 25 Nov)
 
 - **Hypothesis:** radio cut v3 (OmniVoice copying my own 11 s sample) had the natural Amharic
