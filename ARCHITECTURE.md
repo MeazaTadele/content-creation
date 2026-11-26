@@ -7,20 +7,23 @@ shot in the storyboard, run `make film` again, and only the parts that depend on
 made again.
 
 ```
+              Meaza writes the story, the narration and the shots (no AI script stage)
+                                │
+                                ▼
                          storyboard.json  (the contract, checked by schema/storyboard.schema.json)
                                 │
-   ┌──────────────┬─────────────┼──────────────┬──────────────┬──────────────┐
-   ▼              ▼             ▼              ▼              ▼              ▼
-1 narration   3 reference   4 keyframes    5 video clips   6 music       (script: written
-  (voice per    sheet         (one still     (Wan 2.2 on     (ACE-Step 1.5  by Meaza in the
-  line)         (characters)  per shot)      Kaggle)         on Kaggle)     storyboard)
+   ┌──────────────┬─────────────┼──────────────┬──────────────┐
+   ▼              ▼             ▼              ▼              ▼
+1 narration   3 reference   4 keyframes    5 video clips   6 music
+  (voice per    sheet         (one still     (Wan 2.2 on     (ACE-Step 1.5
+  line)         (characters)  per shot)      Kaggle)         on Kaggle)
    │              │             │              │              │
    ▼              └────────────►│ refs         │              │
 2 timing ◄──────────────────────┼──────────────┼──────────────┘
   (shot lengths from            │              │
   the voice)                    ▼              ▼
    └──────────────────────► 7 assembly (FFmpeg only): picture, voice, music, subtitles,
-                              loudness, end card → outputs/film_9x16.mp4, film_16x9.mp4
+                              loudness, end card → outputs/final/film_9x16.mp4, film_16x9.mp4
 ```
 
 ## The contract: `storyboard.json`
